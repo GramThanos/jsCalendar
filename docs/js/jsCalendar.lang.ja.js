@@ -1,8 +1,7 @@
 /*
  * jsCalendar language extension v1.0
- * add Greek Language support
- * Copyright (c) DinoDevs
- * Exclusive on Envato Market
+ * Add Japanese Language support
+ * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
  */
 
 // We love anonymous functions
@@ -29,37 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        // EDIT HERE THE LANGUAGE CODE ~~~~~~~~~~
-        code : "en",
-        // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        code : "ja",
         // Months of the year
         months : [
-            // EDIT HERE THE MONTHS ~~~~~~~~~~~~~
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-            // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
+            "一月",
+            "二月",
+            "三月",
+            "四月",
+            "五月",
+            "六月",
+            "七月",
+            "八月",
+            "九月",
+            "十月",
+            "十一月",
+            "十二月"
         ],
         // Days of the week
         days : [
-            // EDIT HERE THE DAYS ~~~~~~~~~~~~~~~
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-            // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
+            "星期天",
+            "星期一",
+            "星期二",
+            "星期三",
+            "星期四",
+            "星期五",
+            "星期六"
         ]
     });
 

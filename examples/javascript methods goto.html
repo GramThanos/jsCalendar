@@ -5,12 +5,10 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="Blank HTML5">
 		<meta name="author" content="DinoDevs">
-		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
-		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
-		<!-- Load German language -->
-		<script type="text/javascript" src="../../source/jsCalendar.lang.de.js"></script>
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -18,7 +16,7 @@
 	</head>
 	<body>
 		<!-- Button -->
-		<button id="my-button">Change language</button>
+		<button id="my-button">Goto</button>
 		<!-- My calendar element -->
 		<div id="my-calendar"></div>
 		<!-- Create the calendar -->
@@ -31,8 +29,8 @@
 		    var button = document.getElementById("my-button");
 		    // Add a button event
 		    button.addEventListener("click", function(){
-		        // Change language
-		        myCalendar.setLanguage("de");
+		        // Goto
+		        myCalendar.goto("30/01/2017");
 		    }, false);
 		</script>
 	</body>

@@ -1,6 +1,5 @@
 /*
  * jsCalendar v1.2
- * With love by DinoDevs
  * 
  * 
  * MIT License

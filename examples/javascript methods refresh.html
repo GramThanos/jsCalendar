@@ -5,18 +5,18 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="Blank HTML5">
 		<meta name="author" content="DinoDevs">
-		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
-		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
-		<!-- Next month button -->
-		<button id="my-button">Next</button>
+		<!-- Button -->
+		<button id="my-button">Refresh</button>
 		<!-- My calendar element -->
 		<div id="my-calendar"></div>
 		<!-- Create the calendar -->
@@ -29,8 +29,8 @@
 		    var button = document.getElementById("my-button");
 		    // Add a button event
 		    button.addEventListener("click", function(){
-		        // Go to the next month
-		        myCalendar.next();
+		        // Refresh
+		        myCalendar.refresh();
 		    }, false);
 		</script>
 	</body>
