@@ -1,0 +1,204 @@
+/*
+ * GramThanos | DinoDevs
+ * Copyright 2017
+ * All rights reserved.
+ */
+
+/* Global Styling
+-------------------------------------------------- */
+body{
+	font-family: Arial;
+}
+.container {
+	width: 900px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #f3f3f3;
+	border-radius: 5px;
+}
+a {
+	color: #2f6f9f;
+	text-decoration: none;
+}
+
+/* General Styling
+-------------------------------------------------- */
+.side-info {
+	margin: 20px;
+}
+.side-info input{
+	padding: 4px 8px;
+	margin: 4px;
+	border-radius: 3px;
+	border: 1px solid #c5c5c5;
+	width: 420px;
+	font-size: 14px;
+}
+
+.wrapper-left {
+	float : left;
+}
+.wrapper-right {
+	float : right;
+}
+.wrapper-clear {
+	clear: both;
+}
+
+.classic-theme {
+	margin: 0px 4px;
+}
+.jsCalendar table{
+	margin: 10px;
+	/*box-shadow:
+		0px 0px 2px rgba(0, 0, 0, 0.4),
+		-1px 1px 1px #eee,
+		-2px 2px 1px #eee,
+		-3px 3px 1px #eee,
+		-4px 4px 1px #eee;*/
+}
+
+.section {
+	padding: 80px 0px;
+}
+.section-wrapper {
+	width: 800px;
+	margin: 0px auto;
+}
+.section-title {
+	font-size: 22px;
+	line-height: 26px;
+	padding-bottom: 6px;
+	color: #2f6f9f;
+}
+.section-subtitle {
+	font-size: 18px;
+	line-height: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: #2f6f9f;
+}
+.section p {
+	margin: 10px 0px;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+ul {
+	line-height: 24px;
+}
+
+p.note {
+	font-size: 12px;
+}
+
+button {
+	margin: 0px 10px;
+}
+input {
+	width: 100%;
+}
+
+/* Header Styling
+-------------------------------------------------- */
+.section-header {
+	height: 335px;
+}
+.header {
+	width: 800px;
+	margin: 0px auto;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: lighter;
+}
+.header .title {
+	font-size: 32px;
+	line-height: 40px;
+	margin: 100px 0px 10px 0px;
+}
+.header .sub-title {
+	font-size: 16px;
+	line-height: 20px;
+	margin: 10px 0px 10px 0px;
+}
+.header .wrapper-left {
+	width: 490px;
+	text-align: center;
+}
+.header .wrapper-right {
+	width: 308px;
+}
+
+.section-menu {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: #fdfdfd;
+}
+
+
+/* Table styling */
+table {
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid #ddd;
+}
+th, td {
+	padding: 5px 8px;
+}
+
+
+/* HTML code preview */
+.html-code {
+	font-family: "Courier New", Courier, monospace;
+	padding: 9px 14px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 18px;
+	color: #333;
+	margin: 20px 0px;
+}
+span.html-code{
+	padding: 0px;
+	font-size: 1em;
+}
+.html-code .comment{
+	color: #999;
+}
+.html-code .tag {
+	color: #2f6f9f;
+}
+.html-code .attribute {
+	color: #4f9fcf;
+}
+.html-code .string {
+	color: #d44950;
+}
+
+
+/* Custom Calendar Color Styling
+-------------------------------------------------- */
+.jsCalendar.custom-purple tbody td.jsCalendar-current {
+	background-color: #f55cff;
+}
+.jsCalendar.custom-purple *::selection {
+	background: #f55cff;
+}
+.jsCalendar.custom-purple *::-moz-selection {
+	background: #f55cff;
+}
+.jsCalendar.material-theme.custom-purple thead {
+	background-color: #f55cff;
+}
+.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-left:hover,
+.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-right:hover {
+	background-color: #ef00ff;
+}
+.jsCalendar.classic-theme.custom-purple thead {
+	background-color: #f55cff;
+}
+.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-left:hover,
+.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-right:hover {
+	background-color: #ef00ff;
+}
