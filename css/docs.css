@@ -170,13 +170,25 @@ input {
 
 .header ul {
 	list-style-type: none;
-	padding: 0 120px;
-    height: 30px;
-    line-height: 30px;
+	padding: 0 70px;
+	height: 30px;
+	line-height: 30px;
 }
 .header li {
 	float: left;
-	margin: 0 20px;
+	margin: 0 10px;
+}
+
+.header li a{
+	border: 1px solid #fff;
+	padding: 4px 9px;
+	border-radius: 4px;
+}
+
+.header li a:hover{
+	border: 1px solid #76a1c1;
+	padding: 4px 9px;
+	transition: all 0.2s;
 }
 
 /* Menu Styling
