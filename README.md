@@ -103,3 +103,5 @@ I need to give some attribute to all the people that tested the library and repo
 
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
 We do although appreciate attribute.
+
+Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
