@@ -150,10 +150,31 @@ input {
 	width: 308px;
 }
 
+.header ul {
+	list-style-type: none;
+	padding: 0 120px;
+    height: 30px;
+    line-height: 30px;
+}
+.header li {
+	float: left;
+	margin: 0 20px;
+}
+
+/* Menu Styling
+-------------------------------------------------- */
 .section-menu {
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	background-color: #fdfdfd;
+}
+
+/* Footer Styling
+-------------------------------------------------- */
+.section-footer {
+	border-top: 1px solid #ccc;
+	background-color: #fdfdfd;
+	font-size: 12px;
 }
 
 
