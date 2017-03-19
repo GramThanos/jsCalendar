@@ -55,6 +55,7 @@ Visit the jsCalendar site
 Contact us to leave us your feedback or to express your thoughts.
 
 [Open an issue](https://github.com/GramThanos/jsCalendar/issues)
+
 [Send me a mail](mailto:agrammatopoulos@isc.tuc.gr)
 
 
