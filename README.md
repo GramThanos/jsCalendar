@@ -57,10 +57,17 @@ Then insert a calendar on `<body>`
 	- [Custom Colors](https://gramthanos.github.io/jsCalendar/docs.html#more-theme-colors)
 - [Add more languages](https://gramthanos.github.io/jsCalendar/docs.html#more-languages)
 
+
 ## Preview images
 ![preview 3](preview/preview_theme_simple.png)
 ![preview 4](preview/preview_theme_material.png)
 ![preview 5](preview/preview_theme_classic.png)
+
+
+## Inspiration
+I have been using for years javascript libraries like [jQuery](https://github.com/jquery/jquery) and other smaller ones like [ResponsiveSlides.js](https://github.com/viljamis/ResponsiveSlides.js).
+
+So it was time to give back to the community. I just hope this library is helpfull to many people.
 
 
 ## Contact me
@@ -70,8 +77,6 @@ Contact us to leave us your feedback or to express your thoughts.
 [Open an issue](https://github.com/GramThanos/jsCalendar/issues)
 
 [Send me a mail](mailto:agrammatopoulos@isc.tuc.gr)
-
-
 
 
 ## My team
