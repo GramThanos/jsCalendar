@@ -4,10 +4,11 @@
 Just a simple javascript calendar
 
 Visit the jsCalendar site
+
 [https://gramthanos.github.io/jsCalendar/](https://gramthanos.github.io/jsCalendar/)
 
 ![preview 1](preview/preview_default.png)
-• [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
+
 
 ## Learn to jsCalendar
 - [Themes](https://gramthanos.github.io/jsCalendar/docs.html#calendar-themes)
