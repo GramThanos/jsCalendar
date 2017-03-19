@@ -4,7 +4,7 @@
 Just a simple javascript calendar
 
 • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
-![preview 1](preview/preview_1.png)
-![preview 3](preview/preview_2.png)
-![preview 4](preview/preview_3.png)
-![preview 5](preview/preview_4.png)
+![preview 1](preview/preview_default.png)
+![preview 3](preview/preview_theme_simple.png)
+![preview 4](preview/preview_theme_material.png)
+![preview 5](preview/preview_theme_classic.png)
