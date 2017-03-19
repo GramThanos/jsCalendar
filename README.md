@@ -11,6 +11,18 @@ Visit the jsCalendar site
 
 • [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
 
+## Fast set up
+
+Add the jsCalendar code on `<head>`
+
+	<link rel="stylesheet" type="text/css" href="jsCalendar.css">
+	<script type="text/javascript" src="jsCalendar.js"></script>
+	
+Then insert a calendar on `<body>`
+
+	<div class="auto-jsCalendar"></div>
+
+
 ## Learn to jsCalendar
 - [Getting started](https://gramthanos.github.io/jsCalendar/docs.html#getting-started)
 - [Themes](https://gramthanos.github.io/jsCalendar/docs.html#calendar-themes)
