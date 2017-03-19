@@ -32,7 +32,7 @@ Visit the jsCalendar site
 - [Javascript Calendar Methods](https://gramthanos.github.io/jsCalendar/docs.html#javascript-api-create)
 	- [.next()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-next)
 	- [.previous()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-previous)
-	- [.set()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-set).set()
+	- [.set()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-set)
 	- [.refresh()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-refresh)
 	- [.goto()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-goto)
 	- [.reset()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-reset)
