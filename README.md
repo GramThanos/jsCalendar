@@ -9,6 +9,7 @@ Visit the jsCalendar site
 
 ![preview 1](preview/preview_default.png)
 
+• [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
 
 ## Learn to jsCalendar
 - [Themes](https://gramthanos.github.io/jsCalendar/docs.html#calendar-themes)
