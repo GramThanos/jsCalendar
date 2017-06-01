@@ -15,13 +15,16 @@ Visit the jsCalendar site
 
 Add the jsCalendar code on `<head>`
 
-	<link rel="stylesheet" type="text/css" href="jsCalendar.css">
-	<script type="text/javascript" src="jsCalendar.js"></script>
-	
+```html
+<link rel="stylesheet" type="text/css" href="jsCalendar.css">
+<script type="text/javascript" src="jsCalendar.js"></script>
+```
+
 Then insert a calendar on `<body>`
 
-	<div class="auto-jsCalendar"></div>
-
+```html
+<div class="auto-jsCalendar"></div>
+```
 
 ## Learn to jsCalendar
 - [Getting started](https://gramthanos.github.io/jsCalendar/docs.html#getting-started)
