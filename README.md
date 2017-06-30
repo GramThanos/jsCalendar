@@ -1,5 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.2-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-![latest development](https://img.shields.io/badge/latest%20development-v1.3--rc.1-yellow.svg?style=flat-square)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.3--rc.1-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -70,7 +70,7 @@ Then insert a calendar on `<body>`
 
 ## Whats new?
 
-#### Latest development code v1.3--rc.1
+#### Latest development code v1.3-rc.1
  - Added support for setting the fisrt day of the week
 	- firstDayOfTheWeek : "{day-name}" // Based on the language sellected
 	- firstDayOfTheWeek : "{number}" | {number} // 1-7 starting from Sunday
