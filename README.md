@@ -89,8 +89,8 @@ we are [DinoDevs](https://github.com/DinoDevs), a group of people coding for fun
 
 DinoDevs members working on this project:
 <dl>
-  <dt>GramThanos (aka DarkThanos) ~ https://github.com/GramThanos</dt>
-  <dd>I like to code!</dd>
+  <dt>GramThanos ~ https://github.com/GramThanos</dt>
+  <dd>console.log('Hello!');</dd>
 </dl>
 
 
