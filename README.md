@@ -112,6 +112,14 @@ I need to give some attribute to all the people that tested the library and repo
 
 
 
+## Buy me a beer :beer:
+
+I like beer, you can buy me one by donating to my Bitcoin wallet
+
+My Bitcoin wallet address `173advnPpAgh4UDJXd2TFwTCgAppBKvqKF`
+
+
+
 ## License
 
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
