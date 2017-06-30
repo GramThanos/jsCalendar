@@ -43,7 +43,7 @@ var jsCalendar = (function(){
 
     // Languages
     JsCalendar.prototype._construct = function(args) {
-        // Parse agruments
+        // Parse arguments
         var args = this._parseArguments(args);
         // Init calendar
         this._init(args.options);
@@ -60,7 +60,7 @@ var jsCalendar = (function(){
 
     // Languages
     JsCalendar.prototype.languages = {
-        // Default english language
+        // Default English language
         en : {
             // Months Names
             months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -208,7 +208,7 @@ var jsCalendar = (function(){
         if (typeof options.firstDayOfTheWeek !== "undefined"){
             // If day number
             if (typeof options.firstDayOfTheWeek === "number") {
-                // Range check (no need to check for bigger then 7 but I dont trust anyone)
+                // Range check (no need to check for bigger then 7 but I don't trust anyone)
                 if (options.firstDayOfTheWeek >= 1 && options.firstDayOfTheWeek <= 7) {
                     this._options.firstDayOfTheWeek = options.firstDayOfTheWeek - 1;
                 }
@@ -224,7 +224,7 @@ var jsCalendar = (function(){
                     // So find day
                     this._options.firstDayOfTheWeek = this.language.days.indexOf(options.firstDayOfTheWeek);
 
-                    // Range check (no need to check for bigger then 7 but I dont trust anyone)
+                    // Range check (no need to check for bigger then 7 but I don't trust anyone)
                     if (this._options.firstDayOfTheWeek < 0 || this._options.firstDayOfTheWeek >= 7) {
                         this._options.firstDayOfTheWeek = 0;
                     }
@@ -383,7 +383,7 @@ var jsCalendar = (function(){
             day = new Date(day.getTime() - 864E5);
             // Add page on frond of the list
             dates.unshift(day);
-            // Previus
+            // Previous
             previous --;
         }
 
@@ -395,7 +395,7 @@ var jsCalendar = (function(){
             dates.push(day);
             // Calculate next day
             day = new Date(day.getTime() + 864E5);
-            // Repeat untill next month
+            // Repeat until next month
         } while (day.getDate() != 1);
 
         // Next month's days
@@ -537,7 +537,7 @@ var jsCalendar = (function(){
         }
     };
 
-    // Unselect dates on calendar
+    // Un-select dates on calendar
     JsCalendar.prototype._unselectDates = function(dates) {
         // Copy array instance
         dates = dates.slice();
@@ -802,7 +802,7 @@ var jsCalendar = (function(){
         return this;
     };
 
-    // Unselect dates
+    // Unselect all dates
     JsCalendar.prototype.clearselect = function(dates){
         // Unselect all dates
         this._unselectAllDates();
@@ -840,7 +840,7 @@ var jsCalendar = (function(){
     }
 
 
-    // Static foo methods (well... not realy static)
+    // Static foo methods (well... not really static)
 
     // Auto init calendars
     JsCalendar.autoFind = function(){
@@ -918,7 +918,7 @@ var jsCalendar = (function(){
         };
     };
 
-    // Load any lanuguage on the load list
+    // Load any language on the load list
     (function(){
         // If a list exist
         if (typeof window.jsCalendar_language2load !== "undefined") {
