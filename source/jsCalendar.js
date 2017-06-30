@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.2
+ * jsCalendar v1.3-rc.1
  * 
  * 
  * MIT License
@@ -163,6 +163,7 @@ var jsCalendar = (function(){
             zeroFill : false,
             monthFormat : "month",
             dayFormat : "D",
+            firstDayOfTheWeek : 0,
             navigator : true,
             navigatorPosition : "both"
         };
@@ -199,6 +200,37 @@ var jsCalendar = (function(){
         }
         // Set language
         this.setLanguage(this._options.language);
+
+        // Set first day of the week
+        if (typeof options.fdotw !== "undefined"){
+            options.firstDayOfTheWeek = options.fdotw;
+        }
+        if (typeof options.firstDayOfTheWeek !== "undefined"){
+            // If day number
+            if (typeof options.firstDayOfTheWeek === "number") {
+                // Range check (no need to check for bigger then 7 but I dont trust anyone)
+                if (options.firstDayOfTheWeek >= 1 && options.firstDayOfTheWeek <= 7) {
+                    this._options.firstDayOfTheWeek = options.firstDayOfTheWeek - 1;
+                }
+            }
+            // If string
+            if (typeof options.firstDayOfTheWeek === "string") {
+                // If day number
+                if (options.firstDayOfTheWeek.match(/^[1-7]$/)) {
+                    this._options.firstDayOfTheWeek = parseInt(options.firstDayOfTheWeek, 10) - 1;
+                }
+                // else use it as a day name
+                else {
+                    // So find day
+                    this._options.firstDayOfTheWeek = this.language.days.indexOf(options.firstDayOfTheWeek);
+
+                    // Range check (no need to check for bigger then 7 but I dont trust anyone)
+                    if (this._options.firstDayOfTheWeek < 0 || this._options.firstDayOfTheWeek >= 7) {
+                        this._options.firstDayOfTheWeek = 0;
+                    }
+                }
+            }
+        }
     };
 
     // Set target
@@ -290,6 +322,10 @@ var jsCalendar = (function(){
         var first = new Date(date.getTime());
         first.setDate(1);
 
+        // First day of the month index
+        var firstDay = first.getDay() + this._options.firstDayOfTheWeek;
+        if (firstDay >= 7) firstDay -= 7;
+
         // Get month's name
         var name = this._options.monthFormat;
         name = name.replace(/month/i, this.language.months[first.getMonth()]);
@@ -306,16 +342,16 @@ var jsCalendar = (function(){
         // If this is the month
         if (first.getYear() === this._now.getYear() && first.getMonth() === this._now.getMonth()) {
             // Calculate current
-            current = first.getDay() + this._now.getDate() - 1;
+            current = firstDay + this._now.getDate() - 1;
         }
 
         // Return object
         return {
             name : name,
             days : days,
-            start : first.getDay() + 1,
+            start : firstDay + 1,
             current : current,
-            end : first.getDay() + daysInMonth
+            end : firstDay + daysInMonth
         };
     };
 
@@ -336,13 +372,14 @@ var jsCalendar = (function(){
         var first = new Date(date.getTime());
         first.setDate(1);
 
-        // Count days of previus month
-        var previous = first.getDay();
+        // Count days of previous month to show
+        var previous = first.getDay() + this._options.firstDayOfTheWeek;
+        if (previous >= 7) previous -= 7;
         // Set day to month's first
         var day = first;
         // Previous month's days
         while (previous > 0) {
-            // Calculate previus day
+            // Calculate previous day
             day = new Date(day.getTime() - 864E5);
             // Add page on frond of the list
             dates.unshift(day);
@@ -378,7 +415,7 @@ var jsCalendar = (function(){
     };
 
     // Create calendar
-    JsCalendar.prototype._create = function(date) {
+    JsCalendar.prototype._create = function() {
         // Save instance
         var that = this;
 
@@ -443,18 +480,19 @@ var jsCalendar = (function(){
         this._elements.headRows[1].className = "jsCalendar-week-days";
         title_header.className = "jsCalendar-title";
         this._elements.days = [];
-        var name;
+        var name, nameOfDay;
         for (var i = 0; i < 7; i++) {
             this._elements.days.push(document.createElement("th"));
             this._elements.headRows[1].appendChild(this._elements.days[
-                this._elements.days.length -1
+                this._elements.days.length - 1
             ]);
 
+            nameOfDay = this.language.days[(i + this._options.firstDayOfTheWeek) % 7];
             name = this._options.dayFormat;
-            name = name.replace(/day/i, this.language.days[i]);
-            name = name.replace(/DDD/i, this.language.days[i].substring(0, 3));
-            name = name.replace(/DD/i, this.language.days[i].substring(0, 2));
-            name = name.replace(/D/, this.language.days[i].substring(0, 1));
+            name = name.replace(/day/i, nameOfDay);
+            name = name.replace(/DDD/i, nameOfDay.substring(0, 3));
+            name = name.replace(/DD/i, nameOfDay.substring(0, 2));
+            name = name.replace(/D/, nameOfDay.substring(0, 1));
             this._elements.days[this._elements.days.length - 1].textContent = name;
         }
 
