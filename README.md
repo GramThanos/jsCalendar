@@ -1,5 +1,5 @@
-[![latest release](https://img.shields.io/badge/latest%20release-v1.2-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.3--rc.1-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
+[![latest release](https://img.shields.io/badge/latest%20release-v1.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.3-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -10,7 +10,7 @@ Visit the jsCalendar site
 
 ![preview 1](preview/preview_default.png)
 
-• [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
+• [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
 
 ## Fast set up
 
@@ -70,7 +70,7 @@ Then insert a calendar on `<body>`
 
 ## Whats new?
 
-#### Latest development code v1.3-rc.1
+#### Latest development code v1.3
  - Added support for setting the fisrt day of the week
 	- firstDayOfTheWeek : "{day-name}" // Based on the language sellected
 	- firstDayOfTheWeek : "{number}" | {number} // 1-7 starting from Sunday

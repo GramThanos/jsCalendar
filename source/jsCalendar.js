@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.3-rc.1
+ * jsCalendar v1.3
  * 
  * 
  * MIT License
@@ -941,7 +941,7 @@ var jsCalendar = (function(){
     return JsCalendar;
 })();
 
-// We love anonymous functions
+// I love anonymous functions
 (function(){
     // Init auto calendars
     // After the page loads
