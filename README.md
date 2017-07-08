@@ -40,6 +40,7 @@ Then insert a calendar on `<body>`
 	- [zero fill](https://gramthanos.github.io/jsCalendar/docs.html#parameter-zero-fill)
 	- [month format](https://gramthanos.github.io/jsCalendar/docs.html#parameter-month-format)
 	- [day format](https://gramthanos.github.io/jsCalendar/docs.html#parameter-day-format)
+	- [first day of the week](https://gramthanos.github.io/jsCalendar/docs.html#parameter-first-day-of-the-week)
 	- [language](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language)
 - [Javascript Create Calendar](https://gramthanos.github.io/jsCalendar/docs.html#javascript-api-create)
 	- [Create calendar](https://gramthanos.github.io/jsCalendar/docs.html#javascript-create-calendar)
