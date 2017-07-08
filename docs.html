@@ -32,9 +32,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip" class="download-button">
 						Download<br>
-						<span>version 1.2</span>
+						<span>version 1.3</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -65,6 +65,7 @@
 								<li><a href="#parameter-zero-fill">zero fill</a></li>
 								<li><a href="#parameter-month-format">month format</a></li>
 								<li><a href="#parameter-day-format">day format</a></li>
+								<li><a href="#parameter-first-day-of-the-week">first day of the week</a></li>
 								<li><a href="#parameter-language">language</a></li>
 							</ul>
 						</li>
@@ -228,7 +229,7 @@
 
 
 
-				<div class="section-subtitle" id="parameter-navigator">navigator</div>
+				<div class="section-subtitle" id="parameter-navigator">navigator <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Enable/Disable month's navigation buttons.</p>
 					<table style="width: 100%;">
@@ -249,7 +250,7 @@
 
 
 
-				<div class="section-subtitle" id="parameter-navigator-position">navigator position</div>
+				<div class="section-subtitle" id="parameter-navigator-position">navigator position <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Set the month's navigation position.</p>
 					<table style="width: 100%;">
@@ -270,7 +271,7 @@
 
 
 
-				<div class="section-subtitle" id="parameter-zero-fill">zero fill</div>
+				<div class="section-subtitle" id="parameter-zero-fill">zero fill <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Enable/Disable date's number zero fill.</p>
 					<table style="width: 100%;">
@@ -291,7 +292,7 @@
 
 
 
-				<div class="section-subtitle" id="parameter-month-format">month format</div>
+				<div class="section-subtitle" id="parameter-month-format">month format <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Custom month string format.</p>
 					<table style="width: 100%;">
@@ -325,7 +326,7 @@
 
 
 
-				<div class="section-subtitle" id="parameter-day-format">day format</div>
+				<div class="section-subtitle" id="parameter-day-format">day format <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Custom day of the week string format.</p>
 					<table style="width: 100%;">
@@ -357,7 +358,44 @@
 
 
 
-				<div class="section-subtitle" id="parameter-language">language</div>
+				<div class="section-subtitle" id="parameter-first-day-of-the-week">first day of the week <span class="version-tag" title="Added on version 1.3">v1.3</span></div>
+				<div class="wrapper-left">
+					<p>Sellect the first day of the week.</p>
+					<table style="width: 100%;">
+						<tr><td>Name</td><td>firstDayOfTheWeek</td></tr>
+						<tr><td>Shortcut</td><td>fdotw</td></tr>
+						<tr><td>Values</td><td>&lt;string&gt; | &lt;number&gt;</td></tr>
+						<tr><td>Default</td><td>1</td></tr>
+					</table>
+					<p>Values format</p>
+					<table style="width: 100%;">
+						<tr><th>Type</th><th>Description</th><th>Example</th></tr>
+						<tr><td>String</td><td>Day's full name (based on the language)</td><td>"Monday"</td></tr>
+						<tr><td>String</td><td>Day's number 1-7 starting from Sunday</td><td>"2"</td></tr>
+						<tr><td>Number</td><td>Day's number 1-7 starting from Sunday</td><td>2</td></tr>
+					</table>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Sellect Monday as the first day of the week --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-first-day-of-the-week=<span class="string">"2"</span></span>&gt;&lt;/div&gt;</span><br>
+					</div>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Equivalent using shortcut --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-fdotw=<span class="string">"2"</span></span>&gt;&lt;/div&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar" data-first-day-of-the-week="2"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+				<br>
+				<br>
+				<br>
+
+
+
+				<div class="section-subtitle" id="parameter-language">language <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Change calendar language.</p>
 					<table style="width: 100%;">
@@ -413,7 +451,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-create-calendar">Create calendar</div>
+				<div class="section-subtitle" id="javascript-create-calendar">Create calendar <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Create a calendar on an HTML element.</p><br>
 					<p>API syntax</p>
@@ -459,7 +497,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-calendar-target">Calendar target</div>
+				<div class="section-subtitle" id="javascript-calendar-target">Calendar target <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>The target element for the calendar</p>
 					<table style="width: 100%;">
@@ -481,7 +519,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-calendar-date">Calendar date</div>
+				<div class="section-subtitle" id="javascript-calendar-date">Calendar date <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>The date for the calendar</p>
 					<table style="width: 100%;">
@@ -539,14 +577,15 @@
 					</table>
 					<p>Options items</p>
 					<table style="width: 100%;">
-						<tr><th>Name</th><th>Values</th><th>Example</th></tr>
-						<tr><td><a href="#javascript-calendar-target">target</a></td><td>HTML element</td><td></td></tr>
-						<tr><td><a href="#javascript-calendar-date">date</a></td><td>Date | Number | String</td><td></td></tr>
-						<tr><td><a href="#parameter-navigator">navigator</a></td><td>true | false</td><td></td></tr>
-						<tr><td><a href="#parameter-navigator-position">navigatorPosition</a></td><td>"both" | "left" | "right"</td><td></td></tr>
-						<tr><td><a href="#parameter-month-format">monthFormat</a></td><td>true | false</td><td></td></tr>
-						<tr><td><a href="#parameter-day-format">dayFormat</a></td><td>String</td><td></td></tr>
-						<tr><td><a href="#parameter-language">language</a></td><td>String</td><td></td></tr>
+						<tr><th>Name</th><th>Values</th><th></th></tr>
+						<tr><td><a href="#javascript-calendar-target">target</a></td><td>HTML element</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#javascript-calendar-date">date</a></td><td>Date | Number | String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-navigator">navigator</a></td><td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-navigator-position">navigatorPosition</a></td><td>"both" | "left" | "right"</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-month-format">monthFormat</a></td><td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-day-format">dayFormat</a></td><td>String | Number</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-first-day-of-the-week">firstDayOfTheWeek</a></td><td>String</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
+						<tr><td><a href="#parameter-language">language</a></td><td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
 					</table>
 				</div>
 				<div class="wrapper-clear"></div>
@@ -650,7 +689,7 @@
 				<div class="section-title">Javascript Methods</div>
 				<p>For dynamic control of the calendar, you can use the Javascript API.</p>
 
-				<div class="section-subtitle" id="javascript-method-next">.next()</div>
+				<div class="section-subtitle" id="javascript-method-next">.next() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Move to the next month.</p><br>
 					<p>API syntax</p>
@@ -714,7 +753,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-method-previous">.previous()</div>
+				<div class="section-subtitle" id="javascript-method-previous">.previous() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Move to the previous month.</p><br>
 					<p>API syntax</p>
@@ -778,7 +817,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-method-set">.set()</div>
+				<div class="section-subtitle" id="javascript-method-set">.set() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Set the calendar date.</p><br>
 					<p>API syntax</p>
@@ -836,7 +875,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-method-refresh">.refresh()</div>
+				<div class="section-subtitle" id="javascript-method-refresh">.refresh() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Refresh the calendar.</p><br>
 					<p>API syntax</p>
@@ -894,7 +933,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-method-goto">.goto()</div>
+				<div class="section-subtitle" id="javascript-method-goto">.goto() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Go to a specific date.</p><br>
 					<p>API syntax</p>
@@ -952,7 +991,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-method-reset">.reset()</div>
+				<div class="section-subtitle" id="javascript-method-reset">.reset() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Go to the set date.</p><br>
 					<p>API syntax</p>
@@ -1010,7 +1049,7 @@
 
 
 
-				<div class="section-subtitle" id="javascript-method-setLanguage">.setLanguage()</div>
+				<div class="section-subtitle" id="javascript-method-setLanguage">.setLanguage() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Change the calendar language.</p><br>
 					<p>API syntax</p>
@@ -1076,7 +1115,7 @@
 				<div class="section-title">More Javascript Things</div>
 				<p>Some more things in the Javascript API.</p>
 
-				<div class="section-subtitle" id="more-javascript-events">Click events</div>
+				<div class="section-subtitle" id="more-javascript-events">Click events <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Add a click event on the calendar</p><br>
 					<p>API syntax</p>
@@ -1153,7 +1192,7 @@
 
 
 
-				<div class="section-subtitle" id="more-javascript-select">Select days</div>
+				<div class="section-subtitle" id="more-javascript-select">Select days <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Select days on the calendar</p><br>
 					<p>API syntax</p>

@@ -228,8 +228,12 @@ th, td {
 	background-color: #f7f7f9;
 	border: 1px solid #e1e1e8;
 	border-radius: 4px;
+	/*
 	font-size: 14px;
 	line-height: 18px;
+	*/
+	font-size: 12px;
+	line-height: 16px;
 	color: #333;
 	margin: 20px 0px;
 }
@@ -248,6 +252,21 @@ span.html-code{
 }
 .html-code .string {
 	color: #d44950;
+}
+
+/* Version tags */
+.version-tag {
+	background-color: #90CAF9;
+	color: white;
+	font-size: 10px;
+	border-radius: 3px;
+	padding: 1px 3px;
+	opacity: 0.8;
+	transition: 0.2s opacity;
+	cursor: default;
+}
+.version-tag:hover {
+	opacity: 1;
 }
 
 
