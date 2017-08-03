@@ -41,6 +41,9 @@ var jsCalendar = (function(){
         }
     }
 
+    // Version
+    JsCalendar.version = "v1.4-beta";
+
     // Languages
     JsCalendar.prototype._construct = function(args) {
         // Parse arguments
