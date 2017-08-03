@@ -818,6 +818,29 @@ var jsCalendar = (function(){
     // Unselect all dates (alias)
     JsCalendar.prototype.clearSelected = JsCalendar.prototype.clearselect;
 
+    // Check if date is selected
+    JsCalendar.prototype.isSelected = function(date){
+        // If no arguments or null
+        if (typeof date === "undefined" || date === null) {
+            // Return
+            return false;
+        }
+
+        // Parse date
+        date = this._parseDate(date);
+        date.setHours(0, 0, 0, 0);
+        date = date.getTime();
+
+        // If selected
+        if (this._selected.indexOf(date) >= 0) {
+            return true;
+        }
+        // If not selected
+        else {
+            return false;
+        }
+    };
+
     // Set language
     JsCalendar.prototype.setLanguage = function(code) {
         // Check if language exist
