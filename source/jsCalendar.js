@@ -108,11 +108,17 @@ var jsCalendar = (function(){
         // Only 1 argument
         else if (args.length === 1) {
 
-            // If html element
+            // If target element
             if (
-                ((typeof HTMLElement === "object") ? (args[0] instanceof HTMLElement) : args[0]) &&
-                (typeof args[0] === "object") && (args[0] !== null) && (args[0].nodeType === 1) &&
-                (typeof args[0].nodeName === "string")
+                (
+                    // If html element
+                    ((typeof HTMLElement === "object") ? (args[0] instanceof HTMLElement) : args[0]) &&
+                    (typeof args[0] === "object") && (args[0] !== null) && (args[0].nodeType === 1) &&
+                    (typeof args[0].nodeName === "string")
+                ) || (
+                    // Or string
+                    typeof args[0] === "string"
+                )
             ) {
                 obj.target = args[0];
             }
@@ -238,8 +244,45 @@ var jsCalendar = (function(){
 
     // Set target
     JsCalendar.prototype._setTarget = function(element) {
-        // Save element
-        this._target = element;
+        // Parse target
+        var target = this._getElement(element);
+        // If target not found
+        if (!target) {
+            // Throw an error
+            throw new Error("jsCalendar: Target was not found.");
+        }
+        else {
+            // Save element
+            this._target = target;
+        }
+    };
+
+    // Get element
+    JsCalendar.prototype._getElement = function(element) {
+        // Check if not valid
+        if (!element) {
+            return null;
+        }
+
+        // If string
+        if (typeof element == "string") {
+            // Get element by id
+            if (element[0] == "#") {
+                return document.getElementById(element.substring(1));
+            }
+            // Get element by class-name
+            else if (element[0] == ".") {
+                return document.getElementsByClassName(element.substring(1))[0];
+            }
+        }
+        
+        // or if it is HTML element (just a naive-simple check)
+        else if (element.tagName && element.nodeName && element.ownerDocument && element.removeAttribute) {
+            return element;
+        }
+
+        // Unknown
+        return null;
     };
 
     // Init target
