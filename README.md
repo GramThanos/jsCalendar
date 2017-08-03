@@ -73,7 +73,7 @@ Then insert a calendar on `<body>`
 
 #### Latest development code v1.3
  - Added support for setting the fisrt day of the week
-	- firstDayOfTheWeek : "{day-name}" // Based on the language sellected
+	- firstDayOfTheWeek : "{day-name}" // Based on the language selected
 	- firstDayOfTheWeek : "{number}" | {number} // 1-7 starting from Sunday
 	- shortcut keyword : "fdotw" (from the initials FistDayOfTheWeek)
 
