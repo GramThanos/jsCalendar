@@ -866,6 +866,34 @@ var jsCalendar = (function(){
         }
     };
 
+    // Check if date is in active month
+    JsCalendar.prototype.isInMonth = function(date){
+        // If no arguments or null
+        if (typeof date === "undefined" || date === null) {
+            // Return
+            return false;
+        }
+
+        // Parse date and get month
+        month = this._parseDate(date);
+        month.setHours(0, 0, 0, 0);
+        month.setDate(1);
+
+        // Parse active month date
+        active = this._parseDate(this._date);
+        active.setHours(0, 0, 0, 0);
+        active.setDate(1);
+        
+        // If same month
+        if (month.getTime() == active.getTime()) {
+            return true;
+        }
+        // Other month
+        else {
+            return false;
+        }
+    };
+
     // Set language
     JsCalendar.prototype.setLanguage = function(code) {
         // Check if language exist
