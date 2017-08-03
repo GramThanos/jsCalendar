@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.3
+ * jsCalendar v1.4-beta
  * 
  * 
  * MIT License
