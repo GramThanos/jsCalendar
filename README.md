@@ -75,9 +75,9 @@ Then insert a calendar on `<body>`
  - Added
 	- jsCalendar.version
 	- calendar.clearSelected() alias of calendar.clearselect()
-	- calendar.isSelected(date) #3
-	- calendar.isVisible(date) #3
-	- calendar.isInMonth(date) #3
+	- calendar.isSelected(date) [#3](/../../issues/3)
+	- calendar.isVisible(date) [#3](/../../issues/3)
+	- calendar.isInMonth(date) [#3](/../../issues/3)
 	- support to get target with selectors
 
  - Fixed
