@@ -815,6 +815,8 @@ var jsCalendar = (function(){
         // Return
         return this;
     };
+    // Unselect all dates (alias)
+    JsCalendar.prototype.clearSelected = JsCalendar.prototype.clearselect;
 
     // Set language
     JsCalendar.prototype.setLanguage = function(code) {
