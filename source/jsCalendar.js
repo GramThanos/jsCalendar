@@ -284,8 +284,14 @@ var jsCalendar = (function(){
             date = date.replace(/-/g,"\/").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4,4})$/i);
             // If match
             if (date !== null) {
+                var month_index = parseInt(date[2], 10) - 1;
                 // Parse date
-                date = new Date(date[3], parseInt(date[2], 10)-1, date[1]);
+                date = new Date(date[3], month_index, date[1]);
+                // Check if date does not exist
+                if (!date || date.getMonth() != month_index) {
+                    // Throw an error
+                    throw new Error("jsCalendar: Date does not exist.");
+                }
             }
             // Can't parse string
             else {
