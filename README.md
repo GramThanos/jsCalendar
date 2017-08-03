@@ -1,5 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.3-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4--beta-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -71,11 +71,18 @@ Then insert a calendar on `<body>`
 
 ## Whats new?
 
-#### Latest development code v1.3
- - Added support for setting the fisrt day of the week
-	- firstDayOfTheWeek : "{day-name}" // Based on the language selected
-	- firstDayOfTheWeek : "{number}" | {number} // 1-7 starting from Sunday
-	- shortcut keyword : "fdotw" (from the initials FistDayOfTheWeek)
+#### Latest development code v1.4-beta
+ - Added
+	- jsCalendar.version
+	- calendar.clearSelected() alias of calendar.clearselect()
+	- calendar.isSelected(date) #3
+	- calendar.isVisible(date) #3
+	- calendar.isInMonth(date) #3
+	- support to get target with selectors
+
+ - Fixed
+	- string dates that do not exist throw error
+		- ex. `new jsCalendar(document.createElement('div'), "31/2/2017");` now throw error
 
 
 ## Inspiration
