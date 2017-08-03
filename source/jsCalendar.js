@@ -841,6 +841,31 @@ var jsCalendar = (function(){
         }
     };
 
+    // Check if date is visible in calendar
+    JsCalendar.prototype.isVisible = function(date){
+        // If no arguments or null
+        if (typeof date === "undefined" || date === null) {
+            // Return
+            return false;
+        }
+
+        // Parse date
+        date = this._parseDate(date);
+        date.setHours(0, 0, 0, 0);
+        date = date.getTime();
+
+        // Get visible dates
+        var visible = this._getVisibleDates();
+        // Check if date is inside visible dates
+        if (visible[0].getTime() <= date && visible[visible.length - 1].getTime() >= date) {
+            return true;
+        }
+        // Not visible
+        else {
+            return false;
+        }
+    };
+
     // Set language
     JsCalendar.prototype.setLanguage = function(code) {
         // Check if language exist
