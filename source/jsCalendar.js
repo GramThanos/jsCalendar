@@ -359,6 +359,24 @@ var jsCalendar = (function(){
         return new Date(date.getTime());
     };
 
+    // Convert to date string
+    JsCalendar.prototype._parseToDateString = function(date, format) {
+        var str = format;
+        str = str.replace(/month/i, this.language.months[date.getMonth()]);
+        str = str.replace(/mmm/i, this.language.months[date.getMonth()].substring(0, 3));
+        str = str.replace(/mm/, this.language.months[date.getMonth()].substring(0, 2));
+        str = str.replace(/m/, this.language.months[date.getMonth()].substring(0, 1));
+        str = str.replace(/MM/, (date.getMonth() < 9 ? "0" : "") + (date.getMonth() + 1));
+        str = str.replace(/M/, date.getMonth() + 1);
+        str = str.replace(/ddd/i, this.language.days[date.getDay()].substring(0, 3));
+        str = str.replace(/dd/, this.language.days[date.getDay()].substring(0, 2));
+        str = str.replace(/d/, this.language.days[date.getDay()].substring(0, 1));
+        str = str.replace(/DD/, (date.getDate() < 9 ? "0" : "") + date.getDate());
+        str = str.replace(/D/, date.getDate());
+        str = str.replace(/yyyy/i, date.getYear() + 1900);
+        return str;
+    }
+
     // Get visible month
     JsCalendar.prototype._getVisibleMonth = function(date) {
         // For date
@@ -866,6 +884,51 @@ var jsCalendar = (function(){
     };
     // Unselect all dates (alias)
     JsCalendar.prototype.clearSelected = JsCalendar.prototype.clearselect;
+
+    // Get selected dates
+    JsCalendar.prototype.getSelected = function(options){
+        // Check if no options
+        if (typeof options !== "object")
+            options = {};
+
+        // Copy selected array
+        var dates = this._selected.slice();
+
+        // Options - Sort array
+        if (options.sort) {
+            if (options.sort === true) {
+                dates.sort();
+            }
+            else if (typeof options.sort == "string") {
+                if (options.sort.toLowerCase() == "asc") {
+                    dates.sort();
+                }
+                else if (options.sort.toLowerCase() == "desc"){
+                    dates.sort();
+                    dates.reverse();
+                }
+            }
+        }
+
+        // Options - Data type
+        if (options.type && typeof options.type == "string") {
+            // Convert to date object
+            if (options.type.toLowerCase() == "date"){
+                for (var i = dates.length - 1; i >= 0; i--) {
+                    dates[i] = new Date(dates[i]);
+                }
+            }
+            // If not a timestamp - convert to custom format
+            else if (options.type.toLowerCase() != "timestamp") {
+                for (var i = dates.length - 1; i >= 0; i--) {
+                    dates[i] = this._parseToDateString(new Date(dates[i]), options.type);
+                }
+            }
+        }
+
+        // Return dates
+        return dates;
+    };
 
     // Check if date is selected
     JsCalendar.prototype.isSelected = function(date){
