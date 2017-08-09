@@ -78,8 +78,9 @@ Then insert a calendar on `<body>`
 	- calendar.isSelected(date) [#3](/../../issues/3)
 	- calendar.isVisible(date) [#3](/../../issues/3)
 	- calendar.isInMonth(date) [#3](/../../issues/3)
+	- calendar.getSelected(options) [#3](/../../issues/3)
 	- support to get target with selectors
-	   - See "javascript create calendar with selectors.html" file on examples
+		- See "javascript create calendar with selectors.html" file on examples
 
  - Fixed
 	- string dates that do not exist throw error
