@@ -805,6 +805,24 @@ var jsCalendar = (function(){
         return this;
     };
 
+    // Set min date
+    JsCalendar.prototype.min = function(date){
+        // Set min date
+        this._options.min = this._parseDate(date);
+
+        // Return
+        return this;
+    };
+
+    // Set max date
+    JsCalendar.prototype.max = function(date){
+        // Set max date
+        this._options.max = this._parseDate(date);
+
+        // Return
+        return this;
+    };
+
     // Refresh
     // Safe _update
     JsCalendar.prototype.refresh = function(date) {
