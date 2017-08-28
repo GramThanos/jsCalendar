@@ -1,5 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.4--beta-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4--beta.2-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -71,20 +71,27 @@ Then insert a calendar on `<body>`
 
 ## Whats new?
 
-#### Latest development code v1.4-beta
- - Added
-	- jsCalendar.version
-	- calendar.clearSelected() alias of calendar.clearselect()
-	- calendar.isSelected(date) [#3](/../../issues/3)
-	- calendar.isVisible(date) [#3](/../../issues/3)
-	- calendar.isInMonth(date) [#3](/../../issues/3)
-	- calendar.getSelected(options) [#3](/../../issues/3)
-	- support to get target with selectors
-		- See "javascript create calendar with selectors.html" file on examples
+#### Latest development code v1.4-beta.2
 
- - Fixed
-	- string dates that do not exist throw error
-		- ex. `new jsCalendar(document.createElement('div'), "31/2/2017");` now throw error
+ - **v1.4-beta.2**
+	 - Added
+		- jsCalendar.min(date) [#4](/../../issues/4)
+		- jsCalendar.max(date) [#4](/../../issues/4)
+
+ - **v1.4-beta.1**
+	 - Added
+		- jsCalendar.version
+		- calendar.clearSelected() alias of calendar.clearselect()
+		- calendar.isSelected(date) [#3](/../../issues/3)
+		- calendar.isVisible(date) [#3](/../../issues/3)
+		- calendar.isInMonth(date) [#3](/../../issues/3)
+		- calendar.getSelected(options) [#3](/../../issues/3)
+		- support to get target with selectors
+			- See "javascript create calendar with selectors.html" file on examples
+
+	 - Fixed
+		- string dates that do not exist throw error
+			- ex. `new jsCalendar(document.createElement('div'), "31/2/2017");` now throw error
 
 
 ## Inspiration
