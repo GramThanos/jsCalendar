@@ -174,7 +174,9 @@ var jsCalendar = (function(){
             dayFormat : "D",
             firstDayOfTheWeek : 1,
             navigator : true,
-            navigatorPosition : "both"
+            navigatorPosition : "both",
+            min : false,
+            max : false
         };
         // Check options
         if (typeof options.zeroFill !== "undefined"){
@@ -239,6 +241,17 @@ var jsCalendar = (function(){
                     }
                 }
             }
+        }
+
+        // Set min calendar date
+        if (typeof options.min !== "undefined" && options.min != "false" && options.min != false) {
+            // Parse date
+            this._options.min = this._parseDate(options.min);
+        }
+        // Set max calendar date
+        if (typeof options.max !== "undefined" && options.max != "false" && options.max != false) {
+            // Parse date
+            this._options.max = this._parseDate(options.max);
         }
     };
 
@@ -306,9 +319,36 @@ var jsCalendar = (function(){
         this._target.appendChild(this._elements.table);
     };
 
+    // Check if date in range
+    JsCalendar.prototype._isDateInRange = function(date) {
+        // If no range
+        if (this._options.min === false && this._options.max === false)
+            return true;
+
+        // Parse date
+        date = this._parseDate(date);
+        
+        // Check min
+        if (this._options.min !== false && this._options.min.getTime() > date.getTime()) {
+            return false;
+        }
+        // Check max
+        if (this._options.max !== false && this._options.max.getTime() < date.getTime()) {
+            return false;
+        }
+
+        // In range
+        return true;
+    };
+
     // Set a Date
     JsCalendar.prototype._setDate = function(date) {
-        this._now = this._parseDate(date);
+        // Check date not in range
+        if (!this._isDateInRange(date)) {
+            return;
+        }
+        // Set data
+        this._now = this._parseDate(date);;
         this._date = new Date(this._now.getFullYear(), this._now.getMonth(), 1);
     };
 
@@ -770,7 +810,10 @@ var jsCalendar = (function(){
     JsCalendar.prototype.refresh = function(date) {
         // If date provided
         if (typeof date !== "undefined") {
-            this._date = this._parseDate(date);
+            // If date is in range
+            if (this._isDateInRange(date)) {
+                this._date = this._parseDate(date);
+            }
         }
 
         // If calendar elements ready
@@ -789,8 +832,16 @@ var jsCalendar = (function(){
             n = 1;
         }
 
+        // Calculate date
+        date = new Date(this._date.getFullYear(), this._date.getMonth() + n, 1);
+
+        // If date is not in range
+        if (!this._isDateInRange(date)) {
+            return this;
+        }
+
         // Set date
-        this._date = new Date(this._date.getFullYear(), this._date.getMonth() + n, 1);
+        this._date = date;
         this.refresh();
 
         // Return
@@ -804,8 +855,16 @@ var jsCalendar = (function(){
             n = 1;
         }
 
+        // Calculate date
+        date = new Date(this._date.getFullYear(), this._date.getMonth() - n, 1);
+
+        // If date is not in range
+        if (!this._isDateInRange(date)) {
+            return this;
+        }
+
         // Set date
-        this._date = new Date(this._date.getFullYear(), this._date.getMonth() - n, 1);
+        this._date = date;
         this.refresh();
 
         // Return
