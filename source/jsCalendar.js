@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4-beta.2
+ * jsCalendar v1.4-beta.3
  * 
  * 
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = "v1.4-beta.2";
+    JsCalendar.version = "v1.4-beta.3";
 
     // Languages
     JsCalendar.prototype._construct = function(args) {
@@ -486,25 +486,25 @@ var jsCalendar = (function(){
         var previous = first.getDay() - (this._options.firstDayOfTheWeek - 1);
         if (previous < 0) previous += 7;
         // Set day to month's first
-        var day = first;
+        var day = new Date(first.getTime());
         // Previous month's days
         while (previous > 0) {
             // Calculate previous day
-            day = new Date(day.getTime() - 864E5);
+            day.setDate(day.getDate() - 1);
             // Add page on frond of the list
-            dates.unshift(day);
+            dates.unshift(new Date(day.getTime()));
             // Previous
             previous --;
         }
 
         // Set day to month's first
-        day = first;
+        day = new Date(first.getTime());
         // This month's days
         do {
             // Add page on back of the list
-            dates.push(day);
+            dates.push(new Date(day.getTime()));
             // Calculate next day
-            day = new Date(day.getTime() + 864E5);
+            day.setDate(day.getDate() + 1);
             // Repeat until next month
         } while (day.getDate() != 1);
 
@@ -513,9 +513,9 @@ var jsCalendar = (function(){
         // Add days left
         while (next > 0) {
             // Add page on back of the list
-            dates.push(day);
+            dates.push(new Date(day.getTime()));
             // Calculate next day
-            day = new Date(day.getTime() + 864E5);
+            day.setDate(day.getDate() + 1);
             // Next
             next --;
         }
