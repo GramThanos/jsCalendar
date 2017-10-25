@@ -1,7 +1,7 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
 [![latest development](https://img.shields.io/badge/latest%20development-v1.4--beta.3-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
-*:star: I will release v1.4 as soon as I find some time to update all the documentation/example-codes. Thanks! :star:*
+:star: *I will release v1.4 as soon as I find some time to update all the documentation/example-codes. Thanks!* :star:
 
 # jsCalendar
 Just a simple javascript calendar
