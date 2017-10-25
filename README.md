@@ -6,13 +6,11 @@
 # jsCalendar
 Just a simple javascript calendar
 
-Visit the jsCalendar site
-
-[https://gramthanos.github.io/jsCalendar/](https://gramthanos.github.io/jsCalendar/)
-
-![preview 1](preview/preview_default.png)
+Visit the jsCalendar site [https://gramthanos.github.io/jsCalendar/](https://gramthanos.github.io/jsCalendar/)
 
 • [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
+
+![preview 1](preview/preview_default.png)
 
 ## Fast set up
 
@@ -100,7 +98,7 @@ Then insert a calendar on `<body>`
 			- ex. `new jsCalendar(document.createElement('div'), "31/2/2017");` now throw error
 
 
-## Inspiration
+## Motivation
 I have been using for years javascript libraries like [jQuery](https://github.com/jquery/jquery) and other smaller ones like [ResponsiveSlides.js](https://github.com/viljamis/ResponsiveSlides.js).
 
 So it was time to give back to the community. I just hope this library is helpfull to many people.
