@@ -12,7 +12,11 @@ Visit the jsCalendar site [https://gramthanos.github.io/jsCalendar/](https://gra
 
 ![preview 1](preview/preview_default.png)
 
-## Fast set up
+
+___
+
+
+### Fast set up
 
 Add the jsCalendar code on `<head>`
 
@@ -27,7 +31,11 @@ Then insert a calendar on `<body>`
 <div class="auto-jsCalendar"></div>
 ```
 
-## Learn to jsCalendar
+
+___
+
+
+### Learn to jsCalendar
 - [Getting started](https://gramthanos.github.io/jsCalendar/docs.html#getting-started)
 - [Themes](https://gramthanos.github.io/jsCalendar/docs.html#calendar-themes)
 	- [Default theme](https://gramthanos.github.io/jsCalendar/docs.html#default-theme)
@@ -63,13 +71,20 @@ Then insert a calendar on `<body>`
 - [Add more languages](https://gramthanos.github.io/jsCalendar/docs.html#more-languages)
 
 
-## Preview images
+
+___
+
+
+### Preview images
 ![preview 3](preview/preview_theme_simple.png)
 ![preview 4](preview/preview_theme_material.png)
 ![preview 5](preview/preview_theme_classic.png)
 
 
-## Whats new?
+___
+
+
+### Whats new?
 
 #### Latest development code v1.4-beta.3
 
@@ -98,13 +113,19 @@ Then insert a calendar on `<body>`
 			- ex. `new jsCalendar(document.createElement('div'), "31/2/2017");` now throw error
 
 
-## Motivation
+___
+
+
+### Motivation
 I have been using for years javascript libraries like [jQuery](https://github.com/jquery/jquery) and other smaller ones like [ResponsiveSlides.js](https://github.com/viljamis/ResponsiveSlides.js).
 
 So it was time to give back to the community. I just hope this library is helpfull to many people.
 
 
-## Contact me
+___
+
+
+### Contact me
 
 Contact us to leave us your feedback or to express your thoughts.
 
@@ -113,37 +134,17 @@ Contact us to leave us your feedback or to express your thoughts.
 [Send me a mail](mailto:agrammatopoulos@isc.tuc.gr)
 
 
-## My team
-
-This is a project that I developed for my team,
-we are [DinoDevs](https://github.com/DinoDevs), a group of people coding for fun!
-
-DinoDevs members working on this project:
-<dl>
-  <dt>GramThanos ~ https://github.com/GramThanos</dt>
-  <dd>console.log('Hello!');</dd>
-</dl>
+___
 
 
-
-
-## Special Thanks
-
-I need to give some attribute to all the people that tested the library and reported the bugs and the mistakes.
-
-
-
-## Buy me a beer :beer:
-
-I like beer, you can buy me one by donating to my Bitcoin wallet
-
-My Bitcoin wallet address `173advnPpAgh4UDJXd2TFwTCgAppBKvqKF`
-
-
-
-## License
+### License
 
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
 We do although appreciate attribute.
 
 Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+
+___
+
+[![GramThanos](https://avatars2.githubusercontent.com/u/14858959?s=42&v=4)](https://github.com/GramThanos)
+[![DinoDevs](https://avatars1.githubusercontent.com/u/17518066?s=42&v=4)](https://github.com/DinoDevs)
