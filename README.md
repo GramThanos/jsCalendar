@@ -1,7 +1,5 @@
-[![latest release](https://img.shields.io/badge/latest%20release-v1.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.4--beta.3-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
-
-:star: *I will release v1.4 as soon as I find some time to update all the documentation/example-codes. Thanks!* :star:
+[![latest release](https://img.shields.io/badge/latest%20release-v1.4-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -70,7 +68,7 @@ ___
 	- [Custom Colors](https://gramthanos.github.io/jsCalendar/docs.html#more-theme-colors)
 - [Add more languages](https://gramthanos.github.io/jsCalendar/docs.html#more-languages)
 
-
+Some new docs links need to be added, as soon as docs go live.
 
 ___
 
@@ -86,31 +84,10 @@ ___
 
 ### Whats new?
 
-#### Latest development code v1.4-beta.3
+#### Latest development code v1.4
 
- - **v1.4-beta.3**
-	 - Fixed
-		- duplicate dates when time changes (ex. 29/10/2017) [#5](/../../issues/5)
-
- - **v1.4-beta.2**
-	 - Added
-		- calendar.min(date) [#4](/../../issues/4)
-		- calendar.max(date) [#4](/../../issues/4)
-
- - **v1.4-beta.1**
-	 - Added
-		- jsCalendar.version
-		- calendar.clearSelected() alias of calendar.clearselect()
-		- calendar.isSelected(date) [#3](/../../issues/3)
-		- calendar.isVisible(date) [#3](/../../issues/3)
-		- calendar.isInMonth(date) [#3](/../../issues/3)
-		- calendar.getSelected(options) [#3](/../../issues/3)
-		- support to get target with selectors
-			- See "javascript create calendar with selectors.html" file on examples
-
-	 - Fixed
-		- string dates that do not exist throw error
-			- ex. `new jsCalendar(document.createElement('div'), "31/2/2017");` now throw error
+ - **no dev version yet**
+	 - no news
 
 
 ___
