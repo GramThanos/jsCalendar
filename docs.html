@@ -67,6 +67,7 @@
 								<li><a href="#parameter-day-format">day format</a></li>
 								<li><a href="#parameter-first-day-of-the-week">first day of the week</a></li>
 								<li><a href="#parameter-language">language</a></li>
+								<li><a href="#parameter-min-max">min - max</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -98,6 +99,7 @@
 					<ul>
 						<li><a href="#more-javascript">More javascript things</a>
 							<ul>
+								<li><a href="#more-javascript-version">Version Attribute</a></li>
 								<li><a href="#more-javascript-events">Events</a></li>
 								<li><a href="#more-javascript-select">Select days</a></li>
 							</ul>
@@ -363,7 +365,7 @@
 					<p>Select the first day of the week.</p>
 					<table style="width: 100%;">
 						<tr><td>Name</td><td>firstDayOfTheWeek</td></tr>
-						<tr><td>Shortcut</td><td>fdotw</td></tr>
+						<tr><td>Alias</td><td>fdotw</td></tr>
 						<tr><td>Values</td><td>&lt;string&gt; | &lt;number&gt;</td></tr>
 						<tr><td>Default</td><td>1</td></tr>
 					</table>
@@ -380,7 +382,7 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-first-day-of-the-week=<span class="string">"2"</span></span>&gt;&lt;/div&gt;</span><br>
 					</div>
 					<div class="html-code">
-						<span class="comment">&lt;!-- Equivalent using shortcut --&gt;</span><br>
+						<span class="comment">&lt;!-- Equivalent using alias --&gt;</span><br>
 						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-fdotw=<span class="string">"2"</span></span>&gt;&lt;/div&gt;</span><br>
 					</div>
@@ -438,6 +440,90 @@
 					<div class="auto-jsCalendar" data-language="de"></div>
 				</div>
 				<div class="wrapper-clear"></div>
+				<br>
+				<br>
+				<br>
+
+
+
+				<div class="section-subtitle" id="parameter-min-max">min - max <span class="version-tag" title="Added on version 1.4">v1.4</span></div>
+				<div class="wrapper-left">
+					<p>Set a Minimum/Maximum date for the calendar.</p>
+					<table style="width: 100%;">
+						<tr><td>Name</td><td>min | max</td></tr>
+						<tr><td>Values</td><td> false | <a href="#javascript-calendar-date">date</a></td></tr>
+						<tr><td>Default</td><td>false</td></tr>
+					</table>
+				</div>
+				<div class="wrapper-clear"></div>
+
+				<div class="wrapper-left">
+					<div class="html-code">
+						Min-date 01/01/2017 (January 2017 and later)<br>
+						<span class="comment">&lt;!-- Set min date --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-date=<span class="string">"01/02/2017"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-min=<span class="string">"01/01/2017"</span></span>&gt;&lt;/div&gt;</span>
+						<br><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					Min-date 01/01/2017 (January 2017 and later)<br>
+					<!-- Set min date -->
+					<div class="auto-jsCalendar"
+					     data-date="01/02/2017"
+					     data-min="01/01/2017"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+
+				<div class="wrapper-left">
+					<div class="html-code">
+						Max-date 01/03/2017 (before March 2017)<br>
+						<span class="comment">&lt;!-- Set max date --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-date=<span class="string">"01/02/2017"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-max=<span class="string">"01/03/2017"</span></span>&gt;&lt;/div&gt;</span>
+						<br><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					Max-date 01/03/2017 (before March 2017)<br>
+					<!-- Set max date -->
+					<div class="auto-jsCalendar"
+					     data-date="01/02/2017"
+					     data-max="01/03/2017"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+
+				<div class="wrapper-left">
+					<div class="html-code">
+						Min-date 01/02/2017 and Max-date 01/02/2017<br>
+						(between January 2017 and March 2017)<br>
+						<span class="comment">&lt;!-- Set min-max date --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-date=<span class="string">"01/02/2017"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-min=<span class="string">"01/01/2017"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-max=<span class="string">"01/03/2017"</span></span>&gt;&lt;/div&gt;</span>
+						<br><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					Min-date 01/02/2017 and Max-date 01/02/2017<br>
+					(between January 2017 and March 2017)<br>
+					<!-- Set min-max date -->
+					<div class="auto-jsCalendar"
+					     data-date="01/02/2017"
+					     data-min="01/01/2017"
+					     data-max="01/03/2017"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+
+				<br>
+				<br>
+				<br>
 
 
 			</div>
@@ -453,7 +539,7 @@
 
 				<div class="section-subtitle" id="javascript-create-calendar">Create calendar <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
-					<p>Create a calendar on an HTML element.</p><br>
+					<p>Create a calendar on an HTML element. Throws an error if date does not exist.</p><br>
 					<p>API syntax</p>
 					<table style="width: 100%;">
 						<tr><td>Syntax 1</td><td>jsCalendar.new( target | options );</td></tr>
@@ -497,11 +583,12 @@
 
 
 
-				<div class="section-subtitle" id="javascript-calendar-target">Calendar target <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
+				<div class="section-subtitle" id="javascript-calendar-target">Calendar target</div>
 				<div class="wrapper-left">
 					<p>The target element for the calendar</p>
 					<table style="width: 100%;">
-						<tr><td>target</td><td>HTML element</td></tr>
+						<tr><td>target</td><td>HTML element</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td>target</td><td>String</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
 					</table>
 					<br>
 					<div class="html-code">
@@ -511,6 +598,24 @@
 						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
 						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the target element</span><br>
 						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> target = document.getElementById(<span class="string">"my-calendar-target"</span>);<br>
+						<span class="tag">&lt;/script&gt;</span><br>
+					</div>
+					<div class="html-code">
+						<span class="comment">&lt;!-- id calendar target --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"id-calendar-target"</span></span>&gt;&lt;/div&gt;</span><br>
+						<span class="comment">&lt;!-- Code to get the target element --&gt;</span><br>
+						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// String identifier of the target element</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> target = <span class="string">"#id-calendar-target"</span>;<br>
+						<span class="tag">&lt;/script&gt;</span><br>
+					</div>
+					<div class="html-code">
+						<span class="comment">&lt;!-- class calendar target --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"class-calendar-target"</span></span>&gt;&lt;/div&gt;</span><br>
+						<span class="comment">&lt;!-- Code to get the target element --&gt;</span><br>
+						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// String identifier of the target element</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> target = <span class="string">".class-calendar-target"</span>;<br>
 						<span class="tag">&lt;/script&gt;</span><br>
 					</div>
 				</div>
@@ -1115,6 +1220,42 @@
 				<div class="section-title">More Javascript Things</div>
 				<p>Some more things in the Javascript API.</p>
 
+				<div class="section-subtitle" id="more-javascript-version">Version Attribute <span class="version-tag" title="Added on version 1.4">v1.4</span></div>
+				<div class="wrapper-left">
+					<p>Get the version of jsCalendar</p><br>
+					<p>API syntax</p>
+					<table style="width: 100%;">
+						<tr><td>Syntax</td><td>jsCalendar.version</td></tr>
+					</table>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+				<div class="wrapper-left">
+					<p>Example code</p>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Print version --&gt;</span><br>
+						You are using<span class="tag">&lt;br&gt;</span>jsCalendar <span class="tag">&lt;span <span class="attribute">id=<span class="string">"version"</span></span>&gt;</span><span class="tag">&lt;/span&gt;</span><br>
+						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(<span class="string">"version"</span>).textContent = jsCalendar.version;<br>
+						<span class="tag">&lt;/script&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					<br>
+					<br>
+					<div style="text-align: center;">
+						You are using<br>jsCalendar <span id="test-version-attribute"></span>
+					</div>
+					<script type="text/javascript">
+						(function(){
+							// Print version
+							document.getElementById("test-version-attribute").textContent = jsCalendar.version;
+						})();
+					</script>
+				</div>
+				<div class="wrapper-clear"></div>
+
 				<div class="section-subtitle" id="more-javascript-events">Click events <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Add a click event on the calendar</p><br>
@@ -1192,15 +1333,36 @@
 
 
 
-				<div class="section-subtitle" id="more-javascript-select">Select days <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
+				<div class="section-subtitle" id="more-javascript-select">Select days</div>
 				<div class="wrapper-left">
 					<p>Select days on the calendar</p><br>
 					<p>API syntax</p>
 					<table style="width: 100%;">
-						<tr><td>Select</td><td>.select(<a href="#javascript-calendar-date">date</a> | <a href="#javascript-calendar-date">date</a> array)</td></tr>
-						<tr><td>Unselect</td><td>.unselect(<a href="#javascript-calendar-date">date</a> | <a href="#javascript-calendar-date">date</a> array)</td></tr>
-						<tr><td>Clear select</td><td>.clearselect()</td></tr>
+						<tr><td>Select</td><td>.select(<a href="#javascript-calendar-date">date</a> | <a href="#javascript-calendar-date">date</a> array)</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td>Unselect</td><td>.unselect(<a href="#javascript-calendar-date">date</a> | <a href="#javascript-calendar-date">date</a> array)</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+
+						<tr><td>Clear select</td><td>.clearselect()</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td>Clear select</td><td>.clearSelected()</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td>Get selected</td><td>.getSelected(<a href="#more-javascript-select-options">select options</a> | None)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
 					</table>
+					<br>
+					<p>Check date API syntax</p>
+					<table style="width: 100%;">
+						<tr><td>Check if selected</td><td>.isSelected(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td>Check if visible</td><td>.isVisible(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td>Check if in month</td><td>.isInMonth(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+					</table>
+					<br>
+					<p id="more-javascript-select-options">Select options <span class="version-tag" title="Added on version 1.4">v1.4</span></p>
+					<table style="width: 100%;">
+						<tr><td>Attribute</td><td>Value</td><td>Description</td></tr>
+						<tr><td>sort</td><td>true</td><td>Sort in ascending order</td></tr>
+						<tr><td>sort</td><td>"asc" | "desc"</td><td>Sort in ascending/descending order</td></tr>
+						<tr><td>type</td><td>"timestamp"</td><td>Format dates as timestamp integer</td></tr>
+						<tr><td>type</td><td>"date"</td><td>Format dates as javascript Date</td></tr>
+						<tr><td>type</td><td>String with <a href="#parameter-month-format">month format</a> or <a href="#parameter-day-format">day format</a></li></td><td>Format dates as custom string</td></tr>
+					</table>
+					<p class="note">*Examples <a href="#more-javascript-select-options-examples">below</a>.</p>
 					<br>
 				</div>
 				<div class="wrapper-clear"></div>
@@ -1286,6 +1448,31 @@
 						})();
 					</script>
 				</div>
+
+				<div class="wrapper-clear"></div>
+				<div class="wrapper-left" id="more-javascript-select-options-examples">
+					<p>Example .getSelected()</p>
+					<div class="html-code">
+						myCalendar.getSelected();<br>
+						<span class="comment">// Returns [1483567200000, 1483394400000, 1483308000000, 1483221600000]</span><br>
+						<br>
+						myCalendar.getSelected({sort : <span class="tag">true</span>});<br>
+						<span class="comment">// Returns [1483221600000, 1483308000000, 1483394400000, 1483567200000]</span><br>
+						<br>
+						myCalendar.getSelected({sort : <span class="string">"desc"</span>, type : <span class="string">"DD-MM-YYYY"</span>});<br>
+						<span class="comment">// Returns ["05-01-2017", "03-01-2017", "02-01-2017", "01-01-2017"]</span><br>
+						<br>
+						myCalendar.getSelected({sort : <span class="string">"asc"</span>, type : <span class="string">"date"</span>});<br>
+						<span class="comment">/* <br>
+						&nbsp;*&nbsp;Returns [<br>
+						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun Jan 01 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
+						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mon Jan 02 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
+						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tue Jan 03 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
+						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thu Jan 05 2017 00:00:00 GMT+0200 (GTB Standard Time)<br>
+						&nbsp;*&nbsp;]<br>
+						&nbsp;*/</span><br>
+					</div>
+				</div>
 				<div class="wrapper-clear"></div>
 				<br><br>
 
@@ -1310,27 +1497,27 @@
 						<span class="comment">&lt;!-- New purple color --&gt;</span><br>
 						<span class="tag">&lt;style <span class="attribute">type=<span class="string">"text/css"</span></span>&gt;</span><br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.custom-purple tbody td.jsCalendar-current {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #f55cff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #800080;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.custom-purple *::selection {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #f55cff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #800080;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.custom-purple *::-moz-selection {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #f55cff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #800080;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.material-theme.custom-purple thead {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #f55cff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #800080;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-left:hover,<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-right:hover {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #ef00ff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #660066;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.classic-theme.custom-purple thead {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #f55cff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #800080;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-left:hover,<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-right:hover {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #ef00ff;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #660066;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						<span class="tag">&lt;/style&gt;</span><br>
 						<span class="comment">&lt;!-- Custom color on calendar --&gt;</span><br>
