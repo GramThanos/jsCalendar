@@ -1,28 +1,7 @@
 /*
- * jsCalendar v1.2
- * 
- * 
- * MIT License
+ * jsCalendar Page Css
  * 
  * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  * 
  */
 
@@ -169,6 +148,7 @@ input {
 }
 
 .header ul {
+	display: block;
 	list-style-type: none;
 	padding: 0 70px;
 	height: 30px;
@@ -206,6 +186,43 @@ input {
 	background-color: #fdfdfd;
 	font-size: 12px;
 	text-align: center;
+}
+
+.section-footer .heart {
+	color: #2f6f9f;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+/* Ribbon Styling
+-------------------------------------------------- */
+.github-ribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	width: 149px;
+	height: 149px;
+	background-image: url('https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67');
+	transition: all 0.2s;
+}
+
+.github-ribbon:hover {
+	filter: drop-shadow(1px 1px 1px rgba(0,0,0,1));
+}
+
+/* Old Docs Styling
+-------------------------------------------------- */
+.section-old-docs {
+	padding: 10px 10px;
+	background-color: #2f6fab;
+	color: white;
+	text-align: center;
+	border-bottom: 1px solid #002e58;
+}
+.section-old-docs a {
+	color: white;
+	text-decoration: underline;
 }
 
 
@@ -273,25 +290,25 @@ span.html-code{
 /* Custom Calendar Color Styling
 -------------------------------------------------- */
 .jsCalendar.custom-purple tbody td.jsCalendar-current {
-	background-color: #f55cff;
+	background-color: #800080;
 }
 .jsCalendar.custom-purple *::selection {
-	background: #f55cff;
+	background: #800080;
 }
 .jsCalendar.custom-purple *::-moz-selection {
-	background: #f55cff;
+	background: #800080;
 }
 .jsCalendar.material-theme.custom-purple thead {
-	background-color: #f55cff;
+	background-color: #800080;
 }
 .jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-left:hover,
 .jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-right:hover {
-	background-color: #ef00ff;
+	background-color: #660066;
 }
 .jsCalendar.classic-theme.custom-purple thead {
-	background-color: #f55cff;
+	background-color: #800080;
 }
 .jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-left:hover,
 .jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-right:hover {
-	background-color: #ef00ff;
+	background-color: #660066;
 }
