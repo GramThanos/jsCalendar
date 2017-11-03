@@ -94,8 +94,8 @@ ___
 
  - **v1.4-beta.2**
 	 - Added
-		- jsCalendar.min(date) [#4](/../../issues/4)
-		- jsCalendar.max(date) [#4](/../../issues/4)
+		- calendar.min(date) [#4](/../../issues/4)
+		- calendar.max(date) [#4](/../../issues/4)
 
  - **v1.4-beta.1**
 	 - Added
