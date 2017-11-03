@@ -48,6 +48,7 @@ ___
 	- [day format](https://gramthanos.github.io/jsCalendar/docs.html#parameter-day-format)
 	- [first day of the week](https://gramthanos.github.io/jsCalendar/docs.html#parameter-first-day-of-the-week)
 	- [language](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language)
+	- [min - max](https://gramthanos.github.io/jsCalendar/docs.html#parameter-min-max)
 - [Javascript Create Calendar](https://gramthanos.github.io/jsCalendar/docs.html#javascript-api-create)
 	- [Create calendar](https://gramthanos.github.io/jsCalendar/docs.html#javascript-create-calendar)
 	- [Target Element](https://gramthanos.github.io/jsCalendar/docs.html#javascript-calendar-target)
@@ -62,13 +63,12 @@ ___
 	- [.reset()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-reset)
 	- [.setLanguage()](https://gramthanos.github.io/jsCalendar/docs.html#javascript-method-setLanguage)
 - [More javascript things](https://gramthanos.github.io/jsCalendar/docs.html#more-javascript)
+	- [Version Attribute](https://gramthanos.github.io/jsCalendar/docs.html#more-javascript-version)
 	- [Events](https://gramthanos.github.io/jsCalendar/docs.html#more-javascript-events)
 	- [Select days](https://gramthanos.github.io/jsCalendar/docs.html#more-javascript-select)
 - [More theme things](https://gramthanos.github.io/jsCalendar/docs.html#more-theme)
 	- [Custom Colors](https://gramthanos.github.io/jsCalendar/docs.html#more-theme-colors)
 - [Add more languages](https://gramthanos.github.io/jsCalendar/docs.html#more-languages)
-
-Some new docs links need to be added, as soon as docs go live.
 
 ___
 
