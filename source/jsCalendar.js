@@ -807,8 +807,18 @@ var jsCalendar = (function(){
 
     // Set min date
     JsCalendar.prototype.min = function(date){
-        // Set min date
-        this._options.min = this._parseDate(date);
+        // If value
+        if (date) {
+            // Set min date
+            this._options.min = this._parseDate(date);
+        }
+        // Disable
+        else {
+            this._options.min = false;
+        }
+
+        // Refresh
+        this.refresh();
 
         // Return
         return this;
@@ -816,8 +826,18 @@ var jsCalendar = (function(){
 
     // Set max date
     JsCalendar.prototype.max = function(date){
-        // Set max date
-        this._options.max = this._parseDate(date);
+        // If value
+        if (date) {
+            // Set max date
+            this._options.max = this._parseDate(date);
+        }
+        // Disable
+        else {
+            this._options.max = false;
+        }
+
+        // Refresh
+        this.refresh();
 
         // Return
         return this;
