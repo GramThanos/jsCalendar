@@ -1,0 +1,314 @@
+/*
+ * jsCalendar Page Css
+ * 
+ * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * 
+ */
+
+/* Global Styling
+-------------------------------------------------- */
+body{
+	font-family: Arial;
+	background-color: #fdfdfd;
+}
+.container {
+	width: 900px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #f3f3f3;
+	border-radius: 5px;
+}
+a {
+	color: #2f6f9f;
+	text-decoration: none;
+}
+
+/* General Styling
+-------------------------------------------------- */
+.side-info {
+	margin: 20px;
+}
+.side-info input{
+	padding: 4px 8px;
+	margin: 4px;
+	border-radius: 3px;
+	border: 1px solid #c5c5c5;
+	width: 420px;
+	font-size: 14px;
+}
+
+.wrapper-left {
+	float : left;
+}
+.wrapper-right {
+	float : right;
+}
+.wrapper-clear {
+	clear: both;
+}
+
+.classic-theme {
+	margin: 0px 4px;
+}
+.jsCalendar table{
+	margin: 10px;
+	/*box-shadow:
+		0px 0px 2px rgba(0, 0, 0, 0.4),
+		-1px 1px 1px #eee,
+		-2px 2px 1px #eee,
+		-3px 3px 1px #eee,
+		-4px 4px 1px #eee;*/
+}
+
+.section {
+	padding: 80px 0px;
+	background-color: #ffffff;
+}
+.section-wrapper {
+	width: 800px;
+	margin: 0px auto;
+}
+.section-title {
+	font-size: 22px;
+	line-height: 26px;
+	padding-bottom: 6px;
+	color: #2f6f9f;
+}
+.section-subtitle {
+	font-size: 18px;
+	line-height: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: #2f6f9f;
+}
+.section p {
+	margin: 10px 0px;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+ul {
+	line-height: 24px;
+}
+
+p.note {
+	font-size: 12px;
+}
+
+button {
+	margin: 0px 10px;
+}
+input {
+	width: 100%;
+}
+
+.download-button {
+	display: inline-block;
+	padding: 5px 25px;
+	font-size: 12px;
+	line-height: 14px;
+	border-radius: 4px;
+	border: 1px solid #dedede;
+	background-color: #fdfdfd;
+}
+.download-button span{
+	font-weight: bold;
+}
+.download-button:hover {
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling
+-------------------------------------------------- */
+.section-header {
+	height: 335px;
+}
+.header {
+	width: 800px;
+	margin: 0px auto;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: lighter;
+}
+.header .title {
+	font-size: 32px;
+	line-height: 40px;
+	margin: 100px 0px 10px 0px;
+}
+.header .sub-title {
+	font-size: 16px;
+	line-height: 20px;
+	margin: 10px 0px 10px 0px;
+}
+.header .wrapper-left {
+	width: 490px;
+	text-align: center;
+}
+.header .wrapper-right {
+	width: 308px;
+}
+
+.header ul {
+	display: block;
+	list-style-type: none;
+	padding: 0 70px;
+	height: 30px;
+	line-height: 30px;
+}
+.header li {
+	float: left;
+	margin: 0 10px;
+}
+
+.header li a{
+	border: 1px solid #fff;
+	padding: 4px 9px;
+	border-radius: 4px;
+}
+
+.header li a:hover{
+	border: 1px solid #76a1c1;
+	padding: 4px 9px;
+	transition: all 0.2s;
+}
+
+/* Menu Styling
+-------------------------------------------------- */
+.section-menu {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: #fdfdfd;
+}
+
+/* Footer Styling
+-------------------------------------------------- */
+.section-footer {
+	border-top: 1px solid #ccc;
+	background-color: #fdfdfd;
+	font-size: 12px;
+	text-align: center;
+}
+
+.section-footer .heart {
+	color: #2f6f9f;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+/* Ribbon Styling
+-------------------------------------------------- */
+.github-ribbon {
+	position: absolute;
+	top: 39px;
+	right: 0;
+	border: 0;
+	width: 149px;
+	height: 149px;
+	background-image: url('https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67');
+	transition: all 0.2s;
+}
+
+.github-ribbon:hover {
+	filter: drop-shadow(1px 1px 1px rgba(0,0,0,1));
+}
+
+/* Old Docs Styling
+-------------------------------------------------- */
+.section-old-docs {
+	padding: 10px 10px;
+	background-color: #2f6fab;
+	color: white;
+	text-align: center;
+	border-bottom: 1px solid #002e58;
+}
+.section-old-docs a {
+	color: white;
+	text-decoration: underline;
+}
+
+
+/* Table styling */
+table {
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid #ddd;
+}
+th, td {
+	padding: 5px 8px;
+}
+
+
+/* HTML code preview */
+.html-code {
+	font-family: "Courier New", Courier, monospace;
+	padding: 9px 14px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+	/*
+	font-size: 14px;
+	line-height: 18px;
+	*/
+	font-size: 12px;
+	line-height: 16px;
+	color: #333;
+	margin: 20px 0px;
+}
+span.html-code{
+	padding: 0px;
+	font-size: 1em;
+}
+.html-code .comment{
+	color: #999;
+}
+.html-code .tag {
+	color: #2f6f9f;
+}
+.html-code .attribute {
+	color: #4f9fcf;
+}
+.html-code .string {
+	color: #d44950;
+}
+
+/* Version tags */
+.version-tag {
+	background-color: #90CAF9;
+	color: white;
+	font-size: 10px;
+	border-radius: 3px;
+	padding: 1px 3px;
+	opacity: 0.8;
+	transition: 0.2s opacity;
+	cursor: default;
+}
+.version-tag:hover {
+	opacity: 1;
+}
+
+
+/* Custom Calendar Color Styling
+-------------------------------------------------- */
+.jsCalendar.custom-purple tbody td.jsCalendar-current {
+	background-color: #f55cff;
+}
+.jsCalendar.custom-purple *::selection {
+	background: #f55cff;
+}
+.jsCalendar.custom-purple *::-moz-selection {
+	background: #f55cff;
+}
+.jsCalendar.material-theme.custom-purple thead {
+	background-color: #f55cff;
+}
+.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-left:hover,
+.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-right:hover {
+	background-color: #ef00ff;
+}
+.jsCalendar.classic-theme.custom-purple thead {
+	background-color: #f55cff;
+}
+.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-left:hover,
+.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-right:hover {
+	background-color: #ef00ff;
+}
