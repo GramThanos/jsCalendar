@@ -40,7 +40,8 @@
 		}
 	/* Blue default */
 		.jsCalendar table {
-			background-color: white;
+			color: #000000;
+			background-color: #ffffff;
 			border-collapse: collapse;
 			font-family: Tahoma, Geneva, sans-serif;
 			margin: 5px;
