@@ -150,12 +150,12 @@ input {
 .header ul {
 	display: block;
 	list-style-type: none;
-	padding: 0 70px;
+	padding: 0 30px;
 	height: 30px;
 	line-height: 30px;
 }
 .header li {
-	float: left;
+	display: inline-block;
 	margin: 0 10px;
 }
 
