@@ -6,7 +6,7 @@ Just a simple javascript calendar
 
 Visit the jsCalendar site [https://gramthanos.github.io/jsCalendar/](https://gramthanos.github.io/jsCalendar/)
 
-• [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
+• [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/)  • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html)
 
 ![preview 1](preview/preview_default.png)
 
