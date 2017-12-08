@@ -1,5 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.4-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.4-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4.1-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -84,10 +84,12 @@ ___
 
 ### Whats new?
 
-#### Latest development code v1.4
+#### Latest development code v1.4.1
 
- - **no dev version yet**
-	 - no news
+ - **JsCalendar.tools**
+	 - Added JsCalendar.tools.parseDate(date)
+	 - Added JsCalendar.tools.stringToDate alias of JsCalendar.tools.parseDate
+	 - Added JsCalendar.tools.dateToString(date, format, lang)
 
 
 ___

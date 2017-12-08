@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4
+ * jsCalendar v1.4.1
  * 
  * 
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = "v1.4";
+    JsCalendar.version = "v1.4.1";
 
     // Languages
     JsCalendar.prototype._construct = function(args) {
@@ -348,7 +348,7 @@ var jsCalendar = (function(){
             return;
         }
         // Set data
-        this._now = this._parseDate(date);;
+        this._now = this._parseDate(date);
         this._date = new Date(this._now.getFullYear(), this._now.getMonth(), 1);
     };
 
@@ -1156,6 +1156,27 @@ var jsCalendar = (function(){
                 new jsCalendar(options);
             }
         }
+    };
+    
+    // Tools
+    JsCalendar.tools = {};
+    // String to date
+    JsCalendar.tools.parseDate = function() {
+        return JsCalendar.prototype._parseDate.apply({}, arguments);
+    };
+    JsCalendar.tools.stringToDate = JsCalendar.tools.parseDate;
+    // Date to string
+    JsCalendar.tools.dateToString = function(date, format, lang) {
+        // Find lang
+        var languages = JsCalendar.prototype.languages;
+        if (!lang || !languages.hasOwnProperty(lang)) {
+            lang = "en";
+        }
+        // Call parser
+        return JsCalendar.prototype._parseToDateString.apply(
+            {language : languages[lang]},
+            [date, format]
+        );
     };
     
     // Get a new object
