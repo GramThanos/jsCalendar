@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar Demo</title>
+		<meta name="description" content="jsCalendar demo - date picker">
+		<meta name="author" content="GramThanos">
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+
+		<!-- jsCalendar -->
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!-- Demo Style -->
+		<style>
+			html, body {
+				font-family: Tahoma, Geneva, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Date Picker</h3>
+		Demo date picker using jsCalendar<br>
+		<br>
+
+		<!-- Date picker element -->
+		<input id="date-input" type="text" value=""/>
+		<!-- Calendar element -->
+		<div id="date-picker-calendar" style="display:none;position:absolute;"></div>
+		
+		<br><br>
+		Click the input and select a day.
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Get elements
+			var elements = {
+				// Input element
+				input : document.getElementById("date-input"),
+				// Calendar element
+				calendar : document.getElementById("date-picker-calendar")
+			}
+			// Create the calendar
+			var calendar = jsCalendar.new(elements.calendar);
+
+			// Add events
+			calendar.onDateClick(function(event, date){
+				// Set input date
+				elements.input.value = jsCalendar.tools.dateToString(date, "DD/MM/YYYY", "en");
+				// Update calendar date
+				calendar.set(date);
+				// Hide calendar
+				elements.calendar.style.display = "none";
+			});
+
+			// Open calendar
+			elements.input.addEventListener("focus", function(){
+				elements.calendar.style.display = "block";
+			}, true);
+			// Close calendar
+			input.addEventListener("change", function(){
+				elements.calendar.style.display = "none";
+			}, true);
+		</script>
+		
+		<br><br><br>
+		<div style="font-size:12px;">You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script></div>
+	</body>
+</html>

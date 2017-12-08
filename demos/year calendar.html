@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar Demo</title>
+		<meta name="description" content="jsCalendar demo - year calendar">
+		<meta name="author" content="GramThanos">
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+
+		<!-- jsCalendar -->
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!-- Demo Style -->
+		<style>
+			html, body {
+				font-family: Tahoma, Geneva, sans-serif;
+			}
+
+			#year-calendar {
+				margin : 10px;
+				padding : 5px 5px 25px 5px;
+				border-radius : 4px;
+				text-align : center;
+				box-shadow : 0px 0px 2px rgba(0, 0, 0, 0.4);
+			}
+
+			#year-calendar .year-title {
+				padding : 20px;
+				font-size : 28px;
+				text-align : center;
+			}
+
+			#year-calendar .jsCalendar {
+				display : inline-block;
+			}
+
+			#year-calendar .jsCalendar table {
+				box-shadow : none;
+			}
+
+			#year-calendar .jsCalendar-previous,
+			#year-calendar .jsCalendar-next {
+				opacity : 0.8;
+			}
+
+			.jsCalendar thead .jsCalendar-week-days th,
+			.jsCalendar tbody td {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Year calendar</h3>
+		Demo full year calendar using jsCalendar
+		<br><br><br>
+
+		<!-- Full Calendar wrapper -->
+		<div id="year-calendar"></div>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Get element
+			var wrapper = document.getElementById("year-calendar");
+
+			// Variables
+			var date = new Date();
+			var year = date.getYear() + 1900;
+			var div;
+
+			// Create title
+			div = document.createElement("div");
+			div.className = "year-title";
+			div.textContent = "Calendar of " + year;
+			wrapper.appendChild(div);
+
+			// Create calendars
+			var calendars =[];
+			for (var i = 0; i < 12; i++) {
+				// Create element
+				div = document.createElement("div");
+				wrapper.appendChild(div);
+				// Create month calender
+				calendars.push(
+					jsCalendar.new(div, date, {
+						zeroFill : true,
+						navigator : false
+					})
+				);
+				calendars[i].goto("01-" + ((i + 1 < 10) ? "0" : "") + (i + 1) + "-" + year);
+			}
+		</script>
+		
+		<br><br><br>
+		<div style="font-size:12px;">You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script></div>
+	</body>
+</html>
