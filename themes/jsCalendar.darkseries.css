@@ -109,5 +109,3 @@
 	.jsCalendar.white-theme *::selection {
 		background: #afafaf;
 	}
-	.jsCalendar.white-theme *::-moz-selection {
-		background: #afafaf;

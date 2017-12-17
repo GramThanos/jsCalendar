@@ -103,7 +103,6 @@
 		.jsCalendar thead .jsCalendar-week-days th,
 		.jsCalendar tbody td {
 			display: inline-block;
-			float: left;
 			height: 36px;
 			width: 36px;
 			margin: 1px 2px;
@@ -349,7 +348,6 @@
 			border-left: 1px solid #dadada;
 			border-right: 0px;
 			border-bottom: 0px;
-			background-color: #f7f7f7;
 			height: 36px;
 			line-height: 36px;
 			background-color: #ccefff;

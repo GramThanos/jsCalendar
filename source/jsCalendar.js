@@ -1,21 +1,21 @@
 /*
  * jsCalendar v1.4.1
- * 
- * 
+ *
+ *
  * MIT License
- * 
+ *
  * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,7 +23,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  */
 
 var jsCalendar = (function(){
@@ -31,7 +31,7 @@ var jsCalendar = (function(){
     // Constructor
     function JsCalendar(){
         // No parameters
-        if (arguments.length == 0) {
+        if (arguments.length === 0) {
             // Do nothing
             return;
         }
@@ -47,7 +47,7 @@ var jsCalendar = (function(){
     // Languages
     JsCalendar.prototype._construct = function(args) {
         // Parse arguments
-        var args = this._parseArguments(args);
+        args = this._parseArguments(args);
         // Init calendar
         this._init(args.options);
         // Init target
@@ -59,7 +59,7 @@ var jsCalendar = (function(){
         this._create();
         // Update
         this._update();
-    }
+    };
 
     // Languages
     JsCalendar.prototype.languages = {
@@ -244,12 +244,12 @@ var jsCalendar = (function(){
         }
 
         // Set min calendar date
-        if (typeof options.min !== "undefined" && options.min != "false" && options.min != false) {
+        if (typeof options.min !== "undefined" && options.min !== "false" && options.min !== false) {
             // Parse date
             this._options.min = this._parseDate(options.min);
         }
         // Set max calendar date
-        if (typeof options.max !== "undefined" && options.max != "false" && options.max != false) {
+        if (typeof options.max !== "undefined" && options.max !== "false" && options.max !== false) {
             // Parse date
             this._options.max = this._parseDate(options.max);
         }
@@ -278,13 +278,13 @@ var jsCalendar = (function(){
         }
 
         // If string
-        if (typeof element == "string") {
+        if (typeof element === "string") {
             // Get element by id
-            if (element[0] == "#") {
+            if (element[0] === "#") {
                 return document.getElementById(element.substring(1));
             }
             // Get element by class-name
-            else if (element[0] == ".") {
+            else if (element[0] === ".") {
                 return document.getElementsByClassName(element.substring(1))[0];
             }
         }
@@ -322,8 +322,9 @@ var jsCalendar = (function(){
     // Check if date in range
     JsCalendar.prototype._isDateInRange = function(date) {
         // If no range
-        if (this._options.min === false && this._options.max === false)
+        if (this._options.min === false && this._options.max === false) {
             return true;
+        }
 
         // Parse date
         date = this._parseDate(date);
@@ -371,7 +372,7 @@ var jsCalendar = (function(){
                 // Parse date
                 date = new Date(date[3], month_index, date[1]);
                 // Check if date does not exist
-                if (!date || date.getMonth() != month_index) {
+                if (!date || date.getMonth() !== month_index) {
                     // Throw an error
                     throw new Error("jsCalendar: Date does not exist.");
                 }
@@ -415,7 +416,7 @@ var jsCalendar = (function(){
         str = str.replace(/D/, date.getDate());
         str = str.replace(/yyyy/i, date.getYear() + 1900);
         return str;
-    }
+    };
 
     // Get visible month
     JsCalendar.prototype._getVisibleMonth = function(date) {
@@ -434,7 +435,9 @@ var jsCalendar = (function(){
 
         // First day of the month index
         var firstDay = first.getDay() - (this._options.firstDayOfTheWeek - 1);
-        if (firstDay < 0) firstDay += 7;
+        if (firstDay < 0) {
+            firstDay += 7;
+        }
 
         // Get month's name
         var name = this._options.monthFormat;
@@ -484,7 +487,9 @@ var jsCalendar = (function(){
 
         // Count days of previous month to show
         var previous = first.getDay() - (this._options.firstDayOfTheWeek - 1);
-        if (previous < 0) previous += 7;
+        if (previous < 0) {
+            previous += 7;
+        }
         // Set day to month's first
         var day = new Date(first.getTime());
         // Previous month's days
@@ -506,7 +511,7 @@ var jsCalendar = (function(){
             // Calculate next day
             day.setDate(day.getDate() + 1);
             // Repeat until next month
-        } while (day.getDate() != 1);
+        } while (day.getDate() !== 1);
 
         // Next month's days
         var next = 42 - dates.length;
@@ -591,7 +596,7 @@ var jsCalendar = (function(){
         title_header.className = "jsCalendar-title";
         this._elements.days = [];
         var name, nameOfDay;
-        for (var i = 0; i < 7; i++) {
+        for (i = 0; i < 7; i++) {
             this._elements.days.push(document.createElement("th"));
             this._elements.headRows[1].appendChild(this._elements.days[
                 this._elements.days.length - 1
@@ -610,7 +615,7 @@ var jsCalendar = (function(){
         this._elements.bodyRows = [];
         this._elements.bodyCols = [];
         // 6 rows
-        for (var i = 0; i < 6; i++) {
+        for (i = 0; i < 6; i++) {
             this._elements.bodyRows.push(document.createElement("tr"));
             this._elements.body.appendChild(this._elements.bodyRows[i]);
             // 7 days
@@ -620,7 +625,7 @@ var jsCalendar = (function(){
                 this._elements.bodyCols[i * 7 + j].addEventListener('click', (function(index){
                     return function (event) {
                         that._eventFire_dateClick(event, that._active[index]);
-                    }
+                    };
                 })(i * 7 + j), false);
             }
         }
@@ -639,7 +644,7 @@ var jsCalendar = (function(){
         }
 
         // Insert dates on array
-        for (var i = dates.length - 1; i >= 0; i--) {
+        for (i = dates.length - 1; i >= 0; i--) {
             // If not already selected
             if (this._selected.indexOf(dates[i]) < 0) {
                 this._selected.push(dates[i]);
@@ -661,7 +666,7 @@ var jsCalendar = (function(){
 
         // Remove dates of the array
         var index;
-        for (var i = dates.length - 1; i >= 0; i--) {
+        for (i = dates.length - 1; i >= 0; i--) {
             // If selected
             index = this._selected.indexOf(dates[i]);
             if (index >= 0) {
@@ -709,7 +714,7 @@ var jsCalendar = (function(){
         }
 
         // Previous month
-        for (var i = 0; i < month.start - 1; i++) {
+        for (i = 0; i < month.start - 1; i++) {
             this._elements.bodyCols[i].className = "jsCalendar-previous";
         }
         // Current day
@@ -722,7 +727,7 @@ var jsCalendar = (function(){
             }
         }
         // Next month
-        for (var i = month.end; i < month.days.length; i++) {
+        for (i = month.end; i < month.days.length; i++) {
             this._elements.bodyCols[i].className = "jsCalendar-next";
         }
     };
@@ -738,7 +743,7 @@ var jsCalendar = (function(){
                     callback(event, new Date(date.getTime()));
                 }, 0);
             })(this._events.date[i]);
-        };
+        }
     };
 
     // Fire all event listeners
@@ -755,13 +760,13 @@ var jsCalendar = (function(){
                     callback(event, new Date(month.getTime()));
                 }, 0);
             })(this._events.month[i]);
-        };
+        }
     };
 
     // Add a event listener
     JsCalendar.prototype.onDateClick = function(callback) {
         // If callback is a function
-        if(typeof callback == "function"){
+        if(typeof callback === "function"){
             // Add to the list
             this._events.date.push(callback);
         }
@@ -779,7 +784,7 @@ var jsCalendar = (function(){
     // Add a event listener
     JsCalendar.prototype.onMonthChange = function(callback) {
         // If callback is a function
-        if(typeof callback == "function"){
+        if(typeof callback === "function"){
             // Add to the list
             this._events.month.push(callback);
         }
@@ -871,7 +876,7 @@ var jsCalendar = (function(){
         }
 
         // Calculate date
-        date = new Date(this._date.getFullYear(), this._date.getMonth() + n, 1);
+        var date = new Date(this._date.getFullYear(), this._date.getMonth() + n, 1);
 
         // If date is not in range
         if (!this._isDateInRange(date)) {
@@ -894,7 +899,7 @@ var jsCalendar = (function(){
         }
 
         // Calculate date
-        date = new Date(this._date.getFullYear(), this._date.getMonth() - n, 1);
+        var date = new Date(this._date.getFullYear(), this._date.getMonth() - n, 1);
 
         // If date is not in range
         if (!this._isDateInRange(date)) {
@@ -970,7 +975,7 @@ var jsCalendar = (function(){
     };
 
     // Unselect all dates
-    JsCalendar.prototype.clearselect = function(dates){
+    JsCalendar.prototype.clearselect = function(){
         // Unselect all dates
         this._unselectAllDates();
         // Refresh
@@ -985,8 +990,9 @@ var jsCalendar = (function(){
     // Get selected dates
     JsCalendar.prototype.getSelected = function(options){
         // Check if no options
-        if (typeof options !== "object")
+        if (typeof options !== "object") {
             options = {};
+        }
 
         // Copy selected array
         var dates = this._selected.slice();
@@ -996,11 +1002,11 @@ var jsCalendar = (function(){
             if (options.sort === true) {
                 dates.sort();
             }
-            else if (typeof options.sort == "string") {
-                if (options.sort.toLowerCase() == "asc") {
+            else if (typeof options.sort === "string") {
+                if (options.sort.toLowerCase() === "asc") {
                     dates.sort();
                 }
-                else if (options.sort.toLowerCase() == "desc"){
+                else if (options.sort.toLowerCase() === "desc"){
                     dates.sort();
                     dates.reverse();
                 }
@@ -1008,16 +1014,17 @@ var jsCalendar = (function(){
         }
 
         // Options - Data type
-        if (options.type && typeof options.type == "string") {
+        if (options.type && typeof options.type === "string") {
+        	var i;
             // Convert to date object
-            if (options.type.toLowerCase() == "date"){
-                for (var i = dates.length - 1; i >= 0; i--) {
+            if (options.type.toLowerCase() === "date"){
+                for (i = dates.length - 1; i >= 0; i--) {
                     dates[i] = new Date(dates[i]);
                 }
             }
             // If not a timestamp - convert to custom format
-            else if (options.type.toLowerCase() != "timestamp") {
-                for (var i = dates.length - 1; i >= 0; i--) {
+            else if (options.type.toLowerCase() !== "timestamp") {
+                for (i = dates.length - 1; i >= 0; i--) {
                     dates[i] = this._parseToDateString(new Date(dates[i]), options.type);
                 }
             }
@@ -1084,17 +1091,17 @@ var jsCalendar = (function(){
         }
 
         // Parse date and get month
-        month = this._parseDate(date);
+        var month = this._parseDate(date);
         month.setHours(0, 0, 0, 0);
         month.setDate(1);
 
         // Parse active month date
-        active = this._parseDate(this._date);
+        var active = this._parseDate(this._date);
         active.setHours(0, 0, 0, 0);
         active.setDate(1);
         
         // If same month
-        if (month.getTime() == active.getTime()) {
+        if (month.getTime() === active.getTime()) {
             return true;
         }
         // Other month
@@ -1127,7 +1134,7 @@ var jsCalendar = (function(){
 
         // Return
         return this;
-    }
+    };
 
 
     // Static foo methods (well... not really static)
@@ -1242,7 +1249,7 @@ var jsCalendar = (function(){
                         JsCalendar.addLanguage(language);
                     };
                 })(window.jsCalendar_language2load.pop()), 0);
-            };
+            }
             // Clean up useless list
             delete window.jsCalendar_language2load;
         }
