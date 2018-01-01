@@ -1,7 +1,7 @@
 # Changelog
 All jsCalendar changes will be documented in this file.
 
-## [1.4.1] - 2010-01-01
+## [1.4.1] - 2018-01-01
 
 ### Added
 - jsCalendar.tools.*
