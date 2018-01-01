@@ -32,9 +32,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip" class="download-button">
 						Download<br>
-						<span>version 1.4</span>
+						<span>version 1.4.1</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -102,6 +102,7 @@
 								<li><a href="#more-javascript-version">Version Attribute</a></li>
 								<li><a href="#more-javascript-events">Events</a></li>
 								<li><a href="#more-javascript-select">Select days</a></li>
+								<li><a href="#more-javascript-tools">Tools</a></li>
 							</ul>
 						</li>
 						<li><a href="#more-theme">More theme things</a>
@@ -422,7 +423,7 @@
 					</div>
 					<p>The supported lanuages codes are based on the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639-1</a> codes.</p>
 					<br>
-					<p>Included lanuages</p>
+					<p id="parameter-language-codes">Included lanuages</p>
 					<table style="width: 100%;">
 						<tr><td>Language</td><td>Code</td></tr>
 						<tr><td>English</td><td><span class="html-code"><span class="tag">en</span></span></td></tr>
@@ -1333,145 +1334,63 @@
 
 
 
-				<div class="section-subtitle" id="more-javascript-select">Select days</div>
+				<div class="section-subtitle" id="more-javascript-tools">Tools</div>
 				<div class="wrapper-left">
-					<p>Select days on the calendar</p><br>
-					<p>API syntax</p>
+					<p>Calendar tools methods</p><br>
+					<p>API methods syntax</p>
 					<table style="width: 100%;">
-						<tr><td>Select</td><td>.select(<a href="#javascript-calendar-date">date</a> | <a href="#javascript-calendar-date">date</a> array)</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td>Unselect</td><td>.unselect(<a href="#javascript-calendar-date">date</a> | <a href="#javascript-calendar-date">date</a> array)</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-
-						<tr><td>Clear select</td><td>.clearselect()</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td>Clear select</td><td>.clearSelected()</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
-						<tr><td>Get selected</td><td>.getSelected(<a href="#more-javascript-select-options">select options</a> | None)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td>String to Date</td><td>jsCalendar.tools.parseDate(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4.1">v1.4.1</span></td></tr>
+						<tr><td>String to Date</td><td>jsCalendar.tools.stringToDate(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4.1">v1.4.1</span></td></tr>
+						<tr><td>Date to String</td><td>jsCalendar.tools.dateToString(<a href="#javascript-calendar-date">date</a>, string_format, <a href="#parameter-language-codes">language_code</a> = "en")</td><td><span class="version-tag" title="Added on version 1.4.1">v1.4.1</span></td></tr>
 					</table>
-					<br>
-					<p>Check date API syntax</p>
-					<table style="width: 100%;">
-						<tr><td>Check if selected</td><td>.isSelected(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
-						<tr><td>Check if visible</td><td>.isVisible(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
-						<tr><td>Check if in month</td><td>.isInMonth(<a href="#javascript-calendar-date">date</a>)</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
-					</table>
-					<br>
-					<p id="more-javascript-select-options">Select options <span class="version-tag" title="Added on version 1.4">v1.4</span></p>
-					<table style="width: 100%;">
-						<tr><td>Attribute</td><td>Value</td><td>Description</td></tr>
-						<tr><td>sort</td><td>true</td><td>Sort in ascending order</td></tr>
-						<tr><td>sort</td><td>"asc" | "desc"</td><td>Sort in ascending/descending order</td></tr>
-						<tr><td>type</td><td>"timestamp"</td><td>Format dates as timestamp integer</td></tr>
-						<tr><td>type</td><td>"date"</td><td>Format dates as javascript Date</td></tr>
-						<tr><td>type</td><td>String with <a href="#parameter-month-format">month format</a> or <a href="#parameter-day-format">day format</a></li></td><td>Format dates as custom string</td></tr>
-					</table>
-					<p class="note">*Examples <a href="#more-javascript-select-options-examples">below</a>.</p>
+					<p class="note">*<i>jsCalendar.tools.stringToDate</i> is alias of <i>JsCalendar.tools.parseDate</i>.</p>
+					<p class="note">*<i>string_format</i> parameter is a string with <a href="#parameter-month-format">month format</a> or <a href="#parameter-day-format">day format</a>.</p>
 					<br>
 				</div>
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
 					<div class="html-code">
-						<span class="comment">&lt;!-- Buttons --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button-a"</span></span>&gt;</span>Select<span class="tag">&lt;/button&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button-b"</span></span>&gt;</span>Unselect<span class="tag">&lt;/button&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button-c"</span></span>&gt;</span>Clear<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
+						<span class="comment">&lt;!-- Inputs to show results --&gt;</span><br>
+						Testing stringToDate:<br>
+						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-a"</span></span> <span class="attribute">value=<span class="string">"checking"</span></span>/&gt;</span><span class="tag">&lt;br&gt;</span><br>
+						Testing dateToString:<br>
+						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-b"</span></span> <span class="attribute">value=<span class="string">"checking"</span></span>/&gt;</span><span class="tag">&lt;br&gt;</span><br>
 						<br>
-						<span class="comment">&lt;!-- Outputs --&gt;</span><br>
-						Day click : <span class="tag">&lt;br&gt;</span><br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-a"</span></span>&gt;&lt;br&gt;</span><br>
-						Month change : <span class="tag">&lt;br&gt;</span><br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-b"</span></span>&gt;&lt;br&gt;</span><br>
-						<br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
+						<span class="comment">&lt;!-- Test the methods --&gt;</span><br>
 						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element,<span class="string">"1-1-2017"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the buttons</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> buttonA = document.getElementById(<span class="string">"my-button-a"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> buttonB = document.getElementById(<span class="string">"my-button-b"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> buttonC = document.getElementById(<span class="string">"my-button-c"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add events</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;buttonA.addEventListener("click", <span class="tag">function</span>() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.select([<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"01/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"02/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"03/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"05/01/2017"</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;buttonB.addEventListener("click", <span class="tag">function</span>() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.unselect([<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"05/01/2017"</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;buttonC.addEventListener("click", <span class="tag">function</span>() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.clearselect();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the elements</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> inputA = document.getElementById(<span class="string">"my-input-a"</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> inputB = document.getElementById(<span class="string">"my-input-b"</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Express 01-01-2018 in string and date</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> str = <span class="string">"01-01-2018"</span>;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> date = new Date(<span class="tag">2018</span> , <span class="tag">0</span>, <span class="tag">1</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Parse/Convert dates</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> str2date = jsCalendar.tools.stringToDate(str);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> date2str = jsCalendar.tools.dateToString(date, "DD-MM-yyyy");<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Check results</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;inputA.value = (str2date.getTime() === date.getTime()) ? <span class="string">"pass"</span> : <span class="string">"failed"</span>;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;inputB.value = (date2str === str) ? <span class="string">"pass"</span> : <span class="string">"failed"</span>;<br>
 						<span class="tag">&lt;/script&gt;</span><br>
 					</div>
-				</div>
-				<div class="wrapper-right">
-					<br>
-					<button id="my-button-13-a">Select</button>
-					<button id="my-button-13-b">Unselect</button>
-					<button id="my-button-13-c">Clear</button><br>
-					<div id="my-calendar-13"></div>
+					Testing stringToDate:  <input id="my-input-14-a" value="checking"/><br>
+					Testing dateToString:  <input id="my-input-14-b" value="checking"/><br>
 					<script type="text/javascript">
 						(function(){
-							// Get the element
-							var element = document.getElementById("my-calendar-13");
-							// Create the calendar
-							var myCalendar = jsCalendar.new(element, "1-1-2017");
-							// Get the buttons
-							var buttonA = document.getElementById("my-button-13-a");
-							var buttonB = document.getElementById("my-button-13-b");
-							var buttonC = document.getElementById("my-button-13-c");
-							// Add events
-							buttonA.addEventListener("click", function() {
-								myCalendar.select([
-									"01/01/2017",
-									"02/01/2017",
-									"03/01/2017",
-									"05/01/2017"
-								]);
-							}, false);
-							buttonB.addEventListener("click", function() {
-								myCalendar.unselect([
-									"05/01/2017"
-								]);
-							}, false);
-							buttonC.addEventListener("click", function() {
-								myCalendar.clearselect();
-							}, false);
+							// Get element
+							var inputA = document.getElementById("my-input-14-a");
+							var inputB = document.getElementById("my-input-14-b");
+							// Express 01-01-2018 in string and date
+							var str = "01-01-2018";
+							var date = new Date(2018 , 0, 1);
+							// Parse/Convert dates
+							var str2date = jsCalendar.tools.stringToDate(str);
+							var date2str = jsCalendar.tools.dateToString(date, "DD-MM-yyyy");
+							// Check results
+							inputA.value = (str2date.getTime() === date.getTime()) ? "pass" : "failed";
+							inputB.value = (date2str === str) ? "pass" : "failed";
 						})();
 					</script>
-				</div>
-
-				<div class="wrapper-clear"></div>
-				<div class="wrapper-left" id="more-javascript-select-options-examples">
-					<p>Example .getSelected()</p>
-					<div class="html-code">
-						myCalendar.getSelected();<br>
-						<span class="comment">// Returns [1483567200000, 1483394400000, 1483308000000, 1483221600000]</span><br>
-						<br>
-						myCalendar.getSelected({sort : <span class="tag">true</span>});<br>
-						<span class="comment">// Returns [1483221600000, 1483308000000, 1483394400000, 1483567200000]</span><br>
-						<br>
-						myCalendar.getSelected({sort : <span class="string">"desc"</span>, type : <span class="string">"DD-MM-YYYY"</span>});<br>
-						<span class="comment">// Returns ["05-01-2017", "03-01-2017", "02-01-2017", "01-01-2017"]</span><br>
-						<br>
-						myCalendar.getSelected({sort : <span class="string">"asc"</span>, type : <span class="string">"date"</span>});<br>
-						<span class="comment">/* <br>
-						&nbsp;*&nbsp;Returns [<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun Jan 01 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mon Jan 02 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tue Jan 03 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thu Jan 05 2017 00:00:00 GMT+0200 (GTB Standard Time)<br>
-						&nbsp;*&nbsp;]<br>
-						&nbsp;*/</span><br>
-					</div>
 				</div>
 				<div class="wrapper-clear"></div>
 				<br><br>
@@ -1590,7 +1509,7 @@
 			<div class="section-wrapper">
 				Created with <span class="heart">&hearts;</span> by Grammatopoulos Athanasios-Vasileios
 				&bull; <a href="https://raw.githubusercontent.com/GramThanos/jsCalendar/master/LICENSE">MIT License</a>
-				&bull; <a href="versions.html">Older Versions</a>
+				&bull; <a href="versions.html">All Versions</a>
 			</div>
 		</div>
 

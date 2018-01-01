@@ -8,7 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" type="text/css" href="css/jsCalendar.min.css">
-		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.darkseries.css">
+		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.darkseries.min.css">
+		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.clean.min.css">
 		<link rel="stylesheet" type="text/css" href="css/docs.css">
 
 		<!-- jsCalendar -->
@@ -33,9 +34,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip" class="download-button">
 						Download<br>
-						<span>version 1.4</span>
+						<span>version 1.4.1</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -57,10 +58,17 @@
 								<li><a href="#classic-theme">Classic theme</a></li>
 							</ul>
 						</li>
-						<li><a href="#darkseries-themes">DarkSeries themes</a>
+						<li><a href="#darkseries-themes">DarkSeries theme</a>
 							<ul>
 								<li><a href="#darkseries-themes-black-theme">Black theme</a></li>
+								<li><a href="#darkseries-themes-grey-theme">Grey theme</a></li>
 								<li><a href="#darkseries-themes-white-theme">White theme</a></li>
+							</ul>
+						</li>
+						<li><a href="#clean-themes">Clean theme</a>
+							<ul>
+								<li><a href="#clean-themes-grey-theme">Clean Grey theme</a></li>
+								<li><a href="#clean-themes-color-theme">Clean Color themes</a></li>
 							</ul>
 						</li>
 						<li><a href="#community-themes">Community themes</a>
@@ -139,10 +147,9 @@
 				<div class="section-title">DarkSeries Theme</div>
 				<div class="wrapper-left">
 					<p>Gray scale themes, for neutral feel.</p>
-					<link rel="stylesheet" type="text/css" href="css/jsCalendar.darkseries.css">
 					<div class="html-code">
 						<span class="comment">&lt;!-- Include the DarkSeries theme --&gt;</span><br>
-						<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.darkseries.css"</span></span>&gt;</span><br>
+						<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.darkseries.min.css"</span></span>&gt;</span><br>
 					</div>
 				</div>
 				<div class="wrapper-clear"></div>
@@ -162,6 +169,20 @@
 				<div class="wrapper-clear"></div>
 
 
+				<div class="section-subtitle" id="darkseries-themes-grey-theme">Grey theme</div>
+				<div class="wrapper-left">
+					<p>For neutral websites, we need a grey theme.</p>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Grey theme --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar grey-theme"</span></span>&gt;&lt;/div&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar grey-theme"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+
+
 				<div class="section-subtitle" id="darkseries-themes-white-theme">White theme</div>
 				<div class="wrapper-left">
 					<p>For light websites, we need a white theme.</p>
@@ -172,6 +193,60 @@
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar white-theme"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+			</div>
+		</div>
+
+		<div class="section" id="clean-themes">
+			<div class="section-wrapper">
+				<div class="section-title">Clean Theme</div>
+				<div class="wrapper-left">
+					<p>A clean minimal look theme.</p>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Include the Clean theme --&gt;</span><br>
+						<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.clean.min.css"</span></span>&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-clear"></div>
+
+
+				<div class="section-subtitle" id="clean-themes-grey-theme">Clean Grey theme</div>
+				<div class="wrapper-left">
+					<p>The default clean look theme.</p>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Default theme --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar clean-theme"</span></span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-navigator=<span class="string">"false"</span></span>&gt;&lt;/div&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar clean-theme" data-navigator="false"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+
+
+				<div class="section-subtitle" id="clean-themes-color-theme">Clean Color themes</div>
+				<div class="wrapper-left">
+					<p>Add color to your clean calendar.</p>
+					<p>
+						Supports 5 colors <br>
+						<span class="html-code">blue</span>,
+						<span class="html-code">yellow</span>,
+						<span class="html-code">orange</span>,
+						<span class="html-code">red</span>,
+						<span class="html-code">green</span>
+					</p>
+					<div class="html-code">
+						<span class="comment">&lt;!-- Clean red theme --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar clean-theme red"</span></span>&gt;&lt;/div&gt;</span><br>
+						<span class="comment">&lt;!-- Clean yellow theme --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar clean-theme yellow"</span></span>&gt;&lt;/div&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar clean-theme red"></div>
+					<div class="auto-jsCalendar clean-theme yellow"></div>
 				</div>
 				<div class="wrapper-clear"></div>
 			</div>
@@ -194,7 +269,7 @@
 			<div class="section-wrapper">
 				Created with <span class="heart">&hearts;</span> by Grammatopoulos Athanasios-Vasileios
 				&bull; <a href="https://raw.githubusercontent.com/GramThanos/jsCalendar/master/LICENSE">MIT License</a>
-				&bull; <a href="versions.html">Older Versions</a>
+				&bull; <a href="versions.html">All Versions</a>
 			</div>
 		</div>
 
