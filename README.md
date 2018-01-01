@@ -74,9 +74,13 @@ ___
 
 
 ### Preview images
-![preview 3](preview/preview_theme_simple.png)
-![preview 4](preview/preview_theme_material.png)
-![preview 5](preview/preview_theme_classic.png)
+Build-in Themes
+![Default theme](preview/preview_theme_default.png)
+![Material theme](preview/preview_theme_material.png)
+![Classic theme](preview/preview_theme_classic.png)
+Additional Themes
+![DarkSeries theme](preview/preview_theme_blackseries.png)
+![Clean theme](preview/preview_theme_clean.png)
 
 
 ___
@@ -89,7 +93,7 @@ ___
  - **JsCalendar.tools**
 	 - Added JsCalendar.tools.parseDate(date)
 	 - Added JsCalendar.tools.stringToDate alias of JsCalendar.tools.parseDate
-	 - Added JsCalendar.tools.dateToString(date, format, lang)
+	 - Added JsCalendar.tools.dateToString(date, format, language)
 
 
 ___
@@ -98,7 +102,7 @@ ___
 ### Motivation
 I have been using for years javascript libraries like [jQuery](https://github.com/jquery/jquery) and other smaller ones like [ResponsiveSlides.js](https://github.com/viljamis/ResponsiveSlides.js).
 
-So it was time to give back to the community. I just hope this library is helpfull to many people.
+So it was time to give back to the community. I just hope this library is helpful to many people.
 
 
 ___
