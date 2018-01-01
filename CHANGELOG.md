@@ -1,6 +1,17 @@
 # Changelog
 All jsCalendar changes will be documented in this file.
 
+## [1.4.1] - 2010-01-01
+
+### Added
+- JsCalendar.tools.*
+	- jsCalendar.tools.parseDate(date)
+	- jsCalendar.tools.stringToDate alias of JsCalendar.tools.parseDate
+	- jsCalendar.tools.dateToString(date, format, lang)
+
+
+
+
 ## [1.4.0] - 2017-11-04
 
 ### Added
