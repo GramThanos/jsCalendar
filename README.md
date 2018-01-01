@@ -43,9 +43,13 @@ ___
 
 
 ### Preview images
-![preview 3](preview/preview_theme_simple.png)
-![preview 4](preview/preview_theme_material.png)
-![preview 5](preview/preview_theme_classic.png)
+Build-in Themes
+![Default Theme](preview/preview_theme_default.png)
+![Material Theme](preview/preview_theme_material.png)
+![Classic Theme](preview/preview_theme_classic.png)
+Additional Themes
+![DarkSeries Theme](preview/preview_theme_darkseries.png)
+![Clean Theme](preview/preview_theme_clean.png)
 
 
 ___
