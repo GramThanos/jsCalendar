@@ -44,7 +44,7 @@ var jsCalendar = (function(){
     // Version
     JsCalendar.version = "v1.4.2";
 
-    // Languages
+    // Sub-Constructor
     JsCalendar.prototype._construct = function(args) {
         // Parse arguments
         args = this._parseArguments(args);
@@ -102,7 +102,7 @@ var jsCalendar = (function(){
         // If no arguments
         if (args.length === 0) {
             // Throw an error
-            throw new Error("jsCalendar: Not parameters were given.");
+            throw new Error("jsCalendar: No parameters were given.");
         }
 
         // Only 1 argument
@@ -402,20 +402,42 @@ var jsCalendar = (function(){
 
     // Convert to date string
     JsCalendar.prototype._parseToDateString = function(date, format) {
-        var str = format;
-        str = str.replace(/month/i, this.language.months[date.getMonth()]);
-        str = str.replace(/mmm/i, this.language.months[date.getMonth()].substring(0, 3));
-        str = str.replace(/mm/, this.language.months[date.getMonth()].substring(0, 2));
-        str = str.replace(/m/, this.language.months[date.getMonth()].substring(0, 1));
-        str = str.replace(/MM/, (date.getMonth() < 9 ? "0" : "") + (date.getMonth() + 1));
-        str = str.replace(/M/, date.getMonth() + 1);
-        str = str.replace(/ddd/i, this.language.days[date.getDay()].substring(0, 3));
-        str = str.replace(/dd/, this.language.days[date.getDay()].substring(0, 2));
-        str = str.replace(/d/, this.language.days[date.getDay()].substring(0, 1));
-        str = str.replace(/DD/, (date.getDate() < 9 ? "0" : "") + date.getDate());
-        str = str.replace(/D/, date.getDate());
-        str = str.replace(/yyyy/i, date.getYear() + 1900);
-        return str;
+        var lang = this.language;
+        return format.replace(/(MONTH|month|MMM|mmm|mm|m|MM|M|DAY|day|DDD|ddd|dd|d|DD|D|YYYY|yyyy)/g, function(key){
+            switch(key) {
+                case "MONTH":
+                case "month":
+                    return lang.months[date.getMonth()];
+                case "MMM":
+                case "mmm":
+                    return lang.months[date.getMonth()].substring(0, 3);
+                case "mm":
+                    return lang.months[date.getMonth()].substring(0, 2);
+                case "m":
+                    return lang.months[date.getMonth()].substring(0, 1);
+                case "MM":
+                    return (date.getMonth() < 9 ? "0" : "") + (date.getMonth() + 1);
+                case "M":
+                    return date.getMonth() + 1;
+                case "DAY":
+                case "day":
+                    return lang.days[date.getDay()];
+                case "DDD":
+                case "ddd":
+                    return lang.days[date.getDay()].substring(0, 3);
+                case "dd":
+                    return lang.days[date.getDay()].substring(0, 2);
+                case "d":
+                    return lang.days[date.getDay()].substring(0, 1);
+                case "DD":
+                    return (date.getDate() < 9 ? "0" : "") + date.getDate();
+                case "D":
+                    return date.getDate();
+                case "YYYY":
+                case "yyyy":
+                    return date.getYear() + 1900;
+            }
+        });
     };
 
     // Get visible month
@@ -440,12 +462,24 @@ var jsCalendar = (function(){
         }
 
         // Get month's name
-        var name = this._options.monthFormat;
-        name = name.replace(/month/i, this.language.months[first.getMonth()]);
-        name = name.replace(/MMM/i, this.language.months[first.getMonth()].substring(0, 3));
-        name = name.replace(/##/i, (first.getMonth() < 9 ? "0" : "") + (first.getMonth() + 1));
-        name = name.replace(/#/i, first.getMonth() + 1);
-        name = name.replace(/YYYY/i, first.getYear() + 1900);
+        var lang = this.language;
+        var name = this._options.monthFormat.replace(/(MONTH|month|MMM|mmm|##|#|YYYY|yyyy)/g, function(key){
+            switch(key) {
+                case "MONTH":
+                case "month":
+                    return lang.months[first.getMonth()];
+                case "MMM":
+                case "mmm":
+                    return lang.months[first.getMonth()].substring(0, 3);
+                case "##":
+                    return (first.getMonth() < 9 ? "0" : "") + (first.getMonth() + 1);
+                case "#":
+                    return first.getMonth() + 1;
+                case "YYYY":
+                case "yyyy":
+                    return first.getYear() + 1900;
+            }
+        });
 
         // Get visible days
         var days = this._getVisibleDates(date);
@@ -603,11 +637,21 @@ var jsCalendar = (function(){
             ]);
 
             nameOfDay = this.language.days[(i + this._options.firstDayOfTheWeek - 1) % 7];
-            name = this._options.dayFormat;
-            name = name.replace(/day/i, nameOfDay);
-            name = name.replace(/DDD/i, nameOfDay.substring(0, 3));
-            name = name.replace(/DD/i, nameOfDay.substring(0, 2));
-            name = name.replace(/D/, nameOfDay.substring(0, 1));
+            name = this._options.dayFormat.replace(/(DAY|day|DDD|ddd|DD|dd|D)/g, function(key){
+                switch(key) {
+                    case "DAY":
+                    case "day":
+                        return nameOfDay;
+                    case "DDD":
+                    case "ddd":
+                        return nameOfDay.substring(0, 3);
+                    case "DD":
+                    case "dd":
+                        return nameOfDay.substring(0, 2);
+                    case "D":
+                        return nameOfDay.substring(0, 1);
+                }
+            });
             this._elements.days[this._elements.days.length - 1].textContent = name;
         }
 
