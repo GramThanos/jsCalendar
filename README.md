@@ -97,7 +97,7 @@ ___
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
 We do although appreciate attribute.
 
-Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
 
 ___
 
