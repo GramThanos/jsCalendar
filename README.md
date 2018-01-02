@@ -4,7 +4,7 @@
 # jsCalendar
 Just a simple javascript calendar
 
- • [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html) • 
+ • [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html) • [Languages](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language) • 
 
 ![preview image](preview/preview_default.png)
 
@@ -27,6 +27,15 @@ Then insert a calendar on `<body>`
 <div class="auto-jsCalendar"></div>
 ```
 
+Or maybe you need to display it in an **other language**!
+
+```html
+<!-- Load Greek language -->
+<script type="text/javascript" src="jsCalendar.lang.gr.js"></script>
+
+<!-- Display calendar in Greek -->
+<div class="auto-jsCalendar" data-language="gr"></div>
+```
 
 ___
 
