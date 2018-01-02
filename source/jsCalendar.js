@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4.1
+ * jsCalendar v1.4.2
  *
  *
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = "v1.4.1";
+    JsCalendar.version = "v1.4.2";
 
     // Languages
     JsCalendar.prototype._construct = function(args) {
