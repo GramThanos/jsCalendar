@@ -6,6 +6,7 @@
 		<meta name="description" content="jsCalendar demo - date events">
 		<meta name="author" content="GramThanos">
 		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<link rel="stylesheet" type="text/css" href="../themes/jsCalendar.clean.css">
 
 		<!-- jsCalendar -->
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
@@ -17,12 +18,20 @@
 		<!-- Demo Style -->
 		<style>
 			html, body {
-				font-family: Tahoma, Geneva, sans-serif;
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			}
+
+			.description {
+				padding-bottom: 40px;
+			}
+
+			.jsCalendar.clean-theme tbody td.jsCalendar-previous, .jsCalendar.clean-theme tbody td.jsCalendar-next {
+				color: #000;
+				opacity: 0.2;
 			}
 
 			#wrapper {
 				float: left;
-				border-radius: 4px;
 				box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
 			}
 			#wrapper .jsCalendar table {
@@ -36,12 +45,13 @@
 			}
 			#events {
 				float: left;
-				width: 250px;
+				width: 435px;
 				margin: 10px 20px 10px 5px;
 			}
 			#events .title {
 				padding: 5px 0px;
 				text-align: center;
+				font-weight: bold;
 				border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 			}
 			#events .subtitle {
@@ -51,8 +61,8 @@
 				color: #888;
 			}
 			#events .list {
-				height: 210px;
-				overflow-y: scroll;
+				height: 250px;
+				overflow-y: auto;
 				border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 			}
 			#events .list .event-item {
@@ -63,12 +73,13 @@
 			}
 			#events .list .event-item .close {
 				font-family: Tahoma, Geneva, sans-serif;
+				font-weight: bold;
 				font-size: 12px;
-				color: #fff;
+				color: #000;
 				border-radius: 8px;
 				height: 14px;
 				width: 14px;
-				line-height: 14px;
+				line-height: 12px;
 				text-align: center;
 				float: right;
 				border: 1px solid rgba(0, 0, 0, 0.5);
@@ -76,7 +87,7 @@
 				margin: 5px;
 				display: block;
 				overflow: hidden;
-				background: #000;
+				background: #F44336;
 				cursor: pointer;
 			}
 			#events .action {
@@ -90,9 +101,10 @@
 		</style>
 	</head>
 	<body>
-		<h3>Date Events</h3>
-		Demo calendar date events using jsCalendar<br>
-		<br>
+		<div class="description">
+			<div style="font-size: 1.4em;">Date Events</div>
+			<div>Demo calendar date events using jsCalendar</div>
+		</div>
 
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -116,6 +128,7 @@
 			}
 
 			// Create the calendar
+			elements.calendar.className = "clean-theme";
 			var calendar = jsCalendar.new(elements.calendar);
 
 			// Create events elements

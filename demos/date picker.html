@@ -17,19 +17,25 @@
 		<!-- Demo Style -->
 		<style>
 			html, body {
-				font-family: Tahoma, Geneva, sans-serif;
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+				text-align: center;
+			}
+
+			.description {
+				padding-bottom: 40px;
 			}
 		</style>
 	</head>
 	<body>
-		<h3>Date Picker</h3>
-		Demo date picker using jsCalendar<br>
-		<br>
+		<div class="description">
+			<div style="font-size: 1.4em;">Date Picker</div>
+			<div>Demo date picker using jsCalendar</div>
+		</div>
 
 		<!-- Date picker element -->
-		<input id="date-input" type="text" value=""/>
+		<input id="date-input" type="text" value="" style="width: 294px;"/>
 		<!-- Calendar element -->
-		<div id="date-picker-calendar" style="display:none;position:absolute;"></div>
+		<div id="date-picker-calendar" style="display:none;"></div>
 		
 		<br><br>
 		Click the input and select a day.
@@ -41,10 +47,32 @@
 				// Input element
 				input : document.getElementById("date-input"),
 				// Calendar element
-				calendar : document.getElementById("date-picker-calendar")
+				calendar : document.getElementById("date-picker-calendar"),
+				// Close btn
+				close : document.createElement('div')
 			}
+			
+			// Hide calendar element
+			elements.calendar.style.display = "none";
+			elements.calendar.style.position = "absolute";
+
 			// Create the calendar
 			var calendar = jsCalendar.new(elements.calendar);
+
+			// Add close button
+			elements.close.textContent = "×";
+			elements.close.style.position = "absolute";
+			elements.close.style.top = "-2px";
+			elements.close.style.right = "-2px";
+			elements.close.style.height = "24px";
+			elements.close.style.width = "24px";
+			elements.close.style.textAlign = "center";
+			elements.close.style.lineHeight = "24px";
+			elements.close.style.backgroundColor = "#F44336";
+			elements.close.style.borderRadius = "12px";
+			elements.close.style.boxShadow = "0px 0px 2px #000000";
+			elements.close.style.cursor = "pointer";
+			elements.calendar.appendChild(elements.close);
 
 			// Add events
 			calendar.onDateClick(function(event, date){
@@ -58,10 +86,15 @@
 
 			// Open calendar
 			elements.input.addEventListener("focus", function(){
+				elements.calendar.style.top = elements.input.offsetTop + elements.input.offsetHeight + "px";
+				elements.calendar.style.left = elements.input.offsetLeft + "px";
 				elements.calendar.style.display = "block";
 			}, true);
 			// Close calendar
-			input.addEventListener("change", function(){
+			elements.input.addEventListener("change", function(){
+				elements.calendar.style.display = "none";
+			}, true);
+			elements.close.addEventListener("click", function(){
 				elements.calendar.style.display = "none";
 			}, true);
 		</script>
