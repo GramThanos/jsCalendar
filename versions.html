@@ -13,8 +13,8 @@
 
 		<!-- jsCalendar -->
 		<script type="text/javascript" src="js/jsCalendar.min.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.gr.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.de.js"></script>
+		<!-- GitInfoHub -->
+		<script type="text/javascript" src="js/gitinfohub.js"></script>
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -57,6 +57,7 @@
 					<span style="font-size: 0.6em;">
 						(2018-01-01)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip">Download</a>]
+						<span class="downloads" data-version="v1.4.1"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -86,6 +87,7 @@
 					<span style="font-size: 0.6em;">
 						(2017-11-04)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip">Download</a>]
+						<span class="downloads" data-version="v1.4"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -125,6 +127,7 @@
 					<span style="font-size: 0.6em;">
 						(2017-07-08)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip">Download</a>]
+						<span class="downloads" data-version="v1.3"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -149,6 +152,7 @@
 					<span style="font-size: 0.6em;">
 						(2017-03-19)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip">Download</a>]
+						<span class="downloads" data-version="v1.2"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -157,8 +161,37 @@
 					</ul>
 				</div>
 
+				<div id="downloads" style="padding-top: 30px;font-size: 0.6em;text-align: right;"></div>
 
 
+				<!-- Get number of downloads -->
+				<script type="text/javascript">
+					// Get repo
+					var repo = new GitInfoHub("GramThanos", "jsCalendar");
+					// Get download elements
+					var download = document.getElementsByClassName("downloads");
+					var downloads = document.getElementById("downloads");
+
+					// Info vars
+					var total = 0;
+					var notdone = download.length;
+
+					// Get download data
+					for (var i = 0; i < download.length; i++) {
+						(function(element){
+							repo.getVersion(element.dataset.version, function(data){
+								var n = data.assets[0].download_count;
+								element.textContent = "[" + n + " " + (n > 1 ? "downloads" : "download") + "]";
+								total += n;
+								notdone--;
+
+								if (notdone === 0) {
+									downloads.textContent = "Downloaded " + total + " times in total!";
+								}
+							});
+						})(download[i]);
+					}
+				</script>
 
 			</div>
 		</div>
