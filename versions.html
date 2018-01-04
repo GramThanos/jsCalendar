@@ -57,7 +57,7 @@
 					<span style="font-size: 0.6em;">
 						(2018-01-01)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip">Download</a>]
-						<span class="downloads" data-version="v1.4.1"></span>
+						<span class="version-info" data-version="v1.4.1"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -87,7 +87,7 @@
 					<span style="font-size: 0.6em;">
 						(2017-11-04)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip">Download</a>]
-						<span class="downloads" data-version="v1.4"></span>
+						<span class="version-info" data-version="v1.4"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -127,7 +127,7 @@
 					<span style="font-size: 0.6em;">
 						(2017-07-08)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip">Download</a>]
-						<span class="downloads" data-version="v1.3"></span>
+						<span class="version-info" data-version="v1.3"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -152,7 +152,7 @@
 					<span style="font-size: 0.6em;">
 						(2017-03-19)
 						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip">Download</a>]
-						<span class="downloads" data-version="v1.2"></span>
+						<span class="version-info" data-version="v1.2"></span>
 					</span>
 				</div>
 				<div style="margin-bottom: 50px;">
@@ -164,32 +164,49 @@
 				<div id="downloads" style="padding-top: 30px;font-size: 0.6em;text-align: right;"></div>
 
 
-				<!-- Get number of downloads -->
+				<!-- Get version info -->
 				<script type="text/javascript">
 					// Get repo
 					var repo = new GitInfoHub("GramThanos", "jsCalendar");
 					// Get download elements
-					var download = document.getElementsByClassName("downloads");
+					var info = document.getElementsByClassName("version-info");
 					var downloads = document.getElementById("downloads");
 
 					// Info vars
-					var total = 0;
-					var notdone = download.length;
+					var total_downloads = 0;
+					var notdone = info.length;
 
-					// Get download data
-					for (var i = 0; i < download.length; i++) {
+					// Get info data
+					for (var i = 0; i < info.length; i++) {
 						(function(element){
 							repo.getVersion(element.dataset.version, function(data){
 								var n = data.assets[0].download_count;
-								element.textContent = "[" + n + " " + (n > 1 ? "downloads" : "download") + "]";
-								total += n;
+								var s = data.assets[0].size;
+								element.textContent = "[" + 
+									humanFileSize(s, false) + ", " +
+									n + " " + (n > 1 ? "downloads" : "download") + 
+								"]";
+								total_downloads += n;
 								notdone--;
 
 								if (notdone === 0) {
-									downloads.textContent = "Downloaded " + total + " times in total!";
+									downloads.textContent = "Downloaded " + total_downloads + " times in total!";
 								}
 							});
-						})(download[i]);
+						})(info[i]);
+					}
+
+					function humanFileSize(bytes, si) {
+						if(Math.abs(bytes) < 1024) {
+							return bytes + ' B';
+						}
+						var units = ['kB','MB','GB','TB','PB','EB','ZB','YB'];
+						var u = -1;
+						do {
+							bytes /= 1024;
+							++u;
+						} while(Math.abs(bytes) >= 1024 && u < units.length - 1);
+						return bytes.toFixed(1) + '' + units[u];
 					}
 				</script>
 
