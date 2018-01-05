@@ -167,8 +167,13 @@ input {
 
 .header li a:hover{
 	border: 1px solid #76a1c1;
+	border-bottom: 2px solid #5c8aac;
 	padding: 4px 9px;
 	transition: all 0.2s;
+}
+
+.header li.active a{
+	border-bottom: 2px solid #5c8aac;
 }
 
 /* Menu Styling
