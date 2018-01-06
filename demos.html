@@ -17,6 +17,14 @@
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
+
+		<style type="text/css">
+			#demo-page {
+				border: 0px;
+				width: 100%;
+				height: 200px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="section section-header">
@@ -29,7 +37,7 @@
 						<li><a href="docs.html">Docs</a></li>
 						<li><a href="themes.html">Themes</a></li>
 						<li class="active"><a href="demos.html">Demos</a></li>
-						<li><a href="https://github.com/GramThanos/jsCalendar/">Github</a></li>
+						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
 					</ul>
 					<br>
 					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip" class="download-button">
@@ -44,6 +52,27 @@
 			</div>
 		</div>
 
+		<div class="section section-menu">
+			<div class="section-wrapper">
+				<div class="section-title">Select a demo</div>
+				<div class="wrapper-left">
+					<ul id="demo-list">
+						<li><a href="#load-demo" data-demo="date-picker">Date Picker</a></li>
+						<li><a href="#load-demo" data-demo="date-events">Date Events</a></li>
+						<li><a href="#load-demo" data-demo="date-calendar">Year Calendar</a></li>
+					</ul>
+				</div>
+				<div class="wrapper-clear"></div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div style="text-align: right;font-size: 12px;padding: 0px 50px 10px 50px;">
+				<a href="#" target="_blank" id="demo-link">Open demo on new tab</a>
+			</div>
+			<iframe src="" id="demo-page"></iframe>
+		</div>
+
 		<div class="section section-footer">
 			<div class="section-wrapper">
 				Created with <span class="heart">&hearts;</span> by Grammatopoulos Athanasios-Vasileios
@@ -54,5 +83,33 @@
 
 		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
 
+		<!-- Load demos -->
+		<script type="text/javascript">
+			var element = document.getElementById("demo-page");
+			var link = document.getElementById("demo-link");
+			var demos = {
+				"date-picker" : {height : 460, url : "demos/date picker.html"},
+				"date-events" : {height : 530, url : "demos/date events.html"},
+				"date-calendar" : {height : 1760, url : "demos/year calendar.html"}
+			};
+
+			// Load a demo
+			var loadDemo = function(id){
+				if (!demos.hasOwnProperty(id)) return;
+				element.style.height = demos[id].height + "px";
+				element.src = demos[id].url;
+				link.href = demos[id].url;
+			};
+
+			var menuItems = document.getElementById("demo-list").getElementsByTagName("a");
+			for (var i = menuItems.length - 1; i >= 0; i--) {
+				menuItems[i].addEventListener("click", function(){
+					loadDemo(this.dataset.demo);
+				}, false);
+			}
+
+			// Load first demo
+			loadDemo("date-picker");
+		</script>
 	</body>
 </html>
