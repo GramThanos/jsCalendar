@@ -430,7 +430,7 @@ var jsCalendar = (function(){
                 case "d":
                     return lang.days[date.getDay()].substring(0, 1);
                 case "DD":
-                    return (date.getDate() < 9 ? "0" : "") + date.getDate();
+                    return (date.getDate() <= 9 ? "0" : "") + date.getDate();
                 case "D":
                     return date.getDate();
                 case "YYYY":
