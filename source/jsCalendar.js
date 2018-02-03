@@ -4,7 +4,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -1059,7 +1059,7 @@ var jsCalendar = (function(){
 
         // Options - Data type
         if (options.type && typeof options.type === "string") {
-        	var i;
+            var i;
             // Convert to date object
             if (options.type.toLowerCase() === "date"){
                 for (i = dates.length - 1; i >= 0; i--) {

@@ -1,5 +1,20 @@
 # Changelog
-All jsCalendar changes will be documented in this file.
+All jsCalendar changes are documented in this file.
+
+## [1.4.2] - 2018-02-03
+
+### Fixed
+- Fixed date format bugs and added "day" keyword
+	- Before fix
+		- `javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");`
+		- `// returns "1eceDber Fay" (D = 1, m = D, d = F)`
+	- After fix
+		- `javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");`
+		- `// returns "December Friday"`
+- Fixed no zero fill for day 9 with format DD
+
+
+
 
 ## [1.4.1] - 2018-01-01
 
