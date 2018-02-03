@@ -75,6 +75,7 @@ ___
     - After fix
        - `javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");`
        - `// returns "December Friday"`
+ - Fixed no zero fill for day 9 with format DD
 
 
 ___
@@ -82,7 +83,7 @@ ___
 
 ### Contact me
 
-Contact us to leave us your feedback or to express your thoughts.
+Contact me to leave me your feedback or to express your thoughts.
 
 [Open an issue](https://github.com/GramThanos/jsCalendar/issues)
 
