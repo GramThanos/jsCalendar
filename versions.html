@@ -34,9 +34,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip" class="download-button">
 						Download<br>
-						<span>version 1.4.1</span>
+						<span>version 1.4.2</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -49,6 +49,44 @@
 		<div class="section section-menu">
 			<div class="section-wrapper">
 				<div class="section-title">Latest version</div>
+
+
+
+
+				<div class="section-subtitle">
+					Version v1.4.2
+					<span style="font-size: 0.6em;">
+						(2018-02-03)
+						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip">Download</a>]
+						<span class="version-info" data-version="v1.4.2"></span>
+					</span>
+				</div>
+				<div style="margin-bottom: 50px;">
+					<ul>
+						<li>Fixed</li>
+						<ul>
+							<li>Fixed date format bugs and added "day" keyword</li>
+							<ul>
+								<li>Before fix</li>
+								<ul>
+									<li><span class="html-code">javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");</span></li>
+									<li><span class="html-code">// returns "1eceDber Fay" (D = 1, m = D, d = F)</span></li>
+								</ul>
+								<li>After fix</li>
+								<ul>
+									<li><span class="html-code">javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");</span></li>
+									<li><span class="html-code">// returns "December Friday"</span></li>
+								</ul>
+							</ul>
+							<li>Fixed no zero fill for day 9 with format DD</li>
+						</ul>
+					</ul>
+				</div>
+
+
+
+
+				<div class="section-title" style="margin-top: 100px;">Older versions</div>
 
 
 
@@ -74,11 +112,6 @@
 						</ul>
 					</ul>
 				</div>
-
-
-
-
-				<div class="section-title" style="margin-top: 100px;">Older versions</div>
 
 
 
