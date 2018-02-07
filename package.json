@@ -1,0 +1,23 @@
+{
+  "name": "jscalendar",
+  "version": "1.4.2",
+  "description": "Just a simple javascript calendar",
+  "main": "source/jsCalendar.js",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GramThanos/jsCalendar.git"
+  },
+  "keywords": [
+    "calendar",
+    "javascript"
+  ],
+  "author": "GramThanos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GramThanos/jsCalendar/issues"
+  },
+  "homepage": "https://gramthanos.github.io/jsCalendar/"
+}
