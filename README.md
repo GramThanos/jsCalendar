@@ -5,9 +5,9 @@
 # jsCalendar
 Just a simple javascript calendar
 
- • [Download](https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip) • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html) • [Languages](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language) • 
+ • [Download](https://github.com/GramThanos/jsCalendar/releases/latest) • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html) • [Languages](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language) • 
 
-![preview image](preview/preview_default.png)
+![preview image](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_default.png)
 
 
 ___
@@ -40,6 +40,19 @@ Or maybe you need to display it in an **other language**!
 
 ___
 
+### npm package
+
+If you are into *npm* you can install the lib's package by just typing in your command line
+
+```cmd
+npm i simple-jscalendar
+```
+
+More info here on the npm page
+https://www.npmjs.com/package/simple-jscalendar
+
+___
+
 
 ### Learn to jsCalendar
 - [Getting started](https://gramthanos.github.io/jsCalendar/docs.html#getting-started)
@@ -54,12 +67,12 @@ ___
 
 ### Preview images
 Build-in Themes
-![Default Theme](preview/preview_theme_default.png)
-![Material Theme](preview/preview_theme_material.png)
-![Classic Theme](preview/preview_theme_classic.png)
+![Default Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_default.png)
+![Material Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_material.png)
+![Classic Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_classic.png)
 Additional Themes
-![DarkSeries Theme](preview/preview_theme_darkseries.png)
-![Clean Theme](preview/preview_theme_clean.png)
+![DarkSeries Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_darkseries.png)
+![Clean Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_clean.png)
 
 
 ___
