@@ -1,5 +1,5 @@
 {
-  "name": "jscalendar",
+  "name": "simple-jscalendar",
   "version": "1.4.2",
   "description": "Just a simple javascript calendar",
   "main": "source/jsCalendar.js",
