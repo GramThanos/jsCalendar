@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<meta name="description" content="jsCalendar - Just a simple javascript calendar library">
+		<meta name="author" content="Grammatopoulos Athanasios-Vasileios">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/jsCalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.darkseries.min.css">
+		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.clean.min.css">
+		<link rel="stylesheet" type="text/css" href="css/docs.css">
+
+		<!-- jsCalendar -->
+		<script type="text/javascript" src="js/jsCalendar.min.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.es.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.fr.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.de.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.gr.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.it.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.ja.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.ru.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.zh.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="section section-header">
+			<div class="header">
+				<div class="wrapper-left">
+					<div class="title">jsCalendar</div>
+					<div class="sub-title">Just a simple javascript calendar</div>
+					<ul>
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="docs.html">Docs</a></li>
+						<li><a href="themes.html">Themes</a></li>
+						<li><a href="demos.html">Demos</a></li>
+						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
+					</ul>
+					<br>
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip" class="download-button">
+						Download<br>
+						<span>version 1.4.2</span>
+					</a>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="section-wrapper">
+				<div class="section-title">Code Generator</div>
+				<div class="wrapper-left">
+					<div id="generated-calendar"></div>
+				</div>
+				<div class="wrapper-right" style="width: 400px;">
+					<div id="select-theme"></div>
+					<div class="divider"></div>
+					<div id="select-color"></div>
+					<div class="divider"></div>
+					<div id="select-parameters"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+			</div>
+			<div class="section-wrapper">
+				<div class="section-title">HTML Code</div>
+				<div id="generated-code"></div>
+			</div>
+		</div>
+
+		<div class="section section-footer">
+			<div class="section-wrapper">
+				Created with <span class="heart">&hearts;</span> by Grammatopoulos Athanasios-Vasileios
+				&bull; <a href="https://raw.githubusercontent.com/GramThanos/jsCalendar/master/LICENSE">MIT License</a>
+				&bull; <a href="versions.html">All Versions</a>
+			</div>
+		</div>
+
+		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
+
+
+		<style type="text/css">
+			.section {
+				border-top: 1px solid #ccc;
+			}
+			#generated-calendar {
+				height: 350px;
+				text-align: center;
+			}
+			#generated-calendar .jsCalendar{
+				display: inline-block;
+			}
+			
+			#select-theme {
+				font-size: 12px;
+				/*text-align: center;*/
+			}
+			#select-theme .theme {
+				display: inline-block;
+				margin: 5px;
+				height: 28px;
+				padding: 1px 8px;
+				cursor: pointer;
+				border: 1px solid rgba(0, 0, 0, 0.5);
+				box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+				line-height: 28px;
+			}
+			#select-theme .theme:hover {
+				padding: 0px 7px;
+				border: 2px solid rgba(0, 0, 0, 0.5);
+			}
+			#select-theme .theme.active {
+				padding: 0px 7px;
+				border: 2px solid black;
+				background: rgba(200, 200, 200, 0.1);
+			}
+
+			#select-color {
+				/*text-align: center;*/
+			}
+			#select-color .color {
+				display: inline-block;
+				margin: 5px;
+				height: 28px;
+				width: 28px;
+				padding: 1px;
+				cursor: pointer;
+				border: 1px solid rgba(0, 0, 0, 0.5);
+				box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+			}
+			#select-color .color:hover {
+				padding: 0px;
+				border: 2px solid rgba(0, 0, 0, 0.5);
+			}
+			#select-color .color.active {
+				padding: 0px;
+				border: 2px solid black;
+				background: rgba(200, 200, 200, 0.1);
+			}
+
+			#select-parameters {
+				font-size: 12px;
+			}
+			#select-parameters .param-name {
+				font-size: 14px;
+				display: inline-block;
+				margin: 5px;
+				height: 20px;
+				padding: 2px 9px 2px 0px;
+				cursor: pointer;
+				line-height: 20px;
+			}
+			#select-parameters .param-value {
+				display: inline-block;
+				margin: 5px;
+				height: 20px;
+				padding: 1px 6px;
+				cursor: pointer;
+				border: 1px solid rgba(0, 0, 0, 0.5);
+				box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+				line-height: 20px;
+			}
+			#select-parameters .param-value:hover {
+				padding: 0px 5px;
+				border: 2px solid rgba(0, 0, 0, 0.5);
+			}
+			#select-parameters .param-value.active {
+				padding: 0px 5px;
+				border: 2px solid black;
+				background: rgba(200, 200, 200, 0.1);
+			}
+
+			.divider {
+				border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+
+			var codeGenerator = {
+
+				info : {
+					themes : {
+						'default-theme' : {
+							name : 'Default Theme',
+							classname : '',
+							colors : {
+								blue : {classname : '', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'blue',
+							require : []
+						},
+						'material-theme' : {
+							name : 'Material Theme',
+							classname : 'material-theme',
+							colors : {
+								blue : {classname : '', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'blue',
+							require : []
+						},
+						'classic-theme' : {
+							name : 'Classic Theme',
+							classname : 'classic-theme',
+							colors : {
+								blue : {classname : '', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'blue',
+							require : []
+						},
+						'darkseries-theme' : {
+							name : 'DarkSeries Theme',
+							classname : '',
+							colors : {
+								black : {classname : 'black-theme', bg : '#000'},
+								grey : {classname : 'grey-theme', bg : '#e3e6eb'},
+								white : {classname : 'white-theme', bg : '#ffffff'}
+							},
+							defcolor : 'black',
+							require : ['jsCalendar.darkseries.min.css']
+						},
+						'clean-theme' : {
+							name : 'Clean Theme',
+							classname : 'clean-theme',
+							colors : {
+								white : {classname : '', bg : '#ffffff'},
+								blue : {classname : 'blue', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'white',
+							require : ['jsCalendar.clean.min.css']
+						}
+					},
+					parameters : {
+						navigator : {name : 'Navigator', defvalue : 'true', values : ['true', 'false']},
+						navigatorPosition : {name : 'Navigator\'s Position', type : 'enum', defvalue : 'both', values : ['both', 'left', 'right']},
+						zeroFill : {name : 'Zero fill', defvalue : 'true', values : ['true', 'false']},
+						monthFormat : {name : 'Month format', defvalue : 'month', values : ['month', 'MMM', 'month YYYY', '##/YYYY']},
+						dayFormat : {name : 'Day format', defvalue : 'D', values : ['DDD', 'DD', 'D']},
+						fdotw : {name : 'First day of the week', defvalue : '1', values : ['1', '2']},
+						language : {name : 'Language', defvalue : 'en', values : ['en', 'es', 'fr', 'de', 'gr', 'it', 'ja', 'ru', 'zh']}
+					}
+				},
+
+				active : {
+					theme : 'default-theme',
+					color : 'blue',
+					parameters : {
+						navigator : 'true',
+						navigatorPosition : 'both',
+						zeroFill : 'true',
+						monthFormat : 'month',
+						fdotw : '1',
+						language : 'en'
+					}
+				},
+
+				init : function () {
+					this.wrapper = {};
+
+					this.wrapper.calendar = document.getElementById('generated-calendar');
+					this.wrapper.theme = document.getElementById('select-theme');
+					this.wrapper.color = document.getElementById('select-color');
+					this.wrapper.parameters = document.getElementById('select-parameters');
+					this.wrapper.code = document.getElementById('generated-code');
+
+					this.generate('init');
+				},
+
+				createThemes : function () {
+					var themes = this.info.themes;
+					this.wrapper.theme.innerHTML = '';
+					
+					var that = this;
+					var select;
+					for (theme in themes) {
+						if (themes.hasOwnProperty(theme)) {
+							select = document.createElement('div');
+							select.className = 'theme' + (this.active.theme == theme ? ' active' : '');
+							select.innerHTML = themes[theme].name;
+							select.addEventListener('click', (function(theme, themeObj, select) {
+								return function () {
+									that.changeActiveSelect(select);
+									if (that.active.theme == theme)
+										return;
+									that.active.theme = theme;
+									that.active.color = themeObj.defcolor;
+									that.generate('theme');
+								}
+							})(theme, themes[theme], select), false);
+							this.wrapper.theme.appendChild(select);
+						}
+					}
+				},
+
+				createColors : function () {
+					var theme = this.info.themes[this.active.theme];
+					var colors = theme.colors;
+					this.wrapper.color.innerHTML = '';
+
+					var that = this;
+					var select;
+					for (color in colors) {
+						if (colors.hasOwnProperty(color)) {
+							select = document.createElement('div');
+							select.className = 'color' + (theme.defcolor == color ? ' active' : '');
+							select.style.background = colors[color].bg;
+							select.addEventListener('click', (function(color, select) {
+								return function () {
+									that.changeActiveSelect(select);
+									if (that.active.color == color)
+										return;
+									that.active.color = color;
+									that.generate('color');
+								}
+							})(color, select), false);
+							this.wrapper.color.appendChild(select);
+						}
+					}
+				},
+
+				createParameters : function () {
+					var parameters = this.info.parameters;
+
+					var that = this;
+					var param, row, select;
+					for (param_name in parameters) {
+						if (parameters.hasOwnProperty(param_name)) {
+							param = parameters[param_name];
+
+							row = document.createElement('div');
+							row.className = 'param-row';
+
+							select = document.createElement('div');
+							select.className = 'param-name';
+							select.innerHTML = param.name;
+							row.appendChild(select);
+
+							for (i in param.values) {
+								if (param.values.hasOwnProperty(i)) {
+									select = document.createElement('div');
+									select.className = 'param-value' + (param.values[i] == param.defvalue ? ' active' : '');
+									select.innerHTML = param.values[i];
+									row.appendChild(select);
+									select.addEventListener('click', (function(param, value, select) {
+										return function () {
+											that.changeActiveSelect(select);
+											if (that.active.parameters[param] == value)
+												return;
+											that.active.parameters[param] = value;
+											that.generate('parameter');
+										}
+									})(param_name, param.values[i], select), false);
+								}
+							}
+
+							this.wrapper.parameters.appendChild(row);
+						}
+					}
+				},
+
+				changeActiveSelect : function (select) {
+					var oldSelect = select.parentNode.getElementsByClassName('active')[0];
+					oldSelect.className = oldSelect.className.replace(' active', '');
+					select.className += ' active';
+				},
+
+				createCalendar : function () {
+					this.wrapper.calendar.innerHTML = '';
+
+					var theme = this.info.themes[this.active.theme];
+					var color = theme.colors[this.active.color];
+					console.log(theme.classname, color.classname);
+
+					var calendar = document.createElement('div');
+					var classname = '';
+					if (theme.classname.length) {
+						classname += ' ' + theme.classname;
+					}
+					if (color.classname.length) {
+						classname += ' ' + color.classname;
+					}
+					calendar.className = classname;
+
+					this.wrapper.calendar.appendChild(calendar);
+
+					var options = {};
+					if (this.active.parameters.navigator != this.info.parameters.navigator.defvalue) {
+						options.navigator = this.active.parameters.navigator;
+					}
+					if (this.active.parameters.navigatorPosition != this.info.parameters.navigatorPosition.defvalue) {
+						options.navigatorPosition = this.active.parameters.navigatorPosition;
+					}
+					if (this.active.parameters.zeroFill != this.info.parameters.zeroFill.defvalue) {
+						options.zeroFill = this.active.parameters.zeroFill;
+					}
+					if (this.active.parameters.monthFormat != this.info.parameters.monthFormat.defvalue) {
+						options.monthFormat = this.active.parameters.monthFormat;
+					}
+					if (this.active.parameters.dayFormat != this.info.parameters.dayFormat.defvalue) {
+						options.dayFormat = this.active.parameters.dayFormat;
+					}
+					if (this.active.parameters.fdotw != this.info.parameters.fdotw.defvalue) {
+						options.fdotw = this.active.parameters.fdotw;
+					}
+					if (this.active.parameters.language != this.info.parameters.language.defvalue) {
+						options.language = this.active.parameters.language;
+					}
+
+					jsCalendar.new(calendar, new Date().getTime(), options);
+				},
+
+				generate : function (changed) {
+					var regenerate = false;
+
+					if (changed === 'init') {
+						this.createThemes();
+						this.createColors();
+						this.createParameters();
+						regenerate = true;
+					}
+					else if (changed === 'theme') {
+						this.createColors();
+						regenerate = true;
+					}
+					else if (changed === 'color') {
+						regenerate = true;
+					}
+					else if (changed === 'parameter') {
+						regenerate = true;
+					}
+
+					if (regenerate) {
+						this.createCalendar();
+					}
+				}
+			};
+
+			codeGenerator.init();
+		</script>
+
+	</body>
+</html>
