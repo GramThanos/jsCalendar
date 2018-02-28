@@ -5,7 +5,7 @@
 # jsCalendar
 Just a simple javascript calendar
 
- • [Download](https://github.com/GramThanos/jsCalendar/releases/latest) • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html) • [Languages](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language) • 
+ • [Download](https://github.com/GramThanos/jsCalendar/releases/latest) • [Live preview](https://gramthanos.github.io/jsCalendar/) • [Documentation](https://gramthanos.github.io/jsCalendar/docs.html) • [Languages](https://gramthanos.github.io/jsCalendar/docs.html#parameter-language) • [Calendar Generator](https://gramthanos.github.io/jsCalendar/generator.html)
 
 ![preview image](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_default.png)
 
@@ -38,6 +38,7 @@ Or maybe you need to display it in an **other language**!
 <div class="auto-jsCalendar" data-language="gr"></div>
 ```
 
+We also have a simple GUI [calendar code generator](https://gramthanos.github.io/jsCalendar/generator.html), so that you can easily create your jsCalendar.
 ___
 
 ### npm package
