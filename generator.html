@@ -24,68 +24,7 @@
 		<script type="text/javascript" src="js/jsCalendar.lang.ru.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.zh.js"></script>
 
-		<!--[if lt IE 9]>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="section section-header">
-			<div class="header">
-				<div class="wrapper-left">
-					<div class="title">jsCalendar</div>
-					<div class="sub-title">Just a simple javascript calendar</div>
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="docs.html">Docs</a></li>
-						<li><a href="themes.html">Themes</a></li>
-						<li><a href="demos.html">Demos</a></li>
-						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
-					</ul>
-					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip" class="download-button">
-						Download<br>
-						<span>version 1.4.2</span>
-					</a>
-				</div>
-				<div class="wrapper-right">
-					<div class="auto-jsCalendar"></div>
-				</div>
-				<div class="wrapper-clear"></div>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="section-wrapper">
-				<div class="section-title">Code Generator</div>
-				<div class="wrapper-left">
-					<div id="generated-calendar"></div>
-				</div>
-				<div class="wrapper-right" style="width: 400px;">
-					<div id="select-theme"></div>
-					<div class="divider"></div>
-					<div id="select-color"></div>
-					<div class="divider"></div>
-					<div id="select-parameters"></div>
-				</div>
-				<div class="wrapper-clear"></div>
-			</div>
-			<div class="section-wrapper">
-				<div class="section-title">HTML Code</div>
-				<div id="generated-code"></div>
-			</div>
-		</div>
-
-		<div class="section section-footer">
-			<div class="section-wrapper">
-				Created with <span class="heart">&hearts;</span> by Grammatopoulos Athanasios-Vasileios
-				&bull; <a href="https://raw.githubusercontent.com/GramThanos/jsCalendar/master/LICENSE">MIT License</a>
-				&bull; <a href="versions.html">All Versions</a>
-			</div>
-		</div>
-
-		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
-
-
+		<!-- Generator style -->
 		<style type="text/css">
 			.section {
 				border-top: 1px solid #ccc;
@@ -183,6 +122,72 @@
 				padding-bottom: 10px;
 			}
 		</style>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="section section-header">
+			<div class="header">
+				<div class="wrapper-left">
+					<div class="title">jsCalendar</div>
+					<div class="sub-title">Just a simple javascript calendar</div>
+					<ul>
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="docs.html">Docs</a></li>
+						<li><a href="themes.html">Themes</a></li>
+						<li><a href="demos.html">Demos</a></li>
+						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
+					</ul>
+					<br>
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip" class="download-button">
+						Download<br>
+						<span>version 1.4.2</span>
+					</a>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="section-wrapper">
+				<div class="section-title">Code Generator</div>
+				<div class="wrapper-left">
+					<div id="generated-calendar"></div>
+				</div>
+				<div class="wrapper-right" style="width: 400px;">
+					<div id="select-theme"></div>
+					<div class="divider"></div>
+					<div id="select-color"></div>
+					<div class="divider"></div>
+					<div id="select-parameters"></div>
+				</div>
+				<div class="wrapper-clear"></div>
+			</div>
+			<div class="section-wrapper">
+				<div class="section-title" style="margin-top: 40px;">HTML Code for auto create jsCalendar</div>
+				<div id="generated-code-auto-calendar"></div>
+				<div class="section-title" style="margin-top: 40px;">HTML Code for dynamically create jsCalendar</div>
+				<div id="generated-code-dynamic-calendar"></div>
+			</div>
+		</div>
+
+		<div class="section section-footer">
+			<div class="section-wrapper">
+				Created with <span class="heart">&hearts;</span> by Grammatopoulos Athanasios-Vasileios
+				&bull; <a href="https://raw.githubusercontent.com/GramThanos/jsCalendar/master/LICENSE">MIT License</a>
+				&bull; <a href="versions.html">All Versions</a>
+			</div>
+		</div>
+
+		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
+
+
+
 		<script type="text/javascript">
 
 			var codeGenerator = {
@@ -257,7 +262,7 @@
 					parameters : {
 						navigator : {name : 'Navigator', defvalue : 'true', values : ['true', 'false']},
 						navigatorPosition : {name : 'Navigator\'s Position', type : 'enum', defvalue : 'both', values : ['both', 'left', 'right']},
-						zeroFill : {name : 'Zero fill', defvalue : 'true', values : ['true', 'false']},
+						zeroFill : {name : 'Zero fill', defvalue : 'false', values : ['true', 'false']},
 						monthFormat : {name : 'Month format', defvalue : 'month', values : ['month', 'MMM', 'month YYYY', '##/YYYY']},
 						dayFormat : {name : 'Day format', defvalue : 'D', values : ['DDD', 'DD', 'D']},
 						fdotw : {name : 'First day of the week', defvalue : '1', values : ['1', '2']},
@@ -271,8 +276,9 @@
 					parameters : {
 						navigator : 'true',
 						navigatorPosition : 'both',
-						zeroFill : 'true',
+						zeroFill : 'false',
 						monthFormat : 'month',
+						dayFormat : 'D',
 						fdotw : '1',
 						language : 'en'
 					}
@@ -393,7 +399,6 @@
 
 					var theme = this.info.themes[this.active.theme];
 					var color = theme.colors[this.active.color];
-					console.log(theme.classname, color.classname);
 
 					var calendar = document.createElement('div');
 					var classname = '';
@@ -408,29 +413,39 @@
 					this.wrapper.calendar.appendChild(calendar);
 
 					var options = {};
+					var dataset = {};
 					if (this.active.parameters.navigator != this.info.parameters.navigator.defvalue) {
 						options.navigator = this.active.parameters.navigator;
+						dataset['navigator'] = this.active.parameters.navigator;
 					}
 					if (this.active.parameters.navigatorPosition != this.info.parameters.navigatorPosition.defvalue) {
 						options.navigatorPosition = this.active.parameters.navigatorPosition;
+						dataset['navigator-position'] = this.active.parameters.navigatorPosition;
 					}
 					if (this.active.parameters.zeroFill != this.info.parameters.zeroFill.defvalue) {
 						options.zeroFill = this.active.parameters.zeroFill;
+						dataset['zero-fill'] = this.active.parameters.zeroFill;
 					}
 					if (this.active.parameters.monthFormat != this.info.parameters.monthFormat.defvalue) {
 						options.monthFormat = this.active.parameters.monthFormat;
+						dataset['month-format'] = this.active.parameters.monthFormat;
 					}
 					if (this.active.parameters.dayFormat != this.info.parameters.dayFormat.defvalue) {
 						options.dayFormat = this.active.parameters.dayFormat;
+						dataset['day-format'] = this.active.parameters.dayFormat;
 					}
 					if (this.active.parameters.fdotw != this.info.parameters.fdotw.defvalue) {
 						options.fdotw = this.active.parameters.fdotw;
+						dataset['fdotw'] = this.active.parameters.fdotw;
 					}
 					if (this.active.parameters.language != this.info.parameters.language.defvalue) {
 						options.language = this.active.parameters.language;
+						dataset['language'] = this.active.parameters.language;
 					}
 
-					jsCalendar.new(calendar, new Date().getTime(), options);
+					jsCalendar.new(calendar, 'now', options);
+
+					this.displayCode(classname, options, dataset, theme.require);
 				},
 
 				generate : function (changed) {
@@ -456,7 +471,58 @@
 					if (regenerate) {
 						this.createCalendar();
 					}
-				}
+				},
+
+				displayCode : function (classname, jsOptions, htmlOptions, css) {
+
+					var cssAdditionalCode = '';
+					for (var i = 0; i < css.length; i++) {
+						cssAdditionalCode += '	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"' + css[i] + '"</span></span>&gt;</span><br>\n';
+					}
+
+					// Create auto calendar code
+					var autoClassName = 'auto-jsCalendar' + (classname.length > 0 ? ' ' + classname : '');
+					var autoAttributes = '';
+					for (attr in htmlOptions) {
+						if (htmlOptions.hasOwnProperty(attr)) {
+							//autoAttributes += ' <span class="attribute">data-' + attr + '=<span class="string">"' + htmlOptions[attr] + '"</span></span>';
+							autoAttributes += '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-' + attr + '=<span class="string">"' + htmlOptions[attr] + '"</span></span>';
+						}
+					}
+
+					var autoCalendarCode = '' +
+					'<div class="html-code">\n' +
+					'	<span class="comment">&lt;!-- jsCalendar style --&gt;</span><br>\n' +
+					'	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.css"</span></span>&gt;</span><br>\n' +
+					cssAdditionalCode +
+					'	<span class="comment">&lt;!-- jsCalendar script --&gt;</span><br>\n' +
+					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>\n' +
+					'	<span class="comment">&lt;!-- auto jsCalendar element --&gt;</span><br>\n' +
+					'	<span class="tag">&lt;div <span class="attribute">class=<span class="string">"' + autoClassName + '"</span></span>' + autoAttributes + '&gt;&lt;/div&gt;</span><br>\n' +
+					'</div>';
+
+					document.getElementById('generated-code-auto-calendar').innerHTML = autoCalendarCode;
+
+					
+					var dynamicOptions = JSON.stringify(jsOptions, null, '\t').replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;').replace(/\n/g, '<br>\n&nbsp;&nbsp;&nbsp;&nbsp;');
+					var dynamicCalendarCode = '' +
+					'<div class="html-code">\n' +
+					'	<span class="comment">&lt;!-- jsCalendar style --&gt;</span><br>\n' +
+					'	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.css"</span></span>&gt;</span><br>\n' +
+					cssAdditionalCode +
+					'	<span class="comment">&lt;!-- jsCalendar script --&gt;</span><br>\n' +
+					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>\n' +
+					'	<span class="comment">&lt;!-- auto jsCalendar element --&gt;</span><br>\n' +
+					'	<span class="tag">&lt;div <span class="attribute">id=<span class="string">"calendar"</span></span>&gt;&lt;/div&gt;</span><br>\n' +
+					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>\n' +
+					'	&nbsp;&nbsp;&nbsp;&nbsp;jsCalendar.new("#calendar", "now", ' + dynamicOptions + ');</br>'+
+					'	<span class="tag">&lt;/script&gt;</span><br>\n' +
+					'</div>';
+ 
+					document.getElementById('generated-code-dynamic-calendar').innerHTML = dynamicCalendarCode;
+
+					return;
+				},
 			};
 
 			codeGenerator.init();
