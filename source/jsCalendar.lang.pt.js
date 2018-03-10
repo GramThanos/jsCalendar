@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension v1.0
  * Add Portuguese - BRAZIL Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: Alex Anderson (goodeath@github)
  */
 
 // We love anonymous functions
