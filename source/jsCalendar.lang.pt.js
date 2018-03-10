@@ -1,6 +1,6 @@
 /*
  * jsCalendar language extension v1.0
- * Add Spanish Language support
+ * Add Portuguese - BRAZIL Language support
  * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
  */
 
