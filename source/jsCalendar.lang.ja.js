@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension v1.0
  * Add Japanese Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: Lucas Suehara (sueharaluke@github)
  */
 
 // We love anonymous functions
