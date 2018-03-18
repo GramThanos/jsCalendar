@@ -39,7 +39,7 @@ var jsCalendar = (function(){
             // Construct calendar
             this._construct(arguments);
         }
-    }
+    };
 
     // Version
     JsCalendar.version = "v1.4.2";
