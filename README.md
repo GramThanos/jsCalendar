@@ -82,8 +82,9 @@ ___
 ### Whats new?
 
 #### Latest development code v1.4.3
-
- - No changes for now
+ - Languages
+    - Added BRAZIL Language (by [goodeath](https://github.com/goodeath))
+    - Fixed Japanese Language (by [sueharaluke](https://github.com/sueharaluke))
 
 
 ___
