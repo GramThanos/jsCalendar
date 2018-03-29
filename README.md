@@ -85,6 +85,7 @@ ___
  - Languages
     - Added BRAZIL Language (by [goodeath](https://github.com/goodeath))
     - Fixed Japanese Language (by [sueharaluke](https://github.com/sueharaluke))
+    - Added Turkish Language (by [mgvjet](https://github.com/mgvjet))
 
 
 ___
