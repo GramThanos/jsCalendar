@@ -1,6 +1,7 @@
 /*
  * jsCalendar language extension v1.0
  * Add Slovak Language support
+ * Provided by GreatApo
  */
 
 // We love anonymous functions
@@ -30,28 +31,28 @@
         code : "sk",
         // Months of the year
         months : [
-            "Január",
-			"Február",
-			"Marec",
-			"Apríl",
-			"Máj",
-			"Jún",
-			"Júl",
-			"August",
-			"September",
-			"Október",
-			"November",
-			"December"
+                "Január",
+                "Február",
+                "Marec",
+                "Apríl",
+                "Máj",
+                "Jún",
+                "Júl",
+                "August",
+                "September",
+                "Október",
+                "November",
+                "December"
         ],
         // Days of the week
         days : [
-			"Pondelok",
-			"Utorok",
-			"Streda",
-			"Štvrtok",
-			"Piatok",
-			"Sobota",
-			"Nedeľa"
+                "Nedeľa",
+                "Pondelok",
+                "Utorok",
+                "Streda",
+                "Štvrtok",
+                "Piatok",
+                "Sobota"
         ]
     });
 
