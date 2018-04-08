@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension v1.0
- * Add Japanese Language support
- * Translator: Lucas Suehara (sueharaluke@github)
+ * Add Turkish Language support
+ * Translator: Adem Yıldız (mgvjet@github)
  */
 
 // We love anonymous functions
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "ja",
+        code : "tr",
         // Months of the year
         months : [
-            "1月",
-            "2月",
-            "3月",
-            "4月",
-            "5月",
-            "6月",
-            "7月",
-            "8月",
-            "9月",
-            "10月",
-            "11月",
-            "12月"
+            "Ocak",
+            "Şubat",
+            "Mart",
+            "Nisan",
+            "Mayıs",
+            "Haziran",
+            "Temmuz",
+            "Ağustos",
+            "Eylül",
+            "Ekim",
+            "Kasım",
+            "Aralık"
         ],
         // Days of the week
         days : [
-            "日曜日",
-            "月曜日",
-            "火曜日",
-            "水曜日",
-            "木曜日",
-            "金曜日",
-            "土曜日"
+            "Pazar",
+            "Pazartesi",
+            "Salı",
+            "Çarşamba",
+            "Perşembe",
+            "Cuma",
+            "Cumartesi"
         ]
     });
 

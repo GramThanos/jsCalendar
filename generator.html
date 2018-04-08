@@ -24,6 +24,11 @@
 		<script type="text/javascript" src="js/jsCalendar.lang.ru.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.zh.js"></script>
 
+		<script type="text/javascript" src="js/jsCalendar.lang.pt.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.tr.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.sk.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.hu.js"></script>
+
 		<!-- Generator style -->
 		<style type="text/css">
 			.section {
@@ -267,7 +272,7 @@
 						monthFormat : {name : 'Month format', defvalue : 'month', values : ['month', 'MMM', 'month YYYY', '##/YYYY']},
 						dayFormat : {name : 'Day format', defvalue : 'D', values : ['DDD', 'DD', 'D']},
 						fdotw : {name : 'First day of the week', defvalue : '1', values : ['1', '2']},
-						language : {name : 'Language', defvalue : 'en', values : ['en', 'es', 'fr', 'de', 'gr', 'it', 'ja', 'ru', 'zh']}
+						language : {name : 'Language', defvalue : 'en', values : ['en', 'es', 'fr', 'de', 'gr', 'it', 'ja', 'ru', 'zh', 'hu', 'pt', 'sk', 'tr']}
 					}
 				},
 
@@ -481,6 +486,13 @@
 						cssAdditionalCode += '	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"' + css[i] + '"</span></span>&gt;</span><br>\n';
 					}
 
+					var jsAdditionalCode = '';
+					if (jsOptions.hasOwnProperty('language')) {
+						jsAdditionalCode += '' +
+						'	<span class="comment">&lt;!-- jsCalendar language script --&gt;</span><br>\n' +
+						'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.lang.' + jsOptions['language'] + '.js"</span></span>&gt;&lt;/script&gt;</span><br>\n';
+					}
+
 					// Create auto calendar code
 					var autoClassName = 'auto-jsCalendar' + (classname.length > 0 ? ' ' + classname : '');
 					var autoAttributes = '';
@@ -498,6 +510,7 @@
 					cssAdditionalCode +
 					'	<span class="comment">&lt;!-- jsCalendar script --&gt;</span><br>\n' +
 					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>\n' +
+					jsAdditionalCode +
 					'	<span class="comment">&lt;!-- auto jsCalendar element --&gt;</span><br>\n' +
 					'	<span class="tag">&lt;div <span class="attribute">class=<span class="string">"' + autoClassName + '"</span></span>' + autoAttributes + '&gt;&lt;/div&gt;</span><br>\n' +
 					'</div>';
@@ -513,6 +526,7 @@
 					cssAdditionalCode +
 					'	<span class="comment">&lt;!-- jsCalendar script --&gt;</span><br>\n' +
 					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>\n' +
+					jsAdditionalCode +
 					'	<span class="comment">&lt;!-- target jsCalendar element --&gt;</span><br>\n' +
 					'	<span class="tag">&lt;div <span class="attribute">id=<span class="string">"calendar"</span></span>&gt;&lt;/div&gt;</span><br>\n' +
 					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>\n' +
