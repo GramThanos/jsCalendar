@@ -1,6 +1,6 @@
 /*
  * jsCalendar language extension v1.0
- * Add Greek Language support
+ * Add <Language Name> Language support
  * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
  */
 
