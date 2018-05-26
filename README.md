@@ -110,7 +110,7 @@ ___
 ### License
 
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
-We do although appreciate attribute.
+I do although appreciate attribute.
 
 Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
 
