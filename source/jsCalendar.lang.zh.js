@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension v1.0
  * Add Chinese Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: Lucas Suehara (BlackEgg@github)
  */
 
 // We love anonymous functions
@@ -52,8 +52,18 @@
             "星期三",
             "星期四",
             "星期五",
-            "星期六"
-        ]
+            "星期日"
+        ],
+
+        // Overwrite day string format rules
+        dayStringParser : function(key, day) {
+            switch(key) {
+                case "DD":
+                case "dd":
+                case "D":
+                    return this.days[day].substring(2, 3);
+            }
+        }
     });
 
 })();
