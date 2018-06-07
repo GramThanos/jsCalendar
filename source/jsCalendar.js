@@ -520,6 +520,7 @@ var jsCalendar = (function(){
 
     // Create calendar
     JsCalendar.prototype._create = function() {
+        var i, j;
         // Save instance
         var that = this;
 
@@ -528,7 +529,7 @@ var jsCalendar = (function(){
 
         // Head rows
         this._elements.headRows = [];
-        for (var i = 0; i < 2; i++) {
+        for (i = 0; i < 2; i++) {
             this._elements.headRows.push(document.createElement('tr'));
             this._elements.head.appendChild(this._elements.headRows[i]);
         }
@@ -606,7 +607,7 @@ var jsCalendar = (function(){
             this._elements.bodyRows.push(document.createElement('tr'));
             this._elements.body.appendChild(this._elements.bodyRows[i]);
             // 7 days
-            for (var j = 0; j < 7; j++) {
+            for (j = 0; j < 7; j++) {
                 this._elements.bodyCols.push(document.createElement('td'));
                 this._elements.bodyRows[i].appendChild(this._elements.bodyCols[i * 7 + j]);
                 this._elements.bodyCols[i * 7 + j].addEventListener('click', (function(index){
