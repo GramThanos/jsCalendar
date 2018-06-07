@@ -270,6 +270,12 @@ var jsCalendar = (function(){
         else {
             // Save element
             this._target = target;
+
+            // Link object to list
+            this._target_id = this._target.id;
+            if (this._target_id && this._target_id.length > 0) {
+                jsCalendarObjects['#' + this._target_id] = this;
+            }
         }
     };
 
@@ -1194,6 +1200,15 @@ var jsCalendar = (function(){
         obj._construct(arguments);
         // Return new object
         return obj;
+    };
+    
+    // Manage existing jsCalendar objects
+    var jsCalendarObjects = {};
+    JsCalendar.get = function(identifier){
+        if (jsCalendarObjects.hasOwnProperty(identifier)) {
+            return jsCalendarObjects[identifier];
+        }
+        return null;
     };
     
     // Add a new language
