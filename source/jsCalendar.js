@@ -39,10 +39,10 @@ var jsCalendar = (function(){
             // Construct calendar
             this._construct(arguments);
         }
-    };
+    }
 
     // Version
-    JsCalendar.version = "v1.4.2";
+    JsCalendar.version = 'v1.4.2';
 
     // Sub-Constructor
     JsCalendar.prototype._construct = function(args) {
@@ -66,9 +66,9 @@ var jsCalendar = (function(){
         // Default English language
         en : {
             // Months Names
-            months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            months : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             // Days Names
-            days : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            days : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         }
     };
 
@@ -102,7 +102,7 @@ var jsCalendar = (function(){
         // If no arguments
         if (args.length === 0) {
             // Throw an error
-            throw new Error("jsCalendar: No parameters were given.");
+            throw new Error('jsCalendar: No parameters were given.');
         }
 
         // Only 1 argument
@@ -112,12 +112,12 @@ var jsCalendar = (function(){
             if (
                 (
                     // If html element
-                    ((typeof HTMLElement === "object") ? (args[0] instanceof HTMLElement) : args[0]) &&
-                    (typeof args[0] === "object") && (args[0] !== null) && (args[0].nodeType === 1) &&
-                    (typeof args[0].nodeName === "string")
+                    ((typeof HTMLElement === 'object') ? (args[0] instanceof HTMLElement) : args[0]) &&
+                    (typeof args[0] === 'object') && (args[0] !== null) && (args[0].nodeType === 1) &&
+                    (typeof args[0].nodeName === 'string')
                 ) || (
                     // Or string
-                    typeof args[0] === "string"
+                    typeof args[0] === 'string'
                 )
             ) {
                 obj.target = args[0];
@@ -128,15 +128,15 @@ var jsCalendar = (function(){
                 // Init arguments
                 obj.options = args[0];
                 // Get target
-                if (typeof args[0].target !== "undefined") {
+                if (typeof args[0].target !== 'undefined') {
                     obj.target = args[0].target;
                 }
                 else {
                     // Throw an error
-                    throw new Error("jsCalendar: Not target was given.");
+                    throw new Error('jsCalendar: Not target was given.');
                 }
                 // Get date
-                if (typeof args[0].date !== "undefined") {
+                if (typeof args[0].date !== 'undefined') {
                     obj.date = args[0].date;
                 }
             }
@@ -168,64 +168,64 @@ var jsCalendar = (function(){
     JsCalendar.prototype._parseOptions = function(options) {
         // Default options
         this._options = {
-            language : "en",
+            language : 'en',
             zeroFill : false,
-            monthFormat : "month",
-            dayFormat : "D",
+            monthFormat : 'month',
+            dayFormat : 'D',
             firstDayOfTheWeek : 1,
             navigator : true,
-            navigatorPosition : "both",
+            navigatorPosition : 'both',
             min : false,
             max : false
         };
         // Check options
-        if (typeof options.zeroFill !== "undefined"){
-            if (options.zeroFill === "false" || !options.zeroFill) {
+        if (typeof options.zeroFill !== 'undefined'){
+            if (options.zeroFill === 'false' || !options.zeroFill) {
                 this._options.zeroFill = false;
             }
             else {
                 this._options.zeroFill = true;
             }
         }
-        if (typeof options.monthFormat !== "undefined"){
+        if (typeof options.monthFormat !== 'undefined'){
             this._options.monthFormat = options.monthFormat;
         }
-        if (typeof options.dayFormat !== "undefined"){
+        if (typeof options.dayFormat !== 'undefined'){
             this._options.dayFormat = options.dayFormat;
         }
-        if (typeof options.navigator !== "undefined"){
-            if (options.navigator === "false" || !options.navigator) {
+        if (typeof options.navigator !== 'undefined'){
+            if (options.navigator === 'false' || !options.navigator) {
                 this._options.navigator = false;
             }
             else {
                 this._options.navigator = true;
             }
         }
-        if (typeof options.navigatorPosition !== "undefined"){
+        if (typeof options.navigatorPosition !== 'undefined'){
             this._options.navigatorPosition = options.navigatorPosition;
         }
 
         // Language
-        if (typeof options.language === "string" && typeof this.languages[options.language] !== "undefined"){
+        if (typeof options.language === 'string' && typeof this.languages[options.language] !== 'undefined'){
             this._options.language = options.language;
         }
         // Set language
         this.setLanguage(this._options.language);
 
         // Set first day of the week
-        if (typeof options.fdotw !== "undefined"){
+        if (typeof options.fdotw !== 'undefined'){
             options.firstDayOfTheWeek = options.fdotw;
         }
-        if (typeof options.firstDayOfTheWeek !== "undefined"){
+        if (typeof options.firstDayOfTheWeek !== 'undefined'){
             // If day number
-            if (typeof options.firstDayOfTheWeek === "number") {
+            if (typeof options.firstDayOfTheWeek === 'number') {
                 // Range check (no need to check for bigger than 7 but I don't trust anyone)
                 if (options.firstDayOfTheWeek >= 1 && options.firstDayOfTheWeek <= 7) {
                     this._options.firstDayOfTheWeek = options.firstDayOfTheWeek;
                 }
             }
             // If string
-            if (typeof options.firstDayOfTheWeek === "string") {
+            if (typeof options.firstDayOfTheWeek === 'string') {
                 // If day number
                 if (options.firstDayOfTheWeek.match(/^[1-7]$/)) {
                     this._options.firstDayOfTheWeek = parseInt(options.firstDayOfTheWeek, 10);
@@ -244,12 +244,12 @@ var jsCalendar = (function(){
         }
 
         // Set min calendar date
-        if (typeof options.min !== "undefined" && options.min !== "false" && options.min !== false) {
+        if (typeof options.min !== 'undefined' && options.min !== 'false' && options.min !== false) {
             // Parse date
             this._options.min = this._parseDate(options.min);
         }
         // Set max calendar date
-        if (typeof options.max !== "undefined" && options.max !== "false" && options.max !== false) {
+        if (typeof options.max !== 'undefined' && options.max !== 'false' && options.max !== false) {
             // Parse date
             this._options.max = this._parseDate(options.max);
         }
@@ -262,7 +262,7 @@ var jsCalendar = (function(){
         // If target not found
         if (!target) {
             // Throw an error
-            throw new Error("jsCalendar: Target was not found.");
+            throw new Error('jsCalendar: Target was not found.');
         }
         else {
             // Save element
@@ -278,13 +278,13 @@ var jsCalendar = (function(){
         }
 
         // If string
-        if (typeof element === "string") {
+        if (typeof element === 'string') {
             // Get element by id
-            if (element[0] === "#") {
+            if (element[0] === '#') {
                 return document.getElementById(element.substring(1));
             }
             // Get element by class-name
-            else if (element[0] === ".") {
+            else if (element[0] === '.') {
                 return document.getElementsByClassName(element.substring(1))[0];
             }
         }
@@ -302,17 +302,17 @@ var jsCalendar = (function(){
     JsCalendar.prototype._initTarget = function() {
         // Add class
         if (this._target.className.length > 0){
-            this._target.className += " ";
+            this._target.className += ' ';
         }
-        this._target.className += "jsCalendar";
+        this._target.className += 'jsCalendar';
 
         // Create table
-        this._elements.table = document.createElement("table");
+        this._elements.table = document.createElement('table');
         // Create table header
-        this._elements.head = document.createElement("thead");
+        this._elements.head = document.createElement('thead');
         this._elements.table.appendChild(this._elements.head);
         // Create table body
-        this._elements.body = document.createElement("tbody");
+        this._elements.body = document.createElement('tbody');
         this._elements.table.appendChild(this._elements.body);
 
         // Insert on page
@@ -357,15 +357,15 @@ var jsCalendar = (function(){
     JsCalendar.prototype._parseDate = function(date) {
 
         // If set now date
-        if (typeof date === "undefined" || date === null || date === "now") {
+        if (typeof date === 'undefined' || date === null || date === 'now') {
             // Get date now
             date = new Date();
         }
 
         // If date is string
-        else if (typeof date === "string") {
+        else if (typeof date === 'string') {
             // Parse date string
-            date = date.replace(/-/g,"\/").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4,4})$/i);
+            date = date.replace(/-/g,'/').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4,4})$/i);
             // If match
             if (date !== null) {
                 var month_index = parseInt(date[2], 10) - 1;
@@ -374,18 +374,18 @@ var jsCalendar = (function(){
                 // Check if date does not exist
                 if (!date || date.getMonth() !== month_index) {
                     // Throw an error
-                    throw new Error("jsCalendar: Date does not exist.");
+                    throw new Error('jsCalendar: Date does not exist.');
                 }
             }
             // Can't parse string
             else {
                 // Throw an error
-                throw new Error("jsCalendar: Failed to parse date.");
+                throw new Error('jsCalendar: Failed to parse date.');
             }
         }
 
         // If it is a number
-        else if (typeof date === "number") {
+        else if (typeof date === 'number') {
             // Get time from timestamp
             date = new Date(date);
         }
@@ -393,7 +393,7 @@ var jsCalendar = (function(){
         // If it not a date 
         else if (!(date instanceof Date)) {
             // Throw an error
-            throw new Error("jsCalendar: Invalid date.");
+            throw new Error('jsCalendar: Invalid date.');
         }
 
         // Return date
@@ -405,36 +405,36 @@ var jsCalendar = (function(){
         var lang = this.language;
         return format.replace(/(MONTH|month|MMM|mmm|mm|m|MM|M|DAY|day|DDD|ddd|dd|d|DD|D|YYYY|yyyy)/g, function(key){
             switch(key) {
-                case "MONTH":
-                case "month":
+                case 'MONTH':
+                case 'month':
                     return lang.months[date.getMonth()];
-                case "MMM":
-                case "mmm":
+                case 'MMM':
+                case 'mmm':
                     return lang.months[date.getMonth()].substring(0, 3);
-                case "mm":
+                case 'mm':
                     return lang.months[date.getMonth()].substring(0, 2);
-                case "m":
+                case 'm':
                     return lang.months[date.getMonth()].substring(0, 1);
-                case "MM":
-                    return (date.getMonth() < 9 ? "0" : "") + (date.getMonth() + 1);
-                case "M":
+                case 'MM':
+                    return (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1);
+                case 'M':
                     return date.getMonth() + 1;
-                case "DAY":
-                case "day":
+                case 'DAY':
+                case 'day':
                     return lang.days[date.getDay()];
-                case "DDD":
-                case "ddd":
+                case 'DDD':
+                case 'ddd':
                     return lang.days[date.getDay()].substring(0, 3);
-                case "dd":
+                case 'dd':
                     return lang.days[date.getDay()].substring(0, 2);
-                case "d":
+                case 'd':
                     return lang.days[date.getDay()].substring(0, 1);
-                case "DD":
-                    return (date.getDate() <= 9 ? "0" : "") + date.getDate();
-                case "D":
+                case 'DD':
+                    return (date.getDate() <= 9 ? '0' : '') + date.getDate();
+                case 'D':
                     return date.getDate();
-                case "YYYY":
-                case "yyyy":
+                case 'YYYY':
+                case 'yyyy':
                     return date.getYear() + 1900;
             }
         });
@@ -443,7 +443,7 @@ var jsCalendar = (function(){
     // Get visible month
     JsCalendar.prototype._getVisibleMonth = function(date) {
         // For date
-        if (typeof date === "undefined") {
+        if (typeof date === 'undefined') {
             // Get saved date
             date = this._date;
         }
@@ -465,18 +465,18 @@ var jsCalendar = (function(){
         var lang = this.language;
         var name = this._options.monthFormat.replace(/(MONTH|month|MMM|mmm|##|#|YYYY|yyyy)/g, function(key){
             switch(key) {
-                case "MONTH":
-                case "month":
+                case 'MONTH':
+                case 'month':
                     return lang.months[first.getMonth()];
-                case "MMM":
-                case "mmm":
+                case 'MMM':
+                case 'mmm':
                     return lang.months[first.getMonth()].substring(0, 3);
-                case "##":
-                    return (first.getMonth() < 9 ? "0" : "") + (first.getMonth() + 1);
-                case "#":
+                case '##':
+                    return (first.getMonth() < 9 ? '0' : '') + (first.getMonth() + 1);
+                case '#':
                     return first.getMonth() + 1;
-                case "YYYY":
-                case "yyyy":
+                case 'YYYY':
+                case 'yyyy':
                     return first.getYear() + 1900;
             }
         });
@@ -505,7 +505,7 @@ var jsCalendar = (function(){
     // Get visible dates
     JsCalendar.prototype._getVisibleDates = function(date) {
         // For date
-        if (typeof date === "undefined") {
+        if (typeof date === 'undefined') {
             // Get saved date
             date = this._date;
         }
@@ -575,38 +575,38 @@ var jsCalendar = (function(){
         // Head rows
         this._elements.headRows = [];
         for (var i = 0; i < 2; i++) {
-            this._elements.headRows.push(document.createElement("tr"));
+            this._elements.headRows.push(document.createElement('tr'));
             this._elements.head.appendChild(this._elements.headRows[i]);
         }
 
         // Month row
-        var title_header = document.createElement("th");
-        title_header.setAttribute("colspan", 7);
-        this._elements.headRows[0].className = "jsCalendar-title-row";
+        var title_header = document.createElement('th');
+        title_header.setAttribute('colspan', 7);
+        this._elements.headRows[0].className = 'jsCalendar-title-row';
         this._elements.headRows[0].appendChild(title_header);
 
-        this._elements.headLeft = document.createElement("div");
-        this._elements.headLeft.className = "jsCalendar-title-left";
+        this._elements.headLeft = document.createElement('div');
+        this._elements.headLeft.className = 'jsCalendar-title-left';
         title_header.appendChild(this._elements.headLeft);
-        this._elements.month = document.createElement("div");
-        this._elements.month.className = "jsCalendar-title-name";
+        this._elements.month = document.createElement('div');
+        this._elements.month.className = 'jsCalendar-title-name';
         title_header.appendChild(this._elements.month);
-        this._elements.headRight = document.createElement("div");
-        this._elements.headRight.className = "jsCalendar-title-right";
+        this._elements.headRight = document.createElement('div');
+        this._elements.headRight.className = 'jsCalendar-title-right';
         title_header.appendChild(this._elements.headRight);
 
         // Navigation
         if (this._options.navigator) {
-            this._elements.navLeft = document.createElement("div");
-            this._elements.navLeft.className = "jsCalendar-nav-left";
-            this._elements.navRight = document.createElement("div");
-            this._elements.navRight.className = "jsCalendar-nav-right";
+            this._elements.navLeft = document.createElement('div');
+            this._elements.navLeft.className = 'jsCalendar-nav-left';
+            this._elements.navRight = document.createElement('div');
+            this._elements.navRight.className = 'jsCalendar-nav-right';
 
-            if (this._options.navigatorPosition === "left") {
+            if (this._options.navigatorPosition === 'left') {
                 this._elements.headLeft.appendChild(this._elements.navLeft);
                 this._elements.headLeft.appendChild(this._elements.navRight);
             }
-            else if (this._options.navigatorPosition === "right") {
+            else if (this._options.navigatorPosition === 'right') {
                 this._elements.headRight.appendChild(this._elements.navLeft);
                 this._elements.headRight.appendChild(this._elements.navRight);
             }
@@ -627,12 +627,12 @@ var jsCalendar = (function(){
         }
 
         // Days row
-        this._elements.headRows[1].className = "jsCalendar-week-days";
-        title_header.className = "jsCalendar-title";
+        this._elements.headRows[1].className = 'jsCalendar-week-days';
+        title_header.className = 'jsCalendar-title';
         this._elements.days = [];
         var name, nameOfDay;
         for (i = 0; i < 7; i++) {
-            this._elements.days.push(document.createElement("th"));
+            this._elements.days.push(document.createElement('th'));
             this._elements.headRows[1].appendChild(this._elements.days[
                 this._elements.days.length - 1
             ]);
@@ -640,16 +640,16 @@ var jsCalendar = (function(){
             nameOfDay = this.language.days[(i + this._options.firstDayOfTheWeek - 1) % 7];
             name = this._options.dayFormat.replace(/(DAY|day|DDD|ddd|DD|dd|D)/g, function(key){
                 switch(key) {
-                    case "DAY":
-                    case "day":
+                    case 'DAY':
+                    case 'day':
                         return nameOfDay;
-                    case "DDD":
-                    case "ddd":
+                    case 'DDD':
+                    case 'ddd':
                         return nameOfDay.substring(0, 3);
-                    case "DD":
-                    case "dd":
+                    case 'DD':
+                    case 'dd':
                         return nameOfDay.substring(0, 2);
-                    case "D":
+                    case 'D':
                         return nameOfDay.substring(0, 1);
                 }
             });
@@ -661,11 +661,11 @@ var jsCalendar = (function(){
         this._elements.bodyCols = [];
         // 6 rows
         for (i = 0; i < 6; i++) {
-            this._elements.bodyRows.push(document.createElement("tr"));
+            this._elements.bodyRows.push(document.createElement('tr'));
             this._elements.body.appendChild(this._elements.bodyRows[i]);
             // 7 days
             for (var j = 0; j < 7; j++) {
-                this._elements.bodyCols.push(document.createElement("td"));
+                this._elements.bodyCols.push(document.createElement('td'));
                 this._elements.bodyRows[i].appendChild(this._elements.bodyCols[i * 7 + j]);
                 this._elements.bodyCols[i * 7 + j].addEventListener('click', (function(index){
                     return function (event) {
@@ -738,9 +738,9 @@ var jsCalendar = (function(){
         this._elements.month.textContent = month.name;
 
         // Check zeros filling
-        var prefix = "";
+        var prefix = '';
         if (this._options.zeroFill) {
-            prefix = "0";
+            prefix = '0';
         }
 
         // Populate days
@@ -751,29 +751,29 @@ var jsCalendar = (function(){
 
             // If date is selected
             if (this._selected.indexOf(month.days[i].getTime()) >= 0) {
-                this._elements.bodyCols[i].className = "jsCalendar-selected";
+                this._elements.bodyCols[i].className = 'jsCalendar-selected';
             }
             else {
-                this._elements.bodyCols[i].removeAttribute("class");
+                this._elements.bodyCols[i].removeAttribute('class');
             }
         }
 
         // Previous month
         for (i = 0; i < month.start - 1; i++) {
-            this._elements.bodyCols[i].className = "jsCalendar-previous";
+            this._elements.bodyCols[i].className = 'jsCalendar-previous';
         }
         // Current day
         if(month.current >= 0){
             if (this._elements.bodyCols[month.current].className.length > 0) {
-                this._elements.bodyCols[month.current].className += " jsCalendar-current";
+                this._elements.bodyCols[month.current].className += ' jsCalendar-current';
             }
             else {
-                this._elements.bodyCols[month.current].className = "jsCalendar-current";
+                this._elements.bodyCols[month.current].className = 'jsCalendar-current';
             }
         }
         // Next month
         for (i = month.end; i < month.days.length; i++) {
-            this._elements.bodyCols[i].className = "jsCalendar-next";
+            this._elements.bodyCols[i].className = 'jsCalendar-next';
         }
     };
 
@@ -811,7 +811,7 @@ var jsCalendar = (function(){
     // Add a event listener
     JsCalendar.prototype.onDateClick = function(callback) {
         // If callback is a function
-        if(typeof callback === "function"){
+        if(typeof callback === 'function'){
             // Add to the list
             this._events.date.push(callback);
         }
@@ -819,7 +819,7 @@ var jsCalendar = (function(){
         // Not a function
         else {
             // Throw an error
-            throw new Error("jsCalendar: Invalid callback function.");
+            throw new Error('jsCalendar: Invalid callback function.');
         }
 
         // Return
@@ -829,7 +829,7 @@ var jsCalendar = (function(){
     // Add a event listener
     JsCalendar.prototype.onMonthChange = function(callback) {
         // If callback is a function
-        if(typeof callback === "function"){
+        if(typeof callback === 'function'){
             // Add to the list
             this._events.month.push(callback);
         }
@@ -837,7 +837,7 @@ var jsCalendar = (function(){
         // Not a function
         else {
             // Throw an error
-            throw new Error("jsCalendar: Invalid callback function.");
+            throw new Error('jsCalendar: Invalid callback function.');
         }
 
         // Return
@@ -897,7 +897,7 @@ var jsCalendar = (function(){
     // Safe _update
     JsCalendar.prototype.refresh = function(date) {
         // If date provided
-        if (typeof date !== "undefined") {
+        if (typeof date !== 'undefined') {
             // If date is in range
             if (this._isDateInRange(date)) {
                 this._date = this._parseDate(date);
@@ -916,7 +916,7 @@ var jsCalendar = (function(){
     // Next month
     JsCalendar.prototype.next = function(n){
         // Next number
-        if (typeof n !== "number") {
+        if (typeof n !== 'number') {
             n = 1;
         }
 
@@ -939,7 +939,7 @@ var jsCalendar = (function(){
     // Next month
     JsCalendar.prototype.previous = function(n){
         // Next number
-        if (typeof n !== "number") {
+        if (typeof n !== 'number') {
             n = 1;
         }
 
@@ -978,7 +978,7 @@ var jsCalendar = (function(){
     // Select dates
     JsCalendar.prototype.select = function(dates){
         // If no arguments
-        if (typeof dates === "undefined") {
+        if (typeof dates === 'undefined') {
             // Return
             return this;
         }
@@ -1000,7 +1000,7 @@ var jsCalendar = (function(){
     // Unselect dates
     JsCalendar.prototype.unselect = function(dates){
         // If no arguments
-        if (typeof dates === "undefined") {
+        if (typeof dates === 'undefined') {
             // Return
             return this;
         }
@@ -1035,7 +1035,7 @@ var jsCalendar = (function(){
     // Get selected dates
     JsCalendar.prototype.getSelected = function(options){
         // Check if no options
-        if (typeof options !== "object") {
+        if (typeof options !== 'object') {
             options = {};
         }
 
@@ -1047,11 +1047,11 @@ var jsCalendar = (function(){
             if (options.sort === true) {
                 dates.sort();
             }
-            else if (typeof options.sort === "string") {
-                if (options.sort.toLowerCase() === "asc") {
+            else if (typeof options.sort === 'string') {
+                if (options.sort.toLowerCase() === 'asc') {
                     dates.sort();
                 }
-                else if (options.sort.toLowerCase() === "desc"){
+                else if (options.sort.toLowerCase() === 'desc'){
                     dates.sort();
                     dates.reverse();
                 }
@@ -1059,16 +1059,16 @@ var jsCalendar = (function(){
         }
 
         // Options - Data type
-        if (options.type && typeof options.type === "string") {
+        if (options.type && typeof options.type === 'string') {
             var i;
             // Convert to date object
-            if (options.type.toLowerCase() === "date"){
+            if (options.type.toLowerCase() === 'date'){
                 for (i = dates.length - 1; i >= 0; i--) {
                     dates[i] = new Date(dates[i]);
                 }
             }
             // If not a timestamp - convert to custom format
-            else if (options.type.toLowerCase() !== "timestamp") {
+            else if (options.type.toLowerCase() !== 'timestamp') {
                 for (i = dates.length - 1; i >= 0; i--) {
                     dates[i] = this._parseToDateString(new Date(dates[i]), options.type);
                 }
@@ -1082,7 +1082,7 @@ var jsCalendar = (function(){
     // Check if date is selected
     JsCalendar.prototype.isSelected = function(date){
         // If no arguments or null
-        if (typeof date === "undefined" || date === null) {
+        if (typeof date === 'undefined' || date === null) {
             // Return
             return false;
         }
@@ -1105,7 +1105,7 @@ var jsCalendar = (function(){
     // Check if date is visible in calendar
     JsCalendar.prototype.isVisible = function(date){
         // If no arguments or null
-        if (typeof date === "undefined" || date === null) {
+        if (typeof date === 'undefined' || date === null) {
             // Return
             return false;
         }
@@ -1130,7 +1130,7 @@ var jsCalendar = (function(){
     // Check if date is in active month
     JsCalendar.prototype.isInMonth = function(date){
         // If no arguments or null
-        if (typeof date === "undefined" || date === null) {
+        if (typeof date === 'undefined' || date === null) {
             // Return
             return false;
         }
@@ -1158,13 +1158,13 @@ var jsCalendar = (function(){
     // Set language
     JsCalendar.prototype.setLanguage = function(code) {
         // Check if language exist
-        if (typeof code !== "string"){
+        if (typeof code !== 'string'){
             // Throw an error
-            throw new Error("jsCalendar: Invalid language code.");
+            throw new Error('jsCalendar: Invalid language code.');
         }
-        if (typeof this.languages[code] === "undefined"){
+        if (typeof this.languages[code] === 'undefined'){
             // Throw an error
-            throw new Error("jsCalendar: Language not found.");
+            throw new Error('jsCalendar: Language not found.');
         }
 
         // Change language
@@ -1187,15 +1187,15 @@ var jsCalendar = (function(){
     // Auto init calendars
     JsCalendar.autoFind = function(){
         // Get all auto-calendars
-        var calendars = document.getElementsByClassName("auto-jsCalendar");
+        var calendars = document.getElementsByClassName('auto-jsCalendar');
         // Temp options variable
         var options;
         // For each auto-calendar
         for (var i = 0; i < calendars.length; i++) {
             // If not loaded
-            if(calendars[i].getAttribute("jsCalendar-loaded") !== "true") {
+            if(calendars[i].getAttribute('jsCalendar-loaded') !== 'true') {
                 // Set as loaded
-                calendars[i].setAttribute("jsCalendar-loaded", "true");
+                calendars[i].setAttribute('jsCalendar-loaded', 'true');
                 // Init options
                 options = {};
                 // Add options
@@ -1222,7 +1222,7 @@ var jsCalendar = (function(){
         // Find lang
         var languages = JsCalendar.prototype.languages;
         if (!lang || !languages.hasOwnProperty(lang)) {
-            lang = "en";
+            lang = 'en';
         }
         // Call parser
         return JsCalendar.prototype._parseToDateString.apply(
@@ -1244,32 +1244,32 @@ var jsCalendar = (function(){
     // Add a new language
     JsCalendar.addLanguage = function(language){
         // Check if language object is valid
-        if (typeof language === "undefined") {
+        if (typeof language === 'undefined') {
             // Throw an error
-            throw new Error("jsCalendar: No language object was given.");
+            throw new Error('jsCalendar: No language object was given.');
         }
         // Check if valid language code
-        if (typeof language.code !== "string") {
+        if (typeof language.code !== 'string') {
             // Throw an error
-            throw new Error("jsCalendar: Invalid language code.");
+            throw new Error('jsCalendar: Invalid language code.');
         }
         // Check language months
         if (!(language.months instanceof Array)) {
             // Throw an error
-            throw new Error("jsCalendar: Invalid language months.");
+            throw new Error('jsCalendar: Invalid language months.');
         }
         if (language.months.length !== 12) {
             // Throw an error
-            throw new Error("jsCalendar: Invalid language months length.");
+            throw new Error('jsCalendar: Invalid language months length.');
         }
         // Check language days
         if (!(language.days instanceof Array)) {
             // Throw an error
-            throw new Error("jsCalendar: Invalid language days.");
+            throw new Error('jsCalendar: Invalid language days.');
         }
         if (language.days.length !== 7) {
             // Throw an error
-            throw new Error("jsCalendar: Invalid language days length.");
+            throw new Error('jsCalendar: Invalid language days length.');
         }
 
         // Now save language
@@ -1284,7 +1284,7 @@ var jsCalendar = (function(){
     // Load any language on the load list
     (function(){
         // If a list exist
-        if (typeof window.jsCalendar_language2load !== "undefined") {
+        if (typeof window.jsCalendar_language2load !== 'undefined') {
             // While list not empty
             while (window.jsCalendar_language2load.length) {
                 // Make it asynchronous
@@ -1308,7 +1308,7 @@ var jsCalendar = (function(){
 (function(){
     // Init auto calendars
     // After the page loads
-    window.addEventListener("load", function() {
+    window.addEventListener('load', function() {
         // Get calendars
         jsCalendar.autoFind();
     }, false);
