@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+
+		<!-- jsCalendar -->
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!-- My calendar element -->
+		<div class="auto-jsCalendar" id="awesome-calendar"></div>
+		<!-- Get the calendar object through javascript -->
+		<script type="text/javascript">
+			// You have to wait the load event
+			window.addEventListener('load', function() {
+				// Get the calendar
+				var calendar = jsCalendar.get('#awesome-calendar');
+
+				// Add Support for Custom Event Listeners
+				jsCalendar.prototype.addDateEventListener = function (event, handler, useCapture) {
+					if (typeof useCapture === 'undefined') useCapture = false;
+					// Save instance
+					var that = this;
+					// Loop through day elements
+					var i, j;
+					for (i = 0; i < 6; i++) {
+						for (j = 0; j < 7; j++) {
+							// Attach event
+							this._elements.bodyCols[i * 7 + j].addEventListener(event, (function(index){
+								return function (event) {
+									// On fire, call handler
+									handler(event, that._active[index]);
+								};
+							})(i * 7 + j), useCapture);
+						}
+					}
+				};
+
+				// Create a tooltip div
+				var tooltip = document.createElement('div');
+				tooltip.style.width = '100px';
+				tooltip.style.marginLeft = '10px';
+				tooltip.style.height = '30px';
+				tooltip.style.marginTop = '-40px';
+				tooltip.style.lineHeight = '30px';
+				tooltip.style.display = 'none';
+				tooltip.style.position = 'absolute';
+				tooltip.style.top = '0';
+				tooltip.style.bottom = '0';
+				tooltip.style.textAlign = 'center';
+				tooltip.style.background = 'rgba(0, 0, 0, 0.75)';
+				tooltip.style.color = '#ffffff';
+				tooltip.style.border = '1px solid #000';
+				tooltip.style.borderRadius = '5px';
+				tooltip.innerHTML = '123';
+				document.body.appendChild(tooltip);
+
+				// Attach events to show/hide tooltip
+				calendar.addDateEventListener('mousemove', function(event, date) {
+					tooltip.style.top = Math.round(event.pageY) + 'px';
+					tooltip.style.left = Math.round(event.pageX) + 'px';
+					tooltip.innerHTML = jsCalendar.tools.dateToString(date, 'DD-MM-yyyy');;
+					tooltip.style.display = 'block';
+				}, false);
+				calendar.addDateEventListener('mouseout', function() {
+					tooltip.style.display = 'none';
+				}, false);
+			}, false);
+			// The jsCalendar creates the auto-jsCalendar onload,
+			// so you have to wait for the event and this code must
+			// be under the jsCalendar.js script tag
+		</script>
+	</body>
+</html>

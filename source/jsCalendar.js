@@ -68,7 +68,10 @@ var jsCalendar = (function(){
             // Months Names
             months : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             // Days Names
-            days : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            days : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            // Default handlers
+            _dateStringParser : function(key, date) {return JsCalendar._defaultDateStringParser(key, date, this);},
+            _dayStringParser : function(key, date) {return JsCalendar._defaultDayStringParser(key, date, this);}
         }
     };
 
@@ -1117,85 +1120,14 @@ var jsCalendar = (function(){
         var language = this.languages[code];
         this.language.months = language.months;
         this.language.days = language.days;
-
-        // Set language string format handlers
-        var that = this;
-        this.language.dateStringParser = (
-            language.hasOwnProperty('dateStringParser') ?
-            function(key, date) {return language.dateStringParser(key, date) || that._defaultDateStringParser(key, date);} :
-            function(key, date) {return that._defaultDateStringParser(key, date);}
-        );
-        this.language.dayStringParser = (
-            language.hasOwnProperty('dayStringParser') ?
-            function(key, day) {return language.dayStringParser(key, day) || that._defaultDayStringParser(key, day);} :
-            function(key, day) {return that._defaultDayStringParser(key, day);}
-        );
+        this.language.dateStringParser = language._dateStringParser;
+        this.language.dayStringParser = language._dayStringParser;
 
         // Refresh calendar
         this.refresh();
 
         // Return
         return this;
-    };
-
-    // Default function to handle date-string parsing
-    JsCalendar.prototype._defaultDateStringParser = function(key, date){
-        var lang = this.language;
-        switch(key) {
-            case 'MONTH':
-            case 'month':
-                return lang.months[date.getMonth()];
-            case 'MMM':
-            case 'mmm':
-                return lang.months[date.getMonth()].substring(0, 3);
-            case 'mm':
-                return lang.months[date.getMonth()].substring(0, 2);
-            case 'm':
-                return lang.months[date.getMonth()].substring(0, 1);
-            case 'MM':
-                return (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1);
-            case 'M':
-                return date.getMonth() + 1;
-            case '##':
-                return (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1);
-            case '#':
-                return date.getMonth() + 1;
-            case 'DAY':
-            case 'day':
-                return lang.days[date.getDay()];
-            case 'DDD':
-            case 'ddd':
-                return lang.days[date.getDay()].substring(0, 3);
-            case 'dd':
-                return lang.days[date.getDay()].substring(0, 2);
-            case 'd':
-                return lang.days[date.getDay()].substring(0, 1);
-            case 'DD':
-                return (date.getDate() <= 9 ? '0' : '') + date.getDate();
-            case 'D':
-                return date.getDate();
-            case 'YYYY':
-            case 'yyyy':
-                return date.getYear() + 1900;
-        }
-    };
-
-    // Default function to handle date-string parsing
-    JsCalendar.prototype._defaultDayStringParser = function(key, day){
-        var lang = this.language;
-        switch(key) {
-            case 'DAY':
-            case 'day':
-                return lang.days[day];
-            case 'DDD':
-            case 'ddd':
-                return lang.days[day].substring(0, 3);
-            case 'DD':
-            case 'dd':
-                return lang.days[day].substring(0, 2);
-            case 'D':
-                return lang.days[day].substring(0, 1);
-        }
     };
 
 
@@ -1241,9 +1173,15 @@ var jsCalendar = (function(){
         if (!lang || !languages.hasOwnProperty(lang)) {
             lang = 'en';
         }
+
         // Call parser
         return JsCalendar.prototype._parseToDateString.apply(
-            {language : languages[lang]},
+            {language : {
+                months : languages[lang].months,
+                days : languages[lang].days,
+                dateStringParser : languages[lang]._dateStringParser,
+                dayStringParser : languages[lang]._dayStringParser
+            }},
             [date, format]
         );
     };
@@ -1291,6 +1229,76 @@ var jsCalendar = (function(){
 
         // Now save language
         JsCalendar.prototype.languages[language.code] = language;
+
+        // Generate language string format handlers
+        language._dateStringParser = (
+            language.hasOwnProperty('dateStringParser') ?
+            function(key, date) {return language.dateStringParser(key, date) || JsCalendar._defaultDateStringParser(key, date, language);} :
+            function(key, date) {return JsCalendar._defaultDateStringParser(key, date, language);}
+        );
+        language._dayStringParser = (
+            language.hasOwnProperty('dayStringParser') ?
+            function(key, day) {return language.dayStringParser(key, day) || JsCalendar._defaultDayStringParser(key, day, language);} :
+            function(key, day) {return JsCalendar._defaultDayStringParser(key, day, language);}
+        );
+    };
+
+    // Default function to handle date-string parsing
+    JsCalendar._defaultDateStringParser = function(key, date, lang){
+        switch(key) {
+            case 'MONTH':
+            case 'month':
+                return lang.months[date.getMonth()];
+            case 'MMM':
+            case 'mmm':
+                return lang.months[date.getMonth()].substring(0, 3);
+            case 'mm':
+                return lang.months[date.getMonth()].substring(0, 2);
+            case 'm':
+                return lang.months[date.getMonth()].substring(0, 1);
+            case 'MM':
+                return (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1);
+            case 'M':
+                return date.getMonth() + 1;
+            case '##':
+                return (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1);
+            case '#':
+                return date.getMonth() + 1;
+            case 'DAY':
+            case 'day':
+                return lang.days[date.getDay()];
+            case 'DDD':
+            case 'ddd':
+                return lang.days[date.getDay()].substring(0, 3);
+            case 'dd':
+                return lang.days[date.getDay()].substring(0, 2);
+            case 'd':
+                return lang.days[date.getDay()].substring(0, 1);
+            case 'DD':
+                return (date.getDate() <= 9 ? '0' : '') + date.getDate();
+            case 'D':
+                return date.getDate();
+            case 'YYYY':
+            case 'yyyy':
+                return date.getYear() + 1900;
+        }
+    };
+
+    // Default function to handle date-string parsing
+    JsCalendar._defaultDayStringParser = function(key, day, lang){
+        switch(key) {
+            case 'DAY':
+            case 'day':
+                return lang.days[day];
+            case 'DDD':
+            case 'ddd':
+                return lang.days[day].substring(0, 3);
+            case 'DD':
+            case 'dd':
+                return lang.days[day].substring(0, 2);
+            case 'D':
+                return lang.days[day].substring(0, 1);
+        }
     };
 
     // Load any language on the load list
