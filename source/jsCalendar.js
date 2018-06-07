@@ -518,6 +518,7 @@ var jsCalendar = (function(){
         // Get first day of the month
         var first = new Date(date.getTime());
         first.setDate(1);
+        first.setHours(0, 0, 0, 0);
 
         // Count days of previous month to show
         var previous = first.getDay() - (this._options.firstDayOfTheWeek - 1);
