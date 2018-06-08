@@ -1,5 +1,5 @@
 /*
- * jsCalendar language extension v1.0
+ * jsCalendar language extension v2.0
  * Add Chinese Language support
  * Translator: Lucas Suehara (BlackEgg@github)
  */
@@ -46,13 +46,13 @@
         ],
         // Days of the week
         days : [
-            "星期天",
+            "星期日",
             "星期一",
             "星期二",
             "星期三",
             "星期四",
             "星期五",
-            "星期日"
+            "星期六"
         ],
 
         // Overwrite day string format rules
