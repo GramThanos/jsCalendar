@@ -87,19 +87,19 @@ ___
  - API
     - Added support for getting the object of an `auto-jsCalendar` calendar
          - `var myCalendar = jsCalendar.get('#byId');`
-    - Added support for custom date string parser handlers #18
+    - Added support for custom date string parser handlers [#18](../../../../GramThanos/jsCalendar/issues/18)
  - Bugs
-    - Fixed selected days bug #19 (by [rodrigoetoh](https://github.com/rodrigoetoh))
+    - Fixed selected days bug [#19](../../../../GramThanos/jsCalendar/issues/19) (by [rodrigoetoh](https://github.com/rodrigoetoh))
  - Languages
     - Added BRAZIL Language (by [goodeath](https://github.com/goodeath))
     - Fixed Japanese Language (by [sueharaluke](https://github.com/sueharaluke))
     - Added Turkish Language (by [mgvjet](https://github.com/mgvjet))
     - Added Slovak Language (by [greatapo](https://github.com/greatapo))
     - Added Hungarian Language
-    - Fixed Chinese Language #18 (by [BlackEgg](https://github.com/BlackEgg))
+    - Fixed Chinese Language [#18](../../../../GramThanos/jsCalendar/issues/18) (by [BlackEgg](https://github.com/BlackEgg))
     - Add Norwegian Language (by [SpellCraft](https://github.com/SpellCraft))
  - Themes
-    - Micro Theme added #15
+    - Micro Theme added [#15](../../../../GramThanos/jsCalendar/issues/15)
 
 
 ___
