@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension v1.0
  * Add Norwegian Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: SpellCraft@github
  */
 
 // We love anonymous functions
@@ -28,12 +28,9 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        // EDIT HERE THE LANGUAGE CODE ~~~~~~~~~~
         code : "no",
-        // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Months of the year
         months : [
-            // EDIT HERE THE MONTHS ~~~~~~~~~~~~~
             "Januar",
             "Februar",
             "Mars",
@@ -46,11 +43,9 @@
             "Oktober",
             "November",
             "Desember"
-            // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
         ],
         // Days of the week
         days : [
-            // EDIT HERE THE DAYS ~~~~~~~~~~~~~~~
             "Søndag",
             "Mandag",
             "Tirsdag",
@@ -58,7 +53,6 @@
             "Torsdag",
             "Fredag",
             "Lørdag"
-            // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
         ]
     });
 
