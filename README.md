@@ -97,6 +97,7 @@ ___
     - Added Slovak Language (by [greatapo](https://github.com/greatapo))
     - Added Hungarian Language
     - Fixed Chinese Language #18 (by [BlackEgg](https://github.com/BlackEgg))
+    - Add Norwegian Language (by [SpellCraft](https://github.com/SpellCraft))
  - Themes
     - Micro Theme added #15
 
