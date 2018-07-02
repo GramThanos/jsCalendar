@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension v1.0
  * Add <Language Name> Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: <Your Name or Nickname> (<Your GitHub Username>@github)
  */
 
 // We love anonymous functions
