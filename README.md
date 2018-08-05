@@ -88,7 +88,7 @@ ___
     - Added support for getting the object of an `auto-jsCalendar` calendar or saving one
          - `var myCalendar = jsCalendar.get('#byId');`
          - `jsCalendar.set('@myCalendar', myCalendar);`
-         - `jsCalendar.det('@myCalendar');`
+         - `jsCalendar.del('@myCalendar');`
     - Added support for custom date string parser handlers [#18](../../../../GramThanos/jsCalendar/issues/18)
  - Bugs
     - Fixed selected days bug [#19](../../../../GramThanos/jsCalendar/issues/19) (by [rodrigoetoh](https://github.com/rodrigoetoh))
