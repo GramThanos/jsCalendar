@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4.2
+ * jsCalendar v1.4.3-beta
  *
  *
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = 'v1.4.2';
+    JsCalendar.version = 'v1.4.3-beta';
 
     // Sub-Constructor
     JsCalendar.prototype._construct = function(args) {
@@ -1204,11 +1204,25 @@ var jsCalendar = (function(){
     
     // Manage existing jsCalendar objects
     var jsCalendarObjects = {};
+    JsCalendar.set = function(identifier, calendar){
+        if (calendar instanceof jsCalendar) {
+            jsCalendarObjects[identifier] = calendar;
+            return true;
+        }
+        throw new Error('jsCalendar: The second parameter is not a jsCalendar.');
+    };
     JsCalendar.get = function(identifier){
         if (jsCalendarObjects.hasOwnProperty(identifier)) {
             return jsCalendarObjects[identifier];
         }
         return null;
+    };
+    JsCalendar.del = function(identifier){
+        if (jsCalendarObjects.hasOwnProperty(identifier)) {
+            delete jsCalendarObjects[identifier];
+            return true;
+        }
+        return false;
     };
     
     // Add a new language
