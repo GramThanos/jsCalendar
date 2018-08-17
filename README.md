@@ -100,6 +100,7 @@ ___
     - Added Hungarian Language
     - Fixed Chinese Language [#18](../../../../GramThanos/jsCalendar/issues/18) (by [BlackEgg](https://github.com/BlackEgg))
     - Add Norwegian Language (by [SpellCraft](https://github.com/SpellCraft))
+    - Add Ukrainian Language (by [ashep](https://github.com/ashep))
  - Themes
     - Micro Theme added [#15](../../../../GramThanos/jsCalendar/issues/15)
 
