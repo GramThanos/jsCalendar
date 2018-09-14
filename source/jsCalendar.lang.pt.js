@@ -1,6 +1,6 @@
 /*
- * jsCalendar language extension v1.0
- * Add Portuguese - BRAZIL Language support
+ * jsCalendar language extension
+ * Add Portuguese Language support
  * Translator: Alex Anderson (goodeath@github)
  */
 
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "pt",
+        code : 'pt',
         // Months of the year
         months : [
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+            'Julho',
+            'Agosto',
+            'Setembro',
+            'Outubro',
+            'Novembro',
+            'Dezembro'
         ],
         // Days of the week
         days : [
-            "Domingo",
-            "Segunda",
-            "Terça",
-            "Quarta",
-            "Quinta",
-            "Sexta",
-            "Sábado"
+            'Domingo',
+            'Segunda',
+            'Terça',
+            'Quarta',
+            'Quinta',
+            'Sexta',
+            'Sábado'
         ]
     });
 

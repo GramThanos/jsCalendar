@@ -1,6 +1,6 @@
 /*
  * jsCalendar theme
- * DarkSeries v1.1
+ * DarkSeries v1.2
  * 
  * 
  * MIT License
@@ -30,9 +30,9 @@
 
 /* Black Theme */
 	.jsCalendar.black-theme table {
-		color: #cccccc;
 		background-color: #000000;
-		box-shadow: 0px 0px 2px rgba(80, 80, 80, 0.4);
+		box-shadow: 0 0 2px rgba(80, 80, 80, 0.4);
+		color: #CCCCCC;
 	}
 	.jsCalendar.black-theme thead .jsCalendar-nav-left,
 	.jsCalendar.black-theme thead .jsCalendar-nav-right {
@@ -41,15 +41,15 @@
 	.jsCalendar.black-theme thead .jsCalendar-nav-left:hover,
 	.jsCalendar.black-theme thead .jsCalendar-nav-right:hover {
 		background-color: #252525;
-		color: #aaaaaa;
+		color: #AAAAAA;
 	}
 	.jsCalendar.black-theme tbody td.jsCalendar-selected {
-		border: 2px solid #404040;
 		background-color: #000000;
+		border: 2px solid #404040;
 	}
 	.jsCalendar.black-theme tbody td:hover {
 		background-color: #252525;
-		color: #ffffff;
+		color: #FFFFFF;
 	}
 	.jsCalendar.black-theme tbody td.jsCalendar-current {
 		background-color: #252525;
@@ -60,94 +60,100 @@
 	}
 	.jsCalendar.black-theme tbody td.jsCalendar-previous:hover,
 	.jsCalendar.black-theme tbody td.jsCalendar-next:hover {
-		color: #ffffff;
+		color: #FFFFFF;
 	}
-	.jsCalendar.black-theme *::selection {
+	.jsCalendar.black-theme ::-moz-selection {
 		background: #505050;
 	}
-	.jsCalendar.black-theme *::-moz-selection {
+	.jsCalendar.black-theme ::selection {
 		background: #505050;
 	}
 
 
 /* Grey Theme */
 	.jsCalendar.grey-theme table {
-		color: #242529; /*OK*/
-		background-color: #e3e6eb; /*OK*/
-		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+		background-color: #E3E6EB;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+		color: #242529;
 	}
 	.jsCalendar.grey-theme thead .jsCalendar-nav-left,
 	.jsCalendar.grey-theme thead .jsCalendar-nav-right {
-		color: #717580; /*OK*/
+		color: #717580;
 	}
 	.jsCalendar.grey-theme thead .jsCalendar-nav-left:hover,
 	.jsCalendar.grey-theme thead .jsCalendar-nav-right:hover {
-		background-color: #717580; /*OK*/
-		color: #e3e6eb; /*OK*/
+		background-color: #717580;
+		color: #E3E6EB;
 	}
 	.jsCalendar.grey-theme tbody td.jsCalendar-selected {
-		border: 2px solid #a3a6ae;
 		background-color: transparent;
+		border: 2px solid #A3A6AE;
 	}
 	.jsCalendar.grey-theme tbody td:hover {
-		background-color: #717580; /*OK*/
-		color: #e3e6eb; /*OK*/
+		background-color: #717580;
+		color: #E3E6EB;
 	}
 	.jsCalendar.grey-theme tbody td.jsCalendar-current {
-		background-color: #42454c; /*OK*/
+		background-color: #42454C;
 	}
 	.jsCalendar.grey-theme tbody td.jsCalendar-current:hover {
-		color: #e3e6eb; /*OK*/
+		color: #E3E6EB;
 	}
 	.jsCalendar.grey-theme tbody td.jsCalendar-previous,
 	.jsCalendar.grey-theme tbody td.jsCalendar-next {
-		color: #b0b4bd; /*OK*/
+		color: #B0B4BD;
 	}
 	.jsCalendar.grey-theme tbody td.jsCalendar-previous:hover,
 	.jsCalendar.grey-theme tbody td.jsCalendar-next:hover {
-		color: #e3e6eb; /*OK*/
+		color: #E3E6EB;
 	}
-	.jsCalendar.grey-theme *::selection {
-		background: #b0b4bd; /*OK*/
+	.jsCalendar.grey-theme ::-moz-selection {
+		background: #B0B4BD;
+	}
+	.jsCalendar.grey-theme ::selection {
+		background: #B0B4BD;
 	}
 
 
 /* White Theme */
 	.jsCalendar.white-theme table {
-		color: #333333;
 		background-color: #ffffff;
-		box-shadow: 0px 0px 2px rgba(80, 80, 80, 0.4);
+		box-shadow: 0 0 2px rgba(80, 80, 80, 0.4);
+		color: #333333;
 	}
 	.jsCalendar.white-theme thead .jsCalendar-nav-left,
 	.jsCalendar.white-theme thead .jsCalendar-nav-right {
-		color: #afafaf;
+		color: #AFAFAF;
 	}
 	.jsCalendar.white-theme thead .jsCalendar-nav-left:hover,
 	.jsCalendar.white-theme thead .jsCalendar-nav-right:hover {
-		background-color: #dadada;
+		background-color: #DADADA;
 		color: #555555;
 	}
 	.jsCalendar.white-theme tbody td:hover {
-		background-color: #dadada;
+		background-color: #DADADA;
 		color: #000000;
 	}
 	.jsCalendar.white-theme tbody td.jsCalendar-selected {
-		border: 2px solid #bfbfbf;
+		border: 2px solid #BFBFBF;
 	}
 	.jsCalendar.white-theme tbody td.jsCalendar-current {
 		background-color: #222222;
 	}
 	.jsCalendar.white-theme tbody td.jsCalendar-current:hover {
-		color: #ffffff;
+		color: #FFFFFF;
 	}
 	.jsCalendar.white-theme tbody td.jsCalendar-previous,
 	.jsCalendar.white-theme tbody td.jsCalendar-next {
-		color: #afafaf;
+		color: #AFAFAF;
 	}
 	.jsCalendar.white-theme tbody td.jsCalendar-previous:hover,
 	.jsCalendar.white-theme tbody td.jsCalendar-next:hover {
 		color: #000000;
 	}
-	.jsCalendar.white-theme *::selection {
-		background: #afafaf;
+	.jsCalendar.white-theme ::-moz-selection {
+		background: #AFAFAF;
+	}
+	.jsCalendar.white-theme ::selection {
+		background: #AFAFAF;
 	}

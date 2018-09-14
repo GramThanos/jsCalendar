@@ -1,5 +1,5 @@
 /*
- * jsCalendar language extension v1.0
+ * jsCalendar language extension
  * Add Norwegian Language support
  * Translator: SpellCraft@github
  */
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "no",
+        code : 'no',
         // Months of the year
         months : [
-            "Januar",
-            "Februar",
-            "Mars",
-            "April",
-            "Mai",
-            "Juni",
-            "Juli",
-            "August",
-            "September",
-            "Oktober",
-            "November",
-            "Desember"
+            'Januar',
+            'Februar',
+            'Mars',
+            'April',
+            'Mai',
+            'Juni',
+            'Juli',
+            'August',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
         ],
         // Days of the week
         days : [
-            "Søndag",
-            "Mandag",
-            "Tirsdag",
-            "Onsdag",
-            "Torsdag",
-            "Fredag",
-            "Lørdag"
+            'Søndag',
+            'Mandag',
+            'Tirsdag',
+            'Onsdag',
+            'Torsdag',
+            'Fredag',
+            'Lørdag'
         ]
     });
 

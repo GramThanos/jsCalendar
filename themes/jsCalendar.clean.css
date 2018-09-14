@@ -1,6 +1,6 @@
 /*
  * jsCalendar theme
- * Clean v1.0
+ * Clean v1.1
  * 
  * 
  * MIT License
@@ -30,9 +30,9 @@
 
 /* Clean Theme */
 	.jsCalendar.clean-theme table {
-		color: #000000;
 		background-color: transparent;
 		box-shadow: none;
+		color: #000000;
 		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	}
 	.jsCalendar.clean-theme thead .jsCalendar-title-name {
@@ -40,7 +40,7 @@
 	}
 	.jsCalendar.clean-theme thead .jsCalendar-nav-left,
 	.jsCalendar.clean-theme thead .jsCalendar-nav-right {
-		color: #afafaf;
+		color: #AFAFAF;
 	}
 	.jsCalendar.clean-theme thead .jsCalendar-nav-left:hover,
 	.jsCalendar.clean-theme thead .jsCalendar-nav-right:hover {
@@ -52,15 +52,15 @@
 	}
 	.jsCalendar.clean-theme thead .jsCalendar-week-days th,
 	.jsCalendar.clean-theme tbody td {
-		height: 42px;
-		width: 42px;
-		line-height: 42px;
-		font-size: 14px;
-		margin: 2px 2px;
 		border-radius: unset;
+		font-size: 14px;
+		height: 42px;
+		line-height: 42px;
+		margin: 2px 2px;
+		width: 42px;
 	}
 	.jsCalendar.clean-theme tbody td:hover {
-		background-color: #f0f0f0;
+		background-color: #F0F0F0;
 		color: #000000;
 	}
 	.jsCalendar.clean-theme tbody td.jsCalendar-selected {
@@ -68,14 +68,14 @@
 	}
 	.jsCalendar.clean-theme tbody td.jsCalendar-current {
 		background-color: transparent;
+		border-bottom: 2px solid #000000;
 		border-radius: unset;
 		color: #000000;
 		font-weight: bold;
-		border-bottom: 2px solid #000000;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 	.jsCalendar.clean-theme tbody td.jsCalendar-selected {
-		background-color: #e0e0e0;
+		background-color: #E0E0E0;
 	}
 	.jsCalendar.clean-theme tbody td.jsCalendar-current:hover {
 		color: #000000;
@@ -89,8 +89,11 @@
 	.jsCalendar.clean-theme tbody td.jsCalendar-next:hover {
 		color: transparent;
 	}
-	.jsCalendar.clean-theme *::selection {
-		background: #afafaf;
+	.jsCalendar.clean-theme ::-moz-selection {
+		background: #AFAFAF;
+	}
+	.jsCalendar.clean-theme ::selection {
+		background: #AFAFAF;
 	}
 
 /* Blue */
@@ -103,11 +106,11 @@
 	.jsCalendar.clean-theme.blue tbody td.jsCalendar-selected {
 		background-color: rgba(82, 201, 255, 0.5);
 	}
-	.jsCalendar.clean-theme.blue *::selection {
-		background: #83d8ff;
+	.jsCalendar.clean-theme.blue ::-moz-selection {
+		background: #83D8FF;
 	}
-	.jsCalendar.blue *::-moz-selection {
-		background: #83d8ff;
+	.jsCalendar.clean-theme.blue ::selection {
+		background: #83D8FF;
 	}
 /* Yellow */
 	.jsCalendar.clean-theme.yellow tbody td:hover {
@@ -119,10 +122,10 @@
 	.jsCalendar.clean-theme.yellow tbody td.jsCalendar-selected {
 		background-color: rgba(255, 227, 27, 0.5);
 	}
-	.jsCalendar.clean-theme.yellow *::selection {
+	.jsCalendar.clean-theme.yellow ::-moz-selection {
 		background: #FDE74C;
 	}
-	.jsCalendar.yellow *::-moz-selection {
+	.jsCalendar.clean-theme.yellow ::selection {
 		background: #FDE74C;
 	}
 /* Orange */
@@ -135,10 +138,10 @@
 	.jsCalendar.clean-theme.orange tbody td.jsCalendar-selected {
 		background-color: rgba(255, 180, 0, 0.5);
 	}
-	.jsCalendar.clean-theme.orange *::selection {
+	.jsCalendar.clean-theme.orange ::-moz-selection {
 		background: #FFB400;
 	}
-	.jsCalendar.clean-theme.orange *::-moz-selection {
+	.jsCalendar.clean-theme.orange ::selection {
 		background: #FFB400;
 	}
 /* Red */
@@ -151,10 +154,10 @@
 	.jsCalendar.clean-theme.red tbody td.jsCalendar-selected {
 		background-color: rgba(246, 81, 29, 0.5);
 	}
-	.jsCalendar.clean-theme.red *::selection {
+	.jsCalendar.clean-theme.red ::-moz-selection {
 		background: #F6511D;
 	}
-	.jsCalendar.clean-theme.red *::-moz-selection {
+	.jsCalendar.clean-theme.red ::selection {
 		background: #F6511D;
 	}
 /* Green */
@@ -167,9 +170,9 @@
 	.jsCalendar.clean-theme.green tbody td.jsCalendar-selected {
 		background-color: rgba(127, 184, 0, 0.5);
 	}
-	.jsCalendar.clean-theme.green *::selection {
+	.jsCalendar.clean-theme.green ::-moz-selection {
 		background: #7FB800;
 	}
-	.jsCalendar.clean-theme.green *::-moz-selection {
+	.jsCalendar.clean-theme.green ::selection {
 		background: #7FB800;
 	}

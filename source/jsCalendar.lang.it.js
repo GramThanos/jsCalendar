@@ -1,7 +1,7 @@
 /*
- * jsCalendar language extension v1.0
+ * jsCalendar language extension
  * Add Italian Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
  */
 
 // We love anonymous functions
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "it",
+        code : 'it',
         // Months of the year
         months : [
-            "Gennaio",
-            "Febbraio",
-            "Marzo",
-            "Aprile",
-            "Maggio",
-            "Giugno",
-            "Luglio",
-            "Agosto",
-            "Settembre",
-            "Ottobre",
-            "Novembre",
-            "Dicembre"
+            'Gennaio',
+            'Febbraio',
+            'Marzo',
+            'Aprile',
+            'Maggio',
+            'Giugno',
+            'Luglio',
+            'Agosto',
+            'Settembre',
+            'Ottobre',
+            'Novembre',
+            'Dicembre'
         ],
         // Days of the week
         days : [
-            "Domenica",
-            "Lunedì",
-            "Martedì",
-            "Mercoledì",
-            "Giovedì",
-            "Venerdì",
-            "Sabato"
+            'Domenica',
+            'Lunedì',
+            'Martedì',
+            'Mercoledì',
+            'Giovedì',
+            'Venerdì',
+            'Sabato'
         ]
     });
 

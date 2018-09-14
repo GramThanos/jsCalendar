@@ -5,9 +5,9 @@
 /* Global style
  -------------------------*/
 	html, body{
-		padding: 0px;
-		margin: 0px;
 		font-size: 12px;
+		margin: 0;
+		padding: 0;
 	}
 
 	body {
@@ -22,15 +22,15 @@
  -------------------------*/
 	.preview-2-styles {
 		margin: 50px auto;
-		position: relative;
 		padding-top: 50px;
+		position: relative;
 	}
 
 	.preview-2-styles .title-wrapper {
 		position: absolute;
-		top: 0px;
 		right: 20px;
 		text-align: right;
+		top: 0;
 	}
 
 	.preview-2-styles .title-wrapper .title {
@@ -53,15 +53,15 @@
  -------------------------*/
 	.preview-3-styles {
 		margin: 50px auto;
-		position: relative;
 		padding-top: 36px;
+		position: relative;
 	}
 
 	.preview-3-styles .title-wrapper {
 		position: absolute;
-		top: 0px;
 		right: 20px;
 		text-align: right;
+		top: 0;
 	}
 
 	.preview-3-styles .title-wrapper .title {
@@ -98,9 +98,9 @@
 
 	.preview-5-styles .title-wrapper {
 		position: absolute;
-		top: 0px;
 		right: 20px;
 		text-align: right;
+		top: 0;
 	}
 
 	.preview-5-styles .title-wrapper .title {
@@ -147,9 +147,9 @@
 
 	.preview-6-styles .title-wrapper {
 		position: absolute;
-		top: 0px;
 		right: 20px;
 		text-align: right;
+		top: 0;
 	}
 
 	.preview-6-styles .title-wrapper .title {
@@ -161,10 +161,10 @@
 	}
 
 	.preview-6-styles .preview {
-		float: left;
 		background-color: white;
-		box-shadow: 0px 0px 5px rgba(0,0,0, 0.2);
 		border-radius: 3px;
+		box-shadow: 0 0 5px rgba(0,0,0, 0.2);
+		float: left;
 	}
 
 	.preview-6-styles .preview.preview-2,

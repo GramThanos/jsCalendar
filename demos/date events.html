@@ -20,17 +20,14 @@
 			html, body {
 				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 			}
-
 			.description {
 				text-align: center;
 				padding-bottom: 40px;
 			}
-
 			.jsCalendar.clean-theme tbody td.jsCalendar-previous, .jsCalendar.clean-theme tbody td.jsCalendar-next {
 				color: #000;
 				opacity: 0.2;
 			}
-
 			#wrapper {
 				margin: 0 auto;
 				width: 800px;
@@ -112,6 +109,12 @@
 				background: #eee;
 				border: 1px solid #000;
 				box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+			}
+			.version {
+				font-size: 12px;
+				width: 800px;
+				margin: 0 auto;
+				text-align: right;
 			}
 		</style>
 	</head>
@@ -274,6 +277,8 @@
 		</script>
 		
 		<br>
-		<div style="font-size: 12px;width: 800px;margin: 0 auto;text-align: right;">You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script></div>
+		<div class="version">
+			You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script>
+		</div>
 	</body>
 </html>

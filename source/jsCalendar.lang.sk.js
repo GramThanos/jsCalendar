@@ -1,7 +1,7 @@
 /*
- * jsCalendar language extension v1.0
+ * jsCalendar language extension
  * Add Slovak Language support
- * Provided by GreatApo
+ * Translator: Grammatopoulos Apostolos (greatapo@github)
  */
 
 // We love anonymous functions
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "sk",
+        code : 'sk',
         // Months of the year
         months : [
-                "Január",
-                "Február",
-                "Marec",
-                "Apríl",
-                "Máj",
-                "Jún",
-                "Júl",
-                "August",
-                "September",
-                "Október",
-                "November",
-                "December"
+            'Január',
+            'Február',
+            'Marec',
+            'Apríl',
+            'Máj',
+            'Jún',
+            'Júl',
+            'August',
+            'September',
+            'Október',
+            'November',
+            'December'
         ],
         // Days of the week
         days : [
-                "Nedeľa",
-                "Pondelok",
-                "Utorok",
-                "Streda",
-                "Štvrtok",
-                "Piatok",
-                "Sobota"
+            'Nedeľa',
+            'Pondelok',
+            'Utorok',
+            'Streda',
+            'Štvrtok',
+            'Piatok',
+            'Sobota'
         ]
     });
 
