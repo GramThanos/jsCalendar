@@ -93,7 +93,7 @@ ___
  - Bugs
     - Fixed selected days bug [#19](../../../../GramThanos/jsCalendar/issues/19) (by [rodrigoetoh](https://github.com/rodrigoetoh))
  - Languages
-    - Added BRAZIL Language (by [goodeath](https://github.com/goodeath))
+    - Added Portuguese Language (by [goodeath](https://github.com/goodeath))
     - Fixed Japanese Language (by [sueharaluke](https://github.com/sueharaluke))
     - Added Turkish Language (by [mgvjet](https://github.com/mgvjet))
     - Added Slovak Language (by [greatapo](https://github.com/greatapo))
