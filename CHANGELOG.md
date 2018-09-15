@@ -3,26 +3,31 @@ All jsCalendar changes are documented in this file.
 
 ## [1.4.3] - 2018-09-15
 
-### Fixed
+### Added
  - API
     - Added support for getting the object of an `auto-jsCalendar` calendar or saving one
          - `var myCalendar = jsCalendar.get('#byId');`
          - `jsCalendar.set('@myCalendar', myCalendar);`
          - `jsCalendar.del('@myCalendar');`
     - Added support for custom date string parser handlers [#18](../../../../GramThanos/jsCalendar/issues/18)
+ - Themes
+    - Micro Theme added [#15](../../../../GramThanos/jsCalendar/issues/15)
+
+### Fixed
  - Bugs
     - Fixed selected days bug [#19](../../../../GramThanos/jsCalendar/issues/19) (by [rodrigoetoh](https://github.com/rodrigoetoh))
  - Languages
-    - Added Portuguese Language (by [goodeath](https://github.com/goodeath))
     - Fixed Japanese Language (by [sueharaluke](https://github.com/sueharaluke))
+    - Fixed Chinese Language [#18](../../../../GramThanos/jsCalendar/issues/18) (by [BlackEgg](https://github.com/BlackEgg))
+
+### Translations
+ - Languages
+    - Added Portuguese Language (by [goodeath](https://github.com/goodeath))
     - Added Turkish Language (by [mgvjet](https://github.com/mgvjet))
     - Added Slovak Language (by [greatapo](https://github.com/greatapo))
     - Added Hungarian Language
-    - Fixed Chinese Language [#18](../../../../GramThanos/jsCalendar/issues/18) (by [BlackEgg](https://github.com/BlackEgg))
-    - Add Norwegian Language (by [SpellCraft](https://github.com/SpellCraft))
-    - Add Ukrainian Language (by [ashep](https://github.com/ashep))
- - Themes
-    - Micro Theme added [#15](../../../../GramThanos/jsCalendar/issues/15)
+    - Added Norwegian Language (by [SpellCraft](https://github.com/SpellCraft))
+    - Added Ukrainian Language (by [ashep](https://github.com/ashep))
 
 
 
