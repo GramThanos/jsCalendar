@@ -5,9 +5,9 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
@@ -15,6 +15,8 @@
 		<![endif]-->
 	</head>
 	<body>
+
+
 		<!-- My calendar element -->
 		<div id="my-calendar"></div>
 
@@ -26,20 +28,24 @@
 
 		<!-- Create the calendar -->
 		<script type="text/javascript">
-		    // Get the element
-		    var element = document.getElementById("my-calendar");
-		    // Create the calendar
-		    var myCalendar = jsCalendar.new(element);
-		    // Get the inputs
-		    var inputA = document.getElementById("my-input-a");
-		    var inputB = document.getElementById("my-input-b");
-		    // Add events
-		    myCalendar.onDateClick(function(event, date){
-		        inputA.value = date.toString();
-		    });
-		    myCalendar.onMonthChange(function(event, date){
-		        inputB.value = date.toString();
-		    });
+			// Create the calendar
+			var calendar = jsCalendar.new("#my-calendar");
+
+			// Get the inputs
+			var print_date = document.getElementById("my-input-a");
+			var print_month = document.getElementById("my-input-b");
+
+			// When the user clicks on a date
+			calendar.onDateClick(function(event, date){
+				print_date.value = jsCalendar.tools.dateToString(date, 'DAY, DD MONTH YYYY', 'en');
+			});
+
+			// When a user change the month
+			calendar.onMonthChange(function(event, date){
+				print_month.value = jsCalendar.tools.dateToString(date, 'MONTH YYYY', 'en');
+			});
 		</script>
+
+
 	</body>
 </html>

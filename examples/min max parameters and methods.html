@@ -5,9 +5,9 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
@@ -15,7 +15,10 @@
 		<![endif]-->
 	</head>
 	<body>
+
+
 		<h4>Min-date 01/01/2017 (January 2017 and later)</h4>
+
 		<!-- Min date calendar element -->
 		<div id="min-calendar"></div>
 		<!-- Create the calendar -->
@@ -27,7 +30,13 @@
 			myCalendarMin.min("01/01/2017");
 		</script>
 
+		<!-- Min date calendar element (auto) -->
+		<div class="auto-jsCalendar" data-date="01/02/2017" data-min="01/01/2017"></div>
+
+
+
 		<h4>Max-date 01/03/2017 (before March 2017)</h4>
+
 		<!-- Max date calendar element -->
 		<div id="max-calendar"></div>
 		<!-- Create the calendar -->
@@ -39,8 +48,14 @@
 			myCalendarMax.max("01/03/2017");
 		</script>
 
+		<!-- Max date calendar element (auto) -->
+		<div class="auto-jsCalendar" data-date="01/02/2017" data-max="01/03/2017"></div>
+
+
+
 		<h4>Min-date 01/02/2017 and Max-date 01/02/2017 (between January 2017 and March 2017)</h4>
-		<!-- Max date calendar element -->
+
+		<!-- Min-Max date calendar element -->
 		<div id="min-max-calendar"></div>
 		<!-- Create the calendar -->
 		<script type="text/javascript">
@@ -51,5 +66,16 @@
 			myCalendarMinMax.min("01/01/2017");
 			myCalendarMinMax.max("01/03/2017");
 		</script>
+
+		<!-- Min-Max date calendar element (auto) -->
+		<div class="auto-jsCalendar" data-date="01/02/2017" data-min="01/01/2017" data-max="01/03/2017"></div>
+
+
+
+		<h4>Only current month</h4>
+		<!-- Calendar element (auto) -->
+		<div class="auto-jsCalendar" data-date="now" data-min="now" data-max="now"></div>
+
+
 	</body>
 </html>

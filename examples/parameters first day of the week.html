@@ -5,22 +5,63 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!-- Load Greek language -->
+		<script type="text/javascript" src="../source/jsCalendar.lang.gr.js"></script>
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
+
+
 		<!-- Set fist date of the week "Monday" -->
 		<div class="auto-jsCalendar"
-		     data-first-day-of-the-week="Monday"></div>
+			 data-first-day-of-the-week="Monday"></div>
 
-		<!-- Set fist date of the week "Monday" (2nd) - shortcut -->
+		<!-- Set fist date of the week "Sunday" (1st day) -->
 		<div class="auto-jsCalendar"
-		     data-fdotw="2"></div>
+			 data-first-day-of-the-week="1"></div>
+
+		<!-- Set fist date of the week "Monday" (2nd day) - shortcut -->
+		<div class="auto-jsCalendar"
+			 data-fdotw="2"></div>
+
+		<!-- Set fist date of the week "Sunday" (1st day) - shortcut -->
+		<div class="auto-jsCalendar"
+			 data-fdotw="Sunday"></div>
+
+		<!-- Set fist date of the week "Monday" (2nd day) on an other language -->
+		<div class="auto-jsCalendar"
+			 data-language="gr"
+			 data-first-day-of-the-week="Δευτέρα"></div>
+
+
+		<!-- Dynamic calendar element -->
+		<div id="dynamic-calendar-1"></div>
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar_1 = jsCalendar.new("#dynamic-calendar-1", 'now', {
+				fdotw : '2'
+			});
+		</script>
+
+		<!-- Dynamic calendar element -->
+		<div id="dynamic-calendar-2"></div>
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar_2 = jsCalendar.new("#dynamic-calendar-2", 'now', {
+				firstDayOfTheWeek : '2'
+			});
+		</script>
+
+
 	</body>
 </html>

@@ -5,9 +5,9 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
@@ -15,8 +15,26 @@
 		<![endif]-->
 	</head>
 	<body>
+
+
 		<!-- Custom month format -->
 		<div class="auto-jsCalendar"
-		     data-month-format="month YYYY"></div>
+			 data-month-format="month YYYY"></div>
+
+		<!-- Custom month format -->
+		<div class="auto-jsCalendar"
+			 data-month-format="##/YYYY"></div>
+
+		<!-- Dynamic calendar element -->
+		<div id="dynamic-calendar"></div>
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar = jsCalendar.new("#dynamic-calendar", 'now', {
+				monthFormat : 'month (##/YYYY)'
+			});
+		</script>
+
+
 	</body>
 </html>

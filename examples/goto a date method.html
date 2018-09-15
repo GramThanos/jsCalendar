@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<!-- Buttons -->
+		<button id="my-button-1">Goto 1</button>
+		<button id="my-button-2">Goto 2</button>
+
+		<!-- My calendar element -->
+		<div id="my-calendar"></div>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var myCalendar = jsCalendar.new("#my-calendar");
+
+			// Get the button
+			var button_1 = document.getElementById("my-button-1");
+			// Add a button event
+			button_1.addEventListener("click", function(){
+				// Goto a date
+				myCalendar.goto("30/01/2017");
+			}, false);
+
+			// Get the button
+			var button_2 = document.getElementById("my-button-2");
+			// Add a button event
+			button_2.addEventListener("click", function(){
+				var date = new Date();
+				// Goto a date
+				myCalendar.goto(date);
+			}, false);
+		</script>
+
+
+	</body>
+</html>

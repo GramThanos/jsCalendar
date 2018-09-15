@@ -5,9 +5,9 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
@@ -15,14 +15,25 @@
 		<![endif]-->
 	</head>
 	<body>
+
+
+		<!-- Button -->
+		<button id="my-button">Refresh</button>
 		<!-- My calendar element -->
 		<div id="my-calendar"></div>
-		<!-- Dynamic create it -->
+		<!-- Create the calendar -->
 		<script type="text/javascript">
-		    // Get the element
-		    var element = document.getElementById("my-calendar");
-		    // Create the calendar
-		    jsCalendar.new(element);
+			// Create the calendar
+			var myCalendar = jsCalendar.new("#my-calendar");
+			// Get the button
+			var button = document.getElementById("my-button");
+			// Add a button event
+			button.addEventListener("click", function(){
+				// Refresh
+				myCalendar.refresh();
+			}, false);
 		</script>
+
+
 	</body>
 </html>

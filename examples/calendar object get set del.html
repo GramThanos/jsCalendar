@@ -5,9 +5,9 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 
 		<!--[if lt IE 9]>
@@ -15,8 +15,11 @@
 		<![endif]-->
 	</head>
 	<body>
+
+
 		<!-- My calendar element -->
 		<div class="auto-jsCalendar" id="awesome-calendar"></div>
+		
 		<!-- Get the calendar object through javascript -->
 		<script type="text/javascript">
 			// You have to wait the load event
@@ -28,5 +31,25 @@
 			// so you have to wait for the event and this code must
 			// be under the jsCalendar.js script tag
 		</script>
+
+
+		<!-- Calendar with id -->
+		<div id="calendar-by-id"></div>
+		<!-- Dynamic create it -->
+		<script type="text/javascript">
+			// Create calendar by id
+			var calendar_2 = jsCalendar.new("#calendar-by-id");
+			// Bind object to an id
+			jsCalendar.set('<custom-id>', calendar_2);
+
+			// Get a reference to the calendar object
+			calendar_2_ref = jsCalendar.get('<custom-id>');
+			calendar_2_ref.goto('01/12/2018');
+
+			// Remove the binding
+			jsCalendar.del('<custom-id>');
+		</script>
+
+
 	</body>
 </html>

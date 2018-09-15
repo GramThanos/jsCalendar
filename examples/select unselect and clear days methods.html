@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<!-- Buttons -->
+		<button id="select-button">Select</button>
+		<button id="unselect-button">Unselect</button>
+		<button id="clear-button">Clear</button>
+		<!-- My calendar element -->
+		<div id="my-calendar"></div>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Get the element
+			var element = document.getElementById("my-calendar");
+			// Create the calendar
+			var myCalendar = jsCalendar.new(element, "1-1-2017");
+
+			// Get the buttons
+			var select_button = document.getElementById("select-button");
+			var unselect_button = document.getElementById("unselect-button");
+			var clear_button = document.getElementById("clear-button");
+
+			// Add events
+			
+			select_button.addEventListener("click", function() {
+				// Select days
+				myCalendar.select([
+					"01/01/2017",
+					"02/01/2017",
+					"03/01/2017",
+					"05/01/2017"
+				]);
+			}, false);
+			
+			unselect_button.addEventListener("click", function() {
+				// Unselect days
+				myCalendar.unselect([
+					"05/01/2017"
+				]);
+			}, false);
+
+			clear_button.addEventListener("click", function() {
+				// Unselect all
+				myCalendar.clearselect();
+			}, false);
+		</script>
+
+
+	</body>
+</html>

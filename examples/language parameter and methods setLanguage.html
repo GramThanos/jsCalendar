@@ -5,35 +5,44 @@
 		<title>jsCalendar</title>
 		<meta name="description" content="jsCalendar example">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
 		<script type="text/javascript" src="../source/jsCalendar.js"></script>
 		<!-- Load German language -->
 		<script type="text/javascript" src="../source/jsCalendar.lang.de.js"></script>
+		<!-- Load Greek language -->
+		<script type="text/javascript" src="../source/jsCalendar.lang.gr.js"></script>
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
+
+
 		<!-- Button -->
-		<button id="my-button">Change language</button>
+		<button id="my-button">Change language to German</button>
 		<!-- My calendar element -->
-		<div id="my-calendar"></div>
+		<div id="dynamic-calendar"></div>
 		<!-- Create the calendar -->
 		<script type="text/javascript">
-		    // Get the element
-		    var element = document.getElementById("my-calendar");
-		    // Create the calendar
-		    var myCalendar = jsCalendar.new(element);
-		    // Get the button
-		    var button = document.getElementById("my-button");
-		    // Add a button event
-		    button.addEventListener("click", function(){
-		        // Change language
-		        myCalendar.setLanguage("de");
-		    }, false);
+			// Create the calendar
+			var myCalendar = jsCalendar.new("#dynamic-calendar");
+
+			// Get the button
+			var button = document.getElementById("my-button");
+			// Add a button event
+			button.addEventListener("click", function(){
+				// Change language
+				myCalendar.setLanguage("de");
+			}, false);
 		</script>
+
+
+		<!-- Auto create calendar in greek -->
+		<div class="auto-jsCalendar" data-language="gr"></div>
+
+
 	</body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<!-- A calendar element -->
+		<div id="my-calendar-1"></div>
+		<!-- Dynamic create it -->
+		<script type="text/javascript">
+			// Get the element
+			var element = document.getElementById("my-calendar-1");
+			// Create the calendar
+			var calendar_1 = jsCalendar.new(element);
+		</script>
+
+
+		<!-- Another calendar element -->
+		<div id="my-calendar-2"></div>
+		<!-- Dynamic create it -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar_2 = jsCalendar.new("#my-calendar-2");
+		</script>
+
+
+		<!-- Another calendar element -->
+		<div id="my-calendar-3" class="auto-jsCalendar"></div>
+		<!-- This calendar is automaticaly created on page load -->
+		<script type="text/javascript">
+			window.addEventListener('load', function(){
+				// We can get its instance using it's id
+				var calendar_3 = jsCalendar.get('#my-calendar-3');
+				calendar_3.goto('01/12/2017');
+			}, false);
+		</script>
+
+
+	</body>
+</html>
