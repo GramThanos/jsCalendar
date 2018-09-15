@@ -34,9 +34,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.3/jsCalendar_v1.4.3.zip" class="download-button">
 						Download<br>
-						<span>version 1.4.2</span>
+						<span>version 1.4.3</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -93,6 +93,7 @@
 								<li><a href="#javascript-method-goto">.goto()</a></li>
 								<li><a href="#javascript-method-reset">.reset()</a></li>
 								<li><a href="#javascript-method-setLanguage">.setLanguage()</a></li>
+								<li><a href="#javascript-method-min-max">.min() - .max()</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -104,6 +105,7 @@
 								<li><a href="#more-javascript-version">Version Attribute</a></li>
 								<li><a href="#more-javascript-events">Events</a></li>
 								<li><a href="#more-javascript-select">Select days</a></li>
+								<li><a href="#more-javascript-get-set">Get & Set Instances</a></li>
 								<li><a href="#more-javascript-tools">Tools</a></li>
 							</ul>
 						</li>
@@ -430,13 +432,19 @@
 					<table style="width: 100%;">
 						<tr><td>Language</td><td>Code</td></tr>
 						<tr><td>English</td><td><span class="html-code"><span class="tag">en</span></span></td></tr>
+						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td></tr>
 						<tr><td>Spanish</td><td><span class="html-code"><span class="tag">es</span></span></td></tr>
 						<tr><td>French</td><td><span class="html-code"><span class="tag">fr</span></span></td></tr>
-						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td></tr>
 						<tr><td>Greek</td><td><span class="html-code"><span class="tag">gr</span></span></td></tr>
+						<tr><td>Hungarian</td><td><span class="html-code"><span class="tag">hu</span></span></td></tr>
 						<tr><td>Italian</td><td><span class="html-code"><span class="tag">it</span></span></td></tr>
 						<tr><td>Japanese</td><td><span class="html-code"><span class="tag">ja</span></span></td></tr>
+						<tr><td>Norwegian</td><td><span class="html-code"><span class="tag">no</span></span></td></tr>
+						<tr><td>Portuguese</td><td><span class="html-code"><span class="tag">pt</span></span></td></tr>
 						<tr><td>Russian</td><td><span class="html-code"><span class="tag">ru</span></span></td></tr>
+						<tr><td>Slovak</td><td><span class="html-code"><span class="tag">sk</span></span></td></tr>
+						<tr><td>Turkish</td><td><span class="html-code"><span class="tag">tr</span></span></td></tr>
+						<tr><td>Ukrainian</td><td><span class="html-code"><span class="tag">uk</span></span></td></tr>
 						<tr><td>Chinese</td><td><span class="html-code"><span class="tag">zh</span></span></td></tr>
 					</table>
 				</div>
@@ -1163,7 +1171,7 @@
 					<p>Change the calendar language.</p><br>
 					<p>API syntax</p>
 					<table style="width: 100%;">
-						<tr><td>Syntax</td><td>.setLanguage()</td></tr>
+						<tr><td>Syntax</td><td>.setLanguage(<a href="#parameter-language-codes">language code</a>)</td></tr>
 					</table>
 					<br>
 				</div>
@@ -1190,6 +1198,8 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
 						<span class="tag">&lt;/script&gt;</span><br>
 					</div>
+					<p class="note">*You can find a list of all the available languages <a href="#parameter-language-codes">here</a>.</p>
+					<br>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1208,6 +1218,50 @@
 								// Change language
 								myCalendar.setLanguage("de");
 							}, false);
+						})();
+					</script>
+				</div>
+				<div class="wrapper-clear"></div>
+				<br><br>
+
+
+
+				<div class="section-subtitle" id="javascript-method-min-max">.min() - .max() <span class="version-tag" title="Added on version 1.4">v1.4</span></div>
+				<div class="wrapper-left">
+					<p>Set a Minimum/Maximum date for the calendar.</p><br>
+					<p>API syntax</p>
+					<table style="width: 100%;">
+						<tr><td>Syntax</td><td>.min(false | <a href="#javascript-calendar-date">date</a>)</td></tr>
+						<tr><td>Syntax</td><td>.max(false | <a href="#javascript-calendar-date">date</a>)</td></tr>
+					</table>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+				<div class="wrapper-left">
+					<p>Example code</p>
+					<div class="html-code">
+						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
+						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
+						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
+						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(<span class="string">"#my-calendar"</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Limit to only current month</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.min(<span class="string">"now"</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.max(<span class="string">"now"</span>);<br>
+						<span class="tag">&lt;/script&gt;</span><br>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					<div id="my-calendar-min-max"></div>
+					<script type="text/javascript">
+						(function(){
+							// Create the calendar
+							var myCalendar = jsCalendar.new("#my-calendar-min-max");
+							// Limit to only current month
+							myCalendar.min("now");
+							myCalendar.max("now");
 						})();
 					</script>
 				</div>
@@ -1488,6 +1542,17 @@
 
 
 
+
+				<div class="section-subtitle" id="more-javascript-get-set">Get & Set Instances <span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></div>
+				<div class="wrapper-left">
+					<p>I will write this section later. I am not in the mood now :P</p>
+					<p class="note">You can find an example file on "<i>examples/calendar object get set del.html</i>"</p>
+				</div>
+				<div class="wrapper-clear"></div>
+				<br><br>
+
+
+
 				<div class="section-subtitle" id="more-javascript-tools">Tools</div>
 				<div class="wrapper-left">
 					<p>Calendar tools methods</p><br>
@@ -1622,31 +1687,31 @@
 					<p>Open the template, then find and translate all the red text you see below.</p>
 					<div class="html-code">
 						// Language code<br>
-						code : "<span class="string">en</span>",<br>
+						code : '<span class="string">en</span>',<br>
 						// Months of the year<br>
 						months : [<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">January</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">February</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">March</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">April</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">May</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">June</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">July</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">August</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">September</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">October</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">November</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">December</span>"<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">January</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">February</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">March</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">April</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">May</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">June</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">July</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">August</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">September</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">October</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">November</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">December</span>'<br>
 						],<br>
 						// Days of the week<br>
 						days : [<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Sunday</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Monday</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Tuesday</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Wednesday</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Thursday</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Friday</span>",<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;"<span class="string">Saturday</span>"<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Sunday</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Monday</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Tuesday</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Wednesday</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Thursday</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Friday</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Saturday</span>'<br>
 						]<br>
 					</div>
 					<p>Save the changes and rename the file from <span class="html-code">jsCalendar.lang.template.js</span> to <span class="html-code">jsCalendar.lang.code.js</span>, where <span class="html-code">code</span> is your language code.</p>

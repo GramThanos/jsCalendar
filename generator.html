@@ -11,23 +11,25 @@
 		<link rel="stylesheet" type="text/css" href="css/jsCalendar.min.css">
 		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.darkseries.min.css">
 		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.clean.min.css">
+		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.micro.min.css">
 		<link rel="stylesheet" type="text/css" href="css/docs.css">
 
 		<!-- jsCalendar -->
 		<script type="text/javascript" src="js/jsCalendar.min.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.de.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.es.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.fr.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.de.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.gr.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.hu.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.it.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.ja.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.ru.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.zh.js"></script>
-
+		<script type="text/javascript" src="js/jsCalendar.lang.no.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.pt.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.tr.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.ru.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.sk.js"></script>
-		<script type="text/javascript" src="js/jsCalendar.lang.hu.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.tr.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.uk.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.zh.js"></script>
 
 		<!-- Generator style -->
 		<style type="text/css">
@@ -146,9 +148,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.3/jsCalendar_v1.4.3.zip" class="download-button">
 						Download<br>
-						<span>version 1.4.2</span>
+						<span>version 1.4.3</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -160,7 +162,7 @@
 
 		<div class="section">
 			<div class="section-wrapper">
-				<div class="section-title">Beta Code Generator</div>
+				<div class="section-title">Code Generator</div>
 				<div class="wrapper-left">
 					<div id="generated-calendar"></div>
 				</div>
@@ -263,7 +265,47 @@
 							},
 							defcolor : 'white',
 							require : ['jsCalendar.clean.min.css']
-						}
+						},
+						
+						'micro-default-theme' : {
+							name : 'Micro Default Theme',
+							classname : 'micro-theme',
+							colors : {
+								blue : {classname : '', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'blue',
+							require : ['jsCalendar.micro.min.css']
+						},
+						'micro-material-theme' : {
+							name : 'Micro Material Theme',
+							classname : 'material-theme micro-theme',
+							colors : {
+								blue : {classname : '', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'blue',
+							require : ['jsCalendar.micro.min.css']
+						},
+						'micro-classic-theme' : {
+							name : 'Micro Classic Theme',
+							classname : 'classic-theme micro-theme',
+							colors : {
+								blue : {classname : '', bg : '#52c9ff'},
+								yellow : {classname : 'yellow', bg : '#ffe31b'},
+								orange : {classname : 'orange', bg : '#FFB400'},
+								red : {classname : 'red', bg : '#F6511D'},
+								green : {classname : 'green', bg : '#7FB800'}
+							},
+							defcolor : 'blue',
+							require : ['jsCalendar.micro.min.css']
+						},
 					},
 					parameters : {
 						navigator : {name : 'Navigator', defvalue : 'true', values : ['true', 'false']},
@@ -272,7 +314,7 @@
 						monthFormat : {name : 'Month format', defvalue : 'month', values : ['month', 'MMM', 'month YYYY', '##/YYYY']},
 						dayFormat : {name : 'Day format', defvalue : 'D', values : ['DDD', 'DD', 'D']},
 						fdotw : {name : 'First day of the week', defvalue : '1', values : ['1', '2']},
-						language : {name : 'Language', defvalue : 'en', values : ['en', 'es', 'fr', 'de', 'gr', 'it', 'ja', 'ru', 'zh', 'hu', 'pt', 'sk', 'tr']}
+						language : {name : 'Language', defvalue : 'en', values : ['en', 'de', 'es', 'fr', 'gr', 'hu', 'it', 'ja', 'no', 'pt', 'ru', 'sk', 'tr', 'uk', 'zh']}
 					}
 				},
 

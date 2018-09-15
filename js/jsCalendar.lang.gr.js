@@ -1,7 +1,7 @@
 /*
- * jsCalendar language extension v1.0
+ * jsCalendar language extension
  * Add Greek Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
  */
 
 // We love anonymous functions
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "gr",
+        code : 'gr',
         // Months of the year
         months : [
-            "Ιανουάριος",
-            "Φεβρουάριος",
-            "Μάρτιος",
-            "Απρίλιος",
-            "Μάιος",
-            "Ιούνιος",
-            "Ιούλιος",
-            "Αύγουστος",
-            "Σεπτέμβριος",
-            "Οκτώβριος",
-            "Νοέμβριος",
-            "Δεκέμβριος"
+            'Ιανουάριος',
+            'Φεβρουάριος',
+            'Μάρτιος',
+            'Απρίλιος',
+            'Μάιος',
+            'Ιούνιος',
+            'Ιούλιος',
+            'Αύγουστος',
+            'Σεπτέμβριος',
+            'Οκτώβριος',
+            'Νοέμβριος',
+            'Δεκέμβριος'
         ],
         // Days of the week
         days : [
-            "Κυριακή",
-            "Δευτέρα",
-            "Τρίτη",
-            "Τετάρτη",
-            "Πέμπτη",
-            "Παρασκευή",
-            "Σάββατο"
+            'Κυριακή',
+            'Δευτέρα',
+            'Τρίτη',
+            'Τετάρτη',
+            'Πέμπτη',
+            'Παρασκευή',
+            'Σάββατο'
         ]
     });
 

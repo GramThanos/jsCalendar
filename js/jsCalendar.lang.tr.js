@@ -1,5 +1,5 @@
 /*
- * jsCalendar language extension v1.0
+ * jsCalendar language extension
  * Add Turkish Language support
  * Translator: Adem Yıldız (mgvjet@github)
  */
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : "tr",
+        code : 'tr',
         // Months of the year
         months : [
-            "Ocak",
-            "Şubat",
-            "Mart",
-            "Nisan",
-            "Mayıs",
-            "Haziran",
-            "Temmuz",
-            "Ağustos",
-            "Eylül",
-            "Ekim",
-            "Kasım",
-            "Aralık"
+            'Ocak',
+            'Şubat',
+            'Mart',
+            'Nisan',
+            'Mayıs',
+            'Haziran',
+            'Temmuz',
+            'Ağustos',
+            'Eylül',
+            'Ekim',
+            'Kasım',
+            'Aralık'
         ],
         // Days of the week
         days : [
-            "Pazar",
-            "Pazartesi",
-            "Salı",
-            "Çarşamba",
-            "Perşembe",
-            "Cuma",
-            "Cumartesi"
+            'Pazar',
+            'Pazartesi',
+            'Salı',
+            'Çarşamba',
+            'Perşembe',
+            'Cuma',
+            'Cumartesi'
         ]
     });
 

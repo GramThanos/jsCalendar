@@ -5,9 +5,9 @@
 		<title>jsCalendar Demo</title>
 		<meta name="description" content="jsCalendar demo - date picker">
 		<meta name="author" content="GramThanos">
-		<link rel="stylesheet" type="text/css" href="../css/jsCalendar.min.css">
 
 		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../css/jsCalendar.min.css">
 		<script type="text/javascript" src="../js/jsCalendar.min.js"></script>
 
 		<!--[if lt IE 9]>
@@ -20,9 +20,11 @@
 				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 				text-align: center;
 			}
-
 			.description {
 				padding-bottom: 40px;
+			}
+			.version {
+				font-size:12px;
 			}
 		</style>
 	</head>
@@ -100,6 +102,8 @@
 		</script>
 		
 		<br><br><br>
-		<div style="font-size:12px;">You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script></div>
+		<div class="version">
+			You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script>
+		</div>
 	</body>
 </html>

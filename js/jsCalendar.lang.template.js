@@ -1,7 +1,7 @@
 /*
- * jsCalendar language extension v1.0
- * Add Greek Language support
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * jsCalendar language extension
+ * Add <Language Name> Language support
+ * Translator: <Your Name or Nickname> (<Your GitHub Username>@github)
  */
 
 // We love anonymous functions
@@ -11,9 +11,9 @@
     var jsCalendar = window.jsCalendar;
 
     // If jsCalendar is not loaded
-    if (typeof jsCalendar === "undefined") {
+    if (typeof jsCalendar === 'undefined') {
         // If there is no language to load array
-        if (typeof window.jsCalendar_language2load === "undefined") {
+        if (typeof window.jsCalendar_language2load === 'undefined') {
             window.jsCalendar_language2load = [];
         }
         // Wrapper to add language to load list
@@ -29,35 +29,35 @@
     jsCalendar.addLanguage({
         // Language code
         // EDIT HERE THE LANGUAGE CODE ~~~~~~~~~~
-        code : "en",
+        code : 'en',
         // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Months of the year
         months : [
             // EDIT HERE THE MONTHS ~~~~~~~~~~~~~
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
             // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
         ],
         // Days of the week
         days : [
             // EDIT HERE THE DAYS ~~~~~~~~~~~~~~~
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday'
             // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
         ]
     });
