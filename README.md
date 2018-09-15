@@ -1,4 +1,4 @@
-[![latest release](https://img.shields.io/badge/latest%20release-v1.4.2-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
+[![latest release](https://img.shields.io/badge/latest%20release-v1.4.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
 [![latest development](https://img.shields.io/badge/latest%20development-v1.4.3-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![latest development](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
 
@@ -74,7 +74,6 @@ Build-in Themes
 Additional Themes
 ![DarkSeries Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_darkseries.png)
 ![Clean Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_clean.png)
-Comming on v1.4.3
 ![Micro Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_micro.png)
 
 
@@ -84,25 +83,8 @@ ___
 ### Whats new?
 
 #### Latest development code v1.4.3
- - API
-    - Added support for getting the object of an `auto-jsCalendar` calendar or saving one
-         - `var myCalendar = jsCalendar.get('#byId');`
-         - `jsCalendar.set('@myCalendar', myCalendar);`
-         - `jsCalendar.del('@myCalendar');`
-    - Added support for custom date string parser handlers [#18](../../../../GramThanos/jsCalendar/issues/18)
- - Bugs
-    - Fixed selected days bug [#19](../../../../GramThanos/jsCalendar/issues/19) (by [rodrigoetoh](https://github.com/rodrigoetoh))
- - Languages
-    - Added Portuguese Language (by [goodeath](https://github.com/goodeath))
-    - Fixed Japanese Language (by [sueharaluke](https://github.com/sueharaluke))
-    - Added Turkish Language (by [mgvjet](https://github.com/mgvjet))
-    - Added Slovak Language (by [greatapo](https://github.com/greatapo))
-    - Added Hungarian Language
-    - Fixed Chinese Language [#18](../../../../GramThanos/jsCalendar/issues/18) (by [BlackEgg](https://github.com/BlackEgg))
-    - Add Norwegian Language (by [SpellCraft](https://github.com/SpellCraft))
-    - Add Ukrainian Language (by [ashep](https://github.com/ashep))
- - Themes
-    - Micro Theme added [#15](../../../../GramThanos/jsCalendar/issues/15)
+
+Nothing new for now.
 
 
 ___
@@ -114,7 +96,7 @@ Contact me to leave me your feedback or to express your thoughts.
 
 [Open an issue](https://github.com/GramThanos/jsCalendar/issues)
 
-[Send me a mail](mailto:agrammatopoulos@isc.tuc.gr)
+[Send me a mail](mailto:gramthanos@gmail.com)
 
 
 ___
