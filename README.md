@@ -1,5 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.4.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.4.3-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4.4-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![latest development](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
 
 # jsCalendar
@@ -82,9 +82,10 @@ ___
 
 ### Whats new?
 
-#### Latest development code v1.4.3
+#### Latest development code v1.4.4
 
-Nothing new for now.
+ - Languages
+    - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
 
 
 ___
