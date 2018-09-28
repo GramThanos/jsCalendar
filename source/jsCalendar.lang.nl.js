@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension
- * Add German Language support
- * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
+ * Add Dutch Language support
+ * Translator: Mike (mikedebruijn@github)
  */
 
 // We love anonymous functions
