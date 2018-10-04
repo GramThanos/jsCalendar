@@ -40,7 +40,7 @@
             'Juillet',
             'Août',
             'Septembre',
-            'octobre',
+            'Octobre',
             'Novembre',
             'Décembre'
         ],
