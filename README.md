@@ -45,8 +45,16 @@ ___
 
 If you are into *npm* you can install the lib's package by just typing in your command line
 
-```cmd
+```bash
 npm i simple-jscalendar
+
+# Copy libary files to your resources folders
+cp ./node_modules/simple-jscalendar/source/jsCalendar.js ./js/jsCalendar.js
+cp ./node_modules/simple-jscalendar/source/jsCalendar.css ./css/jsCalendar.css
+
+# Maybe copy a language and a theme too
+cp ./node_modules/simple-jscalendar/source/jsCalendar.lang.gr.js ./js/jsCalendar.lang.gr.js
+cp ./node_modules/simple-jscalendar/themes/jsCalendar.clean.css ./css/jsCalendar.clean.css
 ```
 
 More info here on the npm page
