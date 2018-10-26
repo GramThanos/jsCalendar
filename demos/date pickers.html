@@ -20,6 +20,7 @@
 				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 				text-align: center;
 			}
+
 			.description {
 				padding-bottom: 40px;
 			}
@@ -35,9 +36,17 @@
 		</div>
 
 		<!-- Date picker elements -->
-		<input type="text" value="" class="jsCalendar-datepicker" style="width: 294px;"/>
-		<input type="text" value="" class="jsCalendar-datepicker" style="width: 294px;"/>
-		<!-- Just add the jsCalendar-datepicker class name -->
+		<table style="margin: 0 auto;">
+			<tr>
+				<td>Date Picker 1</td>
+				<td><input type="text" value="" class="jsCalendar-datepicker"/></td>
+			</tr>
+			<tr>
+				<td>Date Picker 2</td>
+				<td><input type="text" value="" class="jsCalendar-datepicker"/></td>
+			</tr>
+		</table>
+		<!-- Just add the jsCalendar-datepicker class name on your inputs -->
 		
 		<br><br>
 		Click the input and select a day.
@@ -90,8 +99,19 @@
 
 				// Open calendar
 				elements.input.addEventListener("focus", function(){
-					elements.calendar.style.top = elements.input.offsetTop + elements.input.offsetHeight + "px";
-					elements.calendar.style.left = elements.input.offsetLeft + "px";
+					// Find position
+					var left = 0;
+					var top = 0;
+					var el = this;
+					while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)){
+						left += el.offsetLeft - el.scrollLeft;
+						top += el.offsetTop - el.scrollTop;
+						el = el.offsetParent;
+					}
+					var height = this.clientHeight || this.offsetHeight || this.scrollHeight || 20;
+
+					elements.calendar.style.top = (top + height + 2) + "px";
+					elements.calendar.style.left = (left - 4) + "px";
 					elements.calendar.style.display = "block";
 				}, true);
 				// Close calendar
