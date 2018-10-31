@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar Demo</title>
+		<meta name="description" content="jsCalendar demo - date picker">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!-- Demo Style -->
+		<style>
+			html, body {
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+				text-align: center;
+			}
+			.description {
+				padding-bottom: 40px;
+			}
+			.version {
+				font-size:12px;
+			}
+			.wrapper {
+				margin: 0 auto;
+				width: 300px;
+			}
+
+			.jsCalendar tbody td.jsCalendar-colorful-blue {border-color: #52C9FF;}
+			.jsCalendar tbody td.jsCalendar-colorful-yellow {border-color: #FFE31B;}
+			.jsCalendar tbody td.jsCalendar-colorful-orange {border-color: #FFB400;}
+			.jsCalendar tbody td.jsCalendar-colorful-red {border-color: #F6511D;}
+			.jsCalendar tbody td.jsCalendar-colorful-green {border-color: #7FB800;}
+		</style>
+	</head>
+	<body>
+		<div class="description">
+			<div style="font-size: 1.4em;">Colorful select</div>
+			<div>Rainbows</div>
+		</div>
+
+		<div class="wrapper">
+			<!-- Calendar element -->
+			<div id="my-calendar"></div>
+		</div>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Colorful Select
+			jsCalendar.prototype.colorfulSelect = function(dates, color){
+				// If no arguments
+				if (typeof dates === 'undefined') {
+					// Return
+					return this;
+				}
+
+				// If dates not array
+				if (!(dates instanceof Array)) {
+					// Lets make it an array
+					dates = [dates];
+				}
+
+				// Save colors
+				this._colorful_saveDates(dates, color);
+				// Select dates
+				this._selectDates(dates);
+
+				if (!this._colorful_patched) {
+					this._colorful_patched = this.refresh;
+					this.refresh = function(date) {
+						// Call original refresh
+						this._colorful_patched(date);
+						// Refresh select Colors
+						this._colorful_update();
+						// Return
+						return this;
+					};
+				}
+				// Refresh
+				this.refresh();
+
+				// Return
+				return this;
+			};
+
+			// Save dates colors
+			jsCalendar.prototype._colorful_saveDates = function(dates, color) {
+				// Copy array instance
+				dates = dates.slice();
+
+				// Parse dates
+				for (var i = 0; i < dates.length; i++) {
+					dates[i] = this._parseDate(dates[i]);
+					dates[i].setHours(0, 0, 0, 0);
+					dates[i] = dates[i].getTime();
+				}
+
+				if (typeof this._colorful_colors == "undefined") {
+					this._colorful_colors = {};
+				}
+
+				// Save each date color
+				for (i = dates.length - 1; i >= 0; i--) {
+					this._colorful_colors[dates[i]] = color;
+				}
+			};
+
+			// Refresh colors
+			jsCalendar.prototype._colorful_update = function() {
+				// Get month info
+				var month = this._getVisibleMonth(this._date);
+
+				// Check days
+				var timestamp;
+				for (var i = month.days.length - 1; i >= 0; i--) {
+					// If date is selected
+					timestamp = month.days[i].getTime();
+					if (this._selected.indexOf(timestamp) >= 0 && this._colorful_colors.hasOwnProperty(timestamp)) {
+						this._elements.bodyCols[i].className = 'jsCalendar-selected' + ' ' + this._colorful_colors[timestamp];
+					}
+				}
+			};
+
+
+			var cal = new jsCalendar('#my-calendar');
+			cal.select('03/10/2018');
+			cal.colorfulSelect('04/10/2018', 'jsCalendar-colorful-blue');
+			cal.colorfulSelect('05/10/2018', 'jsCalendar-colorful-yellow');
+			cal.colorfulSelect('06/10/2018', 'jsCalendar-colorful-orange');
+			cal.colorfulSelect('07/10/2018', 'jsCalendar-colorful-red');
+			cal.colorfulSelect('08/10/2018', 'jsCalendar-colorful-green');
+			cal.colorfulSelect(['09/10/2018', '10/10/2018'], 'jsCalendar-colorful-blue');
+		</script>
+		
+		<br><br><br>
+		<div class="version">
+			You are using jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script>
+		</div>
+	</body>
+</html>
