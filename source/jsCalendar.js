@@ -723,6 +723,11 @@ var jsCalendar = (function(){
                 this._elements.bodyCols[month.current].className = 'jsCalendar-current';
             }
         }
+        // today
+        var today = new Date();
+        if (month.days[month.start - 1].getMonth() === today.getMonth()) {
+            this._elements.bodyCols[month.start - 2 + today.getDate()].className += ' jsCalendar-today';
+        }
         // Next month
         for (i = month.end; i < month.days.length; i++) {
             this._elements.bodyCols[i].className = 'jsCalendar-next';
