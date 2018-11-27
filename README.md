@@ -90,9 +90,10 @@ ___
 
 ### Whats new?
 
-#### Latest development code v1.4.4
+#### Latest development code v1.4.4-beta
 
  - Bugs
+    - Fixed days locale bug of the `setLanguage` method
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
  - Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))

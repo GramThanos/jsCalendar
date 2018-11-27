@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4.3
+ * jsCalendar v1.4.4-beta
  *
  *
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = 'v1.4.3';
+    JsCalendar.version = 'v1.4.4-beta';
 
     // Sub-Constructor
     JsCalendar.prototype._construct = function(args) {
@@ -594,18 +594,11 @@ var jsCalendar = (function(){
         this._elements.headRows[1].className = 'jsCalendar-week-days';
         title_header.className = 'jsCalendar-title';
         this._elements.days = [];
-        var name, dayIndex, lang = this.language;
         for (i = 0; i < 7; i++) {
             this._elements.days.push(document.createElement('th'));
             this._elements.headRows[1].appendChild(this._elements.days[
                 this._elements.days.length - 1
             ]);
-
-            dayIndex = (i + this._options.firstDayOfTheWeek - 1) % 7;
-            name = this._options.dayFormat.replace(/(DAY|day|DDD|ddd|DD|dd|D)/g, function(key) {
-                return lang.dayStringParser(key, dayIndex);
-            });
-            this._elements.days[this._elements.days.length - 1].textContent = name;
         }
 
         // Body rows
@@ -690,10 +683,7 @@ var jsCalendar = (function(){
         this._elements.month.textContent = month.name;
 
         // Check zeros filling
-        var prefix = '';
-        if (this._options.zeroFill) {
-            prefix = '0';
-        }
+        var prefix = (this._options.zeroFill) ? '0' : '';
 
         // Populate days
         var text;
@@ -715,7 +705,7 @@ var jsCalendar = (function(){
             this._elements.bodyCols[i].className = 'jsCalendar-previous';
         }
         // Current day
-        if(month.current >= 0){
+        if (month.current >= 0) {
             if (this._elements.bodyCols[month.current].className.length > 0) {
                 this._elements.bodyCols[month.current].className += ' jsCalendar-current';
             }
@@ -726,6 +716,17 @@ var jsCalendar = (function(){
         // Next month
         for (i = month.end; i < month.days.length; i++) {
             this._elements.bodyCols[i].className = 'jsCalendar-next';
+        }
+
+        // Set days of the week locale
+        for (i = 0; i < 7; i++) {
+            var that = this;
+            this._elements.days[i].textContent = this._options.dayFormat.replace(/(DAY|day|DDD|ddd|DD|dd|D)/g, function(key) {
+                return that.language.dayStringParser(
+                    key,
+                    (i + that._options.firstDayOfTheWeek - 1) % 7
+                );
+            });
         }
     };
 

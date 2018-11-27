@@ -1,6 +1,21 @@
 # Changelog
 All jsCalendar changes are documented in this file.
 
+
+
+
+## [1.4.4-beta] - Under development
+
+### Fixed
+ - Bugs
+    - Fixed days locale bug of the `setLanguage` method
+    - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
+ - Languages
+    - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
+
+
+
+
 ## [1.4.3] - 2018-09-15
 
 ### Added
