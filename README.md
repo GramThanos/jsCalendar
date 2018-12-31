@@ -90,7 +90,7 @@ ___
 
 ### Whats new?
 
-#### Latest development code v1.4.4-beta
+#### Latest development code v1.4.4-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
 
  - Bugs
     - Fixed days locale bug of the `setLanguage` method
