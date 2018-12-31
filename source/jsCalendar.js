@@ -896,8 +896,8 @@ var jsCalendar = (function(){
             n = 1;
         }
 
-        // Calculate date
-        var date = new Date(this._date.getFullYear(), this._date.getMonth() - n, 1);
+        // Calculate date (last day of previous month)
+        var date = new Date(this._date.getFullYear(), this._date.getMonth() - n + 1, 0);
 
         // If date is not in range
         if (!this._isDateInRange(date)) {
