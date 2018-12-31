@@ -95,6 +95,7 @@ ___
  - Bugs
     - Fixed days locale bug of the `setLanguage` method
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
+    - Fixed min-date comparison on previous month navigation
  - Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
 
