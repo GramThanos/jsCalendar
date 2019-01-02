@@ -28,12 +28,9 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        // EDIT HERE THE LANGUAGE CODE ~~~~~~~~~~
         code : 'ca',
-        // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Months of the year
         months : [
-            // EDIT HERE THE MONTHS ~~~~~~~~~~~~~
             'Gener',
             'Febrer',
             'Març',
@@ -46,11 +43,9 @@
             'Octubre',
             'Novembre',
             'Decembre'
-            // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
         ],
         // Days of the week
         days : [
-            // EDIT HERE THE DAYS ~~~~~~~~~~~~~~~
             'Diumenge',
             'Dilluns',
             'Dimarts',
@@ -58,7 +53,6 @@
             'Dijous',
             'Divendres',
             'Dissabte'
-            // STOP EDIT ~~~~~~~~~~~~~~~~~~~~~~~~
         ]
     });
 
