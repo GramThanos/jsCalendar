@@ -123,6 +123,7 @@
 			height: 32px;
 			line-height: 32px;
 			width: 32px;
+			box-sizing: content-box;
 		}
 		.jsCalendar tbody td.jsCalendar-current {
 			background-color: #52C9FF;
