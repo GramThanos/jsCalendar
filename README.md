@@ -39,6 +39,22 @@ Or maybe you need to display it in an **other language**!
 ```
 
 We also have a simple GUI [calendar code generator](https://gramthanos.github.io/jsCalendar/generator.html), so that you can easily create your jsCalendar.
+
+
+___
+
+### Unpkg CDN
+
+You can also use the [jsCalendar package](https://unpkg.com/simple-jscalendar/) on the [unpkg CDN](https://unpkg.com).
+
+```html
+<!-- jsCalendar v1.4.3 Javascript and CSS -->
+<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous">
+```
+
+Full example with all the files and their integrity hashes [here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn%20full%20demo.html).
+
 ___
 
 ### npm package
@@ -57,7 +73,7 @@ cp ./node_modules/simple-jscalendar/source/jsCalendar.lang.gr.js ./js/jsCalendar
 cp ./node_modules/simple-jscalendar/themes/jsCalendar.clean.css ./css/jsCalendar.clean.css
 ```
 
-More info here on the npm page
+More info on the npm page
 https://www.npmjs.com/package/simple-jscalendar
 
 ___
@@ -122,7 +138,7 @@ ___
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
 I do although appreciate attribute.
 
-Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
+Copyright (c) 2019 Grammatopoulos Athanasios-Vasileios
 
 ___
 
