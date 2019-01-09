@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Minimal jsCalendar Demo</title>
+
+		<!-- jsCalendar v1.4.3 -->
+
+		<!-- Core Minified -->
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous">
+		<!-- Core Normal -->
+		<!--
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.js" integrity="sha384-jusfPXUJPc4Qtl0cdPNH0e/+yBgekufbzKcGsxBNSLzPHCYkHBWYdZtRiA2Hotm5" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.css" integrity="sha384-mJKjaabdvnH+EcAMBIycBVp8MToqC9jhDTBXJRpkYI2x8bNUO+nbYnBqdyQCdMIp" crossorigin="anonymous">
+		-->
+		
+		<!-- Optional Languages -->
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.de.js" integrity="sha384-i0GkTTXTirBg3whOHw5AqlI80IINcvOfx2HjQ/x4uqJ+wsB465gvhaekGGxPlxVX" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.es.js" integrity="sha384-HnSecKq1jgs1/eJQQpOiIb4Wtq7hlMC6nsooaNN+1JPTdzYSbiMP9f8xqKjque1e" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.fr.js" integrity="sha384-EY4DMdXF4Oma4jZBssx0toA2tIf1eAziJ7Muh3kyJjKHQQR8B3Uw4jvqJhQQfwXg" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.gr.js" integrity="sha384-PRRiiI0gLDo7hU5jD+aJQxbUSjjXHJeL0CdFAynqIWD9XATAYPQpKQkwrqjM+b8t" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.hu.js" integrity="sha384-yP2k8rRYSOiAc2PfxQ/WAFjMVRoA8AMxGZhlutbHXDc9vGMeokM2qyF2fLHaGPxo" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.it.js" integrity="sha384-3PiSuWThRXpAvOjasZXyIrVl5H2x296VPhp9D0NebW9V5rcHzCSx4Dh5WRd+pQVO" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.ja.js" integrity="sha384-O/JkPTslqFkNst65hIikWD7NVsNBRN2vGvprEt9n9tXPKFwocawTwKvwAnPOOZRc" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.no.js" integrity="sha384-exBlQuh0Apw5DoBAJVxPYJRKYrQjOScXHmQHX9ZA/jZb92Ec6NQjOddl/GexPkCS" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.pt.js" integrity="sha384-NF3X/E9s0p9PqeJxs+kx2xFHOAfiuNlGpIiwzLBET1Y0pejnfmOm5DJhn6ioTpCr" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.ru.js" integrity="sha384-xVQY3RcL7F/s9lcv9KNRyquT4kypFWf4OsQPGvpOcB70qhCvQ5P5KdhSygsc6GQg" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.sk.js" integrity="sha384-fusvqbkUQKgP3X7NX3lUxQEc5yG0V1vbZx8q246R4Bsl/Mzichrn3n8rOWOvJpSB" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.tr.js" integrity="sha384-9u6ZxP0FkigNhAYvsyxqA97/kjtLLv3cdS5isu5KP/vjQlguqdG76uS4UOEoNk7y" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.uk.js" integrity="sha384-tVzYxj0/QLUOY8QNd3YSzik+Zi4ShGbZTMd72rTA3xTtQMyrFquKRPsp1nsZdMJl" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.lang.zh.js" integrity="sha384-V0QPacMFDmO6dM4PsEqgwCew+6CzJCk0LaaL/cRM1+LQZjoh5GH64OHX+RNLuORd" crossorigin="anonymous"></script>
+
+		<!-- Optional Themes -->
+		<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/themes/jsCalendar.clean.min.css" integrity="sha384-nY03f2IWc99D9Fkru2cGQMrmm0HKZa1qtLZIaVoouYAIiuU0sxGr9Hl8MVYZASj1" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/themes/jsCalendar.clean.css" integrity="sha384-g9zMZ43agOjZv2UHD/5Zfr64ZkGNeRTGNJndcgkXNCpR3QP1GmeK7KKHNZIMdetj" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/themes/jsCalendar.darkseries.min.css" integrity="sha384-AUVqNGQWOgzm7NtCYNyf+KQMJwSlTWBnB5CdcLieumECTQa1dZp6qaLVDAsIUXD5" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/themes/jsCalendar.darkseries.css" integrity="sha384-N/4cA4qzDAFiIb4B2vNA9PCfq4wnrcCGUkohezXIaiZ9bD9Ecd3nxdQ1f6u6dler" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/themes/jsCalendar.micro.min.css" integrity="sha384-NXLBlmKZoWOYtNrtsc/UPkk9vJwQ5y302cg1jveeYMZwBg3Aa22EnUrIRB27XmSI" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/themes/jsCalendar.micro.css" integrity="sha384-NPBHV6DUt2LUi9O1LxfWmLZZszryMgIWthOhb9iuQOJ/o+StbZh7MfBAjWvaFUja" crossorigin="anonymous">-->
+	</head>
+	<body>
+		<!-- Calendar Element -->
+    	<div class="auto-jsCalendar"></div>
+	</body>
+</html>
