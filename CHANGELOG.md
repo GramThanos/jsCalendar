@@ -10,9 +10,11 @@ All jsCalendar changes are documented in this file.
  - Bugs
     - Fixed days locale bug of the `setLanguage` method
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
+    - Fixed min-date comparison on previous month navigation
+    - Fixed compatibility with bootstrap
  - Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
-
+    - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
 
 
 
