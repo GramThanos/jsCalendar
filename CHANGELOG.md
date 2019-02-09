@@ -12,6 +12,7 @@ All jsCalendar changes are documented in this file.
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
     - Fixed min-date comparison on previous month navigation
     - Fixed compatibility with bootstrap
+    - Fixed classic micro theme days of the week width bug
  - Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
     - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
