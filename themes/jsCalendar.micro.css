@@ -1,6 +1,6 @@
 /*
  * jsCalendar theme
- * Micro v1.1
+ * Micro v1.2
  * 
  * 
  * MIT License
@@ -49,4 +49,7 @@
 		line-height: 20px;
 		margin: 0;
 		width: 20px;
+	}
+	.jsCalendar.micro-theme.classic-theme thead .jsCalendar-week-days th {
+		width: 23px;
 	}

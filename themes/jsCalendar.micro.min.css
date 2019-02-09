@@ -1,6 +1,6 @@
 /*
  * jsCalendar theme
- * Micro v1.1
+ * Micro v1.2
  * 
  * 
  * MIT License
@@ -27,4 +27,4 @@
  * 
  */
 
-.jsCalendar.micro-theme thead .jsCalendar-title{height:20px;line-height:20px}.jsCalendar.micro-theme thead .jsCalendar-title-name{font-size:14px;padding:0 5px}.jsCalendar.micro-theme thead .jsCalendar-nav-left,.jsCalendar.micro-theme thead .jsCalendar-nav-right{font-size:12px;height:20px;line-height:20px;margin:0;width:20px}.jsCalendar.micro-theme tbody td,.jsCalendar.micro-theme thead .jsCalendar-week-days th{height:20px;line-height:20px;margin:0;width:20px}
+.jsCalendar.micro-theme thead .jsCalendar-title{height:20px;line-height:20px}.jsCalendar.micro-theme thead .jsCalendar-title-name{font-size:14px;padding:0 5px}.jsCalendar.micro-theme thead .jsCalendar-nav-left,.jsCalendar.micro-theme thead .jsCalendar-nav-right{font-size:12px;height:20px;line-height:20px;margin:0;width:20px}.jsCalendar.micro-theme tbody td,.jsCalendar.micro-theme thead .jsCalendar-week-days th{height:20px;line-height:20px;margin:0;width:20px}.jsCalendar.micro-theme.classic-theme thead .jsCalendar-week-days th{width: 23px;}
