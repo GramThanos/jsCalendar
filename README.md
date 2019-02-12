@@ -107,7 +107,11 @@ ___
 ### Whats new?
 
 #### Latest development code v1.4.4-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
-
+ - Added
+    - Render handlers (based on PR #35 by [jordanwallwork](https://github.com/jordanwallwork))
+       - Option `monthRenderHandler` and method `setMonthRenderHandler`
+       - Option `dayRenderHandler` and method `setDayRenderHandler`
+       - Option `dateRenderHandler` and method `setDateRenderHandler`
  - Bugs
     - Fixed days locale bug of the `setLanguage` method
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
