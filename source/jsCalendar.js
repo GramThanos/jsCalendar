@@ -763,7 +763,6 @@ var jsCalendar = (function(){
             );
         }
         if (this._options.dayRenderHandler) {
-            this._elements.days
             for (i = 0; i < 7; i++) {
                 // Clear any style
                 this._elements.days[i].removeAttribute('style');
