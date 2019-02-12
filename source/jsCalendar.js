@@ -256,6 +256,10 @@ var jsCalendar = (function(){
             // Parse date
             this._options.max = this._parseDate(options.max);
         }
+        
+        if (typeof options.getCellStyle !== 'undefined') {
+            this._options.getCellStyle = options.getCellStyle;
+        }
     };
 
     // Set target
@@ -697,6 +701,11 @@ var jsCalendar = (function(){
             }
             else {
                 this._elements.bodyCols[i].removeAttribute('class');
+            }
+            
+            this._elements.bodyCols[i].removeAttribute('style');
+            if (this._options.getCellStyle !== undefined) {
+                this._elements.bodyCols[i].setAttribute("style", this._options.getCellStyle(month.days[i]));
             }
         }
 

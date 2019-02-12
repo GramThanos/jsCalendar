@@ -33,7 +33,12 @@
 				navigator : true,
 				navigatorPosition : 'left',
 				min : '01/12/2016',
-				max : '01/02/2017'
+				max : '01/02/2017',
+                getCellStyle: function (date) {
+                    var day = date.getDay();
+                    var isWeekend = (day === 6) || (day === 0);
+                    if (isWeekend) return "font-weight:bold";
+                }
 			});
 		</script>
 
