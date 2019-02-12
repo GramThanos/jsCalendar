@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<!-- My calendar element -->
+		<div id="my-calendar"></div>
+		<!-- Dynamic create it -->
+		<script type="text/javascript">
+			// Create the calendar
+			var myCalendar = jsCalendar.new('#my-calendar', 'now', {
+				firstDayOfTheWeek : 2,
+
+				// Make changes on the month element
+				monthRenderHandler : function(month_index, month_element, month_info) {
+					// Show number of days
+					let days = document.createElement('span');
+					days.style.fontSize = '10px';
+					days.textContent = '(' + month_info.numberOfDays + ' days)';
+					month_element.appendChild(document.createTextNode(' '));
+					month_element.appendChild(days);
+
+					// Some month info
+					//console.log(month_info.start);	// Date object of the first day on time 00:00:00 000
+					//console.log(month_info.end);	// Date object of the last day on time 23:59:59 999
+					//console.log(month_info);		// Number of days in that month
+				},
+
+				// Make changes on the week day element
+				dayRenderHandler : function(day_index, day_element, day_info) {
+					// Make weekends red
+					if (day_index == 0 || day_index == 6) {
+						day_element.style.color = '#c32525';
+					}
+
+					// Some week day info
+					//console.log(day_info.position); // Day x-position in the calendar week days row
+				},
+
+				// Make changes on the date elements
+				dateRenderHandler : function(date, date_element, date_info) {
+					// Make weekends bold and red
+					if (!date_info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+						date_element.style.fontWeight = 'bold';
+						date_element.style.color = (date_info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+					}
+
+					// Some more info
+					//console.log(date_info.isCurrent);		// If the set date on calendar
+					//console.log(date_info.isSelected);		// If date is selected or not
+					//console.log(date_info.isPreviousMonth);	// If date is on previous month
+					//console.log(date_info.isCurrentMonth);	// If date is on current month
+					//console.log(date_info.isNextMonth);		// If date is on next month
+					//console.log(date_info.position.x);		// Date x-position on calendar grid
+					//console.log(date_info.position.y);		// Date y-position on calendar grid
+				}
+
+			});
+		</script>
+
+		<!-- My auto calendar element -->
+		<div class="auto-jsCalendar"
+			 id="my-other-calendar"
+			 data-first-day-of-the-week="2"
+			 data-date="now"></div>
+
+		<!-- Apply render handlers to the second calendar -->
+		<script type="text/javascript">
+			window.addEventListener('load', function(){
+				// Get the auto-calendar (we have to wait the window load event)
+				var myOtherCalendar = jsCalendar.get('#my-other-calendar');
+
+				// Make changes on the month element
+				myOtherCalendar.setMonthRenderHandler(
+					function(month_index, month_element, month_info) {
+						// Show month index
+						month_element.textContent = 'Month index: ' + month_index;
+					}
+				);
+
+				// Make changes on the day element
+				myOtherCalendar.setDayRenderHandler(
+					function(day_index, day_element, day_info) {
+						// Show day index
+						day_element.textContent = day_index;
+					}
+				);
+
+				// Make changes on the date elements
+				myOtherCalendar.setDateRenderHandler(
+					function(date, date_element, date_info) {
+						// Show <x,y> position of date
+						date_element.textContent = '<' + date_info.position.x + ',' + date_info.position.y + '>';
+					}
+				);
+			}, false);
+		</script>
+	</body>
+</html>

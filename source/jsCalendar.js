@@ -179,7 +179,10 @@ var jsCalendar = (function(){
             navigator : true,
             navigatorPosition : 'both',
             min : false,
-            max : false
+            max : false,
+            monthRenderHandler : false,
+            dayRenderHandler : false,
+            dateRenderHandler : false
         };
         // Check options
         if (typeof options.zeroFill !== 'undefined'){
@@ -257,8 +260,15 @@ var jsCalendar = (function(){
             this._options.max = this._parseDate(options.max);
         }
         
-        if (typeof options.getCellStyle !== 'undefined') {
-            this._options.getCellStyle = options.getCellStyle;
+        // Set render handlers
+        if (typeof options.monthRenderHandler !== 'undefined' && typeof options.monthRenderHandler === 'function') {
+            this._options.monthRenderHandler = options.monthRenderHandler;
+        }
+        if (typeof options.dayRenderHandler !== 'undefined' && typeof options.dayRenderHandler === 'function') {
+            this._options.dayRenderHandler = options.dayRenderHandler;
+        }
+        if (typeof options.dateRenderHandler !== 'undefined' && typeof options.dateRenderHandler === 'function') {
+            this._options.dateRenderHandler = options.dateRenderHandler;
         }
     };
 
@@ -702,11 +712,6 @@ var jsCalendar = (function(){
             else {
                 this._elements.bodyCols[i].removeAttribute('class');
             }
-            
-            this._elements.bodyCols[i].removeAttribute('style');
-            if (this._options.getCellStyle !== undefined) {
-                this._elements.bodyCols[i].setAttribute("style", this._options.getCellStyle(month.days[i]));
-            }
         }
 
         // Previous month
@@ -737,7 +742,100 @@ var jsCalendar = (function(){
                 );
             });
         }
+
+        // Call render handlers
+        if (this._options.monthRenderHandler) {
+            var date = month.days[month.start];
+            // Clear any style
+            this._elements.month.removeAttribute('style');
+            // Call the render handler
+            this._options.monthRenderHandler.call(this,
+                // Month index
+                date.getMonth(),
+                // Pass the html element
+                this._elements.month,
+                // Info about that month
+                {
+                    start : new Date(date.getTime()),
+                    end : new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59, 999),
+                    numberOfDays : month.end - month.start + 1
+                }
+            );
+        }
+        if (this._options.dayRenderHandler) {
+            this._elements.days
+            for (i = 0; i < 7; i++) {
+                // Clear any style
+                this._elements.days[i].removeAttribute('style');
+                // Call the render handler
+                this._options.dayRenderHandler.call(this,
+                    // Day index
+                    (i + this._options.firstDayOfTheWeek - 1) % 7,
+                    // Pass the html element
+                    this._elements.days[i],
+                    // Info about that day
+                    {
+                        position : i
+                    }
+                );
+            }
+        }
+        if (this._options.dateRenderHandler) {
+            for (i = 0; i < month.days.length; i++) {
+                // Clear any style
+                this._elements.bodyCols[i].removeAttribute('style');
+                // Call the render handler
+                this._options.dateRenderHandler.call(this,
+                    // Date should be clonned
+                    new Date(month.days[i].getTime()),
+                    // Pass the html element
+                    this._elements.bodyCols[i],
+                    // Info about that date
+                    {
+                        isCurrent : (month.current == i),
+                        isSelected : (this._selected.indexOf(month.days[i].getTime()) >= 0),
+                        isPreviousMonth : (i < month.start),
+                        isCurrentMonth : (month.start <= i && i <= month.end),
+                        isNextMonth : (month.end < i),
+                        position : {x: i%7, y: Math.floor(i/7)}
+                    }
+                );
+            }
+        }
     };
+
+    // Set or Clear the Month's render handler
+    JsCalendar.prototype.setMonthRenderHandler = function(handler) {
+        if (typeof handler !== 'undefined' && typeof handler === 'function') {
+            this._options.monthRenderHandler = handler;
+        }
+        else {
+            this._options.monthRenderHandler = false;
+        }
+        this.refresh();
+    }
+
+    // Set or Clear the Day's render handler
+    JsCalendar.prototype.setDayRenderHandler = function(handler) {
+        if (typeof handler !== 'undefined' && typeof handler === 'function') {
+            this._options.dayRenderHandler = handler;
+        }
+        else {
+            this._options.dayRenderHandler = false;
+        }
+        this.refresh();
+    }
+
+    // Set or Clear the Date's render handler
+    JsCalendar.prototype.setDateRenderHandler = function(handler) {
+        if (typeof handler !== 'undefined' && typeof handler === 'function') {
+            this._options.dateRenderHandler = handler;
+        }
+        else {
+            this._options.dateRenderHandler = false;
+        }
+        this.refresh();
+    }
 
     // Fire all event listeners
     JsCalendar.prototype._eventFire_dateClick = function(event, date) {
