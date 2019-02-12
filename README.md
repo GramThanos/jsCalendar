@@ -121,6 +121,7 @@ ___
  - Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
     - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
+    - Added Swedish Language (by [olssonm](https://github.com/olssonm))
 
 
 ___
