@@ -1312,7 +1312,7 @@ var jsCalendar = (function(){
                 // Set as loaded
                 calendars[i].setAttribute('jsCalendar-loaded', 'true');
                 // Create
-                new jsCalendar({target: calendars[i]});
+                new JsCalendar({target: calendars[i]});
             }
         }
     };
@@ -1357,7 +1357,7 @@ var jsCalendar = (function(){
     // Manage existing jsCalendar objects
     var jsCalendarObjects = {};
     JsCalendar.set = function(identifier, calendar){
-        if (calendar instanceof jsCalendar) {
+        if (calendar instanceof JsCalendar) {
             jsCalendarObjects[identifier] = calendar;
             return true;
         }
@@ -1501,16 +1501,13 @@ var jsCalendar = (function(){
         }
     })();
 
-    // Return
-    return JsCalendar;
-})();
-
-// I love anonymous functions
-(function(){
     // Init auto calendars
     // After the page loads
     window.addEventListener('load', function() {
         // Get calendars
-        jsCalendar.autoFind();
+        JsCalendar.autoFind();
     }, false);
+
+    // Return
+    return JsCalendar;
 })();
