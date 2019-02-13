@@ -109,5 +109,35 @@
 				);
 			}, false);
 		</script>
+
+		<!-- My auto calendar element -->
+		<!-- with function names as rendar handlers -->
+		<div class="auto-jsCalendar"
+			 data-first-day-of-the-week="2"
+			 data-date="now"
+			 data-month-render-handler="myFunction4Month"
+			 data-day-render-handler="myFunction4Day"
+			 data-date-render-handler="myFunction4Date"></div>
+
+		<!-- Apply render handlers to the second calendar -->
+		<script type="text/javascript">
+			// Make changes on the month element
+			function myFunction4Month (month_index, month_element, month_info) {
+				// Show month index
+				month_element.textContent = 'Month index: ' + month_index;
+			}
+
+			// Make changes on the day element
+			function myFunction4Day (day_index, day_element, day_info) {
+				// Show day index
+				day_element.textContent = day_index;
+			}
+
+			// Make changes on the date elements
+			function myFunction4Date (date, date_element, date_info) {
+				// Show <x,y> position of date
+				date_element.textContent = '<' + date_info.position.x + ',' + date_info.position.y + '>';
+			}
+		</script>
 	</body>
 </html>

@@ -4,7 +4,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2019 Grammatopoulos Athanasios-Vasileios
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -48,10 +48,11 @@ var jsCalendar = (function(){
     JsCalendar.prototype._construct = function(args) {
         // Parse arguments
         args = this._parseArguments(args);
+        // Set a target
+        this._setTarget(args.target);
         // Init calendar
         this._init(args.options);
         // Init target
-        this._setTarget(args.target);
         this._initTarget();
         // Set date
         this._setDate(args.date);
@@ -167,23 +168,45 @@ var jsCalendar = (function(){
         return obj;
     };
 
+    // Default options
+    JsCalendar.options = {
+        language : 'en',
+        zeroFill : false,
+        monthFormat : 'month',
+        dayFormat : 'D',
+        firstDayOfTheWeek : 1,
+        navigator : true,
+        navigatorPosition : 'both',
+        min : false,
+        max : false,
+        monthRenderHandler : false,
+        dayRenderHandler : false,
+        dateRenderHandler : false
+    };
+
     // Parse options
-    JsCalendar.prototype._parseOptions = function(options) {
-        // Default options
-        this._options = {
-            language : 'en',
-            zeroFill : false,
-            monthFormat : 'month',
-            dayFormat : 'D',
-            firstDayOfTheWeek : 1,
-            navigator : true,
-            navigatorPosition : 'both',
-            min : false,
-            max : false,
-            monthRenderHandler : false,
-            dayRenderHandler : false,
-            dateRenderHandler : false
-        };
+    JsCalendar.prototype._parseOptions = function(doptions) {
+        // Options Object
+        this._options = {};
+        // Input options object (dirty)
+        var options = {};
+
+        // Load default and input options
+        for (var item in JsCalendar.options) {
+            // Default options
+            if (JsCalendar.options.hasOwnProperty(item)) {
+                this._options[item] = JsCalendar.options[item];
+            }
+            // Dynamic options
+            if (doptions.hasOwnProperty(item)) {
+                options[item] = doptions[item];
+            }
+            // Dataset options
+            else if (this._target.dataset.hasOwnProperty(item)) {
+                options[item] = this._target.dataset[item];
+            }
+        }
+
         // Check options
         if (typeof options.zeroFill !== 'undefined'){
             if (options.zeroFill === 'false' || !options.zeroFill) {
@@ -261,14 +284,44 @@ var jsCalendar = (function(){
         }
         
         // Set render handlers
-        if (typeof options.monthRenderHandler !== 'undefined' && typeof options.monthRenderHandler === 'function') {
-            this._options.monthRenderHandler = options.monthRenderHandler;
+        if (typeof options.monthRenderHandler !== 'undefined') {
+            // Passed as function name string
+            if (
+                typeof options.monthRenderHandler === 'string' &&
+                typeof window[options.monthRenderHandler] === 'function'
+            ) {
+                this._options.monthRenderHandler = window[options.monthRenderHandler];
+            }
+            // Passed as function
+            else if (typeof options.monthRenderHandler === 'function') {
+                this._options.monthRenderHandler = options.monthRenderHandler;
+            }
         }
-        if (typeof options.dayRenderHandler !== 'undefined' && typeof options.dayRenderHandler === 'function') {
-            this._options.dayRenderHandler = options.dayRenderHandler;
+        if (typeof options.dayRenderHandler !== 'undefined') {
+            // Passed as function name string
+            if (
+                typeof options.dayRenderHandler === 'string' &&
+                typeof window[options.dayRenderHandler] === 'function'
+            ) {
+                this._options.dayRenderHandler = window[options.dayRenderHandler];
+            }
+            // Passed as function
+            else if (typeof options.dayRenderHandler === 'function') {
+                this._options.dayRenderHandler = options.dayRenderHandler;
+            }
         }
-        if (typeof options.dateRenderHandler !== 'undefined' && typeof options.dateRenderHandler === 'function') {
-            this._options.dateRenderHandler = options.dateRenderHandler;
+        if (typeof options.dateRenderHandler !== 'undefined') {
+            // Passed as function name string
+            if (
+                typeof options.dateRenderHandler === 'string' &&
+                typeof window[options.dateRenderHandler] === 'function'
+            ) {
+                this._options.dateRenderHandler = window[options.dateRenderHandler];
+            }
+            // Passed as function
+            else if (typeof options.dateRenderHandler === 'function') {
+                this._options.dateRenderHandler = options.dateRenderHandler;
+            }
         }
     };
 
@@ -286,9 +339,9 @@ var jsCalendar = (function(){
             this._target = target;
 
             // Link object to list
-            this._target_id = this._target.id;
-            if (this._target_id && this._target_id.length > 0) {
-                jsCalendarObjects['#' + this._target_id] = this;
+            var id = this._target.id;
+            if (id && id.length > 0) {
+                jsCalendarObjects['#' + id] = this;
             }
         }
     };
@@ -1247,7 +1300,7 @@ var jsCalendar = (function(){
     // Static foo methods (well... not really static)
 
     // Auto init calendars
-    JsCalendar.autoFind = function(){
+    JsCalendar.autoFind = function() {
         // Get all auto-calendars
         var calendars = document.getElementsByClassName('auto-jsCalendar');
         // Temp options variable
@@ -1255,19 +1308,11 @@ var jsCalendar = (function(){
         // For each auto-calendar
         for (var i = 0; i < calendars.length; i++) {
             // If not loaded
-            if(calendars[i].getAttribute('jsCalendar-loaded') !== 'true') {
+            if (calendars[i].getAttribute('jsCalendar-loaded') !== 'true') {
                 // Set as loaded
                 calendars[i].setAttribute('jsCalendar-loaded', 'true');
-                // Init options
-                options = {};
-                // Add options
-                for(var j in calendars[i].dataset){
-                    options[j] = calendars[i].dataset[j];
-                }
-                // Set target
-                options.target = calendars[i];
                 // Create
-                new jsCalendar(options);
+                new jsCalendar({target: calendars[i]});
             }
         }
     };
