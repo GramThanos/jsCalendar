@@ -26,6 +26,7 @@
 			window.addEventListener('load', function() {
 				// Get the calendar
 				var calendar = jsCalendar.get('#awesome-calendar');
+				console.log('Get by id', calendar);
 			}, false);
 			// The jsCalendar creates the auto-jsCalendar onload,
 			// so you have to wait for the event and this code must
@@ -40,14 +41,17 @@
 			// Create calendar by id
 			var calendar_2 = jsCalendar.new("#calendar-by-id");
 			// Bind object to an id
-			jsCalendar.set('<custom-id>', calendar_2);
+			var result = jsCalendar.set('<custom-id>', calendar_2);
+			console.log('Set by custom id', result);
 
 			// Get a reference to the calendar object
-			calendar_2_ref = jsCalendar.get('<custom-id>');
+			var calendar_2_ref = jsCalendar.get('<custom-id>');
+			console.log('Get by custom id', calendar_2_ref);
 			calendar_2_ref.goto('01/12/2018');
 
 			// Remove the binding
-			jsCalendar.del('<custom-id>');
+			result = jsCalendar.del('<custom-id>');
+			console.log('Det by custom id', result);
 		</script>
 
 
