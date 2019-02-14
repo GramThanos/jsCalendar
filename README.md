@@ -112,12 +112,16 @@ ___
        - Option `monthRenderHandler` and method `setMonthRenderHandler`
        - Option `dayRenderHandler` and method `setDayRenderHandler`
        - Option `dateRenderHandler` and method `setDateRenderHandler`
+    - Default options were exposed on `jsCalendar.options["option-name"]`
+    - Exposed `jsCalendar.tools.getElement` method (previously known as `jsCalendar.prototype._getElement`)
  - Bugs
     - Fixed days locale bug of the `setLanguage` method
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
     - Fixed min-date comparison on previous month navigation
     - Fixed compatibility with bootstrap
     - Fixed classic micro theme days of the week width bug
+    - Fixed not parsing dataset options on dynamic calendar creation
+    - Fixed `this` not pointing to jsCalendar instance on events handlers (`onDateClick` and `onMonthChange`)
  - Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
     - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
