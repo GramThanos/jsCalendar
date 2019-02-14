@@ -865,13 +865,13 @@ var jsCalendar = (function(){
     JsCalendar.prototype._eventFire_dateClick = function(event, date) {
         // Events
         for (var i = 0; i < this._events.date.length; i++) {
-            (function(callback) {
+            (function(callback, instance) {
                 // Call asynchronous
                 setTimeout(function(){
                     // Call callback
-                    callback(event, new Date(date.getTime()));
+                    callback.call(instance, event, new Date(date.getTime()));
                 }, 0);
-            })(this._events.date[i]);
+            })(this._events.date[i], this);
         }
     };
 
@@ -882,13 +882,13 @@ var jsCalendar = (function(){
         month.setDate(1);
         // Events
         for (var i = 0; i < this._events.month.length; i++) {
-            (function(callback) {
+            (function(callback, instance) {
                 // Call asynchronous
                 setTimeout(function(){
                     // Call callback
-                    callback(event, new Date(month.getTime()));
+                    callback.call(instance, event, new Date(month.getTime()));
                 }, 0);
-            })(this._events.month[i]);
+            })(this._events.month[i], this);
         }
     };
 
