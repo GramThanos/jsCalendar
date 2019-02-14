@@ -1253,7 +1253,7 @@ var jsCalendar = (function(){
     // Tools
     var tools = JsCalendar.tools = {};
     // Parse to javascript date object
-    tools.parseDate = function(date) {
+    tools.parseDate = function(date, silent) {
         // If set now date
         if (typeof date === 'undefined' || date === null || date === 'now') {
             // Get date now
@@ -1272,13 +1272,15 @@ var jsCalendar = (function(){
                 // Check if date does not exist
                 if (!date || date.getMonth() !== month_index) {
                     // Throw an error
-                    throw new Error('jsCalendar: Date does not exist.');
+                    if (!silent) throw new Error('jsCalendar: Date does not exist.');
+                    return null;
                 }
             }
             // Can't parse string
             else {
                 // Throw an error
-                throw new Error('jsCalendar: Failed to parse date.');
+                if (!silent) throw new Error('jsCalendar: Failed to parse date.');
+                return null;
             }
         }
 
@@ -1291,7 +1293,8 @@ var jsCalendar = (function(){
         // If it not a date 
         else if (!(date instanceof Date)) {
             // Throw an error
-            throw new Error('jsCalendar: Invalid date.');
+            if (!silent) throw new Error('jsCalendar: Invalid date.');
+            return null;
         }
 
         // Return date
