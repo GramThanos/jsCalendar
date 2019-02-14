@@ -55,7 +55,13 @@ var jsCalendar = (function(){
         // Init target
         this._initTarget();
         // Set date
-        this._setDate(args.date);
+        this._setDate(
+            (args.date !== null) ? args.date :
+            (this._target.dataset.hasOwnProperty('date')) ? this._target.dataset.date :
+            new Date()
+        );
+        // If invalid date
+        if (!this._now) throw new Error('jsCalendar: Date is outside range.');
         // Create
         this._create();
         // Update
@@ -99,7 +105,7 @@ var jsCalendar = (function(){
         // Arguments object
         var obj = {
             target : null,
-            date : new Date(),
+            date : null,
             options : {}
         };
 
@@ -275,12 +281,12 @@ var jsCalendar = (function(){
         // Set min calendar date
         if (typeof options.min !== 'undefined' && options.min !== 'false' && options.min !== false) {
             // Parse date
-            this._options.min = this._parseDate(options.min);
+            this._options.min = tools.parseDate(options.min);
         }
         // Set max calendar date
         if (typeof options.max !== 'undefined' && options.max !== 'false' && options.max !== false) {
             // Parse date
-            this._options.max = this._parseDate(options.max);
+            this._options.max = tools.parseDate(options.max);
         }
         
         // Set render handlers
@@ -328,7 +334,7 @@ var jsCalendar = (function(){
     // Set target
     JsCalendar.prototype._setTarget = function(element) {
         // Parse target
-        var target = JsCalendar.tools.getElement(element);
+        var target = tools.getElement(element);
         // If target not found
         if (!target) {
             // Throw an error
@@ -375,7 +381,7 @@ var jsCalendar = (function(){
         }
 
         // Parse date
-        date = this._parseDate(date);
+        date = tools.parseDate(date);
         
         // Check min
         if (this._options.min !== false && this._options.min.getTime() > date.getTime()) {
@@ -392,60 +398,15 @@ var jsCalendar = (function(){
 
     // Set a Date
     JsCalendar.prototype._setDate = function(date) {
+        // Parse date
+        date = tools.parseDate(date);
         // Check date not in range
         if (!this._isDateInRange(date)) {
             return;
         }
         // Set data
-        this._now = this._parseDate(date);
+        this._now = date;
         this._date = new Date(this._now.getFullYear(), this._now.getMonth(), 1);
-    };
-
-    // Parse Date
-    JsCalendar.prototype._parseDate = function(date) {
-
-        // If set now date
-        if (typeof date === 'undefined' || date === null || date === 'now') {
-            // Get date now
-            date = new Date();
-        }
-
-        // If date is string
-        else if (typeof date === 'string') {
-            // Parse date string
-            date = date.replace(/-/g,'/').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4,4})$/i);
-            // If match
-            if (date !== null) {
-                var month_index = parseInt(date[2], 10) - 1;
-                // Parse date
-                date = new Date(date[3], month_index, date[1]);
-                // Check if date does not exist
-                if (!date || date.getMonth() !== month_index) {
-                    // Throw an error
-                    throw new Error('jsCalendar: Date does not exist.');
-                }
-            }
-            // Can't parse string
-            else {
-                // Throw an error
-                throw new Error('jsCalendar: Failed to parse date.');
-            }
-        }
-
-        // If it is a number
-        else if (typeof date === 'number') {
-            // Get time from timestamp
-            date = new Date(date);
-        }
-
-        // If it not a date 
-        else if (!(date instanceof Date)) {
-            // Throw an error
-            throw new Error('jsCalendar: Invalid date.');
-        }
-
-        // Return date
-        return new Date(date.getTime());
     };
 
     // Convert to date string
@@ -464,7 +425,7 @@ var jsCalendar = (function(){
             date = this._date;
         }
         else {
-            date = this._parseDate(date);
+            date = tools.parseDate(date);
         }
 
         // Get month's first day
@@ -512,7 +473,7 @@ var jsCalendar = (function(){
             date = this._date;
         }
         else {
-            date = this._parseDate(date);
+            date = tools.parseDate(date);
         }
 
         // Visible days array
@@ -667,7 +628,7 @@ var jsCalendar = (function(){
 
         // Parse dates
         for (var i = 0; i < dates.length; i++) {
-            dates[i] = this._parseDate(dates[i]);
+            dates[i] = tools.parseDate(dates[i]);
             dates[i].setHours(0, 0, 0, 0);
             dates[i] = dates[i].getTime();
         }
@@ -688,7 +649,7 @@ var jsCalendar = (function(){
 
         // Parse dates
         for (var i = 0; i < dates.length; i++) {
-            dates[i] = this._parseDate(dates[i]);
+            dates[i] = tools.parseDate(dates[i]);
             dates[i].setHours(0, 0, 0, 0);
             dates[i] = dates[i].getTime();
         }
@@ -944,7 +905,7 @@ var jsCalendar = (function(){
         // If value
         if (date) {
             // Set min date
-            this._options.min = this._parseDate(date);
+            this._options.min = tools.parseDate(date);
         }
         // Disable
         else {
@@ -963,7 +924,7 @@ var jsCalendar = (function(){
         // If value
         if (date) {
             // Set max date
-            this._options.max = this._parseDate(date);
+            this._options.max = tools.parseDate(date);
         }
         // Disable
         else {
@@ -984,7 +945,7 @@ var jsCalendar = (function(){
         if (typeof date !== 'undefined') {
             // If date is in range
             if (this._isDateInRange(date)) {
-                this._date = this._parseDate(date);
+                this._date = tools.parseDate(date);
             }
         }
 
@@ -1172,7 +1133,7 @@ var jsCalendar = (function(){
         }
 
         // Parse date
-        date = this._parseDate(date);
+        date = tools.parseDate(date);
         date.setHours(0, 0, 0, 0);
         date = date.getTime();
 
@@ -1195,7 +1156,7 @@ var jsCalendar = (function(){
         }
 
         // Parse date
-        date = this._parseDate(date);
+        date = tools.parseDate(date);
         date.setHours(0, 0, 0, 0);
         date = date.getTime();
 
@@ -1220,12 +1181,12 @@ var jsCalendar = (function(){
         }
 
         // Parse date and get month
-        var month = this._parseDate(date);
+        var month = tools.parseDate(date);
         month.setHours(0, 0, 0, 0);
         month.setDate(1);
 
         // Parse active month date
-        var active = this._parseDate(this._date);
+        var active = tools.parseDate(this._date);
         active.setHours(0, 0, 0, 0);
         active.setDate(1);
         
@@ -1290,14 +1251,55 @@ var jsCalendar = (function(){
     };
     
     // Tools
-    JsCalendar.tools = {};
-    // String to date
-    JsCalendar.tools.parseDate = function() {
-        return JsCalendar.prototype._parseDate.apply({}, arguments);
+    var tools = JsCalendar.tools = {};
+    // Parse to javascript date object
+    tools.parseDate = function(date) {
+        // If set now date
+        if (typeof date === 'undefined' || date === null || date === 'now') {
+            // Get date now
+            date = new Date();
+        }
+
+        // If date is string
+        else if (typeof date === 'string') {
+            // Parse date string
+            date = date.replace(/-/g,'/').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4,4})$/i);
+            // If match
+            if (date !== null) {
+                var month_index = parseInt(date[2], 10) - 1;
+                // Parse date
+                date = new Date(date[3], month_index, date[1]);
+                // Check if date does not exist
+                if (!date || date.getMonth() !== month_index) {
+                    // Throw an error
+                    throw new Error('jsCalendar: Date does not exist.');
+                }
+            }
+            // Can't parse string
+            else {
+                // Throw an error
+                throw new Error('jsCalendar: Failed to parse date.');
+            }
+        }
+
+        // If it is a number
+        else if (typeof date === 'number') {
+            // Get time from timestamp
+            date = new Date(date);
+        }
+
+        // If it not a date 
+        else if (!(date instanceof Date)) {
+            // Throw an error
+            throw new Error('jsCalendar: Invalid date.');
+        }
+
+        // Return date
+        return new Date(date.getTime());
     };
-    JsCalendar.tools.stringToDate = JsCalendar.tools.parseDate;
+    tools.stringToDate = tools.parseDate;
     // Date to string
-    JsCalendar.tools.dateToString = function(date, format, lang) {
+    tools.dateToString = function(date, format, lang) {
         // Find lang
         var languages = JsCalendar.prototype.languages;
         if (!lang || !languages.hasOwnProperty(lang)) {
@@ -1316,7 +1318,7 @@ var jsCalendar = (function(){
         );
     };
     // Get element
-    JsCalendar.tools.getElement = function(element) {
+    tools.getElement = function(element) {
         // Check if not valid
         if (!element) {
             return null;
