@@ -328,7 +328,7 @@ var jsCalendar = (function(){
     // Set target
     JsCalendar.prototype._setTarget = function(element) {
         // Parse target
-        var target = this._getElement(element);
+        var target = JsCalendar.tools.getElement(element);
         // If target not found
         if (!target) {
             // Throw an error
@@ -344,34 +344,6 @@ var jsCalendar = (function(){
                 jsCalendarObjects['#' + id] = this;
             }
         }
-    };
-
-    // Get element
-    JsCalendar.prototype._getElement = function(element) {
-        // Check if not valid
-        if (!element) {
-            return null;
-        }
-
-        // If string
-        if (typeof element === 'string') {
-            // Get element by id
-            if (element[0] === '#') {
-                return document.getElementById(element.substring(1));
-            }
-            // Get element by class-name
-            else if (element[0] === '.') {
-                return document.getElementsByClassName(element.substring(1))[0];
-            }
-        }
-        
-        // or if it is HTML element (just a naive-simple check)
-        else if (element.tagName && element.nodeName && element.ownerDocument && element.removeAttribute) {
-            return element;
-        }
-
-        // Unknown
-        return null;
     };
 
     // Init target
@@ -1342,6 +1314,33 @@ var jsCalendar = (function(){
             }},
             [date, format]
         );
+    };
+    // Get element
+    JsCalendar.tools.getElement = function(element) {
+        // Check if not valid
+        if (!element) {
+            return null;
+        }
+
+        // If string
+        if (typeof element === 'string') {
+            // Get element by id
+            if (element[0] === '#') {
+                return document.getElementById(element.substring(1));
+            }
+            // Get element by class-name
+            else if (element[0] === '.') {
+                return document.getElementsByClassName(element.substring(1))[0];
+            }
+        }
+        
+        // or if it is HTML element (just a naive-simple check)
+        else if (element.tagName && element.nodeName && element.ownerDocument && element.removeAttribute) {
+            return element;
+        }
+
+        // Unknown
+        return null;
     };
     
     // Get a new object
