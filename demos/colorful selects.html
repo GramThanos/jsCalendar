@@ -95,7 +95,7 @@
 
 				// Parse dates
 				for (var i = 0; i < dates.length; i++) {
-					dates[i] = this._parseDate(dates[i]);
+					dates[i] = jsCalendar.tools.parseDate(dates[i]);
 					dates[i].setHours(0, 0, 0, 0);
 					dates[i] = dates[i].getTime();
 				}
@@ -128,6 +128,7 @@
 
 
 			var cal = new jsCalendar('#my-calendar');
+			cal.set('02/10/2018');
 			cal.select('03/10/2018');
 			cal.colorfulSelect('04/10/2018', 'jsCalendar-colorful-blue');
 			cal.colorfulSelect('05/10/2018', 'jsCalendar-colorful-yellow');
