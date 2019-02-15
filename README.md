@@ -43,17 +43,25 @@ We also have a simple GUI [calendar code generator](https://gramthanos.github.io
 
 ___
 
-### Unpkg CDN
+### CDN (Unpkg & JsDelivr)
 
 You can also use the [jsCalendar package](https://unpkg.com/simple-jscalendar/) on the [unpkg CDN](https://unpkg.com).
 
 ```html
-<!-- jsCalendar v1.4.3 Javascript and CSS -->
+<!-- jsCalendar v1.4.3 Javascript and CSS from unpkg cdn -->
 <script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous">
 ```
 
-Full example with all the files and their integrity hashes [here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn%20full%20demo.html).
+Or you can also use the [jsCalendar npm package](https://www.jsdelivr.com/package/npm/simple-jscalendar) on the [jsdelivr CDN](https://www.jsdelivr.com).
+
+```html
+<!-- jsCalendar v1.4.3 Javascript and CSS from jsdelivr npm cdn -->
+<script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous">
+```
+
+Full example with all the files and their integrity hashes [using unpkg here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html) and [using jsdelivr here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html) (the hashes are the same).
 
 ___
 
