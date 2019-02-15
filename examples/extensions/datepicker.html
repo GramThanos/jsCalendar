@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/jsCalendar.micro.css">
+		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
+		<script type="text/javascript" src="../../extensions/jsCalendar.datepicker.js"></script>
+
+		<style type="text/css">
+			#wrapper {
+				position: absolute;
+				top: 200px;
+				left: 50%;
+				width: 400px;
+				line-height: 40px;
+				margin-left: -200px;
+				font-size: 20px;
+				text-align: center;
+			}
+			#wrapper input {
+				height: 30px;
+				width: 150px;
+				line-height: 30px;
+				font-size: 16px;
+				text-align: center;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<div id="wrapper">
+			Date Pickers Examples<br>
+			
+			Example 1 :
+			<input type="text"
+				   name="test-1"
+				   data-datepicker/>
+			<br>
+			
+			Example 2 :
+			<input type="text"
+				   name="test-2"
+				   value="05/01/2019"
+				   data-datepicker
+				   data-class="classic-theme meterial-theme"/>
+			<br>
+
+			Example 3 :
+			<input type="text"
+				   name="test-3"
+				   data-datepicker
+				   data-min="01/01/2019"
+				   data-max="31/01/2019"
+				   data-date="05/01/2019"
+				   data-navigation="no"
+				   data-class="classic-theme micro-theme"/>
+			<br>
+
+		</div>
+
+
+	</body>
+</html>
