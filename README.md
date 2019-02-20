@@ -134,6 +134,7 @@ ___
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
     - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
     - Added Swedish Language (by [olssonm](https://github.com/olssonm))
+    - Added Belarusian Language (by [vorvule](https://github.com/vorvule))
 
 
 ___
