@@ -1,6 +1,6 @@
 /*
  * jsCalendar language extension
- * Add Belarussian Language support
+ * Add Belarusian Language support
  * Translator: Alexander Vorvule (vorvule@github)
  */
 
