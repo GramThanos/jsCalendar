@@ -1,6 +1,6 @@
 /*
  * jsCalendar language extension
- * Add Russian Language support
+ * Add Belarussian Language support
  * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
  */
 
