@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension
  * Add Belarussian Language support
- * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
+ * Translator: Alexander Vorvule (vorvule@github)
  */
 
 // We love anonymous functions
