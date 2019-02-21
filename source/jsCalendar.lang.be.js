@@ -28,7 +28,7 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : 'ru',
+        code : 'be',
         // Months of the year
         months : [
             'Студзень',
