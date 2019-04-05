@@ -26,7 +26,7 @@
 				firstDayOfTheWeek : 2,
 
 				// Make changes on the month element
-				monthRenderHandler : function(month_index, month_element, month_info) {
+				onMonthRender : function(month_index, month_element, month_info) {
 					// Show number of days
 					let days = document.createElement('span');
 					days.style.fontSize = '10px';
@@ -41,7 +41,7 @@
 				},
 
 				// Make changes on the week day element
-				dayRenderHandler : function(day_index, day_element, day_info) {
+				onDayRender : function(day_index, day_element, day_info) {
 					// Make weekends red
 					if (day_index == 0 || day_index == 6) {
 						day_element.style.color = '#c32525';
@@ -52,7 +52,7 @@
 				},
 
 				// Make changes on the date elements
-				dateRenderHandler : function(date, date_element, date_info) {
+				onDateRender : function(date, date_element, date_info) {
 					// Make weekends bold and red
 					if (!date_info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
 						date_element.style.fontWeight = 'bold';
@@ -85,7 +85,7 @@
 				var myOtherCalendar = jsCalendar.get('#my-other-calendar');
 
 				// Make changes on the month element
-				myOtherCalendar.setMonthRenderHandler(
+				myOtherCalendar.onMonthRender(
 					function(month_index, month_element, month_info) {
 						// Show month index
 						month_element.textContent = 'Month index: ' + month_index;
@@ -93,20 +93,40 @@
 				);
 
 				// Make changes on the day element
-				myOtherCalendar.setDayRenderHandler(
+				myOtherCalendar.onDayRender(
 					function(day_index, day_element, day_info) {
 						// Show day index
 						day_element.textContent = day_index;
 					}
 				);
+				myOtherCalendar.onDayRender(
+					function(day_index, day_element, day_info) {
+						// Make weekends red
+						if (day_index == 0 || day_index == 6) {
+							day_element.style.color = '#c32525';
+						}
+					}
+				);
 
 				// Make changes on the date elements
-				myOtherCalendar.setDateRenderHandler(
+				myOtherCalendar.onDateRender(
 					function(date, date_element, date_info) {
 						// Show <x,y> position of date
 						date_element.textContent = '<' + date_info.position.x + ',' + date_info.position.y + '>';
 					}
 				);
+				myOtherCalendar.onDateRender(
+					function(date, date_element, date_info) {
+						// Make weekends bold and red
+						if (!date_info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+							date_element.style.fontWeight = 'bold';
+							date_element.style.color = (date_info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+						}
+					}
+				);
+
+				// Refresh layout
+				myOtherCalendar.refresh();
 			}, false);
 		</script>
 
@@ -115,9 +135,9 @@
 		<div class="auto-jsCalendar"
 			 data-first-day-of-the-week="2"
 			 data-date="now"
-			 data-month-render-handler="myFunction4Month"
-			 data-day-render-handler="myFunction4Day"
-			 data-date-render-handler="myFunction4Date"></div>
+			 data-on-month-render="myFunction4Month"
+			 data-on-day-render="myFunction4Day"
+			 data-on-date-render="myFunction4Date"></div>
 
 		<!-- Apply render handlers to the second calendar -->
 		<script type="text/javascript">
