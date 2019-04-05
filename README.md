@@ -116,10 +116,10 @@ ___
 
 #### Latest development code v1.4.4-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
  - Added
-    - Render handlers (based on PR #35 by [jordanwallwork](https://github.com/jordanwallwork))
-       - Option `monthRenderHandler` and method `setMonthRenderHandler`
-       - Option `dayRenderHandler` and method `setDayRenderHandler`
-       - Option `dateRenderHandler` and method `setDateRenderHandler`
+    - Render handlers (based on PR #35 by [jordanwallwork](https://github.com/jordanwallwork) and Issue #40 by [Daniel Rudolf](https://github.com/PhrozenByte))
+       - Option and method `onMonthRender`
+       - Option and method `onDayRender`
+       - Option and method `onDateRender`
     - Default options were exposed on `jsCalendar.options["option-name"]`
     - Exposed `jsCalendar.tools.getElement` method (previously known as `jsCalendar.prototype._getElement`)
  - Bugs
