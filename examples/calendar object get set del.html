@@ -51,7 +51,21 @@
 
 			// Remove the binding
 			result = jsCalendar.del('<custom-id>');
-			console.log('Det by custom id', result);
+			console.log('Del by custom id', result);
+		</script>
+
+
+		<!-- Calendar with id -->
+		<div id="calendar-target-with-id"></div>
+		<!-- Dynamic create it -->
+		<script type="text/javascript">
+			// Create calendar
+			var calendar_3 = jsCalendar.new(document.getElementById("calendar-target-with-id"));
+			// Since the target has an id, it is automatically added to the list 
+
+			// Get a reference to the calendar object
+			var calendar_3_ref = jsCalendar.get('#calendar-target-with-id');
+			console.log('Get by id (automatically added)', calendar_3_ref);
 		</script>
 
 
