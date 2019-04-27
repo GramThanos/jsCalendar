@@ -243,6 +243,38 @@ th, td {
 }
 
 
+/* Caldendar's height */
+.auto-jsCalendar {
+	height: 314px;
+}
+
+
+/* Prismjs code preview */
+pre {
+    background: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    padding: 9px 12px;
+    font-size: 12px;
+    line-height: 14px;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+code.language-html, code.language-css, code.language-javascript {
+	font-size: 12px;
+}
+pre.language-html, pre.language-css, pre.language-javascript {
+	padding: 9px 12px;
+	font-size: 12px;
+	line-height: 14px;
+}
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+}
+
 /* HTML code preview */
 .html-code {
 	font-family: "Courier New", Courier, monospace;
@@ -260,7 +292,7 @@ th, td {
 	margin: 20px 0px;
 }
 span.html-code{
-	padding: 0px;
+	padding: 0px 4px;
 	font-size: 1em;
 }
 .html-code .comment{

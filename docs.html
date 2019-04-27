@@ -6,15 +6,23 @@
 		<link rel="shortcut icon" href="favicon.ico" />
 		<meta name="description" content="jsCalendar - Just a simple javascript calendar library">
 		<meta name="author" content="Grammatopoulos Athanasios-Vasileios">
+
+		<!-- Page Style -->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
-		<link rel="stylesheet" type="text/css" href="css/jsCalendar.min.css">
-		<link rel="stylesheet" type="text/css" href="css/docs.css">
 
 		<!-- jsCalendar -->
 		<script type="text/javascript" src="js/jsCalendar.min.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.gr.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.de.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/jsCalendar.min.css">
+
+		<!-- Prismjs -->
+		<script type="text/javascript" src="js/prism.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/prism.css">
+
+		<!-- Docs Style -->
+		<link rel="stylesheet" type="text/css" href="css/docs.css">
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -48,7 +56,7 @@
 
 		<div class="section section-menu">
 			<div class="section-wrapper">
-				<div class="section-title">Learn to play with it</div>
+				<div class="section-title">Learn use jsCalendar</div>
 				<div class="wrapper-left">
 					<ul>
 						<li><a href="#getting-started">Getting started</a></li>
@@ -84,7 +92,7 @@
 								<li><a href="#javascript-calendar-options">Options</a></li>
 							</ul>
 						</li>
-						<li><a href="#javascript-api-create">Javascript Calendar Methods</a>
+						<li><a href="#javascript-api-methods">Javascript Calendar Methods</a>
 							<ul>
 								<li><a href="#javascript-method-next">.next()</a></li>
 								<li><a href="#javascript-method-previous">.previous()</a></li>
@@ -100,7 +108,7 @@
 				</div>
 				<div class="wrapper-left" style="margin-left: 50px;">
 					<ul>
-						<li><a href="#more-javascript">More javascript things</a>
+						<li><a href="#more-javascript">Additional Javascript APIs</a>
 							<ul>
 								<li><a href="#more-javascript-version">Version Attribute</a></li>
 								<li><a href="#more-javascript-events">Events</a></li>
@@ -125,19 +133,38 @@
 		<div class="section" id="getting-started">
 			<div class="section-wrapper">
 				<div class="section-title">Getting started</div>
-				<p>Add the jsCalendar code on your HTML's <span class="html-code"><span class="tag">&lt;head&gt;</span></span>.</p>
-				<div class="html-code">
-					<span class="comment">&lt;!-- jsCalendar style --&gt;</span><br>
-					<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.css"</span></span>&gt;</span><br>
-					<span class="comment">&lt;!-- jsCalendar script --&gt;</span></span><br>
-					<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>
-				</div>
-				<p>and then add a jsCalendar element on your page's body</p>
-				<div class="html-code">
-					<span class="comment">&lt;!-- my calendar --&gt;</span><br>
-					<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span>&gt;&lt;/div&gt;</span><br>
-				</div>
-				<p class="note">*All <span class="html-code"><span class="string">.auto-jsCalendar</span></span> elements are initiated as a calendar on page load.</p>
+				<p>Add the jsCalendar code on your HTML's <span class="html-code"><span class="tag">&lt;head&gt;</span></span> section.</p>
+				<pre><code class="language-html">&lt;!-- jsCalendar style --&gt;
+&lt;link rel="stylesheet" type="text/css" href="jsCalendar.css"&gt;
+&lt;!-- jsCalendar script --&gt;
+&lt;script type="text/javascript" src="jsCalendar.js"&gt;&lt;/script&gt;</code></pre>
+				
+				<p>Then, add a jsCalendar element on your page's <span class="html-code"><span class="tag">&lt;body&gt;</span></span> section</p>
+				<pre><code class="language-html">&lt;!-- my calendar --&gt;
+&lt;div class="auto-jsCalendar"&gt;&lt;/div&gt;</code></pre>
+				<p class="note">*All <span class="html-code"><span class="string">.auto-jsCalendar</span></span> elements are initiated as a calendar, when the page's load event fire.</p>
+				<br>
+				<br>
+
+				<div class="section-title">Using CDNs</div>
+				<p>
+					Since jsCalendar has a Github and an NPM project, you can use free CDNs that distributes such projects.<br>
+					Two such well-known CDNs are the <a href="https://unpkg.com/" target="_blank">Unpkg CDN</a> and the <a href="https://www.jsdelivr.com/" target="_blank">JsDelivr CDN</a>.<br>
+				</p>
+				<br>
+				<p>jsCalendar using the <a href="https://unpkg.com/simple-jscalendar/" target="_blank">Unpkg CDN</a></p>
+				<pre><code class="language-html">&lt;!-- jsCalendar v1.4.3 Javascript and CSS from unpkg cdn --&gt;
+&lt;script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous"&gt;</code></pre>
+
+				<br>
+				<p>jsCalendar using the <a href="https://www.jsdelivr.com/package/npm/simple-jscalendar" target="_blank">JsDelivr CDN</a></p>
+				<pre><code class="language-html">&lt;!-- jsCalendar v1.4.3 Javascript and CSS from jsdelivr npm cdn --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous"&gt;</code></pre>
+				<br>
+				<p>Full example with all the files and their integrity hashes <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html">using unpkg here</a> and using <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html">jsdelivr here</a> (the hashes are the same).</p>
+				<p><small>Notice: When using CDNs, always include integrity hashes.</small></p>
 			</div>
 		</div>
 
@@ -145,14 +172,22 @@
 			<div class="section-wrapper">
 				<div class="section-title">Themes</div>
 
+				<div class="section-subtitle" id="default-theme">Included themes</div>
+				<div class="wrapper-left">
+					<p>The <span class="html-code">jsCalendar.css</span> includes 3 basic themes. The "Default Theme", the "Material Theme" and "Classic Theme". For additional themes, check the <a href="themes.html">Themes</a> section.</p>
+					<br>
+					<p>Of course, all these themes are just a few lines of CSS code, thus you can easily create your own theme according to your needs.</p>
+					<br>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+
 
 				<div class="section-subtitle" id="default-theme">Default theme</div>
 				<div class="wrapper-left">
-					<p>You already saw the default theme, simple and clear.</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Default theme --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<p>The default theme of the jsCalendar is simple and clear.</p>
+					<pre><code class="language-html">&lt;!-- Default theme --&gt;
+&lt;div class="auto-jsCalendar"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar"></div>
@@ -162,11 +197,9 @@
 
 				<div class="section-subtitle" id="material-theme">Material theme</div>
 				<div class="wrapper-left">
-					<p>For material lovers, try the simple Material theme.</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Material theme --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar material-theme"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<p>For a minimalistic approach, try the simple Material theme.</p>
+					<pre><code class="language-html">&lt;!-- Material theme --&gt;
+&lt;div class="auto-jsCalendar material-theme"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar material-theme"></div>
@@ -177,10 +210,8 @@
 				<div class="section-subtitle" id="classic-theme">Classic theme</div>
 				<div class="wrapper-left">
 					<p>For a more old fashion look, try the Classic theme.</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Classic theme --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar classic-theme"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Classic theme --&gt;
+&lt;div class="auto-jsCalendar classic-theme"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar classic-theme"></div>
@@ -191,7 +222,7 @@
 				<div class="section-subtitle" id="theme-colors">Theme colors</div>
 				<div class="wrapper-left">
 					<p>
-						Each theme has 5 colors:<br>
+						Each one of the built-in themes has 5 color versions:<br>
 						<span class="html-code">blue</span>, <span class="html-code">yellow</span>, <span class="html-code">orange</span>, <span class="html-code">red</span>, <span class="html-code">green</span><br>
 						The blue color is the default.
 					</p>
@@ -199,10 +230,8 @@
 						<br>
 						For example the green version of the default theme is
 					</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Green theme --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar green"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Green theme --&gt;
+&lt;div class="auto-jsCalendar green"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar green"></div>
@@ -218,12 +247,10 @@
 						<br>
 						<br>
 						<br>
-						Or give a try on the fire red Meterial theme.
+						Or give a try on the red version of the material theme.
 					</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Red material theme --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar material-theme red"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Red material theme --&gt;
+&lt;div class="auto-jsCalendar material-theme red"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-clear"></div>
 
@@ -234,6 +261,12 @@
 		<div class="section" id="calendar-parameters">
 			<div class="section-wrapper">
 				<div class="section-title">Parameters</div>
+				<div class="wrapper-left">
+					<p>You can customize each jsCalendar instance by defining <span class="html-code">data-*</span> parameters on its HTML element or by passing them on the <a href="#javascript-create-calendar">dynamic javascript creation</a> of the calendar.</p>
+					<br>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
 
 
 
@@ -245,11 +278,9 @@
 						<tr><td>Values</td><td>true | false</td></tr>
 						<tr><td>Default</td><td>true</td></tr>
 					</table>
-					<div class="html-code">
-						<span class="comment">&lt;!-- No navigator calendar --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-navigator=<span class="string">"false"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- No navigator calendar --&gt;
+&lt;div class="auto-jsCalendar"
+     data-navigator="false"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-navigator="false"></div>
@@ -266,11 +297,9 @@
 						<tr><td>Values</td><td>both | left | right</td></tr>
 						<tr><td>Default</td><td>both</td></tr>
 					</table>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Set navigator on right --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-navigator-position=<span class="string">"right"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Set navigator on right --&gt;
+&lt;div class="auto-jsCalendar"
+     data-navigator-position="right"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-navigator-position="right"></div>
@@ -287,11 +316,9 @@
 						<tr><td>Values</td><td>true | false</td></tr>
 						<tr><td>Default</td><td>false</td></tr>
 					</table>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Add zero prefix --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-zero-fill=<span class="string">"true"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Add zero prefix --&gt;
+&lt;div class="auto-jsCalendar"
+     data-zero-fill="true"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-zero-fill="true"></div>
@@ -310,19 +337,24 @@
 					</table>
 					<p>Format string codes</p>
 					<table style="width: 100%;">
-						<tr><th>Code</th><th>Description</th><th>Example</th></tr>
-						<tr><td>month</td><td>Month's full name</td><td>"February"</td></tr>
-						<tr><td>MMM</td><td>Month's first 3 letters</td><td>"Feb"</td></tr>
-						<tr><td>##</td><td>Month's number</td><td>"02"</td></tr>
-						<tr><td>#</td><td>Month's number</td><td>"2"</td></tr>
-						<tr><td>YYYY</td><td>Year</td><td>"2017"</td></tr>
+						<tr><th>Code</th>	<th>Description</th>				<th>Output</th></tr>
+						<tr><td>MONTH</td>	<td>Month's full name</td>			<td>February</td></tr>
+						<tr><td>month</td>	<td>Month's full name</td>			<td>February</td></tr>
+						<tr><td>MMM</td>	<td>Month's first 3 letters</td>	<td>Feb</td></tr>
+						<tr><td>mmm</td>	<td>Month's first 3 letters</td>	<td>Feb</td></tr>
+						<tr><td>##</td>		<td>Month's number (zerofilled)</td><td>02</td></tr>
+						<tr><td>#</td>		<td>Month's number</td>				<td>2</td></tr>
+						<tr><td>YYYY</td>	<td>Year</td>						<td>2017</td></tr>
+						<tr><td>yyyy</td>	<td>Year</td>						<td>2017</td></tr>
 					</table>
-					<p>Codes can be combined. For example, for the February 2017,<br>the code "##/YYYY" would display "02/2017"</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Custom month format --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-month-format=<span class="string">"month YYYY"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<p>
+						Codes can be combined. For example, for the February<br>
+						month of the year 2017, the code <span class="html-code"><span class="string">"##/YYYY"</span></span> would<br>
+						display <span class="html-code">02/2017</span>
+					</p>
+					<pre><code class="language-html">&lt;!-- Custom month format --&gt;
+&lt;div class="auto-jsCalendar"
+     data-month-format="month YYYY"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-month-format="month YYYY"></div>
@@ -344,17 +376,18 @@
 					</table>
 					<p>Format string codes</p>
 					<table style="width: 100%;">
-						<tr><th>Code</th><th>Description</th><th>Example</th></tr>
-						<tr><td>day</td><td>Day's full name</td><td>"Monday"</td></tr>
-						<tr><td>DDD</td><td>Day's first 3 letters</td><td>"Mon"</td></tr>
-						<tr><td>DD</td><td>Day's first 2 letters</td><td>"Mo"</td></tr>
-						<tr><td>D</td><td>Day's first letter</td><td>"M"</td></tr>
+						<tr><th>Code</th>	<th>Description</th>			<th>Output</th></tr>
+						<tr><td>DAY</td>	<td>Day's full name</td>		<td>Monday</td></tr>
+						<tr><td>day</td>	<td>Day's full name</td>		<td>Monday</td></tr>
+						<tr><td>DDD</td>	<td>Day's first 3 letters</td>	<td>Mon</td></tr>
+						<tr><td>ddd</td>	<td>Day's first 3 letters</td>	<td>Mon</td></tr>
+						<tr><td>DD</td>		<td>Day's first 2 letters</td>	<td>Mo</td></tr>
+						<tr><td>dd</td>		<td>Day's first 2 letters</td>	<td>Mo</td></tr>
+						<tr><td>D</td>		<td>Day's first letter</td>		<td>M</td></tr>
 					</table>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Custom day format --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-day-format=<span class="string">"DDD"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Custom day format --&gt;
+&lt;div class="auto-jsCalendar"
+     data-day-format="DDD"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-day-format="DDD"></div>
@@ -382,16 +415,12 @@
 						<tr><td>String</td><td>Day's number 1-7 starting from Sunday</td><td>"2"</td></tr>
 						<tr><td>Number</td><td>Day's number 1-7 starting from Sunday</td><td>2</td></tr>
 					</table>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Select Monday as the first day of the week --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-first-day-of-the-week=<span class="string">"2"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Equivalent using alias --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-fdotw=<span class="string">"2"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Select Monday as the first day of the week --&gt;
+&lt;div class="auto-jsCalendar"
+     data-first-day-of-the-week="2"&gt;&lt;/div&gt;</code></pre>
+					<pre><code class="language-html">&lt;!-- Equivalent using alias --&gt;
+&lt;div class="auto-jsCalendar"
+     data-fdotw="2"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-first-day-of-the-week="2"></div>
@@ -412,29 +441,24 @@
 						<tr><td>Default</td><td>"en"</td></tr>
 					</table>
 					<p>Each language, other than English, is loaded from a separate script.<br>So first you need to load the languages on the HTML's <span class="html-code"><span class="tag">&lt;head&gt;</span></span>.</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Load Greek language --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">src=<span class="string">"jsCalendar.lang.gr.js"</span></span>&gt;&lt;/script&gt;</span><br>
-						<span class="comment">&lt;!-- Load German language --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">src=<span class="string">"jsCalendar.lang.de.js"</span></span>&gt;&lt;/script&gt;</span><br>
-					</div>
-					<p>and then you can use any other loaded language.</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- With german language --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-language=<span class="string">"de"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
-					<p>The supported lanuages codes are based on the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639-1</a> codes.</p>
+					<pre><code class="language-html">&lt;!-- Load Greek language --&gt;
+&lt;script type="text/javascript"
+     src="jsCalendar.lang.gr.js"&gt;&lt;/script&gt;
+&lt;!-- Load German language --&gt;
+&lt;script type="text/javascript"
+     src="jsCalendar.lang.de.js"&gt;&lt;/script&gt;</code></pre>
+					<p>and then you can use any loaded language.</p>
+					<pre><code class="language-html">&lt;!-- With german language --&gt;
+&lt;div class="auto-jsCalendar"
+     data-language="de"&gt;&lt;/div&gt;</code></pre>
 					<br>
-					<p id="parameter-language-codes">Included lanuages</p>
+					<p id="parameter-language-codes">Supported lanuages <small>(alphabetical order)</small></p>
 					<table style="width: 100%;">
-						<tr><td>Language</td><td>Code</td></tr>
+						<tr><th style="text-align: left;">Language</th><th style="text-align: left;">Code</th></tr>
+						<tr><td>Chinese</td><td><span class="html-code"><span class="tag">zh</span></span></td></tr>
 						<tr><td>English</td><td><span class="html-code"><span class="tag">en</span></span></td></tr>
-						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td></tr>
-						<tr><td>Spanish</td><td><span class="html-code"><span class="tag">es</span></span></td></tr>
 						<tr><td>French</td><td><span class="html-code"><span class="tag">fr</span></span></td></tr>
+						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td></tr>
 						<tr><td>Greek</td><td><span class="html-code"><span class="tag">gr</span></span></td></tr>
 						<tr><td>Hungarian</td><td><span class="html-code"><span class="tag">hu</span></span></td></tr>
 						<tr><td>Italian</td><td><span class="html-code"><span class="tag">it</span></span></td></tr>
@@ -443,10 +467,12 @@
 						<tr><td>Portuguese</td><td><span class="html-code"><span class="tag">pt</span></span></td></tr>
 						<tr><td>Russian</td><td><span class="html-code"><span class="tag">ru</span></span></td></tr>
 						<tr><td>Slovak</td><td><span class="html-code"><span class="tag">sk</span></span></td></tr>
+						<tr><td>Spanish</td><td><span class="html-code"><span class="tag">es</span></span></td></tr>
 						<tr><td>Turkish</td><td><span class="html-code"><span class="tag">tr</span></span></td></tr>
 						<tr><td>Ukrainian</td><td><span class="html-code"><span class="tag">uk</span></span></td></tr>
-						<tr><td>Chinese</td><td><span class="html-code"><span class="tag">zh</span></span></td></tr>
 					</table>
+					<p>The supported lanuages codes are based on the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639-1</a> codes.</p>
+					
 				</div>
 				<div class="wrapper-right">
 					<div class="auto-jsCalendar" data-language="de"></div>
@@ -470,14 +496,11 @@
 				<div class="wrapper-clear"></div>
 
 				<div class="wrapper-left">
-					<div class="html-code">
-						Min-date 01/01/2017 (January 2017 and later)<br>
-						<span class="comment">&lt;!-- Set min date --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-date=<span class="string">"01/02/2017"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-min=<span class="string">"01/01/2017"</span></span>&gt;&lt;/div&gt;</span>
-						<br><br>
-					</div>
+					<pre><code class="language-html">Min-date 01/01/2017 (January 2017 and later)
+&lt;!-- Set min date --&gt;
+&lt;div class="auto-jsCalendar"
+     data-date="01/02/2017"
+     data-min="01/01/2017"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -490,14 +513,11 @@
 				<div class="wrapper-clear"></div>
 
 				<div class="wrapper-left">
-					<div class="html-code">
-						Max-date 01/03/2017 (before March 2017)<br>
-						<span class="comment">&lt;!-- Set max date --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-date=<span class="string">"01/02/2017"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-max=<span class="string">"01/03/2017"</span></span>&gt;&lt;/div&gt;</span>
-						<br><br>
-					</div>
+					<pre><code class="language-html">Max-date 01/03/2017 (before March 2017)
+&lt;!-- Set max date --&gt;
+&lt;div class="auto-jsCalendar"
+     data-date="01/02/2017"
+     data-max="01/03/2017"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -510,16 +530,13 @@
 				<div class="wrapper-clear"></div>
 
 				<div class="wrapper-left">
-					<div class="html-code">
-						Min-date 01/02/2017 and Max-date 01/02/2017<br>
-						(between January 2017 and March 2017)<br>
-						<span class="comment">&lt;!-- Set min-max date --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-date=<span class="string">"01/02/2017"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-min=<span class="string">"01/01/2017"</span></span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-max=<span class="string">"01/03/2017"</span></span>&gt;&lt;/div&gt;</span>
-						<br><br>
-					</div>
+					<pre><code class="language-html">Min-date 01/02/2017 and Max-date 01/02/2017
+(between January 2017 and March 2017)
+&lt;!-- Set min-max date --&gt;
+&lt;div class="auto-jsCalendar"
+     data-date="01/02/2017"
+     data-min="01/01/2017"
+     data-max="01/03/2017"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -565,19 +582,18 @@
 						<tr><td><a href="#javascript-calendar-date">date</a></td><td>Date Object | Timestamp Number | String</td></tr>
 						<tr><td><a href="#javascript-calendar-options">options</a></td><td>Object</td></tr>
 					</table>
-					<br>
+				</div>
+				<div class="wrapper-left">
 					<p>So here is the full code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Dynamic create it --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;jsCalendar.new(element);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Dynamic create it --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    jsCalendar.new(element);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div id="my-calendar-1"></div>
@@ -603,33 +619,27 @@
 						<tr><td>target</td><td>String</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
 					</table>
 					<br>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar target --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar-target"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Code to get the target element --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the target element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> target = document.getElementById(<span class="string">"my-calendar-target"</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
-					<div class="html-code">
-						<span class="comment">&lt;!-- id calendar target --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"id-calendar-target"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Code to get the target element --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// String identifier of the target element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> target = <span class="string">"#id-calendar-target"</span>;<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
-					<div class="html-code">
-						<span class="comment">&lt;!-- class calendar target --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"class-calendar-target"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Code to get the target element --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// String identifier of the target element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> target = <span class="string">".class-calendar-target"</span>;<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar target --&gt;
+&lt;div id="my-calendar-target"&gt;&lt;/div&gt;
+&lt;!-- Code to get the target element --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the target element
+    var target = document.getElementById("my-calendar-target");
+&lt;/script&gt;</code></pre>
+					<pre><code class="language-html">&lt;!-- id calendar target --&gt;
+&lt;div id="id-calendar-target"&gt;&lt;/div&gt;
+&lt;!-- Code to get the target element --&gt;
+&lt;script type="text/javascript"&gt;
+    // String identifier of the target element
+    var target = "#id-calendar-target";
+&lt;/script&gt;</code></pre>
+					<pre><code class="language-html">&lt;!-- class calendar target --&gt;
+&lt;div class="class-calendar-target"&gt;&lt;/div&gt;
+&lt;!-- Code to get the target element --&gt;
+&lt;script type="text/javascript"&gt;
+    // String identifier of the target element
+    var target = ".class-calendar-target";
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-clear"></div>
 				<br><br>
@@ -658,17 +668,15 @@
 				<br>
 				<div class="wrapper-left">
 					<p>Full code example</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Dynamic create it --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;jsCalendar.new(element, "30/01/2017");<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Dynamic create it --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    jsCalendar.new(element, "30/01/2017");
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<div id="my-calendar-2"></div>
@@ -695,39 +703,42 @@
 					<p>Options items</p>
 					<table style="width: 100%;">
 						<tr><th>Name</th><th>Values</th><th></th></tr>
-						<tr><td><a href="#javascript-calendar-target">target</a></td><td>HTML element</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#javascript-calendar-date">date</a></td><td>Date | Number | String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-navigator">navigator</a></td><td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-navigator-position">navigatorPosition</a></td><td>"both" | "left" | "right"</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-month-format">monthFormat</a></td><td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-day-format">dayFormat</a></td><td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-first-day-of-the-week">firstDayOfTheWeek</a></td><td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
-						<tr><td><a href="#parameter-language">language</a></td><td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#javascript-calendar-target">target</a></td>					<td>HTML element</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#javascript-calendar-date">date</a></td>						<td>Date | Number | String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-navigator">navigator</a> *</td>						<td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-navigator-position">navigatorPosition</a> *</td>	<td>"both" | "left" | "right"</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-zero-fill">zeroFill</a> *</td>						<td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-month-format">monthFormat</a> *</td>				<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-day-format">dayFormat</a> *</td>					<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-first-day-of-the-week">firstDayOfTheWeek</a> *</td>	<td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
+						<tr><td><a href="#parameter-first-day-of-the-week">fdotw</a> *</td>				<td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
+						<tr><td><a href="#parameter-language">language</a> *</td>						<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-min-max">min</a> *</td>								<td>false | Date</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td><a href="#parameter-min-max">max</a> *</td>								<td>false | Date</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
 					</table>
+					<p><small>* These options are the same as the HTML element <a href="#calendar-parameters">parameters</a>.</small></p>
 				</div>
 				<div class="wrapper-clear"></div>
 				<br>
 				<br>
 				<div class="wrapper-left">
 					<p>Code example 1</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Dynamic create it --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;jsCalendar.new(element, "30/01/2017", {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigator : <span class="tag">true</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigatorPosition : <span class="string">"left"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zeroFill : <span class="tag">false</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthFormat : <span class="string">"month YYYY"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dayFormat : <span class="string">"DDD"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language : <span class="string">"en"</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Dynamic create it --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    jsCalendar.new(element, "30/01/2017", {
+        navigator : true,
+        navigatorPosition : "left",
+        zeroFill : false,
+        monthFormat : "month YYYY",
+        dayFormat : "DDD",
+        language : "en"
+    });
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br><br>
@@ -752,26 +763,24 @@
 
 				<div class="wrapper-left">
 					<p>Code example 2</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Dynamic create it --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;jsCalendar.new({<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target : element,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date : <span class="string">"30/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigator : <span class="tag">true</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigatorPosition : <span class="string">"right"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zeroFill : <span class="tag">true</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthFormat : <span class="string">"month"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dayFormat : <span class="string">"DD"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language : <span class="string">"gr"</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Dynamic create it --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    jsCalendar.new({
+        target : element,
+        date : "30/01/2017",
+        navigator : true,
+        navigatorPosition : "right",
+        zeroFill : true,
+        monthFormat : "month",
+        dayFormat : "DD",
+        language : "gr"
+    });
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br><br>
@@ -824,26 +833,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Next month button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Next<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Go to the next month</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.next();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Next month button --&gt;
+&lt;button id="my-button"&gt;Next&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Go to the next month
+        myCalendar.next();
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -888,26 +895,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Previous<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Go to the previous month</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.previous();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Button --&gt;
+&lt;button id="my-button"&gt;Previous&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Go to the previous month
+        myCalendar.previous();
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -946,26 +951,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Set date<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Set date</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.set(<span class="string">"30/01/2017"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Button --&gt;
+&lt;button id="my-button"&gt;Set date&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Set date
+        myCalendar.set("30/01/2017");
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -994,36 +997,35 @@
 
 				<div class="section-subtitle" id="javascript-method-refresh">.refresh() <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
-					<p>Refresh the calendar.</p><br>
+					<p>Refreshes the calendar, updating the HTML of the calendar (mainly for developers). If a <a href="#javascript-calendar-date">date</a> is provided, the calendar will refresh to that date (exactly like the <a href="javascript-method-goto">goto</a> method).</p><br>
 					<p>API syntax</p>
-					<table style="width: 100%;">
-						<tr><td>Syntax</td><td>.refresh()</td></tr>
+					<table>
+						<tr><td>Syntax 1</td><td>.refresh()</td></tr>
+						<tr><td>Syntax 2</td><td>.refresh(<a href="#javascript-calendar-date">date</a>)</td></tr>
 					</table>
 					<br>
 				</div>
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Refresh<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Refresh</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.refresh();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Button --&gt;
+&lt;button id="my-button"&gt;Refresh&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Refresh
+        myCalendar.refresh();
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1062,26 +1064,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Goto<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Goto</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.goto(<span class="string">"30/01/2017"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Button --&gt;
+&lt;button id="my-button"&gt;Goto&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Goto
+        myCalendar.goto("30/01/2017");
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1120,26 +1120,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Reset<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Reset</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.reset();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Button --&gt;
+&lt;button id="my-button"&gt;Reset&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Reset
+        myCalendar.reset();
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1178,26 +1176,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Button --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button"</span></span>&gt;</span>Change language<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the button</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> button = document.getElementById(<span class="string">"my-button"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add a button event</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;button.addEventListener(<span class="string">"click"</span>, <span class="tag">function</span>(){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Change language</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.setLanguage(<span class="string">"de"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Button --&gt;
+&lt;button id="my-button"&gt;Change language&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the button
+    var button = document.getElementById("my-button");
+    // Add a button event
+    button.addEventListener("click", function(){
+        // Change language
+        myCalendar.setLanguage("de");
+    }, false);
+&lt;/script&gt;</code></pre>
 					<p class="note">*You can find a list of all the available languages <a href="#parameter-language-codes">here</a>.</p>
 					<br>
 				</div>
@@ -1239,18 +1235,16 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(<span class="string">"#my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Limit to only current month</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.min(<span class="string">"now"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.max(<span class="string">"now"</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Create the calendar
+    var myCalendar = jsCalendar.new("#my-calendar");
+    // Limit to only current month
+    myCalendar.min("now");
+    myCalendar.max("now");
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1275,7 +1269,7 @@
 
 		<div class="section" id="more-javascript">
 			<div class="section-wrapper">
-				<div class="section-title">More Javascript Things</div>
+				<div class="section-title">Additional Javascript APIs</div>
 				<p>Some more things in the Javascript API.</p>
 
 
@@ -1292,13 +1286,11 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Print version --&gt;</span><br>
-						You are using<span class="tag">&lt;br&gt;</span>jsCalendar <span class="tag">&lt;span <span class="attribute">id=<span class="string">"version"</span></span>&gt;</span><span class="tag">&lt;/span&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(<span class="string">"version"</span>).textContent = jsCalendar.version;<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Print version --&gt;
+You are using&lt;br&gt;jsCalendar &lt;span id="version"&gt;&lt;/span&gt;
+&lt;script type="text/javascript"&gt;
+    document.getElementById("version").textContent = jsCalendar.version;
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1333,34 +1325,32 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<br>
-						<span class="comment">&lt;!-- Outputs --&gt;</span><br>
-						Day click : <span class="tag">&lt;br&gt;</span><br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-a"</span></span>&gt;&lt;br&gt;</span><br>
-						Month change : <span class="tag">&lt;br&gt;</span><br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-b"</span></span>&gt;&lt;br&gt;</span><br>
-						<br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the inputs</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> inputA = document.getElementById(<span class="string">"my-input-a"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> inputB = document.getElementById(<span class="string">"my-input-b"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add events</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.onDateClick(<span class="tag">function</span>(event, date){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputA.value = date.toString();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.onMonthChange(<span class="tag">function</span>(event, date){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputB.value = date.toString();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+
+&lt;!-- Outputs --&gt;
+Day click : &lt;br&gt;
+&lt;input id="my-input-a"&gt;&lt;br&gt;
+Month change : &lt;br&gt;
+&lt;input id="my-input-b"&gt;&lt;br&gt;
+
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element);
+    // Get the inputs
+    var inputA = document.getElementById("my-input-a");
+    var inputB = document.getElementById("my-input-b");
+    // Add events
+    myCalendar.onDateClick(function(event, date){
+        inputA.value = date.toString();
+    });
+    myCalendar.onMonthChange(function(event, date){
+        inputB.value = date.toString();
+    });
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1432,49 +1422,47 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Buttons --&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button-a"</span></span>&gt;</span>Select<span class="tag">&lt;/button&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button-b"</span></span>&gt;</span>Unselect<span class="tag">&lt;/button&gt;</span><br>
-						<span class="tag">&lt;button <span class="attribute">id=<span class="string">"my-button-c"</span></span>&gt;</span>Clear<span class="tag">&lt;/button&gt;</span><br>
-						<span class="comment">&lt;!-- My calendar element --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">id=<span class="string">"my-calendar"</span></span>&gt;&lt;/div&gt;</span><br>
-						<br>
-						<span class="comment">&lt;!-- Outputs --&gt;</span><br>
-						Day click : <span class="tag">&lt;br&gt;</span><br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-a"</span></span>&gt;&lt;br&gt;</span><br>
-						Month change : <span class="tag">&lt;br&gt;</span><br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-b"</span></span>&gt;&lt;br&gt;</span><br>
-						<br>
-						<span class="comment">&lt;!-- Create the calendar --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the element</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> element = document.getElementById(<span class="string">"my-calendar"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Create the calendar</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> myCalendar = jsCalendar.new(element,<span class="string">"1-1-2017"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the buttons</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> buttonA = document.getElementById(<span class="string">"my-button-a"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> buttonB = document.getElementById(<span class="string">"my-button-b"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> buttonC = document.getElementById(<span class="string">"my-button-c"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Add events</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;buttonA.addEventListener("click", <span class="tag">function</span>() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.select([<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"01/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"02/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"03/01/2017"</span>,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"05/01/2017"</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;buttonB.addEventListener("click", <span class="tag">function</span>() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.unselect([<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"05/01/2017"</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;buttonC.addEventListener("click", <span class="tag">function</span>() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCalendar.clearselect();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="tag">false</span>);<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Buttons --&gt;
+&lt;button id="my-button-a"&gt;Select&lt;/button&gt;
+&lt;button id="my-button-b"&gt;Unselect&lt;/button&gt;
+&lt;button id="my-button-c"&gt;Clear&lt;/button&gt;
+&lt;!-- My calendar element --&gt;
+&lt;div id="my-calendar"&gt;&lt;/div&gt;
+
+&lt;!-- Outputs --&gt;
+Day click : &lt;br&gt;
+&lt;input id="my-input-a"&gt;&lt;br&gt;
+Month change : &lt;br&gt;
+&lt;input id="my-input-b"&gt;&lt;br&gt;
+
+&lt;!-- Create the calendar --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the element
+    var element = document.getElementById("my-calendar");
+    // Create the calendar
+    var myCalendar = jsCalendar.new(element,"1-1-2017");
+    // Get the buttons
+    var buttonA = document.getElementById("my-button-a");
+    var buttonB = document.getElementById("my-button-b");
+    var buttonC = document.getElementById("my-button-c");
+    // Add events
+    buttonA.addEventListener("click", function() {
+        myCalendar.select([
+            "01/01/2017",
+            "02/01/2017",
+            "03/01/2017",
+            "05/01/2017"
+        ]);
+    }, false);
+    buttonB.addEventListener("click", function() {
+        myCalendar.unselect([
+            "05/01/2017"
+        ]);
+    }, false);
+    buttonC.addEventListener("click", function() {
+        myCalendar.clearselect();
+    }, false);
+&lt;/script&gt;</code></pre>
 				</div>
 				<div class="wrapper-right">
 					<br>
@@ -1516,26 +1504,24 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left" id="more-javascript-select-options-examples">
 					<p>Example .getSelected()</p>
-					<div class="html-code">
-						myCalendar.getSelected();<br>
-						<span class="comment">// Returns [1483567200000, 1483394400000, 1483308000000, 1483221600000]</span><br>
-						<br>
-						myCalendar.getSelected({sort : <span class="tag">true</span>});<br>
-						<span class="comment">// Returns [1483221600000, 1483308000000, 1483394400000, 1483567200000]</span><br>
-						<br>
-						myCalendar.getSelected({sort : <span class="string">"desc"</span>, type : <span class="string">"DD-MM-YYYY"</span>});<br>
-						<span class="comment">// Returns ["05-01-2017", "03-01-2017", "02-01-2017", "01-01-2017"]</span><br>
-						<br>
-						myCalendar.getSelected({sort : <span class="string">"asc"</span>, type : <span class="string">"date"</span>});<br>
-						<span class="comment">/* <br>
-						&nbsp;*&nbsp;Returns [<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun Jan 01 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mon Jan 02 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tue Jan 03 2017 00:00:00 GMT+0200 (GTB Standard Time),<br>
-						&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thu Jan 05 2017 00:00:00 GMT+0200 (GTB Standard Time)<br>
-						&nbsp;*&nbsp;]<br>
-						&nbsp;*/</span><br>
-					</div>
+					<pre><code class="language-javascript">myCalendar.getSelected();
+// Returns [1483567200000, 1483394400000, 1483308000000, 1483221600000]
+
+myCalendar.getSelected({sort : true});
+// Returns [1483221600000, 1483308000000, 1483394400000, 1483567200000]
+
+myCalendar.getSelected({sort : "desc", type : "DD-MM-YYYY"});
+// Returns ["05-01-2017", "03-01-2017", "02-01-2017", "01-01-2017"]
+
+myCalendar.getSelected({sort : "asc", type : "date"});
+/* 
+ * Returns [
+ *     Sun Jan 01 2017 00:00:00 GMT+0200 (GTB Standard Time),
+ *     Mon Jan 02 2017 00:00:00 GMT+0200 (GTB Standard Time),
+ *     Tue Jan 03 2017 00:00:00 GMT+0200 (GTB Standard Time),
+ *     Thu Jan 05 2017 00:00:00 GMT+0200 (GTB Standard Time)
+ * ]
+ */</code></pre>
 				</div>
 				<div class="wrapper-clear"></div>
 				<br><br>
@@ -1569,29 +1555,27 @@
 				<div class="wrapper-clear"></div>
 				<div class="wrapper-left">
 					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- Inputs to show results --&gt;</span><br>
-						Testing stringToDate:<br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-a"</span></span> <span class="attribute">value=<span class="string">"checking"</span></span>/&gt;</span><span class="tag">&lt;br&gt;</span><br>
-						Testing dateToString:<br>
-						<span class="tag">&lt;input <span class="attribute">id=<span class="string">"my-input-b"</span></span> <span class="attribute">value=<span class="string">"checking"</span></span>/&gt;</span><span class="tag">&lt;br&gt;</span><br>
-						<br>
-						<span class="comment">&lt;!-- Test the methods --&gt;</span><br>
-						<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Get the elements</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> inputA = document.getElementById(<span class="string">"my-input-a"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> inputB = document.getElementById(<span class="string">"my-input-b"</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Express 01-01-2018 in string and date</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> str = <span class="string">"01-01-2018"</span>;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> date = new Date(<span class="tag">2018</span> , <span class="tag">0</span>, <span class="tag">1</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Parse/Convert dates</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> str2date = jsCalendar.tools.stringToDate(str);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">var</span> date2str = jsCalendar.tools.dateToString(date, "DD-MM-yyyy");<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Check results</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;inputA.value = (str2date.getTime() === date.getTime()) ? <span class="string">"pass"</span> : <span class="string">"failed"</span>;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;inputB.value = (date2str === str) ? <span class="string">"pass"</span> : <span class="string">"failed"</span>;<br>
-						<span class="tag">&lt;/script&gt;</span><br>
-					</div>
+					<pre><code class="language-html">&lt;!-- Inputs to show results --&gt;
+Testing stringToDate:
+&lt;input id="my-input-a" value="checking"/&gt;&lt;br&gt;
+Testing dateToString:
+&lt;input id="my-input-b" value="checking"/&gt;&lt;br&gt;
+
+&lt;!-- Test the methods --&gt;
+&lt;script type="text/javascript"&gt;
+    // Get the elements
+    var inputA = document.getElementById("my-input-a");
+    var inputB = document.getElementById("my-input-b");
+    // Express 01-01-2018 in string and date
+    var str = "01-01-2018";
+    var date = new Date(2018 , 0, 1);
+    // Parse/Convert dates
+    var str2date = jsCalendar.tools.stringToDate(str);
+    var date2str = jsCalendar.tools.dateToString(date, "DD-MM-yyyy");
+    // Check results
+    inputA.value = (str2date.getTime() === date.getTime()) ? "pass" : "failed";
+    inputB.value = (date2str === str) ? "pass" : "failed";
+&lt;/script&gt;</code></pre>
 					Testing stringToDate:  <input id="my-input-14-a" value="checking"/><br>
 					Testing dateToString:  <input id="my-input-14-b" value="checking"/><br>
 					<script type="text/javascript">
@@ -1622,46 +1606,41 @@
 		<div class="section" id="more-theme">
 			<div class="section-wrapper">
 				<div class="section-title">More Theme Things</div>
-				<p>Some more things about the themes.</p>
+				<p>More themes related informations are provided in this section. Additionaly, you can check the <a href="themes.html">Themes</a> section for more themes.</p>
 
 				<div class="section-subtitle" id="more-theme-colors">Custom colors</div>
-				<div class="wrapper-left">
-					<p>Add a custom theme color</p><br>
-				</div>
-				<div class="wrapper-clear"></div>
 				<div>
-					<p>Example code</p>
-					<div class="html-code">
-						<span class="comment">&lt;!-- New purple color --&gt;</span><br>
-						<span class="tag">&lt;style <span class="attribute">type=<span class="string">"text/css"</span></span>&gt;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.custom-purple tbody td.jsCalendar-current {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #800080;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.custom-purple *::selection {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #800080;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.custom-purple *::-moz-selection {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #800080;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.material-theme.custom-purple thead {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #800080;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-left:hover,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-right:hover {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #660066;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.classic-theme.custom-purple thead {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #800080;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-left:hover,<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-right:hover {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #660066;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						<span class="tag">&lt;/style&gt;</span><br>
-						<span class="comment">&lt;!-- Custom color on calendar --&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar custom-purple"</span></span>&gt;&lt;/div&gt;</span><br>
-						<span class="tag">&lt;div <span class="attribute">class=<span class="string">"auto-jsCalendar material-theme custom-purple"</span></span>&gt;&lt;/div&gt;</span><br>
-					</div>
+					<p>Add a custom theme color on the built in themes by editing the example code below</p>
+					<pre><code class="language-html">&lt;!-- New purple color --&gt;
+&lt;style type="text/css"&gt;
+    .jsCalendar.custom-purple tbody td.jsCalendar-current {
+        background-color: #800080;
+    }
+    .jsCalendar.custom-purple *::selection {
+        background: #800080;
+    }
+    .jsCalendar.custom-purple *::-moz-selection {
+        background: #800080;
+    }
+    .jsCalendar.material-theme.custom-purple thead {
+        background-color: #800080;
+    }
+    .jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-left:hover,
+    .jsCalendar.material-theme.custom-purple thead .jsCalendar-nav-right:hover {
+        background-color: #660066;
+    }
+    .jsCalendar.classic-theme.custom-purple thead {
+        background-color: #800080;
+    }
+    .jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-left:hover,
+    .jsCalendar.classic-theme.custom-purple thead .jsCalendar-nav-right:hover {
+        background-color: #660066;
+    }
+&lt;/style&gt;
+&lt;!-- Custom color on calendar --&gt;
+&lt;div class="auto-jsCalendar custom-purple"&gt;&lt;/div&gt;
+&lt;div class="auto-jsCalendar material-theme custom-purple"&gt;&lt;/div&gt;
+&lt;div class="auto-jsCalendar classic-theme custom-purple"&gt;&lt;/div&gt;</code></pre>
 				</div>
 				<dir>
 					<div class="wrapper-left">
@@ -1669,6 +1648,9 @@
 					</div>
 					<div class="wrapper-left">
 						<div class="auto-jsCalendar material-theme custom-purple"></div>
+					</div>
+					<div class="wrapper-left">
+						<div class="auto-jsCalendar classic-theme custom-purple"></div>
 					</div>
 				</dir>
 				<div class="wrapper-clear"></div>
@@ -1684,39 +1666,37 @@
 				<p>You can add more languages to the calendar easy and fast.</p>
 				<div class="wrapper-left">
 					<p>You can edit the <span class="html-code">jsCalendar.lang.template.js</span> file provided, to support a new language.</p><br>
-					<p>Open the template, then find and translate all the red text you see below.</p>
-					<div class="html-code">
-						// Language code<br>
-						code : '<span class="string">en</span>',<br>
-						// Months of the year<br>
-						months : [<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">January</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">February</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">March</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">April</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">May</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">June</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">July</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">August</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">September</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">October</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">November</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">December</span>'<br>
-						],<br>
-						// Days of the week<br>
-						days : [<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Sunday</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Monday</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Tuesday</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Wednesday</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Thursday</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Friday</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;'<span class="string">Saturday</span>'<br>
-						]<br>
-					</div>
+					<p>Open the template, then find and translate all the green text you see below.</p>
+					<pre><code class="language-javascript">// Language code
+code : 'en',
+// Months of the year
+months : [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+],
+// Days of the week
+days : [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+]</code></pre>
 					<p>Save the changes and rename the file from <span class="html-code">jsCalendar.lang.template.js</span> to <span class="html-code">jsCalendar.lang.code.js</span>, where <span class="html-code">code</span> is your language code.</p>
 					<p>You can find your language code on the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639-1</a> code list.</p>
-					<p>Then you can use it like any other language file.</p>
+					<p>Then you can use it like any other language file. Consider sharing it with the community by submitting it to the jsCaldendar Github project.</p>
 				</div>
 				<div class="wrapper-clear"></div>
 
