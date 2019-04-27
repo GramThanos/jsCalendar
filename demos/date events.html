@@ -262,10 +262,14 @@
 
 				// If no events, create list
 				if (!events.hasOwnProperty(id)) {
-					// Select date
-					calendar.select(current);
 					// Create list
 					events[id] = [];
+				}
+
+				// If where were no events
+				if (events[id].length === 0) {
+					// Select date
+					calendar.select(current);
 				}
 
 				// Add event
