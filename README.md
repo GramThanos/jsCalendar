@@ -123,10 +123,10 @@ ___
     - Default options were exposed on `jsCalendar.options["option-name"]`
     - Exposed `jsCalendar.tools.getElement` method (previously known as `jsCalendar.prototype._getElement`)
  - Bugs
-    - Fixed days locale bug of the `setLanguage` method
+    - Fixed days locale bug of the `setLanguage` method (Issue #28)
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
-    - Fixed min-date comparison on previous month navigation
-    - Fixed compatibility with bootstrap
+    - Fixed min-date comparison on previous month navigation (Issue #30)
+    - Fixed compatibility with bootstrap (Issue #31)
     - Fixed classic micro theme days of the week width bug
     - Fixed not parsing dataset options on dynamic calendar creation
     - Fixed `this` not pointing to jsCalendar instance on events handlers (`onDateClick` and `onMonthChange`)
@@ -144,9 +144,7 @@ ___
 
 Contact me to leave me your feedback or to express your thoughts.
 
-[Open an issue](https://github.com/GramThanos/jsCalendar/issues)
-
-[Send me a mail](mailto:gramthanos@gmail.com)
+You can [open an issue](https://github.com/GramThanos/jsCalendar/issues) or [send me a mail](mailto:gramthanos@gmail.com)
 
 
 ___
