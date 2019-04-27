@@ -70,6 +70,7 @@
 						</li>
 						<li><a href="#calendar-parameters">Parameters</a>
 							<ul>
+								<li><a href="#parameter-date">date</a></li>
 								<li><a href="#parameter-navigator">navigator</a></li>
 								<li><a href="#parameter-navigator-position">navigator position</a></li>
 								<li><a href="#parameter-zero-fill">zero fill</a></li>
@@ -164,7 +165,7 @@
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous"&gt;</code></pre>
 				<br>
 				<p>Full example with all the files and their integrity hashes <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html">using unpkg here</a> and using <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html">jsdelivr here</a> (the hashes are the same).</p>
-				<p><small>Notice: When using CDNs, always include integrity hashes.</small></p>
+				<p class="note">Notice: <i>When using CDNs, always include integrity hashes.</i></p>
 			</div>
 		</div>
 
@@ -265,6 +266,25 @@
 					<p>You can customize each jsCalendar instance by defining <span class="html-code">data-*</span> parameters on its HTML element or by passing them on the <a href="#javascript-create-calendar">dynamic javascript creation</a> of the calendar.</p>
 					<br>
 					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+
+
+
+				<div class="section-subtitle" id="parameter-date">date <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
+				<div class="wrapper-left">
+					<p>Set the calendar's date.</p>
+					<table style="width: 100%;">
+						<tr><td>Name</td><td>date</td></tr>
+						<tr><td>Values</td><td><a href="#javascript-calendar-date">Date string</a></td></tr>
+						<tr><td>Default</td><td>"now"</td></tr>
+					</table>
+					<pre><code class="language-html">&lt;!-- Calendar date 01/12/2018 --&gt;
+&lt;div class="auto-jsCalendar"
+     data-date="01/12/2018"&gt;&lt;/div&gt;</code></pre>
+				</div>
+				<div class="wrapper-right">
+					<div class="auto-jsCalendar" data-date="01/12/2018"></div>
 				</div>
 				<div class="wrapper-clear"></div>
 
@@ -705,18 +725,18 @@
 						<tr><th>Name</th><th>Values</th><th></th></tr>
 						<tr><td><a href="#javascript-calendar-target">target</a></td>					<td>HTML element</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
 						<tr><td><a href="#javascript-calendar-date">date</a></td>						<td>Date | Number | String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-navigator">navigator</a> *</td>						<td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-navigator-position">navigatorPosition</a> *</td>	<td>"both" | "left" | "right"</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-zero-fill">zeroFill</a> *</td>						<td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-month-format">monthFormat</a> *</td>				<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-day-format">dayFormat</a> *</td>					<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-first-day-of-the-week">firstDayOfTheWeek</a> *</td>	<td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
-						<tr><td><a href="#parameter-first-day-of-the-week">fdotw</a> *</td>				<td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
-						<tr><td><a href="#parameter-language">language</a> *</td>						<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
-						<tr><td><a href="#parameter-min-max">min</a> *</td>								<td>false | Date</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
-						<tr><td><a href="#parameter-min-max">max</a> *</td>								<td>false | Date</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td><a href="#parameter-navigator">navigator</a></td>						<td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-navigator-position">navigatorPosition</a></td>	<td>"both" | "left" | "right"</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-zero-fill">zeroFill</a></td>						<td>true | false</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-month-format">monthFormat</a></td>				<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-day-format">dayFormat</a></td>					<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-first-day-of-the-week">firstDayOfTheWeek</a></td>	<td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
+						<tr><td><a href="#parameter-first-day-of-the-week">fdotw</a></td>				<td>String | Number</td><td><span class="version-tag" title="Added on version 1.3">v1.3</span></td></tr>
+						<tr><td><a href="#parameter-language">language</a></td>						<td>String</td><td><span class="version-tag" title="Added on version 1.2">v1.2</span></td></tr>
+						<tr><td><a href="#parameter-min-max">min</a></td>								<td>false | Date</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
+						<tr><td><a href="#parameter-min-max">max</a></td>								<td>false | Date</td><td><span class="version-tag" title="Added on version 1.4">v1.4</span></td></tr>
 					</table>
-					<p><small>* These options are the same as the HTML element <a href="#calendar-parameters">parameters</a>.</small></p>
+					<p class="note">All the options, except the target, are the same as the HTML element <a href="#calendar-parameters">parameters</a>.</p>
 				</div>
 				<div class="wrapper-clear"></div>
 				<br>
