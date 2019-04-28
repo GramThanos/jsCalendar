@@ -1551,8 +1551,73 @@ myCalendar.getSelected({sort : "asc", type : "date"});
 
 				<div class="section-subtitle" id="more-javascript-get-set">Get & Set Instances <span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></div>
 				<div class="wrapper-left">
-					<p>I will write this section later. I am not in the mood now :P</p>
-					<p class="note">You can find an example file on "<i>examples/calendar object get set del.html</i>"</p>
+					<p>The library maintains a list of jsCalendar instances created, based on the id of their target. This is helpful if you want to control an automatically created calendar. Calendars that their target element does not have an id, are not saved but you can manually binding them to a custom id.</p>
+					<br>
+					<p>API methods syntax</p>
+					<table>
+						<tr><td>Get instance</td><td>jsCalendar.get( id )</td></tr>
+						<tr><td>Set instance</td><td>jsCalendar.set( id, calendar )</td></tr>
+						<tr><td>Remove instance from the list</td><td>jsCalendar.del( id )</td></tr>
+					</table>
+					<br>
+					<p>Parameters</p>
+					<table>
+						<tr><td>id</td><td>The string id of the target element or a custom id</td></tr>
+						<tr><td>calendar</td><td>A jsCalendar instance</td></tr>
+					</table>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+				<div class="wrapper-left">
+					<p>Example code</p>
+					<pre><code class="language-html">&lt;!-- My calendar element --&gt;
+&lt;div class="auto-jsCalendar" id="my-calendar"&gt;&lt;/div&gt;
+Get auto-jsCalendar by target id&lt;br&gt;
+&lt;input id="my-input" value="checking"/&gt;&lt;br&gt;
+
+&lt;!-- Get the calendar object through javascript --&gt;
+&lt;script type="text/javascript"&gt;
+	// You have to wait the load event
+	window.addEventListener('load', function() {
+		// Get input
+		var input = document.getElementById('my-input');
+		// Get the calendar
+		var calendar = jsCalendar.get('#my-calendar');
+		// Show result
+		input.value = (calendar instanceof jsCalendar) ?
+			'OK' :
+			'Failed';
+	}, false);
+	// The jsCalendar creates the auto-jsCalendar onload,
+	// so you have to wait for the event and this code must
+	// be under the jsCalendar.js script tag
+&lt;/script&gt;</code></pre>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					<br>
+					<!-- Result -->
+					Get auto-jsCalendar by target id : <br>
+					<input id="my-input-15" value="checking"/><br>
+
+					<!-- My calendar element -->
+					<div class="auto-jsCalendar" id="my-calendar-15"></div>
+					
+					<!-- Get the calendar object through javascript -->
+					<script type="text/javascript">
+						// You have to wait the load event
+						window.addEventListener('load', function() {
+							// Get input
+							var input = document.getElementById('my-input-15');
+							// Get the calendar
+							var calendar = jsCalendar.get('#my-calendar-15');
+							// Show result
+							input.value = calendar instanceof jsCalendar ? 'OK' : 'Failed';
+						}, false);
+						// The jsCalendar creates the auto-jsCalendar onload,
+						// so you have to wait for the event and this code must
+						// be under the jsCalendar.js script tag
+					</script>
 				</div>
 				<div class="wrapper-clear"></div>
 				<br><br>
