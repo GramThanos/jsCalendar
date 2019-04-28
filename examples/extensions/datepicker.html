@@ -2,73 +2,124 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>jsCalendar</title>
-		<meta name="description" content="jsCalendar example">
+		<title>jsCalendar datepicker</title>
+		<meta name="description" content="jsCalendar datepicker example">
 		<meta name="author" content="GramThanos">
 
 		<!-- jsCalendar -->
 		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
 		<link rel="stylesheet" type="text/css" href="../../themes/jsCalendar.micro.css">
 		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
+		<script type="text/javascript" src="../../source/jsCalendar.lang.gr.js"></script>
 		<script type="text/javascript" src="../../extensions/jsCalendar.datepicker.js"></script>
-
-		<style type="text/css">
-			#wrapper {
-				position: absolute;
-				top: 200px;
-				left: 50%;
-				width: 400px;
-				line-height: 40px;
-				margin-left: -200px;
-				font-size: 20px;
-				text-align: center;
-			}
-			#wrapper input {
-				height: 30px;
-				width: 150px;
-				line-height: 30px;
-				font-size: 16px;
-				text-align: center;
-			}
-		</style>
 
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
+		
+		Example 1<br>
+		<input type="text"
+			   name="example-1"
+			   data-datepicker/>
+		<br>
+		<br>
+		
+		Example 2<br>
+		<input type="text"
+			   name="example-2"
+			   value="05/01/2019"
+			   data-datepicker
+			   data-class="classic-theme meterial-theme"/>
+		<br>
+		<br>
 
+		Example 3<br>
+		<input type="text"
+			   name="example-3"
+			   data-datepicker
+			   data-min="01/01/2019"
+			   data-max="31/01/2019"
+			   data-date="05/01/2019"
+			   data-format="DD-MM-YYYY"
+			   data-navigation="no"
+			   data-class="classic-theme micro-theme"/>
+		<br>
+		<br>
 
-		<div id="wrapper">
-			Date Pickers Examples<br>
-			
-			Example 1 :
-			<input type="text"
-				   name="test-1"
-				   data-datepicker/>
-			<br>
-			
-			Example 2 :
-			<input type="text"
-				   name="test-2"
-				   value="05/01/2019"
-				   data-datepicker
-				   data-class="classic-theme meterial-theme"/>
-			<br>
+		Example 4<br>
+		<input type="text" name="example-4" id="example-4">
+		<br>
+		<br>
 
-			Example 3 :
-			<input type="text"
-				   name="test-3"
-				   data-datepicker
-				   data-min="01/01/2019"
-				   data-max="31/01/2019"
-				   data-date="05/01/2019"
-				   data-navigation="no"
-				   data-class="classic-theme micro-theme"/>
-			<br>
+		<script type="text/javascript">
+			// Default options
+			var picker4 = jsCalendar.datepicker({
+				target : '#example-4',			// Target input to insert the datepicker
+				format : 'DD/MM/YYYY',			// Default date format for the input value
+				offsetTop : 2,					// Default datepicker render top-offset
+				offsetLeft : -4,				// Default datepicker render left-offset
+				close_keycodes : [9, 27, 13],	// Close datepicker on TAB, ESC or ENTER keypress
+				class : 'jsCalendar-datepicker-wrappper' // Default datepicker wrapper div class
+														 // On this class you can set the theme and
+														 // color of the datepicker's jsCalendar
+			});
+		</script>
 
-		</div>
+		Example 5<br>
+		<input type="text" name="example-5" id="example-5">
+		<br>
+		<br>
 
+		<script type="text/javascript">
+			// Default options
+			var picker5 = jsCalendar.datepicker({
+
+				// Date picker options
+				target : '#example-5',					// Target input to insert the datepicker
+				format : 'DAY, D MONTH YYYY',			// Date format for the input value
+				offsetTop : 5,							// Datepicker render top-offset
+				offsetLeft : -1,						// Datepicker render left-offset
+				close_keycodes : [13], 					// Close only with ENTER
+				class : 'classic-theme micro-theme',	// Set jsCalendar micro classic theme
+
+				// Additional jsCalendar's option
+				zeroFill : true,						// Add zero before date numbers
+				monthFormat : '##/YYYY'					// Display month number and year on month
+
+			});
+		</script>
+
+		Example 6<br>
+		<input type="text" name="example-6" id="example-6">
+		<input type="button" id="btn-on-6" value="Open"/>
+		<input type="button" id="btn-off-6" value="Close"/>
+		<br>
+		<br>
+
+		<script type="text/javascript">
+			// Default options
+			var picker6 = jsCalendar.datepicker({
+				target : '#example-6',					// Target input to insert the datepicker
+				format : 'DAY, D MONTH YYYY',			// Date format for the input value
+				date : '01/01/2019',					// Set default date of the input
+				language : 'gr',						// Select language
+				dayFormat : 'DDD'						// Day name format
+			});
+
+			// Open button
+			document.getElementById('btn-on-6').addEventListener('click', function(e) {
+				picker6.show();
+				event.stopPropagation();
+			}, false);
+
+			// Close button
+			document.getElementById('btn-off-6').addEventListener('click', function() {
+				picker6.hide();
+				event.stopPropagation();
+			}, false);
+		</script>
 
 	</body>
 </html>
