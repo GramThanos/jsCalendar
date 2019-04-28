@@ -1,6 +1,6 @@
 /*
  * jsCalendar extension
- * DatePicker v1.0.0-beta
+ * DatePicker v1.0.1-beta
  *
  *
  * MIT License
@@ -55,7 +55,7 @@
     };
 
     // Version
-    DatePicker.version = 'v1.0.0-beta';
+    DatePicker.version = 'v1.0.1-beta';
 
     // Sub-Constructor
     DatePicker.prototype._construct = function(args) {
@@ -78,9 +78,18 @@
         calendar_options.target = this._wrapper;
         this.jsCalendar = new $(calendar_options);
 
+        // If date was defined
+        if (calendar_options.hasOwnProperty('date')) {
+            // Set input date
+            this._target.value = $.tools.dateToString(
+                $.tools.parseDate(calendar_options.date),
+                this._options.format,
+                this.jsCalendar._options.language
+            );
+        }
+
         // Add target listeners
         var dp = this;
-        this._safeblur = null;
         // Calendar click handler
         this.jsCalendar.onDateClick(function(event, date) {dp._onPick(date);});
         // Focus handler
@@ -251,8 +260,12 @@
             }
         }
 
-        // Load date
-        if (!options.hasOwnProperty('date')) {
+        // Date defined
+        if (doptions.hasOwnProperty('date')) {
+            options.date = doptions.date;
+        }
+        // Date not defined
+        else if (!options.hasOwnProperty('date')) {
             if (this._target.value.length > 0 && $.tools.parseDate(this._target.value, true) !== null) {
                 options.date = this._target.value;
             }
@@ -271,8 +284,11 @@
         this.show();
     };
     DatePicker.prototype._onPick = function(date) {
+        // If date not in range
+        if (this.jsCalendar._options.min && this.jsCalendar._options.min.getTime() > date) return;
+        if (this.jsCalendar._options.max && this.jsCalendar._options.max.getTime() < date) return;
         // Set input date
-        this._target.value = $.tools.dateToString(date, this._options.format);
+        this._target.value = $.tools.dateToString(date, this._options.format, this.jsCalendar._options.language);
         // Update calendar date
         this.jsCalendar.set(date);
         // Close picker
