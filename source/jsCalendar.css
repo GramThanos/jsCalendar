@@ -130,6 +130,27 @@
 			border-radius: 18px;
 			color: #FFFFFF;
 		}
+		.jsCalendar tbody td div.jsCalendar-event-marks {
+			position: relative;
+			display: flex;
+			bottom: 7px;
+			margin: 0px; 
+			padding:0px;
+			height: 5px;
+		}
+		.jsCalendar tbody td div.jsCalendar-event-marks .jsCalendar-event-mark {
+			width: 6px;
+			height: 4px;
+			display: inline;
+			margin: 0px 1px;
+		}
+		.jsCalendar tbody td div.jsCalendar-event-marks .jsCalendar-event-more-mark {
+			font-size: 8px;
+			position: relative;
+			bottom: 16px;
+			right: -2px;
+		}
+		
 		.jsCalendar tbody td.jsCalendar-previous,
 		.jsCalendar tbody td.jsCalendar-next {
 			color: #CACACA;

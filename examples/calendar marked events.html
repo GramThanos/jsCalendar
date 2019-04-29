@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<!-- My calendar element -->
+		<div id="my-calendar" class="classic-theme"></div>
+
+		<!-- Outputs -->
+		Day click : <br>
+		<input id="my-input-a"><br>
+		Month change : <br>
+		<input id="my-input-b"><br>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar = jsCalendar.new("#my-calendar");
+			var colors = ['red', 'green', 'blue', 'black'];
+			
+			// Get the inputs
+			var print_date = document.getElementById("my-input-a");
+			var print_month = document.getElementById("my-input-b");
+
+			// When the user clicks on a date
+			calendar.onDateClick(function(event, date){
+				var index = Math.floor(Math.random() * colors.length);
+				jsCalendar.get("#my-calendar").addEventMark(date, colors[index]);
+				print_date.value = jsCalendar.tools.dateToString(date, 'DAY, DD MONTH YYYY', 'en');
+				
+			});
+
+			// When a user change the month
+			calendar.onMonthChange(function(event, date){
+				print_month.value = jsCalendar.tools.dateToString(date, 'MONTH YYYY', 'en');
+			});
+		</script>
+
+
+	</body>
+</html>
