@@ -18,30 +18,52 @@
 
 
 		<!-- My calendar element -->
-		<div id="my-calendar" class="classic-theme"></div>
+		<div id="my-calendar" class="jsCalendar classic-theme"></div>
 
 		<!-- Outputs -->
+		Action on day click: <br>
+		<select id="clear-color">
+			<option value="add"> Add event mark</option>
+			<option value="red">Clear red</option>
+			<option value="#2e7d32">Clear color #2e7d32</option>
+			<option value="green">Clear green</option>
+			<option value="blue">Clear blue</option>
+			<option value="black">Clear black</option>
+		</select>
+		<br>
 		Day click : <br>
 		<input id="my-input-a"><br>
 		Month change : <br>
 		<input id="my-input-b"><br>
+		<br>
+		<button id="clear-marks">Clear all event marks</button>
 
 		<!-- Create the calendar -->
 		<script type="text/javascript">
 			// Create the calendar
 			var calendar = jsCalendar.new("#my-calendar");
-			var colors = ['red', 'green', 'blue', 'black'];
+			var colors = ['red', '#2e7d32', 'green', 'blue', 'black'];
 			
 			// Get the inputs
 			var print_date = document.getElementById("my-input-a");
 			var print_month = document.getElementById("my-input-b");
+			var clear_marks = document.getElementById("clear-marks");
+			var clear_color =  document.getElementById("clear-color")
+
+			clear_marks.addEventListener("click", function(){
+				jsCalendar.get("#my-calendar").clearAllEventMarks();
+			}, false);
 
 			// When the user clicks on a date
 			calendar.onDateClick(function(event, date){
-				var index = Math.floor(Math.random() * colors.length);
-				jsCalendar.get("#my-calendar").addEventMark(date, colors[index]);
-				print_date.value = jsCalendar.tools.dateToString(date, 'DAY, DD MONTH YYYY', 'en');
-				
+				if(clear_color.value=="add") {
+					var index = Math.floor(Math.random() * colors.length);
+					jsCalendar.get("#my-calendar").addEventMark(date, colors[index]);
+
+					print_date.value = jsCalendar.tools.dateToString(date, 'DAY, DD MONTH YYYY', 'en');
+				} else {
+					jsCalendar.get("#my-calendar").removeEventMark(date, clear_color.value);
+				}
 			});
 
 			// When a user change the month

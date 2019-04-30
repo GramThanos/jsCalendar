@@ -642,7 +642,26 @@ var jsCalendar = (function(){
     	
     	this._eventMarks[date] = this._eventMarks[date].concat(eventColors);
     };
-    
+
+    JsCalendar.prototype._removeEventMarksForDate = function(date, eventColors) {
+    	date = tools.parseDate(date);
+    	date.setHours(0, 0, 0, 0);
+    	date = date.getTime();
+    	
+    	if( date in this._eventMarks) {
+            for(i=0; i<eventColors.length; i++) {
+                var pos = this._eventMarks[date].indexOf(eventColors[i]);
+                if (pos >= 0) {
+                    this._eventMarks[date].splice(pos,1);
+                }
+            }
+    	}
+    };
+
+    JsCalendar.prototype._clearEventMarksForAllDates = function() {
+        this._eventMarks = {};
+    };
+
     // Select dates on calendar
     JsCalendar.prototype._selectDates = function(dates) {
         // Copy array instance
@@ -1039,7 +1058,40 @@ var jsCalendar = (function(){
         // Return
         return this;
     };
-    
+
+    // Select dates
+    JsCalendar.prototype.removeEventMark = function(date, eventColors){
+        // If no arguments
+        if (typeof date === 'undefined') {
+            // Return
+            return this;
+        }
+
+        // If eventColors not array
+        if (!(eventColors instanceof Array)) {
+            // Lets make it an array
+        	eventColors = [eventColors];
+        }
+        // Unmark dates
+        this._removeEventMarksForDate(date, eventColors);
+        // Refresh
+        this.refresh();
+
+        // Return
+        return this;
+    };
+
+    // Clear event marks from all dates
+    JsCalendar.prototype.clearAllEventMarks = function(){
+        // Unselect all dates
+        this._clearEventMarksForAllDates();
+        // Refresh
+        this.refresh();
+
+        // Return
+        return this;
+    };
+
     // Select dates
     JsCalendar.prototype.select = function(dates){
         // If no arguments
