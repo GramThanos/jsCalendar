@@ -1,6 +1,5 @@
-[![latest release](https://img.shields.io/badge/latest%20release-v1.4.3-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.4.4-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
-[![latest development](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
+[![latest release](https://img.shields.io/badge/latest%20release-v1.4.4-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
+[![npm project](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
 
 # jsCalendar
 Just a simple javascript calendar
@@ -48,17 +47,17 @@ ___
 You can also use the [jsCalendar package](https://unpkg.com/simple-jscalendar/) on the [unpkg CDN](https://unpkg.com).
 
 ```html
-<!-- jsCalendar v1.4.3 Javascript and CSS from unpkg cdn -->
-<script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous">
+<!-- jsCalendar v1.4.4 Javascript and CSS from unpkg cdn -->
+<script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
 ```
 
 Or you can also use the [jsCalendar npm package](https://www.jsdelivr.com/package/npm/simple-jscalendar) on the [jsdelivr CDN](https://www.jsdelivr.com).
 
 ```html
-<!-- jsCalendar v1.4.3 Javascript and CSS from jsdelivr npm cdn -->
-<script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous">
+<!-- jsCalendar v1.4.4 Javascript and CSS from jsdelivr npm cdn -->
+<script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
 ```
 
 Full example with all the files and their integrity hashes [using unpkg here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html) and [using jsdelivr here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html) (the hashes are the same).
@@ -107,34 +106,6 @@ Additional Themes
 ![DarkSeries Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_darkseries.png)
 ![Clean Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_clean.png)
 ![Micro Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_micro.png)
-
-
-___
-
-
-### Whats new?
-
-#### Latest development code v1.4.4-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
- - Added
-    - Render handlers (based on PR #35 by [jordanwallwork](https://github.com/jordanwallwork) and Issue #40 by [Daniel Rudolf](https://github.com/PhrozenByte))
-       - Option and method `onMonthRender`
-       - Option and method `onDayRender`
-       - Option and method `onDateRender`
-    - Default options were exposed on `jsCalendar.options["option-name"]`
-    - Exposed `jsCalendar.tools.getElement` method (previously known as `jsCalendar.prototype._getElement`)
- - Bugs
-    - Fixed days locale bug of the `setLanguage` method (Issue #28)
-    - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
-    - Fixed min-date comparison on previous month navigation (Issue #30)
-    - Fixed compatibility with bootstrap (Issue #31)
-    - Fixed classic micro theme days of the week width bug
-    - Fixed not parsing dataset options on dynamic calendar creation
-    - Fixed `this` not pointing to jsCalendar instance on events handlers (`onDateClick` and `onMonthChange`)
- - Languages
-    - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
-    - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
-    - Added Swedish Language (by [olssonm](https://github.com/olssonm))
-    - Added Belarusian Language (by [vorvule](https://github.com/vorvule))
 
 
 ___

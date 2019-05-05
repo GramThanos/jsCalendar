@@ -1,10 +1,10 @@
 /*
- * jsCalendar v1.4.4-beta
+ * jsCalendar v1.4.4
  * 
  * 
  * MIT License
  * 
- * Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2019 Grammatopoulos Athanasios-Vasileios
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -120,10 +120,10 @@
 		.jsCalendar tbody td.jsCalendar-selected {
 			background-color: #FFFFFF;
 			border: 2px solid #E6E6E6;
+			box-sizing: content-box;
 			height: 32px;
 			line-height: 32px;
 			width: 32px;
-			box-sizing: content-box;
 		}
 		.jsCalendar tbody td.jsCalendar-current {
 			background-color: #52C9FF;
