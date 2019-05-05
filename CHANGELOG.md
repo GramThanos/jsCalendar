@@ -3,8 +3,14 @@ All jsCalendar changes are documented in this file.
 
 
 
+## [1.4.x-beta] - Under development
 
-## [1.4.4-beta] - Under development
+### Added
+ - Nothing yet
+
+
+
+## [1.4.4] - 2019-05-05
 
 ### Added
  - API
