@@ -1,6 +1,6 @@
 /*
  * jsCalendar extension
- * DatePicker v1.0.1-beta
+ * DatePicker v1.0.1
  *
  *
  * MIT License
@@ -194,8 +194,9 @@
         // Input options object (dirty)
         var options = {};
 
+        var item;
         // Load default and input options
-        for (var item in _.options) {
+        for (item in _.options) {
             // Default options
             if (_.options.hasOwnProperty(item)) {
                 if (_.options[item] instanceof Array)
@@ -249,7 +250,7 @@
         options = {};
 
         // Load input options
-        for (var item in $.options) {
+        for (item in $.options) {
             // Dynamic options
             if (doptions.hasOwnProperty(item)) {
                 options[item] = doptions[item];
@@ -358,9 +359,7 @@
                 datepickers.push(inputs[i]);
             }
         }
-
-        // Temp options variable
-        var options;
+        
         // For each auto-calendar
         for (i = 0; i < datepickers.length; i++) {
             // Set as loaded
