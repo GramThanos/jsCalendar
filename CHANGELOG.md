@@ -6,16 +6,33 @@ All jsCalendar changes are documented in this file.
 
 ## [1.4.4-beta] - Under development
 
+### Added
+ - API
+    - Render handlers (based on PR #35 by [jordanwallwork](https://github.com/jordanwallwork) and Issue #40 by [Daniel Rudolf](https://github.com/PhrozenByte))
+       - Option and method `onMonthRender`
+       - Option and method `onDayRender`
+       - Option and method `onDateRender`
+    - Default options were exposed on `jsCalendar.options["option-name"]`
+    - Exposed `jsCalendar.tools.getElement` method (previously known as `jsCalendar.prototype._getElement`)
+
 ### Fixed
  - Bugs
-    - Fixed days locale bug of the `setLanguage` method
+    - Fixed days locale bug of the `setLanguage` method (Issue #28)
     - Fixed a typo in French language (by [Thomas Chapuis](https://github.com/amstr4d))
-    - Fixed min-date comparison on previous month navigation
-    - Fixed compatibility with bootstrap
+    - Fixed min-date comparison on previous month navigation (Issue #30)
+    - Fixed compatibility with bootstrap (Issue #31)
     - Fixed classic micro theme days of the week width bug
+    - Fixed not parsing dataset options on dynamic calendar creation
+    - Fixed `this` not pointing to jsCalendar instance on events handlers (`onDateClick` and `onMonthChange`)
  - Languages
+    - Fixed French language typo (by [amstr4d](https://github.com/amstr4d))
+
+### Translations
+- Languages
     - Added Dutch Language (by [mikedebruijn](https://github.com/mikedebruijn))
     - Added Catalan Language (by [antonstsk](https://github.com/antonstsk))
+    - Added Swedish Language (by [olssonm](https://github.com/olssonm))
+    - Added Belarusian Language (by [vorvule](https://github.com/vorvule))
 
 
 
