@@ -39,9 +39,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.3/jsCalendar_v1.4.3.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.4/jsCalendar_v1.4.4.zip" class="download-button">
 						Download<br>
-						<span>version 1.4.3</span>
+						<span>version 1.4.4</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -57,6 +57,7 @@
 				<table id="versions-table" style="width: 100%;">
 					<tr>
 						<th style="width:100px;">Version</th>
+						<th style="width:100px;">Released</th>
 						<th style="width:130px;">Changelog</th>
 						<th>Download</th>
 					</tr>
@@ -78,7 +79,7 @@
 					var loading = tags.length;
 
 					// Get info for each tag
-					var row, col, a, span;
+					var row, col, date, a, span;
 					for (var i = 0; i < tags.length; i++) {
 						// Create table row
 						row = document.createElement('tr');
@@ -87,6 +88,10 @@
 						col = document.createElement('td');
 						col.textContent = tags[i];
 						row.appendChild(col);
+
+						// Date
+						date = document.createElement('td');
+						row.appendChild(date);
 
 						// Changelog
 						col = document.createElement('td');
@@ -103,30 +108,31 @@
 						a.textContent = 'Download link';
 						col.appendChild(a);
 						span = document.createElement('span');
-						span.textContent = ' ... ';
 						col.appendChild(span);
 						row.appendChild(col);
 
 						table.appendChild(row);
 
 						// Get tag info
-						(function(tag, element){
+						(function(tag, date, info){
 							repo.getVersion(tag, function(data){
-								if (!data || !data.assets) {
-									element.textContent = '';
-								}
-								else {
-									var n = data.assets[0].download_count;
-									var s = data.assets[0].size;
-									element.textContent = ' - ' + readableSize(s) + ' - ' + addDots(n) + ' download' + (n > 1 ? 's' : '');
-									downloads += n;
+								var n, d;
+								if (data && data.assets) {
+									date.textContent = data.published_at.match(/\d\d\d\d-\d\d-\d\d/)[0];
+									if (data.assets.length > 0) {
+										n = data.assets[0].download_count;
+										info.textContent = ' - ' + 
+											readableSize(data.assets[0].size) + ' - ' +
+											addDots(n) + ' download' + (n > 1 ? 's' : '');
+										downloads += n;
+									}
 								}
 								loading--;
 								if (loading === 0) {
 									total.textContent = 'Downloaded ' + addDots(downloads) + ' times in total!';
 								}
 							});
-						})(tags[i], span);
+						})(tags[i], date, span);
 					}
 
 					function readableSize(bytes) {

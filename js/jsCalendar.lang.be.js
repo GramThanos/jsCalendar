@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension
- * Add French Language support
- * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
+ * Add Belarusian Language support
+ * Translator: Alexander Vorvule (vorvule@github)
  */
 
 // We love anonymous functions
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : 'fr',
+        code : 'be',
         // Months of the year
         months : [
-            'Janvier',
-            'Février',
-            'Mars',
-            'Avril',
-            'Mai',
-            'Juin',
-            'Juillet',
-            'Août',
-            'Septembre',
-            'Octobre',
-            'Novembre',
-            'Décembre'
+            'Студзень',
+            'Люты',
+            'Сакавік',
+            'Красавік',
+            'Травень',
+            'Чэрвень',
+            'Ліпень',
+            'Жнівень',
+            'Верасень',
+            'Кастрычнік',
+            'Лістапад',
+            'Снежань'
         ],
         // Days of the week
         days : [
-            'Dimanche',
-            'Lundi',
-            'Mardi',
-            'Mercredi',
-            'Jeudi',
-            'Vendredi',
-            'Samedi'
+            'Нядзеля',
+            'Панядзелак',
+            'Аўторак',
+            'Серада',
+            'Чацвер',
+            'Пятніца',
+            'Субота'
         ]
     });
 
