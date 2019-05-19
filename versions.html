@@ -53,246 +53,84 @@
 
 		<div class="section section-menu">
 			<div class="section-wrapper">
-				<div class="section-title">Latest version</div>
 
-
-
-
-				<div class="section-subtitle">
-					Version v1.4.3
-					<span style="font-size: 0.6em;">
-						(2018-09-15)
-						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.3/jsCalendar_v1.4.3.zip">Download</a>]
-						<span class="version-info" data-version="v1.4.3"></span>
-					</span>
-				</div>
-				<div style="margin-bottom: 50px;">
-					<ul>
-						<li>Added</li>
-						<ul>
-							<li>API</li>
-							<ul>
-								<li>Added support for getting the object of an <span class="html-code">auto-jsCalendar</span> calendar or saving one</li>
-								<ul>
-									<li><span class="html-code">var myCalendar = jsCalendar.get('#byId');</span></li>
-									<li><span class="html-code">jsCalendar.set('@myCalendar', myCalendar);</span></li>
-									<li><span class="html-code">jsCalendar.del('@myCalendar');</span></li>
-								</ul>
-								<li>Added support for custom date string parser handlers</li>
-							</ul>
-							<li>Themes</li>
-							<ul>
-								<li>Micro Theme added</li>
-							</ul>
-						</ul>
-						<li>Fixed</li>
-						<ul>
-							<li>Bugs</li>
-							<ul>
-								<li>Fixed selected days bug</li>
-							</ul>
-							<li>Languages</li>
-							<ul>
-								<li>Fixed Japanese Language</li>
-								<li>Fixed Chinese Language</li>
-							</ul>
-						</ul>
-						<li>Translations</li>
-						<ul>
-							<li>Added Portuguese Language (by <a href="https://github.com/goodeath" target="_blank">goodeath</a>)</li>
-							<li>Added Turkish Language (by <a href="https://github.com/mgvjet" target="_blank">mgvjet</a>)</li>
-							<li>Added Slovak Language (by <a href="https://github.com/greatapo" target="_blank">greatapo</a>)</li>
-							<li>Added Hungarian Language</li>
-							<li>Added Norwegian Language (by <a href="https://github.com/SpellCraft" target="_blank">SpellCraft</a>)</li>
-							<li>Added Ukrainian Language (by <a href="https://github.com/ashep" target="_blank">ashep</a>)</li>
-						</ul>
-					</ul>
-				</div>
-
-
-
-
-				<div class="section-title" style="margin-top: 100px;">Older versions</div>
-
-
-
-
-				<div class="section-subtitle">
-					Version v1.4.2
-					<span style="font-size: 0.6em;">
-						(2018-02-03)
-						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.2/jsCalendar_v1.4.2.zip">Download</a>]
-						<span class="version-info" data-version="v1.4.2"></span>
-					</span>
-				</div>
-				<div style="margin-bottom: 50px;">
-					<ul>
-						<li>Fixed</li>
-						<ul>
-							<li>Fixed date format bugs and added "day" keyword</li>
-							<ul>
-								<li>Before fix</li>
-								<ul>
-									<li><span class="html-code">javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");</span></li>
-									<li><span class="html-code">// returns "1eceDber Fay" (D = 1, m = D, d = F)</span></li>
-								</ul>
-								<li>After fix</li>
-								<ul>
-									<li><span class="html-code">javascript jsCalendar.tools.dateToString(new Date(2017, 11, 1), "month day", "en");</span></li>
-									<li><span class="html-code">// returns "December Friday"</span></li>
-								</ul>
-							</ul>
-							<li>Fixed no zero fill for day 9 with format DD</li>
-						</ul>
-					</ul>
-				</div>
-
-
-
-
-				<div class="section-subtitle">
-					Version v1.4.1
-					<span style="font-size: 0.6em;">
-						(2018-01-01)
-						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.1/jsCalendar_v1.4.1.zip">Download</a>]
-						<span class="version-info" data-version="v1.4.1"></span>
-					</span>
-				</div>
-				<div style="margin-bottom: 50px;">
-					<ul>
-						<li>Added</li>
-						<ul>
-							<li>jsCalendar.tools.*</li>
-							<ul>
-								<li>jsCalendar.tools.parseDate(date)</li>
-								<li>jsCalendar.tools.stringToDate alias of JsCalendar.tools.parseDate</li>
-								<li>jsCalendar.tools.dateToString(date, format, lang)</li>
-							</ul>
-						</ul>
-					</ul>
-				</div>
-
-
-
-
-				<div class="section-subtitle">
-					Version v1.4
-					<span style="font-size: 0.6em;">
-						(2017-11-04)
-						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4/jsCalendar_v1.4.zip">Download</a>]
-						<span class="version-info" data-version="v1.4"></span>
-					</span>
-				</div>
-				<div style="margin-bottom: 50px;">
-					<ul>
-						<li>Added</li>
-						<ul>
-							<li>jsCalendar.version</li>
-							<li>calendar.clearSelected() alias of calendar.clearselect()</li>
-							<li>calendar.isSelected(date)</li>
-							<li>calendar.isVisible(date)</li>
-							<li>calendar.isInMonth(date)</li>
-							<li>calendar.getSelected(options)</li>
-							<li>support to get target with selectors</li>
-							<ul>
-								<li>ex. target string <span class="html-code">"#myelement"</span> will get the element with id <span class="html-code">myelement</span></li>
-							</ul>
-							<li>min(date) // Set a max date for the calendar</li>
-							<li>max(date) // Set a min date for the calendar</li>
-						</ul>
-						<li>Fixed</li>
-						<ul>
-							<li>duplicate dates when time changes (ex. 29/10/2017)</li>
-							<li>calendar.clearSelected() alias of calendar.clearselect()</li>
-							<li>string dates that do not exist throw error</li>
-							<ul>
-								<li>ex. <span class="html-code">new jsCalendar(document.createElement('div'), "31/2/2017");</span> now throw error</li>
-							</ul>
-						</ul>
-					</ul>
-				</div>
-
-
-
-
-				<div class="section-subtitle">
-					Version v1.3
-					<span style="font-size: 0.6em;">
-						(2017-07-08)
-						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.3/jsCalendar_v1.3.zip">Download</a>]
-						<span class="version-info" data-version="v1.3"></span>
-					</span>
-				</div>
-				<div style="margin-bottom: 50px;">
-					<ul>
-						<li>Added</li>
-						<ul>
-							<li>Support for setting the first day of the week</li>
-							<ul>
-								<li>firstDayOfTheWeek : "{day-name}" // Based on the language sellected</li>
-								<li>firstDayOfTheWeek : "{number}" | {number} // 1-7 starting from Sunday</li>
-								<li>alias keyword : "fdotw" (from the initials FistDayOfTheWeek)</li>
-							</ul>
-						</ul>
-					</ul>
-				</div>
-
-
-
-
-				<div class="section-subtitle">
-					Version v1.2
-					<span style="font-size: 0.6em;">
-						(2017-03-19)
-						[<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.2/jsCalendar_v1.2.zip">Download</a>]
-						<span class="version-info" data-version="v1.2"></span>
-					</span>
-				</div>
-				<div style="margin-bottom: 50px;">
-					<ul>
-						<li>Public release of the library.</li>
-					</ul>
-				</div>
-
-				<div id="downloads" style="padding-top: 30px;font-size: 0.6em;text-align: right;"></div>
-
+				<table id="versions-table" style="width: 100%;">
+					<tr>
+						<th style="width:100px;">Version</th>
+						<th style="width:130px;">Changelog</th>
+						<th>Download</th>
+					</tr>
+				</table>
+				<div id="total-downloads" style="text-align:right;padding:10px 10px 0px 10px;font-size:0.8em;">...</div>
 
 				<!-- Get version info -->
 				<script type="text/javascript">
+					// Get elements
+					var table = document.getElementById("versions-table");
+					var total = document.getElementById("total-downloads");
 					// Get repo
+					var project = 'https://github.com/GramThanos/jsCalendar';
 					var repo = new GitInfoHub("GramThanos", "jsCalendar");
-					// Get download elements
-					var info = document.getElementsByClassName("version-info");
-					var downloads = document.getElementById("downloads");
+					var tags = ['v1.4.4', 'v1.4.3', 'v1.4.2', 'v1.4.1', 'v1.4', 'v1.3', 'v1.2'];
 
 					// Info vars
-					var total_downloads = 0;
-					var notdone = info.length;
+					var downloads = 0;
+					var loading = tags.length;
 
-					// Get info data
-					for (var i = 0; i < info.length; i++) {
-						(function(element){
-							repo.getVersion(element.dataset.version, function(data){
-								var n = data.assets[0].download_count;
-								var s = data.assets[0].size;
-								element.textContent = "[" + 
-									humanFileSize(s, false) + ", " +
-									n + " " + (n > 1 ? "downloads" : "download") + 
-								"]";
-								total_downloads += n;
-								notdone--;
+					// Get info for each tag
+					var row, col, a, span;
+					for (var i = 0; i < tags.length; i++) {
+						// Create table row
+						row = document.createElement('tr');
 
-								if (notdone === 0) {
-									downloads.textContent = "Downloaded " + total_downloads + " times in total!";
+						// Tag
+						col = document.createElement('td');
+						col.textContent = tags[i];
+						row.appendChild(col);
+
+						// Changelog
+						col = document.createElement('td');
+						a = document.createElement('a');
+						a.href = project + '/releases/tag/' + tags[i];
+						a.textContent = 'Changelog link';
+						col.appendChild(a);
+						row.appendChild(col);
+
+						// Download
+						col = document.createElement('td');
+						a = document.createElement('a');
+						a.href = project + '/releases/download/' + tags[i] + '/jsCalendar_' + tags[i] + '.zip';
+						a.textContent = 'Download link';
+						col.appendChild(a);
+						span = document.createElement('span');
+						span.textContent = ' ... ';
+						col.appendChild(span);
+						row.appendChild(col);
+
+						table.appendChild(row);
+
+						// Get tag info
+						(function(tag, element){
+							repo.getVersion(tag, function(data){
+								if (!data || !data.assets) {
+									element.textContent = '';
+								}
+								else {
+									var n = data.assets[0].download_count;
+									var s = data.assets[0].size;
+									element.textContent = ' - ' + readableSize(s) + ' - ' + addDots(n) + ' download' + (n > 1 ? 's' : '');
+									downloads += n;
+								}
+								loading--;
+								if (loading === 0) {
+									total.textContent = 'Downloaded ' + addDots(downloads) + ' times in total!';
 								}
 							});
-						})(info[i]);
+						})(tags[i], span);
 					}
 
-					function humanFileSize(bytes, si) {
-						if(Math.abs(bytes) < 1024) {
-							return bytes + ' B';
-						}
+					function readableSize(bytes) {
+						if (Math.abs(bytes) < 1024) return bytes + ' B';
 						var units = ['kB','MB','GB','TB','PB','EB','ZB','YB'];
 						var u = -1;
 						do {
@@ -300,6 +138,9 @@
 							++u;
 						} while(Math.abs(bytes) >= 1024 && u < units.length - 1);
 						return bytes.toFixed(1) + '' + units[u];
+					}
+					function addDots(x) {
+						return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 					}
 				</script>
 
