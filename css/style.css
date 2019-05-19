@@ -274,6 +274,10 @@ pre.language-html, pre.language-css, pre.language-javascript {
     border: 1px solid #e1e1e8;
     border-radius: 4px;
 }
+div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-toolbar > .toolbar span {
+	border-radius: .2em;
+	border: 1px solid #e1e1e8;
+}
 
 /* HTML code preview */
 .html-code {
