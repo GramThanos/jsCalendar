@@ -13,6 +13,8 @@
 
 		<!-- jsCalendar -->
 		<script type="text/javascript" src="js/jsCalendar.min.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.be.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.ca.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.de.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.es.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.fr.js"></script>
@@ -20,10 +22,12 @@
 		<script type="text/javascript" src="js/jsCalendar.lang.hu.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.it.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.ja.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.nl.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.no.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.pt.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.ru.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.sk.js"></script>
+		<script type="text/javascript" src="js/jsCalendar.lang.sv.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.tr.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.uk.js"></script>
 		<script type="text/javascript" src="js/jsCalendar.lang.zh.js"></script>
@@ -31,6 +35,10 @@
 		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.darkseries.min.css">
 		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.clean.min.css">
 		<link rel="stylesheet" type="text/css" href="css/themes/jsCalendar.micro.min.css">
+
+		<!-- Prismjs -->
+		<script type="text/javascript" src="js/prism.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/prism.css">
 
 		<!-- Custom Style -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -83,9 +91,11 @@
 			</div>
 			<div class="section-wrapper">
 				<div class="section-title" style="margin-top: 40px;">HTML Code for auto jsCalendar creation</div>
-				<div id="generated-code-auto-calendar"></div>
+				<!--<div id="generated-code-auto-calendar"></div>-->
+				<pre><code class="language-html" id="generated-code-auto-calendar"></code></pre>
 				<div class="section-title" style="margin-top: 40px;">HTML Code for dynamically jsCalendar creation</div>
-				<div id="generated-code-dynamic-calendar"></div>
+				<!--<div id="generated-code-dynamic-calendar"></div>-->
+				<pre><code class="language-html" id="generated-code-dynamic-calendar"></code></pre>
 			</div>
 		</div>
 
@@ -220,7 +230,7 @@
 						monthFormat : {name : 'Month format', defvalue : 'month', values : ['month', 'MMM', 'month YYYY', '##/YYYY']},
 						dayFormat : {name : 'Day format', defvalue : 'D', values : ['DDD', 'DD', 'D']},
 						fdotw : {name : 'First day of the week', defvalue : '1', values : ['1', '2']},
-						language : {name : 'Language', defvalue : 'en', values : ['en', 'de', 'es', 'fr', 'gr', 'hu', 'it', 'ja', 'no', 'pt', 'ru', 'sk', 'tr', 'uk', 'zh']}
+						language : {name : 'Language', defvalue : 'en', values : ['en','be','ca','de','es','fr','gr','hu','it','ja','nl','no','pt','ru','sk','sv','tr','uk','zh']}
 					}
 				},
 
@@ -246,6 +256,9 @@
 					this.wrapper.color = document.getElementById('select-color');
 					this.wrapper.parameters = document.getElementById('select-parameters');
 					this.wrapper.code = document.getElementById('generated-code');
+
+					this.wrapper.code_auto = document.getElementById('generated-code-auto-calendar');
+					this.wrapper.code_dynamic = document.getElementById('generated-code-dynamic-calendar');
 
 					this.generate('init');
 				},
@@ -349,6 +362,7 @@
 				},
 
 				createCalendar : function () {
+					console.log(123);
 					this.wrapper.calendar.innerHTML = '';
 
 					var theme = this.info.themes[this.active.theme];
@@ -389,8 +403,8 @@
 						dataset['day-format'] = this.active.parameters.dayFormat;
 					}
 					if (this.active.parameters.fdotw != this.info.parameters.fdotw.defvalue) {
-						options.fdotw = this.active.parameters.fdotw;
-						dataset['fdotw'] = this.active.parameters.fdotw;
+						options.firstDayOfTheWeek = this.active.parameters.fdotw;
+						dataset['firstDayOfTheWeek'] = this.active.parameters.fdotw;
 					}
 					if (this.active.parameters.language != this.info.parameters.language.defvalue) {
 						options.language = this.active.parameters.language;
@@ -431,14 +445,14 @@
 
 					var cssAdditionalCode = '';
 					for (var i = 0; i < css.length; i++) {
-						cssAdditionalCode += '	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"' + css[i] + '"</span></span>&gt;</span><br>\n';
+						cssAdditionalCode += '<link rel="stylesheet" type="text/css" href="' + css[i] + '">\n';
 					}
 
 					var jsAdditionalCode = '';
 					if (jsOptions.hasOwnProperty('language')) {
 						jsAdditionalCode += '' +
-						'	<span class="comment">&lt;!-- jsCalendar language script --&gt;</span><br>\n' +
-						'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.lang.' + jsOptions['language'] + '.js"</span></span>&gt;&lt;/script&gt;</span><br>\n';
+						'<!-- jsCalendar language script -->\n' +
+						'<script type="text/javascript" src="jsCalendar.lang.' + jsOptions['language'] + '.js"><\/script>\n';
 					}
 
 					// Create auto calendar code
@@ -446,44 +460,43 @@
 					var autoAttributes = '';
 					for (attr in htmlOptions) {
 						if (htmlOptions.hasOwnProperty(attr)) {
-							//autoAttributes += ' <span class="attribute">data-' + attr + '=<span class="string">"' + htmlOptions[attr] + '"</span></span>';
-							autoAttributes += '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-' + attr + '=<span class="string">"' + htmlOptions[attr] + '"</span></span>';
+							autoAttributes += '\n     data-' + attr + '="' + htmlOptions[attr] + '"';
 						}
 					}
 
 					var autoCalendarCode = '' +
-					'<div class="html-code">\n' +
-					'	<span class="comment">&lt;!-- jsCalendar style --&gt;</span><br>\n' +
-					'	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.css"</span></span>&gt;</span><br>\n' +
+					'<!-- jsCalendar style -->\n' +
+					'<link rel="stylesheet" type="text/css" href="jsCalendar.css">\n' +
 					cssAdditionalCode +
-					'	<span class="comment">&lt;!-- jsCalendar script --&gt;</span><br>\n' +
-					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>\n' +
+					'<!-- jsCalendar script -->\n' +
+					'<script type="text/javascript" src="jsCalendar.js"><\/script>\n' +
 					jsAdditionalCode +
-					'	<span class="comment">&lt;!-- auto jsCalendar element --&gt;</span><br>\n' +
-					'	<span class="tag">&lt;div <span class="attribute">class=<span class="string">"' + autoClassName + '"</span></span>' + autoAttributes + '&gt;&lt;/div&gt;</span><br>\n' +
-					'</div>';
+					'<!-- auto jsCalendar element -->\n' +
+					'<div class="' + autoClassName + '"' + autoAttributes + '></div>\n';
 
-					document.getElementById('generated-code-auto-calendar').innerHTML = autoCalendarCode;
-
-					
-					var dynamicOptions = JSON.stringify(jsOptions, null, '\t').replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;').replace(/\n/g, '<br>\n&nbsp;&nbsp;&nbsp;&nbsp;');
+					var dynamicOptions = JSON.stringify(jsOptions, null, '\t\t');
+					if (dynamicOptions.length > 2) dynamicOptions = dynamicOptions.replace('\n}','\n\t}');
 					var dynamicCalendarCode = '' +
-					'<div class="html-code">\n' +
-					'	<span class="comment">&lt;!-- jsCalendar style --&gt;</span><br>\n' +
-					'	<span class="tag">&lt;link <span class="attribute">rel=<span class="string">"stylesheet"</span></span> <span class="attribute">type=<span class="string">"text/css"</span></span> <span class="attribute">href=<span class="string">"jsCalendar.css"</span></span>&gt;</span><br>\n' +
+					'<!-- jsCalendar style -->\n' +
+					'<link rel="stylesheet" type="text/css" href="jsCalendar.css">\n' +
 					cssAdditionalCode +
-					'	<span class="comment">&lt;!-- jsCalendar script --&gt;</span><br>\n' +
-					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span> <span class="attribute">src=<span class="string">"jsCalendar.js"</span></span>&gt;&lt;/script&gt;</span><br>\n' +
+					'<!-- jsCalendar script -->\n' +
+					'<script type="text/javascript" src="jsCalendar.js"><\/script>\n' +
 					jsAdditionalCode +
-					'	<span class="comment">&lt;!-- target jsCalendar element --&gt;</span><br>\n' +
-					'	<span class="tag">&lt;div <span class="attribute">id=<span class="string">"calendar"</span></span>&gt;&lt;/div&gt;</span><br>\n' +
-					'	<span class="tag">&lt;script <span class="attribute">type=<span class="string">"text/javascript"</span></span>&gt;</span><br>\n' +
-					'	&nbsp;&nbsp;&nbsp;&nbsp;jsCalendar.new("#calendar", "now", ' + dynamicOptions + ');</br>'+
-					'	<span class="tag">&lt;/script&gt;</span><br>\n' +
-					'</div>';
- 
-					document.getElementById('generated-code-dynamic-calendar').innerHTML = dynamicCalendarCode;
+					'<!-- target jsCalendar element -->\n' +
+					'<div id="calendar"></div>\n' +
+					'<script type="text/javascript">\n' +
+					'	jsCalendar.new("#calendar", "now", ' + dynamicOptions + ');\n'+
+					'<\/script>\n';
+					
+					// Convert them
+					autoCalendarCode = autoCalendarCode.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+					dynamicCalendarCode = dynamicCalendarCode.replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
+					this.wrapper.code_auto.innerHTML = autoCalendarCode;
+					this.wrapper.code_dynamic.innerHTML = dynamicCalendarCode;
+					Prism.highlightElement(this.wrapper.code_auto);
+					Prism.highlightElement(this.wrapper.code_dynamic);
 					return;
 				},
 			};
