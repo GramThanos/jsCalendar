@@ -112,7 +112,8 @@
 						<li><a href="#more-javascript">Additional Javascript APIs</a>
 							<ul>
 								<li><a href="#more-javascript-version">Version Attribute</a></li>
-								<li><a href="#more-javascript-events">Events</a></li>
+								<li><a href="#more-javascript-click-events">Click events</a></li>
+								<li><a href="#more-javascript-render-handlers">Render handlers</a></li>
 								<li><a href="#more-javascript-select">Select days</a></li>
 								<li><a href="#more-javascript-get-set">Get & Set Instances</a></li>
 								<li><a href="#more-javascript-tools">Tools</a></li>
@@ -475,7 +476,10 @@
 					<p id="parameter-language-codes">Supported lanuages <small>(alphabetical order)</small></p>
 					<table style="width: 100%;">
 						<tr><th style="text-align: left;">Language</th><th style="text-align: left;">Code</th></tr>
+						<tr><td>Belarusian</td><td><span class="html-code"><span class="tag">be</span></span></td></tr>
+						<tr><td>Catalan</td><td><span class="html-code"><span class="tag">ca</span></span></td></tr>
 						<tr><td>Chinese</td><td><span class="html-code"><span class="tag">zh</span></span></td></tr>
+						<tr><td>Dutch</td><td><span class="html-code"><span class="tag">nl</span></span></td></tr>
 						<tr><td>English</td><td><span class="html-code"><span class="tag">en</span></span></td></tr>
 						<tr><td>French</td><td><span class="html-code"><span class="tag">fr</span></span></td></tr>
 						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td></tr>
@@ -487,6 +491,7 @@
 						<tr><td>Portuguese</td><td><span class="html-code"><span class="tag">pt</span></span></td></tr>
 						<tr><td>Russian</td><td><span class="html-code"><span class="tag">ru</span></span></td></tr>
 						<tr><td>Slovak</td><td><span class="html-code"><span class="tag">sk</span></span></td></tr>
+						<tr><td>Swedish</td><td><span class="html-code"><span class="tag">sv</span></span></td></tr>
 						<tr><td>Spanish</td><td><span class="html-code"><span class="tag">es</span></span></td></tr>
 						<tr><td>Turkish</td><td><span class="html-code"><span class="tag">tr</span></span></td></tr>
 						<tr><td>Ukrainian</td><td><span class="html-code"><span class="tag">uk</span></span></td></tr>
@@ -1331,7 +1336,7 @@ You are using&lt;br&gt;jsCalendar &lt;span id="version"&gt;&lt;/span&gt;
 
 
 
-				<div class="section-subtitle" id="more-javascript-events">Click events <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
+				<div class="section-subtitle" id="more-javascript-click-events">Click events <span class="version-tag" title="Added on version 1.2">v1.2</span></div>
 				<div class="wrapper-left">
 					<p>Add a click event on the calendar</p><br>
 					<p>API syntax</p>
@@ -1398,6 +1403,96 @@ Month change : &lt;br&gt;
 							myCalendar.onMonthChange(function(event, date) {
 								inputB.value = date.toString();
 							});
+						})();
+					</script>
+				</div>
+				<div class="wrapper-clear"></div>
+				<br><br>
+
+
+
+				<div class="section-subtitle" id="more-javascript-render-handlers">Render handlers <span class="version-tag" title="Added on version 1.4.4">v1.4.4</span></div>
+				<div class="wrapper-left">
+					<p>Add render handlers on the calendar to make advance custom changes</p><br>
+					<p>API syntax</p>
+					<table style="width: 100%;">
+						<tr><td>On month render</td><td>.onMonthRender(function(index, element, info){ ... })</td></tr>
+						<tr><td>On day render</td><td>.onDayRender(function(index, element, info){ ... })</td></tr>
+						<tr><td>On date render</td><td>.onDateRender(function(date, element, info){ ... })</td></tr>
+					</table>
+					<p class="note">*The render handlers are called after every corresponding render.</p>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+				<div class="wrapper-left">
+					<p>Example code</p>
+					<pre><code class="language-html">&lt;!-- My auto calendar element --&gt;
+&lt;div id="my-calendar"
+	 data-first-day-of-the-week="2"&gt;&lt;/div&gt;
+
+&lt;!-- Apply render handlers to the second calendar --&gt;
+&lt;script type="text/javascript"&gt;
+	// Get the auto-calendar (we have to wait the window load event)
+	var calendar = jsCalendar.new('#my-calendar');
+	// Make changes on the month element
+	calendar.onMonthRender(function(index, element, info) {
+		// Show month index
+		var month = index + 1;
+		element.textContent += ' (' + (month &gt; 9 ? '' : '0') + month + '/' + (info.start.getYear() + 1900) + ')';
+	});
+	// Make changes on the day name elements
+	calendar.onDayRender(function(index, element, info) {
+		// If weekend, make it red
+		if (index == 0 || index == 6) {
+			element.style.color = '#c32525';
+		}
+	});
+	// Make changes on the date elements
+	calendar.onDateRender(function(date, element, info) {
+		// Make weekends bold and red
+		if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+			element.style.fontWeight = 'bold';
+			element.style.color = (info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+		}
+	});
+	// Refresh layout
+	calendar.refresh();
+&lt;/script&gt;</code></pre>
+				</div>
+				<div class="wrapper-right">
+					<br>
+					<br>
+					<!-- My auto calendar element -->
+					<div id="my-calendar-12-b"
+						 data-first-day-of-the-week="2"></div>
+					<!-- Apply render handlers to the second calendar -->
+					<script type="text/javascript">
+						(function(){
+							// Get the auto-calendar (we have to wait the window load event)
+							var calendar = jsCalendar.new('#my-calendar-12-b');
+							// Make changes on the month element
+							calendar.onMonthRender(function(index, element, info) {
+								// Show month index
+								var month = index + 1;
+								element.textContent += ' (' + (month > 9 ? '' : '0') + month + '/' + (info.start.getYear() + 1900) + ')';
+							});
+							// Make changes on the day name elements
+							calendar.onDayRender(function(index, element, info) {
+								// If weekend, make it red
+								if (index == 0 || index == 6) {
+									element.style.color = '#c32525';
+								}
+							});
+							// Make changes on the date elements
+							calendar.onDateRender(function(date, element, info) {
+								// Make weekends bold and red
+								if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+									element.style.fontWeight = 'bold';
+									element.style.color = (info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+								}
+							});
+							// Refresh layout
+							calendar.refresh();
 						})();
 					</script>
 				</div>
