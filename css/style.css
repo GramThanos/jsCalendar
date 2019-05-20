@@ -1,7 +1,7 @@
 /*
  * jsCalendar Page Css
  * 
- * Copyright (c) 2017 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2019 Grammatopoulos Athanasios-Vasileios
  * 
  */
 
@@ -85,6 +85,13 @@ a {
 	margin: 10px 0px;
 	font-size: 16px;
 	line-height: 18px;
+}
+.section.divider {
+	border-top: 1px solid #ccc;
+}
+.frontpage-section {
+	padding-top: 0;
+	margin-top: -40px;
 }
 
 ul {
@@ -184,6 +191,40 @@ input {
 	background-color: #fdfdfd;
 }
 
+/* Tabs Styling
+-------------------------------------------------- */
+.tabs {
+	margin: 0;
+	padding: 0;
+	display: block;
+	margin-bottom: -1px;
+	text-align: center;
+}
+.tabs li {
+	display: inline-block;
+	padding: 4px 16px;
+	cursor: pointer;
+	border: 1px solid #e1e1e8;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #6e6e73;
+	width: 120px;
+	text-align: center;
+	display: inline-block;
+	background: #f7f7f9;
+}
+.tabs li.active {
+	border-bottom: 1px solid #ffffff;
+	color: #2f6f9f;
+	background: #ffffff;
+}
+.tabs-contents {
+	padding: 20px;
+	border: 1px solid #e1e1e8;
+	border-radius: 3px;
+	min-height: 360px;
+}
+
 /* Footer Styling
 -------------------------------------------------- */
 .section-footer {
@@ -230,8 +271,22 @@ input {
 	text-decoration: underline;
 }
 
+/* Front Page Styling
+-------------------------------------------------- */
+.frontpage-tabs {
+	width:600px;
+	margin:0px auto;
+}
+.frontpage-tabs .tab-content {
+	text-align: center;
+}
+.frontpage-tabs pre {
+	margin-top: 18px;
+}
 
-/* Table styling */
+
+/* Table styling
+-------------------------------------------------- */
 table {
 	border-collapse: collapse;
 }
@@ -243,22 +298,24 @@ th, td {
 }
 
 
-/* Caldendar's height */
+/* Caldendar's height
+-------------------------------------------------- */
 .auto-jsCalendar {
 	height: 314px;
 }
 
 
-/* Prismjs code preview */
+/* Prismjs code preview
+-------------------------------------------------- */
 pre {
-    background: #f7f7f9;
-    border: 1px solid #e1e1e8;
-    border-radius: 4px;
-    padding: 9px 12px;
-    font-size: 12px;
-    line-height: 14px;
-    margin: .5em 0;
-    overflow: auto;
+	background: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+	padding: 9px 12px;
+	font-size: 12px;
+	line-height: 14px;
+	margin: .5em 0;
+	overflow: auto;
 }
 
 code.language-html, code.language-css, code.language-javascript {
@@ -270,16 +327,17 @@ pre.language-html, pre.language-css, pre.language-javascript {
 	line-height: 14px;
 }
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-    background: #f7f7f9;
-    border: 1px solid #e1e1e8;
-    border-radius: 4px;
+	background: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
 }
 div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-toolbar > .toolbar span {
 	border-radius: .2em;
 	border: 1px solid #e1e1e8;
 }
 
-/* HTML code preview */
+/* HTML code preview
+-------------------------------------------------- */
 .html-code {
 	font-family: "Courier New", Courier, monospace;
 	padding: 9px 14px;
@@ -312,7 +370,8 @@ span.html-code{
 	color: #d44950;
 }
 
-/* Version tags */
+/* Version tags
+-------------------------------------------------- */
 .version-tag {
 	background-color: #90CAF9;
 	color: white;

@@ -15,6 +15,10 @@
 		<script type="text/javascript" src="js/jsCalendar.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/jsCalendar.min.css">
 
+		<!-- Prismjs -->
+		<script type="text/javascript" src="js/prism.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/prism.css">
+
 		<!-- Custom Style -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -45,6 +49,88 @@
 					<div class="auto-jsCalendar"></div>
 				</div>
 				<div class="wrapper-clear"></div>
+			</div>
+		</div>
+
+		<div class="section frontpage-section">
+			<div class="section-wrapper">
+				<div class="frontpage-tabs">
+					<ul class="tabs" id="tabs">
+						<li>Local</li>
+						<li class="active">JsDelivr CDN</li>
+						<li>Unpkg CDN</li>
+					</ul>
+					<div class="tabs-contents">
+						<div class="tab-content" style="display: none;">
+							Load jsCalendar on your project!<br>
+							<pre><code class="language-html">&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;title&gt;jsCalendar&lt;/title&gt;
+		&lt;!-- jsCalendar Javascript and CSS --&gt;
+		&lt;script type="text/javascript" src="jsCalendar.js"&gt;&lt;/script&gt;
+		&lt;link rel="stylesheet" type="text/css" href="jsCalendar.css"&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- Calendar Element --&gt;
+		&lt;div class="auto-jsCalendar"&gt;&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre><br>
+							Fork our project on <a href="https://github.com/GramThanos/jsCalendar">Github</a>. Install our <a href="https://www.npmjs.com/package/simple-jscalendar">NPM package</a>.
+						</div>
+						<div class="tab-content" style="display: block;">
+							Load jsCalendar using <a href="https://www.jsdelivr.com/package/npm/simple-jscalendar">jsDelivr</a>, an open source CDN!<br>
+							<pre><code class="language-html">&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;title&gt;jsCalendar&lt;/title&gt;
+		&lt;!-- jsCalendar v1.4.4 Javascript and CSS --&gt;
+		&lt;script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"&gt;&lt;/script&gt;
+		&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous"&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- Calendar Element --&gt;
+		&lt;div class="auto-jsCalendar"&gt;&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre><br>
+							<small>Full jsDelivr example with all the files and their integrity hashes <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html">here</a>.</small>
+						</div>
+						<div class="tab-content" style="display: none;">
+							Load jsCalendar using <a href="https://unpkg.com/simple-jscalendar/">UNPKG</a>, a fast, global CDN for everything on npm!<br>
+							<pre><code class="language-html">&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;title&gt;jsCalendar&lt;/title&gt;
+		&lt;!-- jsCalendar v1.4.4 Javascript and CSS --&gt;
+		&lt;script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"&gt;&lt;/script&gt;
+		&lt;link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous"&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- Calendar Element --&gt;
+		&lt;div class="auto-jsCalendar"&gt;&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre><br>
+							<small>Full UNPKG example with all the files and their integrity hashes <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html">here</a>.</small>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tabs Functionality -->
+				<script type="text/javascript">
+					var tabs = document.getElementById('tabs').getElementsByTagName('li');
+					var contents = document.getElementsByClassName('tab-content');
+					for (var i = tabs.length - 1; i >= 0; i--) {
+						tabs[i].addEventListener('click', (function(n) {
+							return function() {
+								for (var i = contents.length - 1; i >= 0; i--) {
+									tabs[i].className = (i == n ? 'active' : '');
+									contents[i].style.display = (i == n ? 'block' : 'none');
+								}
+							};
+						})(i), false);
+					}
+				</script>
+
 			</div>
 		</div>
 
