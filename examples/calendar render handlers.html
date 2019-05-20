@@ -33,11 +33,11 @@
 					days.textContent = '(' + month_info.numberOfDays + ' days)';
 					month_element.appendChild(document.createTextNode(' '));
 					month_element.appendChild(days);
-
+					
 					// Some month info
-					//console.log(month_info.start);	// Date object of the first day on time 00:00:00 000
-					//console.log(month_info.end);	// Date object of the last day on time 23:59:59 999
-					//console.log(month_info);		// Number of days in that month
+					//console.log(month_info.start);		// Date object of the first day on time 00:00:00 000
+					//console.log(month_info.end);			// Date object of the last day on time 23:59:59 999
+					//console.log(month_info.numberOfDays);	// Number of days in that month
 				},
 
 				// Make changes on the week day element
@@ -48,7 +48,7 @@
 					}
 
 					// Some week day info
-					//console.log(day_info.position); // Day x-position in the calendar week days row
+					//console.log(day_info.position); 		// Day x-position in the calendar week days row
 				},
 
 				// Make changes on the date elements
@@ -60,7 +60,7 @@
 					}
 
 					// Some more info
-					//console.log(date_info.isCurrent);		// If the set date on calendar
+					//console.log(date_info.isCurrent);			// If the set date on calendar
 					//console.log(date_info.isSelected);		// If date is selected or not
 					//console.log(date_info.isPreviousMonth);	// If date is on previous month
 					//console.log(date_info.isCurrentMonth);	// If date is on current month
