@@ -1,4 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.4.4-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4.5-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![npm project](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
 
 # jsCalendar
@@ -106,6 +107,16 @@ Additional Themes
 ![DarkSeries Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_darkseries.png)
 ![Clean Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_clean.png)
 ![Micro Theme](https://raw.githubusercontent.com/GramThanos/jsCalendar/master/preview/preview_theme_micro.png)
+
+
+___
+
+
+### Whats new?
+
+#### Latest development code v1.4.5-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
+ - Bugs
+    - Fixed `info.start` parameter on `onMonthRender` (was not the first date)
 
 
 ___
