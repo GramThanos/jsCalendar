@@ -79,7 +79,7 @@
 					var loading = tags.length;
 
 					// Get info for each tag
-					var row, col, date, a, span;
+					var row, col, date, a, small;
 					for (var i = 0; i < tags.length; i++) {
 						// Create table row
 						row = document.createElement('tr');
@@ -107,8 +107,8 @@
 						a.href = project + '/releases/download/' + tags[i] + '/jsCalendar_' + tags[i] + '.zip';
 						a.textContent = 'Download link';
 						col.appendChild(a);
-						span = document.createElement('span');
-						col.appendChild(span);
+						small = document.createElement('small');
+						col.appendChild(small);
 						row.appendChild(col);
 
 						table.appendChild(row);
@@ -121,10 +121,11 @@
 									date.textContent = data.published_at.match(/\d\d\d\d-\d\d-\d\d/)[0];
 									if (data.assets.length > 0) {
 										n = data.assets[0].download_count;
-										info.textContent = ' - ' + 
+										info.textContent = '' + 
 											readableSize(data.assets[0].size) + ' - ' +
 											addDots(n) + ' download' + (n > 1 ? 's' : '');
 										downloads += n;
+										info.style.padding = '0 5px';
 									}
 								}
 								loading--;
@@ -132,7 +133,7 @@
 									total.textContent = 'Downloaded ' + addDots(downloads) + ' times in total!';
 								}
 							});
-						})(tags[i], date, span);
+						})(tags[i], date, small);
 					}
 
 					function readableSize(bytes) {
