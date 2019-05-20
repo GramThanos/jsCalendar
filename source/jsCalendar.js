@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4.4
+ * jsCalendar v1.4.5-beta
  *
  *
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = 'v1.4.4';
+    JsCalendar.version = 'v1.4.5-beta';
 
     // Sub-Constructor
     JsCalendar.prototype._construct = function(args) {
@@ -739,7 +739,7 @@ var jsCalendar = (function(){
         // Call render handlers
         var j;
         if (this._events.month_render.length > 0) {
-            var date = month.days[month.start];
+            var date = month.days[month.start - 1];
             // Clear any style
             this._elements.month.removeAttribute('style');
             // Call the render handlers
@@ -751,7 +751,7 @@ var jsCalendar = (function(){
                     this._elements.month,
                     // Info about that month
                     {
-                        start : new Date(date.getTime()),
+                        start : new Date(date.getFullYear(), date.getMonth(), 1, 0, 0, 0, 0),
                         end : new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59, 999),
                         numberOfDays : month.end - month.start + 1
                     }
