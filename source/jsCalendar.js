@@ -497,6 +497,7 @@ var jsCalendar = (function(){
         while (previous > 0) {
             // Calculate previous day
             day.setDate(day.getDate() - 1);
+            day.setHours(0, 0, 0, 0);
             // Add page on frond of the list
             dates.unshift(new Date(day.getTime()));
             // Previous
@@ -511,6 +512,7 @@ var jsCalendar = (function(){
             dates.push(new Date(day.getTime()));
             // Calculate next day
             day.setDate(day.getDate() + 1);
+            day.setHours(0, 0, 0, 0);
             // Repeat until next month
         } while (day.getDate() !== 1);
 
@@ -522,6 +524,7 @@ var jsCalendar = (function(){
             dates.push(new Date(day.getTime()));
             // Calculate next day
             day.setDate(day.getDate() + 1);
+            day.setHours(0, 0, 0, 0);
             // Next
             next --;
         }
