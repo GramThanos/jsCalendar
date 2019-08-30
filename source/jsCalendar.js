@@ -216,6 +216,15 @@ var jsCalendar = (function(){
             }
         }
 
+        // Also load alias
+        item = 'fdotw'
+        if (doptions.hasOwnProperty(item)) {
+            options[item] = doptions[item];
+        }
+        else if (this._target.dataset.hasOwnProperty(item)) {
+            options[item] = this._target.dataset[item];
+        }
+
         // Check options
         if (typeof options.zeroFill !== 'undefined'){
             if (options.zeroFill === 'false' || !options.zeroFill) {
