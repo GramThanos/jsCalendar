@@ -795,9 +795,9 @@ var jsCalendar = (function(){
                         {
                             isCurrent : (month.current == i),
                             isSelected : (this._selected.indexOf(month.days[i].getTime()) >= 0),
-                            isPreviousMonth : (i < month.start),
-                            isCurrentMonth : (month.start <= i && i <= month.end),
-                            isNextMonth : (month.end < i),
+                            isPreviousMonth : (i + 1 < month.start),
+                            isCurrentMonth : (month.start <= i + 1 && i + 1 <= month.end),
+                            isNextMonth : (month.end < i + 1),
                             position : {x: i%7, y: Math.floor(i/7)}
                         }
                     );
