@@ -1,6 +1,6 @@
 /*
  * jsCalendar extension
- * DatePicker v1.0.1
+ * DatePicker v1.1.0
  *
  *
  * MIT License
@@ -35,6 +35,8 @@
     var _ = {};
     _.options = {
         format : 'DD/MM/YYYY',
+        autoValueRead : false,
+        yearsLine : false,
         offsetTop : 2,
         offsetLeft : -4,
         close_keycodes : [9, 27, 13], // TAB 9, ESC 27, ENTER 13
@@ -55,7 +57,7 @@
     };
 
     // Version
-    DatePicker.version = 'v1.0.1-beta';
+    DatePicker.version = 'v1.1.0';
 
     // Sub-Constructor
     DatePicker.prototype._construct = function(args) {
@@ -78,29 +80,68 @@
         calendar_options.target = this._wrapper;
         this.jsCalendar = new $(calendar_options);
 
-        // If date was defined
-        if (calendar_options.hasOwnProperty('date')) {
-            // Set input date
-            this._target.value = $.tools.dateToString(
-                $.tools.parseDate(calendar_options.date),
-                this._options.format,
-                this.jsCalendar._options.language
-            );
+        // If need to create years line
+        if (this._options.yearsLine) {
+            this._creatYearsLine();
         }
 
         // Add target listeners
         var dp = this;
+
         // Calendar click handler
-        this.jsCalendar.onDateClick(function(event, date) {dp._onPick(date);});
+        this.jsCalendar.onDateClick(function(event, date) {
+            dp._onPick(date);
+        });
+
         // Focus handler
-        this._target.addEventListener('focus', function() {dp._onFocus();}, false);
-        this._target.addEventListener('keydown', function(event) {if (dp._options.close_keycodes.indexOf(event.keyCode) >= 0) dp.hide();}, false);
+        this._target.addEventListener('focus', function() {
+            dp._onFocus();
+        }, false);
+        this._target.addEventListener('keydown', function(event) {
+            if (dp._options.close_keycodes.indexOf(event.keyCode) >= 0) {
+                dp.hide();
+            }
+        }, false);
+
+        // Value read handlers
+        if (this._options.autoValueRead) {
+            this._target.addEventListener('keyup', function() {
+                dp.readInput();
+            }, false);
+            this._target.addEventListener('change', function() {
+                dp.readInput();
+            }, false);
+        }
+
         // Kill calendar click bubble
-        this.jsCalendar._elements.table.addEventListener('click', function(event) {event.stopPropagation();}, false);
+        this.jsCalendar._elements.table.addEventListener('click', function(event) {
+            event.stopPropagation();
+        }, false);
+
         // Close datepicker on document click
-        window.addEventListener('click', function(event) {if (event.target !== dp._target) dp.hide();}, false);
+        window.addEventListener('click', function(event) {
+            if (event.target !== dp._target) {
+                dp.hide();
+            }
+        }, false);
+
         // On resize re-calculate position
-        window.addEventListener('resize', function() {if (dp._visible) dp.position();}, false);
+        window.addEventListener('resize', function() {
+            if (dp._visible) dp.position();
+        }, false);
+        window.addEventListener('scroll', function() {
+            if (dp._visible) dp.position();
+        }, false);
+
+        // If date was defined
+        if (calendar_options.hasOwnProperty('date')) {
+            // Set input date
+            this.set(calendar_options.date);
+        }
+        else {
+            var date = new Date(dp.jsCalendar._date.getTime());
+            this.set(date);
+        }
     };
 
     // Parse options
@@ -221,8 +262,7 @@
         if (typeof options.offsetTop !== 'undefined'){
             // If number
             if (typeof options.offsetTop === 'number') {
-                item = options.offsetTop;
-                if (!isNaN(item)) this._options.offsetTop = item;
+                this._options.offsetTop = options.offsetTop;
             }
             // If string
             else if (typeof options.offsetTop === 'string') {
@@ -233,8 +273,7 @@
         if (typeof options.offsetLeft !== 'undefined'){
             // If number
             if (typeof options.offsetLeft === 'number') {
-                item = options.offsetLeft;
-                if (!isNaN(item)) this._options.offsetLeft = item;
+                this._options.offsetLeft = options.offsetLeft;
             }
             // If string
             else if (typeof options.offsetLeft === 'string') {
@@ -244,6 +283,15 @@
         }
         if (typeof options.class === 'string'){
             this._options.class = options.class;
+        }
+        if (typeof options.yearsLine !== 'undefined' && options.yearsLine){
+            item = parseInt(options.yearsLine, 10);
+            if (isNaN(item)) {
+                this._options.yearsLine = true;
+            }
+            else if (item > 0) {
+                this._options.yearsLine = item;
+            }
         }
 
         // Get calendar options
@@ -274,6 +322,9 @@
                 options.date = this._target.dataset.date;
             }
         }
+
+        // Set option to read on value change or not
+        this._options.autoValueRead = (this._options.format === 'DD/MM/YYYY' || this._options.format === 'DD-MM-YYYY');
 
         // Return calendar options
         return options;
@@ -321,14 +372,9 @@
         this._wrapper.style.display = 'block';
 
         // Calculate position
-        var left = 0;
-        var top = 0;
-        var element = this._target;
-        while (element && !isNaN(element.offsetLeft) && !isNaN(element.offsetTop)){
-            left += element.offsetLeft - element.scrollLeft;
-            top += element.offsetTop - element.scrollTop;
-            element = element.offsetParent;
-        }
+        var info = DatePicker.detectElementPositionInfo(this._target);
+        var left = info.left;
+        var top = info.top;
         var height = this._target.clientHeight || this._target.offsetHeight || this._target.scrollHeight || 20;
 
         // Postions
@@ -339,10 +385,149 @@
         }
 
         // Apply position
+        this._wrapper.style.zIndex = (info.zIndex) ? info.zIndex : 1;
         this._wrapper.style.display = display;
         this._wrapper.style.top = top + 'px';
         this._wrapper.style.left = left + 'px';
     };
+
+    // Read value from input
+    DatePicker.prototype.readInput = function() {
+        // Try to detect date
+        var date = $.tools.stringToDate(this._target.value, true);
+        if (date !== null) {
+            this.jsCalendar.set(date);
+            this._yearsLineUpdate(date);
+        }
+        return date;
+    };
+
+    // Set date
+    DatePicker.prototype.set = function(date) {
+        // Try to detect date
+        date = $.tools.parseDate(date);
+
+        // Update calendar
+        this.jsCalendar.set(date);
+        this._yearsLineUpdate(date);
+
+        // Set input date
+        this._target.value = $.tools.dateToString(
+            date,
+            this._options.format,
+            this.jsCalendar._options.language
+        );
+    };
+
+    // Create years line
+    DatePicker.prototype._creatYearsLine = function() {
+        if (this._yearsLine) return;
+        this._yearsLine = {};
+
+        var wrapper = document.createElement('tr');
+        wrapper.className = 'jsCalendar-years-line';
+        var th = document.createElement('th');
+        th.setAttribute('colspan', '7');
+        th.style.width = '100%';
+        wrapper.appendChild(th);
+        var table = document.createElement('table');
+        table.style.margin = '0 auto 0 auto';
+        table.style.boxShadow = 'none';
+        th.appendChild(table);
+        var tbody = document.createElement('tbody');
+        tbody.style.margin = '0';
+        table.appendChild(tbody);
+        var tr = document.createElement('tr');
+        tbody.appendChild(tr);
+
+        var years = [];
+        var td;
+        var dp = this;
+        var len = (this._options.yearsLine === true) ? 5 : this._options.yearsLine;
+        for (var i = 0; i < len; i++) {
+            td = document.createElement('td');
+            td.style.display = 'table-cell';
+            years.push(td);
+            tr.appendChild(td);
+
+            // On click change date
+            td.addEventListener('click', function() {
+                var date = new Date(dp.jsCalendar._date.getTime());
+                date.setFullYear(parseInt(this.dataset.year, 10));
+                dp.set(date);
+            }, false);
+        }
+
+        this._yearsLine.wrapper = wrapper;
+        this._yearsLine.table = table;
+        this._yearsLine.years = years;
+
+        this.jsCalendar._elements.head.insertBefore(wrapper, this.jsCalendar._elements.head.childNodes[0]);
+        this.jsCalendar.onMonthChange(function() {
+            var date = new Date(dp.jsCalendar._date.getTime());
+            dp._yearsLineUpdate(date);
+        });
+    };
+    DatePicker.prototype._yearsLineUpdate = function(date) {
+        if (!this._yearsLine) return;
+        
+        var len = this._yearsLine.years.length;
+        var year = date.getFullYear();
+
+        for (var i = 0, y = year - (Math.ceil(len/2) - 1); i < len; i++, y++) {
+            this._yearsLine.years[i].textContent = y;
+            this._yearsLine.years[i].dataset.year = y;
+            this._yearsLine.years[i].className = (y === year) ? 'jsCalendar-current' : '';
+        }
+    };
+
+
+
+    // Calculate position of element
+    DatePicker.detectElementPositionInfo = function(element) {
+        var left = 0;
+        var top = 0;
+        var position = false;
+        var zIndex = false;
+
+        var style, z;
+        style = window.getComputedStyle(element);
+        while (element){
+            left += element.offsetLeft - element.scrollLeft;
+            top += element.offsetTop - element.scrollTop;
+            if (style.position == 'fixed') {
+                position = 'fixed';
+                top += window.scrollY;
+                left += window.scrollX;
+                break;
+            }
+            if (style.position == 'absolute' || style.position == 'fixed') {
+                z = parseInt(style.zIndex, 10);
+                zIndex = (!isNaN(z)) ? z : 0;
+            }
+            element = element.offsetParent;
+            if (element) {
+                style = window.getComputedStyle(element);
+                left += parseInt(style.borderLeftWidth, 10);
+                top += + parseInt(style.borderTopWidth, 10);
+            }
+        }
+        while (element){
+            style = window.getComputedStyle(element);
+            if (style.position == 'fixed' || style.position == 'absolute') {
+                z = parseInt(style.zIndex, 10);
+                zIndex = (!isNaN(z)) ? z : 0;
+            }
+            element = element.offsetParent;
+        }
+
+        return {
+            top: top,
+            left: left,
+            zIndex: zIndex,
+            position: position
+        }
+    }
 
     // Auto init datepickers
     DatePicker.autoFind = function() {
@@ -385,6 +570,7 @@
         // Return new object
         return obj;
     };
+    $.DatePicker = DatePicker;
 
     // Init auto datepickers
     // After the page loads
