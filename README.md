@@ -119,7 +119,7 @@ ___
     - Fixed `info.start` parameter on `onMonthRender` (was not the first date)
     - Fixed selected dates not highlighted bug (depending on your timezone) (issue #44)
     - Fixed `onDateRender` incorrect `isCurrentMonth`, `isPreviousMonth` and `isNextMonth` (issue #45)
-    - Fixed fdotw bug #42
+    - Fixed `fdotw` bug #42
 
 ___
 
