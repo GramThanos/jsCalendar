@@ -22,6 +22,7 @@
 		Example 1<br>
 		<input type="text"
 			   name="example-1"
+			   data-years-line="7"
 			   data-datepicker/>
 		<br>
 		<br>
@@ -83,6 +84,7 @@
 				offsetLeft : -1,							// Datepicker render left-offset
 				close_keycodes : [13], 						// Close only with ENTER
 				class : 'classic-theme micro-theme',		// Set jsCalendar micro classic theme
+				yearsLine : true,							// Add a line with year on the calendar
 
 				// Additional jsCalendar's option
 				zeroFill : true,							// Add zero before date numbers
@@ -109,7 +111,7 @@
 			});
 
 			// Open button
-			document.getElementById('btn-on-6').addEventListener('click', function(e) {
+			document.getElementById('btn-on-6').addEventListener('click', function() {
 				picker6.show();
 				event.stopPropagation();
 			}, false);

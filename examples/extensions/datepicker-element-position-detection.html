@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>jsCalendar datepicker bootstrap</title>
+		<meta name="description" content="jsCalendar datepicker example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/jsCalendar.micro.css">
+		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
+		<script type="text/javascript" src="../../source/jsCalendar.lang.gr.js"></script>
+		<script type="text/javascript" src="../../extensions/jsCalendar.datepicker.js"></script>
+
+		<style type="text/css">
+			body {
+				min-height: 2048px;
+				min-width: 2048px;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<div id="e1" style="position: absolute;top: 10px;left: 20px;z-index: 11;border: 5px solid blue;">
+			aaa
+			<div id="e2" style="position: absolute;top: 20px;left: 30px;z-index: 12;border: 5px solid red;">
+				bbb
+			</div>
+		</div>
+
+		<div id="e3" style="position: absolute;top: 100px;left: 200px;border: 1px solid purple;">
+			ccc
+			<div id="e4" style="position: absolute;top: 20px;left: 30px;z-index: 12;border: 1px solid green;">
+				ddd
+			</div>
+		</div>
+
+		<div id="e5" style="position: fixed;top: 50px;left: 100px;border: 1px solid black;">
+			eee
+			<div id="e6" style="position: absolute;top: 20px;left: 30px;z-index: 12;border: 1px solid yellow;">
+				fff
+			</div>
+		</div>
+
+		<div id="e7" style="position: fixed;top: 200px;left: 200px;border: 1px solid black;">
+			ggg
+			<div id="e8" style="position: relative;margin-top:50px;margin-left:50px;z-index: 15;border: 1px solid red;">
+				hhh
+				<div id="e9" style="position: absolute;top: 5px;left: 5px;z-index: 12;border: 1px solid yellow;">
+					iii
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var elms = 9;
+
+			for (var i = 1; i <= elms; i++) {
+				window['e' + i] = document.getElementById('e' + i);
+				let d = document.createElement('div');
+				d.style.position = 'absolute';
+				d.style.top = '0px';
+				d.style.left = '0px';
+				d.style.width = '2px';
+				d.style.height = '2px';
+				d.style.zIndex = '1';
+				d.style.backgroundColor = 'black';
+				document.body.appendChild(d);
+				window['d' + i] = d;
+			}
+
+			var calculate = function() {
+				for (var i = 1; i <= elms; i++) {
+					let e = window['e' + i];
+					let d = window['d' + i];
+					let p = jsCalendar.DatePicker.detectElementPositionInfo(e);
+					d.style.top = p.top + 'px';
+					d.style.left = p.left + 'px';
+					d.style.zIndex = p.zIndex ? p.zIndex + 1 : 1;
+				}
+			}
+			calculate();
+
+			window.addEventListener('resize', calculate, false);
+			window.addEventListener('scroll', calculate, false);
+		</script>
+
+	</body>
+</html>
