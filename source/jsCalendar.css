@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4.4
+ * jsCalendar v1.4.5-beta
  * 
  * 
  * MIT License
@@ -37,6 +37,7 @@
 		.jsCalendar table th,
 		.jsCalendar table td {
 			border: 0;
+			box-sizing: content-box;
 		}
 	/* Blue default */
 		.jsCalendar table {
@@ -47,6 +48,9 @@
 			color: #000000;
 			font-family: Tahoma, Geneva, sans-serif;
 			margin: 5px;
+		}
+		.jsCalendar tr {
+			line-height: 0;
 		}
 		.jsCalendar thead .jsCalendar-title {
 			height: 40px;
@@ -120,7 +124,6 @@
 		.jsCalendar tbody td.jsCalendar-selected {
 			background-color: #FFFFFF;
 			border: 2px solid #E6E6E6;
-			box-sizing: content-box;
 			height: 32px;
 			line-height: 32px;
 			width: 32px;
