@@ -115,6 +115,8 @@ ___
 ### Whats new?
 
 #### Latest development code v1.4.5-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
+ - Added
+    - Added extension add method `jsCalendar.ext('example', {init : <function>, create : <function>, update : <function>});`
  - Bugs
     - Fixed `info.start` parameter on `onMonthRender` (was not the first date)
     - Fixed selected dates not highlighted bug (depending on your timezone) (issue #44)
