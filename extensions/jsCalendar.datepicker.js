@@ -1,6 +1,6 @@
 /*
  * jsCalendar extension
- * DatePicker v1.1.0
+ * DatePicker v1.1.1
  *
  *
  * MIT License
@@ -31,18 +31,6 @@
     // Check if no jsCalendar library
     if (!$) throw 'Error jsCalendar library was not found';
 
-    // Extension Object
-    var _ = {};
-    _.options = {
-        format : 'DD/MM/YYYY',
-        autoValueRead : false,
-        yearsLine : false,
-        offsetTop : 2,
-        offsetLeft : -4,
-        close_keycodes : [9, 27, 13], // TAB 9, ESC 27, ENTER 13
-        class : 'jsCalendar-datepicker-wrappper'
-    };
-
     // Constructor
     var DatePicker = function () {
         // No parameters
@@ -59,6 +47,17 @@
     // Version
     DatePicker.version = 'v1.1.0';
 
+    // Options
+    DatePicker.options = {
+        format : 'DD/MM/YYYY',
+        autoValueRead : false,
+        yearsLine : false,
+        offsetTop : 2,
+        offsetLeft : -4,
+        close_keycodes : [9, 27, 13], // TAB 9, ESC 27, ENTER 13
+        class : 'jsCalendar-datepicker-wrappper'
+    };
+
     // Sub-Constructor
     DatePicker.prototype._construct = function(args) {
         // Parse arguments
@@ -68,7 +67,7 @@
 
         // Parse options
         var calendar_options = this._parseOptions(args.options);
-        
+
         // Create calendar
         this._visible = false;
         this._wrapper = document.createElement('div');
@@ -237,13 +236,13 @@
 
         var item;
         // Load default and input options
-        for (item in _.options) {
+        for (item in DatePicker.options) {
             // Default options
-            if (_.options.hasOwnProperty(item)) {
-                if (_.options[item] instanceof Array)
-                    this._options[item] = _.options[item].slice(0);
+            if (DatePicker.options.hasOwnProperty(item)) {
+                if (DatePicker.options[item] instanceof Array)
+                    this._options[item] = DatePicker.options[item].slice(0);
                 else
-                    this._options[item] = _.options[item];
+                    this._options[item] = DatePicker.options[item];
             }
             // Dynamic options
             if (doptions.hasOwnProperty(item)) {
@@ -470,7 +469,7 @@
     };
     DatePicker.prototype._yearsLineUpdate = function(date) {
         if (!this._yearsLine) return;
-        
+
         var len = this._yearsLine.years.length;
         var year = date.getFullYear();
 
@@ -544,7 +543,7 @@
                 datepickers.push(inputs[i]);
             }
         }
-        
+
         // For each auto-calendar
         for (i = 0; i < datepickers.length; i++) {
             // Set as loaded
@@ -553,13 +552,6 @@
             new DatePicker(datepickers[i]);
         }
     };
-
-    // Link extension on library
-    if (!$.ext) $.ext = {};
-    
-    // Extensions object
-    $.ext.datepicker = _;
-    $.ext.datepicker.autoFind = DatePicker.autoFind;
 
     // Extension methods
     $.datepicker = function() {
@@ -570,13 +562,15 @@
         // Return new object
         return obj;
     };
-    $.DatePicker = DatePicker;
 
     // Init auto datepickers
     // After the page loads
     window.addEventListener('load', function() {
         // Get calendars
-        _.autoFind();
+        DatePicker.autoFind();
     }, false);
+
+    // Load extension
+    $.ext('DatePicker', DatePicker);
 
 })(window.jsCalendar);

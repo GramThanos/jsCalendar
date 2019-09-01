@@ -81,7 +81,7 @@
 				for (var i = 1; i <= elms; i++) {
 					let e = window['e' + i];
 					let d = window['d' + i];
-					let p = jsCalendar.DatePicker.detectElementPositionInfo(e);
+					let p = jsCalendar.extension.DatePicker.detectElementPositionInfo(e);
 					d.style.top = p.top + 'px';
 					d.style.left = p.left + 'px';
 					d.style.zIndex = p.zIndex ? p.zIndex + 1 : 1;
