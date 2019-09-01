@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar example extension</title>
+		<meta name="description" content="jsCalendar datepicker example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
+		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<!-- Example Calendar -->
+		<div class="auto-jsCalendar"></div>
+
+		<!-- Example Extension -->
+		<script type="text/javascript">
+			(function($){
+				// Check if jsCalendar exists
+				if (!$) throw 'Error jsCalendar library was not found';
+
+				// Intance Handlers
+				var init = function(instance) {
+					console.log('init');
+				};
+				var create = function(instance) {
+					console.log('create');
+				};
+				var update = function(instance, month) {
+					console.log('update');
+				};
+
+				// Extension public methods
+				$.example = function() {
+					console.log('example');
+				};
+				// Extension instance methods
+				$.prototype.example = function() {
+					console.log('example instance');
+				};
+
+				// Load extension
+				$.ext('example', {
+					init : init,
+					create : create,
+					update : update
+				});
+			})(window.jsCalendar);
+		</script>
+	</body>
+</html>
