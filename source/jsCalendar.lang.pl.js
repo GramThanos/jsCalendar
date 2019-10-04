@@ -46,13 +46,13 @@
         ],
         // Days of the week
         days : [
+            'Niedziela',
             'Poniedziałek',
             'Wtorek',
             'Środa',
             'Czwartek',
             'Piątek',
-            'Sobota,
-            'Niedziela'
+            'Sobota
         ]
     });
 
