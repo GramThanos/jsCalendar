@@ -52,7 +52,7 @@
             'Środa',
             'Czwartek',
             'Piątek',
-            'Sobota
+            'Sobota'
         ]
     });
 
