@@ -72,7 +72,7 @@ If you are into *npm* you can install the lib's package by just typing in your c
 ```bash
 npm i simple-jscalendar
 
-# Copy libary files to your resources folders
+# Copy library files to your resources folders
 cp ./node_modules/simple-jscalendar/source/jsCalendar.js ./js/jsCalendar.js
 cp ./node_modules/simple-jscalendar/source/jsCalendar.css ./css/jsCalendar.css
 
