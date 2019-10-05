@@ -122,7 +122,8 @@ ___
     - Fixed selected dates not highlighted bug (depending on your timezone) (issue #44)
     - Fixed `onDateRender` incorrect `isCurrentMonth`, `isPreviousMonth` and `isNextMonth` (issue #45)
     - Fixed `fdotw` bug #42
-
+ - Languages
+    - Added Polish Language (by [avatec](https://github.com/avatec))
 ___
 
 
