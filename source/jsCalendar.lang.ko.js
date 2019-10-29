@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension
- * Add French Language support
- * Translator: Grammatopoulos Athanasios-Vasileios (gramthanos@github)
+ * Add Korean Language support
+ * Translator: Jaafari El Housseine (jefferyhus@github)
  */
 
 // We love anonymous functions
@@ -28,7 +28,7 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : 'kr',
+        code : 'ko',
         // Months of the year
         months : [
             '일월',
