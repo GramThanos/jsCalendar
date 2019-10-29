@@ -55,8 +55,6 @@
 		.jsCalendar thead .jsCalendar-title {
 			height: 40px;
 			line-height: 40px;
-			display: flex;
-			flex-wrap: nowrap;
 		}
 		.jsCalendar thead .jsCalendar-title-left {
 			float: left;
@@ -96,7 +94,6 @@
 			font-size: 18px;
 			font-weight: lighter;
 			padding: 0 20px;
-			width: 100%;
 		}
 		.jsCalendar thead .jsCalendar-nav-left:after {
 			content: "<";
