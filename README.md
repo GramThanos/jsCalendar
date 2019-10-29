@@ -126,6 +126,7 @@ ___
     - Added Polish Language (by [avatec](https://github.com/avatec))
     - Added Arabic Language (by [JefferyHus](https://github.com/JefferyHus))
     - Added Thai Language (by [notjiam](https://github.com/notjiam))
+    - Added Korean Language (by [JefferyHus](https://github.com/JefferyHus))
 ___
 
 
