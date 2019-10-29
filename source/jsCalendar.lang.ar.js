@@ -1,6 +1,6 @@
 /*
  * jsCalendar language extension
- * Add French Language support
+ * Add Arabic Language support
  * Translator: Jaafari El Housseine (jefferyhus@github)
  */
 
