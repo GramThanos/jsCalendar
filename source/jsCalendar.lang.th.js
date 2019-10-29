@@ -53,7 +53,27 @@
             'พฤหัสบดี',
             'ศุกร์',
             'เสาร์'
-        ]
+        ],
+        // Abbreviations of Days
+        days_abr : [
+            'อา',
+            'จ',
+            'อ',
+            'พ',
+            'พฤ',
+            'ศ',
+            'ส'
+        ],
+
+        // Overwrite day string format rules
+        dayStringParser : function(key, day) {
+            switch(key) {
+                case 'DD':
+                case 'dd':
+                case 'D':
+                    return this.days_abr[day];
+            }
+        }
     });
 
 })();
