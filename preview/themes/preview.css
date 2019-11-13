@@ -27,18 +27,18 @@
 	}
 
 	.preview-2-styles .title-wrapper {
-		position: absolute;
-		right: 20px;
-		text-align: right;
-		top: 0;
+		font-family: 'Open Sans Condensed', sans-serif;
+		text-align: center;
+		font-size: 1.5em;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 	}
 
 	.preview-2-styles .title-wrapper .title {
-		font-size: 24px;
+		font-size: 2em;
 	}
 
 	.preview-2-styles .title-wrapper .subtitle {
-		font-size: 12px;
+		font-size: 1em;
 	}
 
 	.preview-2-styles .preview.preview-1 {
@@ -58,18 +58,18 @@
 	}
 
 	.preview-3-styles .title-wrapper {
-		position: absolute;
-		right: 20px;
-		text-align: right;
-		top: 0;
+		font-family: 'Open Sans Condensed', sans-serif;
+		text-align: center;
+		font-size: 1.5em;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 	}
 
 	.preview-3-styles .title-wrapper .title {
-		font-size: 24px;
+		font-size: 2em;
 	}
 
 	.preview-3-styles .title-wrapper .subtitle {
-		font-size: 12px;
+		font-size: 1em;
 	}
 
 	.preview-3-styles .preview {
@@ -97,18 +97,18 @@
 	}
 
 	.preview-5-styles .title-wrapper {
-		position: absolute;
-		right: 20px;
-		text-align: right;
-		top: 0;
+		font-family: 'Open Sans Condensed', sans-serif;
+		text-align: center;
+		font-size: 1.5em;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 	}
 
 	.preview-5-styles .title-wrapper .title {
-		font-size: 24px;
+		font-size: 2em;
 	}
 
 	.preview-5-styles .title-wrapper .subtitle {
-		font-size: 12px;
+		font-size: 1em;
 	}
 
 	.preview-5-styles .preview {
@@ -146,18 +146,18 @@
 	}
 
 	.preview-6-styles .title-wrapper {
-		position: absolute;
-		right: 20px;
-		text-align: right;
-		top: 0;
+		font-family: 'Open Sans Condensed', sans-serif;
+		text-align: center;
+		font-size: 1.5em;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 	}
 
 	.preview-6-styles .title-wrapper .title {
-		font-size: 24px;
+		font-size: 2em;
 	}
 
 	.preview-6-styles .title-wrapper .subtitle {
-		font-size: 12px;
+		font-size: 1em;
 	}
 
 	.preview-6-styles .preview {
