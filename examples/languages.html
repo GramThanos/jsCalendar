@@ -40,6 +40,7 @@
 	</head>
 	<body>
 
+		<h1>Auto Generated Calendars</h1>
 
 		<!-- English language -->
 		[en] English
@@ -202,6 +203,39 @@
 			 data-day-format="DDD"></div>
 		<br>
 
+
+		<h1>Dynamical Generated Calendars</h1>
+
+		<!-- Wrapper -->
+		<div id="dynamical-wrapper"></div>
+		<script type="text/javascript">
+			var langs = ['en', 'be', 'ca', 'de', 'es', 'fr', 'gr', 'hu', 'it', 'ja', 'nl', 'no', 'pt', 'ru', 'sk', 'sv', 'tr', 'uk', 'zh'];
+			var wrapper = document.getElementById('dynamical-wrapper');
+
+			var div;
+			for (var i = 0; i < langs.length; i++) {
+				wrapper.appendChild(document.createTextNode('Language Code ' + langs[i]));
+
+				div = document.createElement('div');
+				jsCalendar.new(div, "now", {
+					"language": langs[i]
+				});
+
+				wrapper.appendChild(div);
+				wrapper.appendChild(document.createElement('br'));
+			}
+
+			for (var i = 0; i < langs.length; i++) {
+				wrapper.appendChild(document.createTextNode('Language Code ' + langs[i] + ' +'));
+
+				div = document.createElement('div');
+				div.dataset.language = langs[i];
+				jsCalendar.new(div, "now");
+
+				wrapper.appendChild(div);
+				wrapper.appendChild(document.createElement('br'));
+			}
+		</script>
 
 	</body>
 </html>
