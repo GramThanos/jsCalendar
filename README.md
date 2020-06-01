@@ -1,6 +1,7 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.4.4-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
 [![latest development](https://img.shields.io/badge/latest%20development-v1.4.5-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![npm project](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
+[![cdn-stats](https://data.jsdelivr.com/v1/package/npm/simple-jscalendar/badge)](https://www.jsdelivr.com/package/npm/simple-jscalendar)
 
 # jsCalendar
 Just a simple javascript calendar
