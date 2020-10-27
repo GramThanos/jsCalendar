@@ -97,7 +97,6 @@ var jsCalendar = (function(){
         this._now = null;
         this._date = null;
         this._selected = [];
-        this._eventMarks = {};
         // Language object
         this.language = {};
         // Parse options
@@ -258,8 +257,7 @@ var jsCalendar = (function(){
         if (typeof options.firstDayOfTheWeek !== 'undefined'){
             // If day number
             if (typeof options.firstDayOfTheWeek === 'number') {
-                // Range check (no need to check for bigger than 7 but I don't
-				// trust anyone)
+                // Range check (no need to check for bigger than 7 but I don't trust anyone)
                 if (options.firstDayOfTheWeek >= 1 && options.firstDayOfTheWeek <= 7) {
                     this._options.firstDayOfTheWeek = options.firstDayOfTheWeek;
                 }
@@ -275,8 +273,7 @@ var jsCalendar = (function(){
                     // So find day
                     this._options.firstDayOfTheWeek = this.language.days.indexOf(options.firstDayOfTheWeek) + 1;
 
-                    // Range check (no need to check for bigger then 7 but I
-					// don't trust anyone)
+                    // Range check (no need to check for bigger then 7 but I don't trust anyone)
                     if (this._options.firstDayOfTheWeek < 1 || this._options.firstDayOfTheWeek > 7) {
                         this._options.firstDayOfTheWeek = 1;
                     }
@@ -631,37 +628,6 @@ var jsCalendar = (function(){
         }
     };
 
-    JsCalendar.prototype._addEventMarksForDate = function(date, eventColors) {
-    	date = tools.parseDate(date);
-    	date.setHours(0, 0, 0, 0);
-    	date = date.getTime();
-    	
-    	if( ! (date in this._eventMarks)) {
-    		this._eventMarks[date] = [];
-    	}
-    	
-    	this._eventMarks[date] = this._eventMarks[date].concat(eventColors);
-    };
-
-    JsCalendar.prototype._removeEventMarksForDate = function(date, eventColors) {
-    	date = tools.parseDate(date);
-    	date.setHours(0, 0, 0, 0);
-    	date = date.getTime();
-    	
-    	if( date in this._eventMarks) {
-            for(i=0; i<eventColors.length; i++) {
-                var pos = this._eventMarks[date].indexOf(eventColors[i]);
-                if (pos >= 0) {
-                    this._eventMarks[date].splice(pos,1);
-                }
-            }
-    	}
-    };
-
-    JsCalendar.prototype._clearEventMarksForAllDates = function() {
-        this._eventMarks = {};
-    };
-
     // Select dates on calendar
     JsCalendar.prototype._selectDates = function(dates) {
         // Copy array instance
@@ -738,24 +704,6 @@ var jsCalendar = (function(){
             }
             else {
                 this._elements.bodyCols[i].removeAttribute('class');
-            }
-            
-            // If date is marked for events    
-            var cellContent = this._elements.bodyCols[i].textContent;
-            if (month.days[i].getTime() in this._eventMarks) {
-            	cellContent += '<div class="jsCalendar-event-marks">'
-            	var moreColors = 0; 
-            	var colors = this._eventMarks[month.days[i].getTime()];
-            	for (j = 0; j < colors.length; j++) {
-            		if( j < 3 ) {
-            			cellContent += '<div class="jsCalendar-event-mark" style="background-color: '+colors[j]+'"></div>';
-            		} else moreColors++;
-                }
-            	if(moreColors>0) {
-            		cellContent += '<div class="jsCalendar-event-more-mark">+'+moreColors+'</div>';
-            	}
-            	cellContent += '</div>';
-            	this._elements.bodyCols[i].innerHTML = cellContent;
             }
         }
 
@@ -1038,61 +986,6 @@ var jsCalendar = (function(){
     };
 
     // Select dates
-    JsCalendar.prototype.addEventMark = function(date, eventColors){
-        // If no arguments
-        if (typeof date === 'undefined') {
-            // Return
-            return this;
-        }
-
-        // If eventColors not array
-        if (!(eventColors instanceof Array)) {
-            // Lets make it an array
-        	eventColors = [eventColors];
-        }
-        // Mark dates
-        this._addEventMarksForDate(date, eventColors);
-        // Refresh
-        this.refresh();
-
-        // Return
-        return this;
-    };
-
-    // Select dates
-    JsCalendar.prototype.removeEventMark = function(date, eventColors){
-        // If no arguments
-        if (typeof date === 'undefined') {
-            // Return
-            return this;
-        }
-
-        // If eventColors not array
-        if (!(eventColors instanceof Array)) {
-            // Lets make it an array
-        	eventColors = [eventColors];
-        }
-        // Unmark dates
-        this._removeEventMarksForDate(date, eventColors);
-        // Refresh
-        this.refresh();
-
-        // Return
-        return this;
-    };
-
-    // Clear event marks from all dates
-    JsCalendar.prototype.clearAllEventMarks = function(){
-        // Unselect all dates
-        this._clearEventMarksForAllDates();
-        // Refresh
-        this.refresh();
-
-        // Return
-        return this;
-    };
-
-    // Select dates
     JsCalendar.prototype.select = function(dates){
         // If no arguments
         if (typeof dates === 'undefined') {
@@ -1360,7 +1253,7 @@ var jsCalendar = (function(){
             date = new Date(date);
         }
 
-        // If it not a date
+        // If it not a date 
         else if (!(date instanceof Date)) {
             // Throw an error
             if (!silent) throw new Error('jsCalendar: Invalid date.');
