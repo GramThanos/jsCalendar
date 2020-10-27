@@ -1495,12 +1495,12 @@ var jsCalendar = (function(){
             // While list not empty
             while (window.jsCalendar_language2load.length) {
                 // Make it asynchronous
-                setTimeout((function (language) {
+                (function (language) {
                     // Return timeout callback
                     return function() {
                         JsCalendar.addLanguage(language);
                     };
-                })(window.jsCalendar_language2load.pop()), 0);
+                })(window.jsCalendar_language2load.pop());
             }
             // Clean up useless list
             delete window.jsCalendar_language2load;
