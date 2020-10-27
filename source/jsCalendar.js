@@ -475,11 +475,11 @@ var jsCalendar = (function(){
 
         // Get visible days
         var days = this._getVisibleDates(date);
-        var daysInMonth = new Date(first.getYear() + 1900, first.getMonth() + 1, 0).getDate();
+        var daysInMonth = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
 
         var current = -1;
         // If this is the month
-        if (first.getYear() === this._now.getYear() && first.getMonth() === this._now.getMonth()) {
+        if (first.getFullYear() === this._now.getFullYear() && first.getMonth() === this._now.getMonth()) {
             // Calculate current
             current = firstDay + this._now.getDate() - 1;
         }
@@ -1467,7 +1467,7 @@ var jsCalendar = (function(){
                 return date.getDate();
             case 'YYYY':
             case 'yyyy':
-                return date.getYear() + 1900;
+                return date.getFullYear();
         }
     };
 
