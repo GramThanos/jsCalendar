@@ -2,7 +2,7 @@
 [![latest development](https://img.shields.io/badge/latest%20development-v1.4.5--beta-yellow.svg)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![license](https://img.shields.io/github/license/GramThanos/jsCalendar.svg)](https://github.com/GramThanos/jsCalendar/blob/master/LICENSE)
 [![npm project](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg)](https://www.npmjs.com/package/simple-jscalendar)
-[![downloads](https://img.shields.io/github/downloads/marktext/marktext/total.svg)](https://github.com/GramThanos/jsCalendar/releases)
+[![downloads](https://img.shields.io/github/downloads/gramthanos/jsCalendar/total.svg)](https://github.com/GramThanos/jsCalendar/releases)
 [![cdn-stats](https://data.jsdelivr.com/v1/package/npm/simple-jscalendar/badge?style=rounded)](https://www.jsdelivr.com/package/npm/simple-jscalendar)
 
 # jsCalendar
