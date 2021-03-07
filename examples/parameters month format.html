@@ -35,6 +35,18 @@
 			});
 		</script>
 
+		<!-- Dynamic calendar element -->
+		<div id="dynamic-calendar-2"></div>
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar = jsCalendar.new("#dynamic-calendar-2", 'now', {
+				onMonthRender : function(month_index, month_element, month_info) {
+					month_element.textContent = this._now.toLocaleDateString('th-TH', {month: 'short', year: 'numeric'});
+				} 
+			});
+		</script>
+
 
 	</body>
 </html>
