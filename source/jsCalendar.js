@@ -1020,7 +1020,7 @@ var jsCalendar = (function(){
     };
 
     // Select dates
-    JsCalendar.prototype.select = function(dates){
+    JsCalendar.prototype.select = function(dates, shouldRefresh = true){
         // If no arguments
         if (typeof dates === 'undefined') {
             // Return
@@ -1035,14 +1035,16 @@ var jsCalendar = (function(){
         // Select dates
         this._selectDates(dates);
         // Refresh
-        this.refresh();
+        if (true === shouldRefresh) {
+            this.refresh();
+        }
 
         // Return
         return this;
     };
 
     // Unselect dates
-    JsCalendar.prototype.unselect = function(dates){
+    JsCalendar.prototype.unselect = function(dates, shouldRefresh = true){
         // If no arguments
         if (typeof dates === 'undefined') {
             // Return
@@ -1057,18 +1059,22 @@ var jsCalendar = (function(){
         // Unselect dates
         this._unselectDates(dates);
         // Refresh
-        this.refresh();
+        if (true === shouldRefresh) {
+            this.refresh();
+        }
 
         // Return
         return this;
     };
 
     // Unselect all dates
-    JsCalendar.prototype.clearselect = function(){
+    JsCalendar.prototype.clearselect = function(shouldRefresh = true){
         // Unselect all dates
         this._unselectAllDates();
         // Refresh
-        this.refresh();
+        if (true === shouldRefresh) {
+            this.refresh();
+        }
 
         // Return
         return this;
