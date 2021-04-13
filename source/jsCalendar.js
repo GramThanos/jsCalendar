@@ -716,6 +716,7 @@ var jsCalendar = (function(){
 
     // Update calendar
     JsCalendar.prototype._update = function() {
+        if (true === this._isFrozen) return this;
         // Get month info
         var month = this._getVisibleMonth(this._date);
         // Save data
@@ -956,8 +957,6 @@ var jsCalendar = (function(){
     // Refresh
     // Safe _update
     JsCalendar.prototype.refresh = function(date) {
-        if (true === this._isFrozen) return this;
-
         // If date provided
         if (typeof date !== 'undefined') {
             // If date is in range
