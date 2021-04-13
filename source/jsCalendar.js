@@ -941,10 +941,12 @@ var jsCalendar = (function(){
 
     JsCalendar.prototype.freeze = function() {
         this._isFrozen = true;
+        return this;
     };
 
     JsCalendar.prototype.unfreeze = function() {
         this._isFrozen = false;
+        return this;
     };
 
     JsCalendar.prototype.isFrozen = function() {
