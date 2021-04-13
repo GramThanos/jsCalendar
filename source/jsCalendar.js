@@ -68,6 +68,8 @@ var jsCalendar = (function(){
         this._create();
         // Update
         this._update();
+        // set not frozen
+        this._isFrozen = false;
     };
 
     // Languages
@@ -937,9 +939,23 @@ var jsCalendar = (function(){
         return this;
     };
 
+    JsCalendar.prototype.freeze = function() {
+        this._isFrozen = true;
+    };
+
+    JsCalendar.prototype.unfreeze = function() {
+        this._isFrozen = false;
+    };
+
+    JsCalendar.prototype.isFrozen = function() {
+        return this._isFrozen;
+    };
+
     // Refresh
     // Safe _update
     JsCalendar.prototype.refresh = function(date) {
+        if (true === this._isFrozen) return this;
+
         // If date provided
         if (typeof date !== 'undefined') {
             // If date is in range
@@ -1020,7 +1036,7 @@ var jsCalendar = (function(){
     };
 
     // Select dates
-    JsCalendar.prototype.select = function(dates, shouldRefresh = true){
+    JsCalendar.prototype.select = function(dates){
         // If no arguments
         if (typeof dates === 'undefined') {
             // Return
@@ -1035,16 +1051,14 @@ var jsCalendar = (function(){
         // Select dates
         this._selectDates(dates);
         // Refresh
-        if (true === shouldRefresh) {
-            this.refresh();
-        }
+        this.refresh();
 
         // Return
         return this;
     };
 
     // Unselect dates
-    JsCalendar.prototype.unselect = function(dates, shouldRefresh = true){
+    JsCalendar.prototype.unselect = function(dates){
         // If no arguments
         if (typeof dates === 'undefined') {
             // Return
@@ -1059,22 +1073,18 @@ var jsCalendar = (function(){
         // Unselect dates
         this._unselectDates(dates);
         // Refresh
-        if (true === shouldRefresh) {
-            this.refresh();
-        }
+        this.refresh();
 
         // Return
         return this;
     };
 
     // Unselect all dates
-    JsCalendar.prototype.clearselect = function(shouldRefresh = true){
+    JsCalendar.prototype.clearselect = function(){
         // Unselect all dates
         this._unselectAllDates();
         // Refresh
-        if (true === shouldRefresh) {
-            this.refresh();
-        }
+        this.refresh();
 
         // Return
         return this;
