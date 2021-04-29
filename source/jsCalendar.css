@@ -134,12 +134,17 @@
 			color: #FFFFFF;
 		}
 		.jsCalendar tbody td.jsCalendar-previous,
-		.jsCalendar tbody td.jsCalendar-next {
+		.jsCalendar tbody td.jsCalendar-next,
+		.jsCalendar tbody td.jsCalendar-unselectable {
 			color: #CACACA;
 		}
 		.jsCalendar tbody td.jsCalendar-previous:hover,
 		.jsCalendar tbody td.jsCalendar-next:hover {
 			color: #FFFFFF;
+		}
+
+		.jsCalendar tbody td.jsCalendar-unselectable:hover {
+			background: transparent;
 		}
 
 		.jsCalendar thead {
