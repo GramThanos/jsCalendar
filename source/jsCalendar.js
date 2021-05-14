@@ -68,6 +68,8 @@ var jsCalendar = (function(){
         this._create();
         // Update
         this._update();
+        // set not frozen
+        this._isFrozen = false;
     };
 
     // Languages
@@ -714,6 +716,7 @@ var jsCalendar = (function(){
 
     // Update calendar
     JsCalendar.prototype._update = function() {
+        if (true === this._isFrozen) return this;
         // Get month info
         var month = this._getVisibleMonth(this._date);
         // Save data
@@ -941,6 +944,20 @@ var jsCalendar = (function(){
 
         // Return
         return this;
+    };
+
+    JsCalendar.prototype.freeze = function() {
+        this._isFrozen = true;
+        return this;
+    };
+
+    JsCalendar.prototype.unfreeze = function() {
+        this._isFrozen = false;
+        return this;
+    };
+
+    JsCalendar.prototype.isFrozen = function() {
+        return this._isFrozen;
     };
 
     // Refresh
