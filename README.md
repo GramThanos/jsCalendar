@@ -120,11 +120,13 @@ ___
 #### Latest development code v1.4.5-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
  - Added
     - Added extension add method `jsCalendar.ext('example', {init : <function>, create : <function>, update : <function>});`
+    - Added methods `freeze`/`unfreeze`/`isFrozen` to prevent the calendars from re-rendering the UI PR#56 by @paxperscientiam
  - Bugs
     - Fixed `info.start` parameter on `onMonthRender` (was not the first date)
     - Fixed selected dates not highlighted bug (depending on your timezone) (issue #44)
     - Fixed `onDateRender` incorrect `isCurrentMonth`, `isPreviousMonth` and `isNextMonth` (issue #45)
     - Fixed `fdotw` bug #42
+    - Improved UX on dates outside `min` & `max` limits PR#58 by @zangarmarsh
  - Languages
     - Added Polish Language (by [avatec](https://github.com/avatec))
     - Added Arabic Language (by [JefferyHus](https://github.com/JefferyHus))
