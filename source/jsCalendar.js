@@ -948,7 +948,7 @@ var jsCalendar = (function(){
     JsCalendar.prototype.onMonthChange = function(callback) {
         return this._on('month', callback);
     };
-    JsCalendar.prototype.onMonthChange = function(callback) {
+    JsCalendar.prototype.onYearChange = function(callback) {
         return this._on('year', callback);
     };
     JsCalendar.prototype.onDayRender = function(callback) {
