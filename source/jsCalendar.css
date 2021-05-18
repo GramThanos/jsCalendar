@@ -29,6 +29,9 @@
 
 /* Default Theme */
 	/* General style */
+		.jsCalendar {
+			position: relative;
+		}
 		.jsCalendar * {
 			margin: 0;
 			padding: 0;
@@ -89,11 +92,14 @@
 			float: right;
 		}
 		.jsCalendar thead .jsCalendar-title-name {
-			cursor: default;
+			cursor: pointer;
 			float: left;
 			font-size: 18px;
 			font-weight: lighter;
 			padding: 0 20px;
+		}
+		.jsCalendar thead .jsCalendar-title-name:hover {
+			background-color: #F0F0F0;
 		}
 		.jsCalendar thead .jsCalendar-nav-left:after {
 			content: "<";
@@ -396,4 +402,28 @@
 		.jsCalendar.classic-theme.green thead .jsCalendar-nav-left:hover,
 		.jsCalendar.classic-theme.green thead .jsCalendar-nav-right:hover {
 			background-color: #639000;
+		}
+
+		.jsCalendar table.year-picker {
+			display: none;
+			z-index: -1;
+		}
+
+		.jsCalendar table.year-picker.active {
+			display: block;
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #FFFFFF;
+		}
+
+		.jsCalendar table.year-picker.active tbody td {
+			width: 22%;
+		}
+
+		.jsCalendar table.year-picker tbody tr {
+			display: block;
 		}
