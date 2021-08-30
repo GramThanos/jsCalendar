@@ -5,7 +5,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2019 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2021 Grammatopoulos Athanasios-Vasileios
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +45,7 @@
     };
 
     // Version
-    DatePicker.version = 'v1.1.0';
+    DatePicker.version = 'v1.1.1';
 
     // Options
     DatePicker.options = {
