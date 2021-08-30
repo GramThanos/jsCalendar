@@ -132,6 +132,8 @@ ___
     - Added Arabic Language (by [JefferyHus](https://github.com/JefferyHus))
     - Added Thai Language (by [notjiam](https://github.com/notjiam))
     - Added Korean Language (by [JefferyHus](https://github.com/JefferyHus))
+    - Added Occitan Language (by [Quentin PAGÈS](https://github.com/ensag-dev))
+    - Fixed Catalan Language spelling mistake
 ___
 
 
