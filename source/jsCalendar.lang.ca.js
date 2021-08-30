@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension
  * Add Catalan Language support
- * Translator: Anton Stasyuk (antonstsk@github)
+ * Translators: Anton Stasyuk (antonstsk@github), Quentin PAGÈS (ensag-dev@github)
  */
 
 // We love anonymous functions
@@ -42,7 +42,7 @@
             'Setembre',
             'Octubre',
             'Novembre',
-            'Decembre'
+            'Desembre'
         ],
         // Days of the week
         days : [
