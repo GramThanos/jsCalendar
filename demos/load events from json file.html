@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar</title>
+		<meta name="description" content="jsCalendar example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../source/jsCalendar.css">
+		<script type="text/javascript" src="../source/jsCalendar.js"></script>
+
+		<style>
+			.jsCalendar {
+				position: relative;
+			}
+			.jsCalendar .loading {
+				display: none;
+				position: absolute;
+				background: rgba(255,255,255,0.8);
+				top: 0px;
+				left: 0px;
+				color: black;
+				text-align: center;
+				line-height: 314px;
+				width: 288px;
+				height: 314px;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<!-- My calendar element -->
+		<div id="my-calendar"></div>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Functions to load events
+			let pending_load = false;
+			let loadEvents = function(year=-1, month=-1, mdate=-1) {
+				if (pending_load) {
+					return Promise.resolve(null);
+				}
+				pending_load = true;
+				return new Promise((resolve, reject) => {
+					// Fetch JSON file
+					fetch("load events from json file.json")
+						// Parse response as JSON
+						.then(res => res.json())
+						// Get JSON response
+						.then(json => {
+							pending_load = false;
+							// Filter results
+							resolve(filterEvents(json.events, year, month, mdate));
+						}).catch(() => {
+							pending_load = false;
+							resolve(null);
+						});
+				});
+			}
+			let filterEvents = function(events, year=-1, month=-1, mdate=-1) {
+				return events.filter(
+					// For each event on the list
+					(event) => {
+						// Get date
+						let date = jsCalendar.tools.parseDate(event.date);
+						// Check if year is correct
+						if (year > 0 && date.getFullYear() != year) {
+							return false;
+						}
+						// Check if month is correct
+						if (month >= 0 && date.getMonth() != month) {
+							return false;
+						}
+						// Check if year is correct
+						if (mdate >= 0 && date.getDate() != mdate) {
+							return false;
+						}
+						return true;
+					}
+				);
+			}
+
+			// Get the element
+			let element = document.getElementById("my-calendar");
+			// Create the calendar
+			let calendar = jsCalendar.new(element, "20-05-2023");
+
+			// Create a loading layer
+			let loading = document.createElement("div");
+			loading.className = 'loading';
+			loading.textContent = 'Loading ...';
+			element.appendChild(loading);
+
+			// Add events
+			calendar.onDateClick(async (event, date) => {
+				loading.style.display = 'block';
+				let events = await loadEvents(date.getFullYear(), date.getMonth(), date.getDate());
+				loading.style.display = 'none';
+				if (events === null) return;
+
+				// Here you can show these events on page
+				console.log(events);
+			});
+
+			let onMonthChangeHandler = async (date) => {
+				loading.style.display = 'block';
+				let events = await loadEvents(date.getFullYear(), date.getMonth());
+				console.log(events);
+				loading.style.display = 'none';
+				if (events === null) return;
+				calendar.clearSelected();
+				calendar.select(events.map(event => event.date));
+				calendar.goto(date);
+			}
+
+			calendar.onMonthChange((event, date) => {
+				onMonthChangeHandler(date);
+			});
+			onMonthChangeHandler(jsCalendar.tools.parseDate("20-05-2023"));
+		</script>
+
+
+	</body>
+</html>
