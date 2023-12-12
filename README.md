@@ -1,5 +1,5 @@
 [![latest release](https://img.shields.io/badge/latest%20release-v1.4.5-green.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases/latest)
-[![latest development](https://img.shields.io/badge/latest%20development-v1.4.5--beta-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
+[![latest development](https://img.shields.io/badge/latest%20development-v1.4.6--beta-yellow.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![license](https://img.shields.io/github/license/GramThanos/jsCalendar.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/blob/master/LICENSE)
 [![npm project](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg?style=flat-square)](https://www.npmjs.com/package/simple-jscalendar)
 [![downloads](https://img.shields.io/github/downloads/gramthanos/jsCalendar/total.svg?style=flat-square)](https://github.com/GramThanos/jsCalendar/releases)
@@ -121,7 +121,8 @@ ___
  - Added
     - Nothing yet
  - Bugs
-    - Nothing yet
+    - Added missing languages on examples
+    - Added missing languages on loader
  - Languages
     - Nothing yet
 ___
@@ -142,7 +143,7 @@ ___
 This project is under [The MIT license](https://opensource.org/licenses/MIT).
 I do although appreciate attribute.
 
-Copyright (c) 2017-2021 Grammatopoulos Athanasios-Vasileios
+Copyright (c) 2017-2023 Grammatopoulos Athanasios-Vasileios
 
 ___
 
