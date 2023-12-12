@@ -10,6 +10,31 @@ All jsCalendar changes are documented in this file.
 
 
 
+## [1.4.5] - 2023-12-12
+
+### Added
+ - Added extension add method `jsCalendar.ext('example', {init : <function>, create : <function>, update : <function>});`
+ - Added methods `freeze`/`unfreeze`/`isFrozen` to prevent the calendars from re-rendering the UI PR#56 by [paxperscientiam](https://github.com/paxperscientiam]
+
+### Bugs
+ - Fixed `info.start` parameter on `onMonthRender` (was not the first date)
+ - Fixed selected dates not highlighted bug (depending on your timezone) (issue #44)
+ - Fixed `onDateRender` incorrect `isCurrentMonth`, `isPreviousMonth` and `isNextMonth` (issue #45)
+ - Fixed `fdotw` bug #42
+ - Improved UX on dates outside `min` & `max` limits PR#58 by [zangarmarsh](https://github.com/zangarmarsh)
+ - Fixed invalid date passed as date object not being detected
+
+### Languages
+ - Added Polish Language (by [avatec](https://github.com/avatec))
+ - Added Arabic Language (by [JefferyHus](https://github.com/JefferyHus))
+ - Added Thai Language (by [notjiam](https://github.com/notjiam))
+ - Added Korean Language (by [JefferyHus](https://github.com/JefferyHus))
+ - Added Occitan Language (by [Quentin PAGÈS](https://github.com/ensag-dev))
+ - Added VietNamese Language (by [Nguyen Duy Dien](https://github.com/dienht))
+ - Fixed Catalan Language spelling mistake
+
+
+
 ## [1.4.4] - 2019-05-05
 
 ### Added
