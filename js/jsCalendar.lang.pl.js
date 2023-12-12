@@ -1,7 +1,7 @@
 /*
  * jsCalendar language extension
- * Add Catalan Language support
- * Translators: Anton Stasyuk (antonstsk@github), Quentin PAGÈS (ensag-dev@github)
+ * Add Polish Language support
+ * Translator: Grzegorz Miskiewicz (avatec@github)
  */
 
 // We love anonymous functions
@@ -28,31 +28,31 @@
     // Add a new language
     jsCalendar.addLanguage({
         // Language code
-        code : 'ca',
+        code : 'pl',
         // Months of the year
         months : [
-            'Gener',
-            'Febrer',
-            'Març',
-            'Abril',
-            'Maig',
-            'Juny',
-            'Juliol',
-            'Agost',
-            'Setembre',
-            'Octubre',
-            'Novembre',
-            'Desembre'
+            'Styczeń',
+            'Luty',
+            'Marzec',
+            'Kwiecień',
+            'Maj',
+            'Czerwiec',
+            'Lipiec',
+            'Sierpień',
+            'Wrzesień',
+            'Październik',
+            'Listopad',
+            'Grudzień'
         ],
         // Days of the week
         days : [
-            'Diumenge',
-            'Dilluns',
-            'Dimarts',
-            'Dimecres',
-            'Dijous',
-            'Divendres',
-            'Dissabte'
+            'Niedziela',
+            'Poniedziałek',
+            'Wtorek',
+            'Środa',
+            'Czwartek',
+            'Piątek',
+            'Sobota'
         ]
     });
 

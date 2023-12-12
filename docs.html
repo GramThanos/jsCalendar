@@ -42,9 +42,9 @@
 						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
 					</ul>
 					<br>
-					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.4/jsCalendar_v1.4.4.zip" class="download-button">
+					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.5/jsCalendar_v1.4.5.zip" class="download-button">
 						Download<br>
-						<span>version 1.4.4</span>
+						<span>version 1.4.5</span>
 					</a>
 				</div>
 				<div class="wrapper-right">
@@ -114,9 +114,11 @@
 								<li><a href="#more-javascript-version">Version Attribute</a></li>
 								<li><a href="#more-javascript-click-events">Click events</a></li>
 								<li><a href="#more-javascript-render-handlers">Render handlers</a></li>
+								<li><a href="#more-javascript-render-freeze">Render freeze</a></li>
 								<li><a href="#more-javascript-select">Select days</a></li>
 								<li><a href="#more-javascript-get-set">Get & Set Instances</a></li>
 								<li><a href="#more-javascript-tools">Tools</a></li>
+								<li><a href="#more-javascript-extensions">Extensions</a></li>
 							</ul>
 						</li>
 						<li><a href="#more-theme">More theme things</a>
@@ -155,16 +157,17 @@
 				</p>
 				<br>
 				<p>jsCalendar using the <a href="https://unpkg.com/simple-jscalendar/" target="_blank">Unpkg CDN</a></p>
-				<pre><code class="language-html">&lt;!-- jsCalendar v1.4.3 Javascript and CSS from unpkg cdn --&gt;
-&lt;script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"&gt;&lt;/script&gt;
-&lt;link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous"&gt;</code></pre>
+				<pre><code class="language-html">&lt;!-- jsCalendar v1.4.5 Javascript and CSS from unpkg cdn --&gt;
+&lt;script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous"&gt;</code></pre>
+				<br>
 
-				<br>
 				<p>jsCalendar using the <a href="https://www.jsdelivr.com/package/npm/simple-jscalendar" target="_blank">JsDelivr CDN</a></p>
-				<pre><code class="language-html">&lt;!-- jsCalendar v1.4.3 Javascript and CSS from jsdelivr npm cdn --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"&gt;&lt;/script&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.3/source/jsCalendar.min.css" integrity="sha384-+OB2CadpqXIt7AheMhNaVI99xKH8j8b+bHC8P5m2tkpFopGBklD3IRvYjPekeWIJ" crossorigin="anonymous"&gt;</code></pre>
+				<pre><code class="language-html">&lt;!-- jsCalendar v1.4.5 Javascript and CSS from jsdelivr npm cdn --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous"&gt;</code></pre>
 				<br>
+
 				<p>Full example with all the files and their integrity hashes <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html">using unpkg here</a> and using <a href="https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html">jsdelivr here</a> (the hashes are the same).</p>
 				<p class="note">Notice: <i>When using CDNs, always include integrity hashes.</i></p>
 			</div>
@@ -475,26 +478,33 @@
 					<br>
 					<p id="parameter-language-codes">Supported lanuages <small>(alphabetical order)</small></p>
 					<table style="width: 100%;">
-						<tr><th style="text-align: left;">Language</th><th style="text-align: left;">Code</th></tr>
-						<tr><td>Belarusian</td><td><span class="html-code"><span class="tag">be</span></span></td></tr>
-						<tr><td>Catalan</td><td><span class="html-code"><span class="tag">ca</span></span></td></tr>
-						<tr><td>Chinese</td><td><span class="html-code"><span class="tag">zh</span></span></td></tr>
-						<tr><td>Dutch</td><td><span class="html-code"><span class="tag">nl</span></span></td></tr>
-						<tr><td>English</td><td><span class="html-code"><span class="tag">en</span></span></td></tr>
-						<tr><td>French</td><td><span class="html-code"><span class="tag">fr</span></span></td></tr>
-						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td></tr>
-						<tr><td>Greek</td><td><span class="html-code"><span class="tag">gr</span></span></td></tr>
-						<tr><td>Hungarian</td><td><span class="html-code"><span class="tag">hu</span></span></td></tr>
-						<tr><td>Italian</td><td><span class="html-code"><span class="tag">it</span></span></td></tr>
-						<tr><td>Japanese</td><td><span class="html-code"><span class="tag">ja</span></span></td></tr>
-						<tr><td>Norwegian</td><td><span class="html-code"><span class="tag">no</span></span></td></tr>
-						<tr><td>Portuguese</td><td><span class="html-code"><span class="tag">pt</span></span></td></tr>
-						<tr><td>Russian</td><td><span class="html-code"><span class="tag">ru</span></span></td></tr>
-						<tr><td>Slovak</td><td><span class="html-code"><span class="tag">sk</span></span></td></tr>
-						<tr><td>Swedish</td><td><span class="html-code"><span class="tag">sv</span></span></td></tr>
-						<tr><td>Spanish</td><td><span class="html-code"><span class="tag">es</span></span></td></tr>
-						<tr><td>Turkish</td><td><span class="html-code"><span class="tag">tr</span></span></td></tr>
-						<tr><td>Ukrainian</td><td><span class="html-code"><span class="tag">uk</span></span></td></tr>
+						<tr><th style="text-align: left;">Language</th><th style="text-align: left;width: 50px;">Code</th><th style="text-align: left;width: 100px;">Released on</th></tr>
+						<tr><td>Arabic</td><td><span class="html-code"><span class="tag">ar</span></span></td><td><span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></td></tr>
+						<tr><td>Belarusian</td><td><span class="html-code"><span class="tag">be</span></span></td><td><span class="version-tag" title="Added on version 1.4.4">v1.4.4</span></td></tr>
+						<tr><td>Catalan</td><td><span class="html-code"><span class="tag">ca</span></span></td><td><span class="version-tag" title="Added on version 1.4.4">v1.4.4</span></td></tr>
+						<tr><td>Chinese</td><td><span class="html-code"><span class="tag">zh</span></span></td><td></td></tr>
+						<tr><td>Dutch</td><td><span class="html-code"><span class="tag">nl</span></span></td><td><span class="version-tag" title="Added on version 1.4.4">v1.4.4</span></td></tr>
+						<tr><td>Dutch</td><td><span class="html-code"><span class="tag">nl</span></span></td><td></td></tr>
+						<tr><td>English</td><td><span class="html-code"><span class="tag">en</span></span></td><td></td></tr>
+						<tr><td>French</td><td><span class="html-code"><span class="tag">fr</span></span></td><td></td></tr>
+						<tr><td>German</td><td><span class="html-code"><span class="tag">de</span></span></td><td></td></tr>
+						<tr><td>Greek</td><td><span class="html-code"><span class="tag">gr</span></span></td><td></td></tr>
+						<tr><td>Hungarian</td><td><span class="html-code"><span class="tag">hu</span></span></td><td><span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></td></tr>
+						<tr><td>Italian</td><td><span class="html-code"><span class="tag">it</span></span></td><td></td></tr>
+						<tr><td>Japanese</td><td><span class="html-code"><span class="tag">ja</span></span></td><td></td></tr>
+						<tr><td>Korean</td><td><span class="html-code"><span class="tag">ko</span></span></td><td><span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></td></tr>
+						<tr><td>Norwegian</td><td><span class="html-code"><span class="tag">no</span></span></td><td><span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></td></tr>
+						<tr><td>Occitan</td><td><span class="html-code"><span class="tag">oc</span></span></td><td><span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></td></tr>
+						<tr><td>Polish</td><td><span class="html-code"><span class="tag">pl</span></span></td><td><span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></td></tr>
+						<tr><td>Portuguese</td><td><span class="html-code"><span class="tag">pt</span></span></td><td><span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></td></tr>
+						<tr><td>Russian</td><td><span class="html-code"><span class="tag">ru</span></span></td><td></td></tr>
+						<tr><td>Slovak</td><td><span class="html-code"><span class="tag">sk</span></span></td><td><span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></td></tr>
+						<tr><td>Spanish</td><td><span class="html-code"><span class="tag">es</span></span></td><td></td></tr>
+						<tr><td>Swedish</td><td><span class="html-code"><span class="tag">sv</span></span></td><td><span class="version-tag" title="Added on version 1.4.4">v1.4.4</span></td></tr>
+						<tr><td>Thai</td><td><span class="html-code"><span class="tag">th</span></span></td><td><span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></td></tr>
+						<tr><td>Turkish</td><td><span class="html-code"><span class="tag">tr</span></span></td><td><span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></td></tr>
+						<tr><td>Ukrainian</td><td><span class="html-code"><span class="tag">uk</span></span></td><td><span class="version-tag" title="Added on version 1.4.3">v1.4.3</span></td></tr>
+						<tr><td>Vietnamese</td><td><span class="html-code"><span class="tag">vi</span></span></td><td><span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></td></tr>
 					</table>
 					<p>The supported lanuages codes are based on the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639-1</a> codes.</p>
 					
@@ -1504,6 +1514,23 @@ Month change : &lt;br&gt;
 
 
 
+				<div class="section-subtitle" id="more-javascript-render-freeze">Render freeze <span class="version-tag" title="Added on version 1.4.5">v1.4.5</span></div>
+				<div class="wrapper-left">
+					<p>To prevent the calendar from rendering between custom changes, you can use the freeze related functions.</p><br>
+					<p>API syntax</p>
+					<table style="width: 100%;">
+						<tr><td>Prevent rendering from running</td><td>.freeze()</td><td>-</td></tr>
+						<tr><td>Restore rendering functionality</td><td>.unfreeze()</td><td>-</td></tr>
+						<tr><td>Get freeze state</td><td>.isFrozen()</td><td>returns: true | false</td></tr>
+					</table>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+				<br><br>
+
+
+
+
 				<div class="section-subtitle" id="more-javascript-select">Select days</div>
 				<div class="wrapper-left">
 					<p>Select days on the calendar</p><br>
@@ -1781,6 +1808,40 @@ Testing dateToString:
 				<br><br>
 
 
+
+
+				<div class="section-subtitle" id="more-javascript-extensions">Extensions</div>
+				<div class="wrapper-left">
+					<p>Calendar exposes an API that allows the extension of its functionalities by developing extension.</p><br>
+					<p>Loading Extension API syntax</p>
+					<table style="width: 100%;">
+						<tr><td>Syntax</td><td>.ext(extention_name, extention_object)</td></tr>
+					</table>
+					<p>Parameters</p>
+					<table>
+						<tr><td>extention_name</td><td>The string name of the extension to load. This should be unique for each extension.</td></tr>
+						<tr><td>extention_object</td><td>The <a href="#more-javascript-extensions-extentionobject">ExtentionObject</a> of the extension.</td></tr>
+					</table>
+					<br><br>
+
+					<p id="more-javascript-extensions-extentionobject">The ExtentionObject is an object that can optionally include handlers that will be called from jsCalendar upon the corresponding event.</p><br>
+					<table style="width: 100%;">
+						<tr><td>ExtentionObject</td><td>{ init: function() { ... }, create: function(elements) { ... }, update: function(month) { ... } }</td></tr>
+					</table>
+					<p>Handlers</p>
+					<table>
+						<tr><td>init</td><td>Will be called just after the initialisation of the calendar's parameters.</td></tr>
+						<tr><td>create</td><td>Will be called just after the creation of the calendar's HTML elements. The calendar's elements will be passed as a parameter.</td></tr>
+						<tr><td>create</td><td>Will be called just after the UI update of the calendar. The information of the active month will be passed as a parameter.</td></tr>
+					</table>
+
+					<p class="note">*Using the this keyword inside any handler, you can get access to the instance of the jsCalendar object of the corresponding calendar.</p>
+					<br>
+				</div>
+				<div class="wrapper-clear"></div>
+				<br><br>
+
+
 			</div>
 		</div>
 
@@ -1788,9 +1849,9 @@ Testing dateToString:
 		<div class="section" id="more-theme">
 			<div class="section-wrapper">
 				<div class="section-title">More Theme Things</div>
-				<p>More themes related informations are provided in this section. Additionaly, you can check the <a href="themes.html">Themes</a> section for more themes.</p>
+				<p>More themes related informations are provided in this section. Additionally, you can check the <a href="themes.html">Themes</a> section for more themes.</p>
 
-				<div class="section-subtitle" id="more-theme-colors">Custom colors</div>
+				<div class="section-subtitle" id="more-theme-colors">Custom colours</div>
 				<div>
 					<p>Add a custom theme color on the built in themes by editing the example code below</p>
 					<pre><code class="language-html">&lt;!-- New purple color --&gt;
