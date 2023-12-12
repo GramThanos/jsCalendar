@@ -375,6 +375,7 @@
 					if (color.classname.length) {
 						classname += ' ' + color.classname;
 					}
+					classname = classname.trim();
 					calendar.className = classname;
 
 					this.wrapper.calendar.appendChild(calendar);
