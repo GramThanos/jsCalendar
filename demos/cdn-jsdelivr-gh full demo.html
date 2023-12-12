@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Minimal jsCalendar Demo</title>
+
+		<!-- jsCalendar v1.4.5 -->
+
+		<!-- Core Minified -->
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+		<!-- Core Normal -->
+		<!--
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.js" integrity="sha384-9U5mx0TwE3KynzfE2673H8cGnEKbBh/hEW/MPkdR9C8qU0lyKvFxZdo9E/5vpcTk" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.css" integrity="sha384-1eG5+BK6CGsH/Pv3yC+0Q17dhDvZTewIMAyQtzOe6Sdf3Y2mAAbIJUonVtuF0aBS" crossorigin="anonymous">
+		-->
+		
+		<!-- Optional Languages -->
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.be.js" integrity="sha384-PI3VPDqjnkgo002ScVctSGQYmHF4VtmXJT2cJ8H6hWWt1rk+l2Xw5hFUHTnvCBRA" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.ca.js" integrity="sha384-JXClNV6lrKePFdidQxupyaOcGHsiWlfiVYHzmS3lIIoz7eFppaVo2ZahCKMGwGCQ" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.de.js" integrity="sha384-pUMNW4wJJocu99HqohAVlQD0z72pYWQ8Rwpk2LnF40x5BK3kTmtT8rE2ZlPgM8oh" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.es.js" integrity="sha384-mrCuMLqSjwshLZD661hRZpNAphRZTR0eAxJsWxPrYzsYKRtNb+bT9u1PXq+YH/eP" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.fr.js" integrity="sha384-KwbbcoiATTslp59b+0njB+Kee4zLz3uQQnfXpDO8R/0c74NRyIZtNNGSf23bb5sX" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.gr.js" integrity="sha384-iK2L0CkyRtBpOuMRtnOoTTYiIB7mutEAdLs8RLl7ywjvO2MTfNXgP7wYlxpI8Luf" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.hu.js" integrity="sha384-jA80WXFW3Uvmi2UmXAeJ7KcwR0r1T17rniPWNRMc5zqOW+Gw/L1YTJWKKJNbwi9s" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.it.js" integrity="sha384-FeutWe45g5Km/saFGan8TUe/2OmOMpOKZsSZrs3rTXuWFR1uUPCsMm4dDtRykeWj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.ja.js" integrity="sha384-dq7lpAR5pDe3s/lBR9ULfpPzd6aK9ZQsPJvGTuwegn+2/rjfLBJtqBv8EOzCPa28" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.nl.js" integrity="sha384-As68w7gSu5n2NaIp0fWUultu4DgI70O6MSQyRH+Od6diIJGUZcBvics4ngTz9oUm" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.no.js" integrity="sha384-dDRDenGpmJ0kVq2YcUz+VYSFeFfr8xKzLwoAI5EELbV8H7duDe0EGJ7yRor0utLK" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.pt.js" integrity="sha384-OuvqMzktEfrB5yX69l56nmgYr7te4ddjTTDRWVFrVNhwfqIKxmtfZ/FuUfNSRyP6" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.ru.js" integrity="sha384-kBE7kRvecDZhG8Iuhos+/KGlGRGhldEWtQY6fGpINKmVBy/wdkPuXFOwbuQgGDHc" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.sk.js" integrity="sha384-lmEicWSwUIuajZmSxrv5afJwh4cnWCv57GZk8txwIdnTn+0qquKzrUXU2lnI9iLz" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.sv.js" integrity="sha384-1v65xmPX5LIyMT0Xx4kYTJGs0m46w5rDMAlI0TEflquw9crO/JNQrzERWzYmAZSZ" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.tr.js" integrity="sha384-hNohV0ROcFbk5u0wNd418nVBT7GrMjKAcOeDyqrmMJJObFJvAg9LLmOVimRt4JZ1" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.uk.js" integrity="sha384-fXAL6Ls5vwxHAkPKW7JLSgv97fC8EsZu4Mzp/ixmQSOENuqx5nKqVfCHKYe8RY57" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.vi.js" integrity="sha384-DOWw8McjzVHs1i9fDFU2Dnxdnu2iegcNWzYCLp4f2Cu0Bp3Qi0BY32RbsLlYgDi4" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/source/jsCalendar.lang.zh.js" integrity="sha384-5hI0jP3xwvMxIRXx35fGWlFlB+WEyL514/3oJS9pUapLWsAQgUOTObZ73Uv6yDEZ" crossorigin="anonymous"></script>
+
+		<!-- Optional Themes -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/themes/jsCalendar.clean.min.css" integrity="sha384-+Q5KnhF5PDyAjoLJ73El+kWpIqwE45/tnCDNQUCoI6aC0I5NB3PjSNsJh7DNlSNl" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/themes/jsCalendar.clean.css" integrity="sha384-iu6Xy6xFoxfjWh3PAdkR3OnAUOSAqV+DzTV68jUTHcp+ChMcGcP/AHAQVffSk3ZH" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/themes/jsCalendar.darkseries.min.css" integrity="sha384-/Q810KfMjn0yvx2vItxJAmnH8Iv7/hrv7uy2ayVeB2ZEtA0KbEeMYWXWKrjPspw2" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/themes/jsCalendar.darkseries.css" integrity="sha384-pAl+cSXMJQfKRFQVA9kUU7CND001EQJRr/wg+E9b98uvyPhluvZ9hMOdkv2OFfr1" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/themes/jsCalendar.micro.min.css" integrity="sha384-3gCaZq7eDuL3x8LF+0UCFizRVc+c26pzZLa2YGmnLdg6w0eqcpNtND/YjdZeTHdr" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/themes/jsCalendar.micro.css" integrity="sha384-uA5g8zJY+Xx+zuLq7rlcHqcqz7JDu/b/GV5pcvmapGNf6MG+1AeY75pQOQZ+LjB6" crossorigin="anonymous">-->
+
+		<!-- Optional Extensions -->
+		<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/extensions/jsCalendar.datepicker.min.js" integrity="sha384-wtfZsrKmrTZWlxIwe+M5+4+N86yssnwnp+roPrrn2iZmZpYwiLuwjyiK7gPHiXaL" crossorigin="anonymous"></script>
+		<!--<script src="https://cdn.jsdelivr.net/gh/GramThanos/jsCalendar@v1.4.5/extensions/jsCalendar.datepicker.js" integrity="sha384-5OolMXEGgjxv0NWEN5CR+spNSn8lbAxaftqcI5b9FenGumJRH6YyLElB5UEknI5u" crossorigin="anonymous"></script>-->
+	</head>
+	<body>
+		<!-- Calendar Element -->
+    	<div class="auto-jsCalendar"></div>
+	</body>
+</html>
