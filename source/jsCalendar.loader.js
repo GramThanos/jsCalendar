@@ -1,12 +1,12 @@
 /*
  * jsCalendar loader v1.0.0-alpha
- * Works with jsCalendar v1.4.4
+ * Works with jsCalendar v1.4.5
  * This is currently experimental
  * 
  *
  * MIT License
  *
- * Copyright (c) 2019 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2017-2023 Grammatopoulos Athanasios-Vasileios
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -78,51 +78,52 @@
 	};
 	let paths = {
 		core : (parameters.minified ?
-			{js : fileInfo('/source/jsCalendar.min.js', 'sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB')} :
-			{js : fileInfo('/source/jsCalendar.js', 'sha384-cmurOusLTBPJV2zIeQtv8E1MAZRuYEgcFNrOYCeNypDeHEhubywEwdyaguEkrDy4')}
+			{js : fileInfo('/source/jsCalendar.min.js', 'sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ')} :
+			{js : fileInfo('/source/jsCalendar.js', 'sha384-9U5mx0TwE3KynzfE2673H8cGnEKbBh/hEW/MPkdR9C8qU0lyKvFxZdo9E/5vpcTk')}
 		),
 		language : {
-			be : {js : fileInfo('/source/jsCalendar.lang.be.js', 'sha384-czOMAb4auqx/S7EgTYgb/Sb3xNKzvCN3heba5z2IR80vAI72y55KvGpYQMOJF0Ul')},
-			ca : {js : fileInfo('/source/jsCalendar.lang.ca.js', 'sha384-qzGOaC9zqJRFiV0hpjawSZ5AZyBN/5LfGURBE+pQVG6jZZG4hZjJI7l8ob7UUsfI')},
-			de : {js : fileInfo('/source/jsCalendar.lang.de.js', 'sha384-i0GkTTXTirBg3whOHw5AqlI80IINcvOfx2HjQ/x4uqJ+wsB465gvhaekGGxPlxVX')},
-			es : {js : fileInfo('/source/jsCalendar.lang.es.js', 'sha384-HnSecKq1jgs1/eJQQpOiIb4Wtq7hlMC6nsooaNN+1JPTdzYSbiMP9f8xqKjque1e')},
-			fr : {js : fileInfo('/source/jsCalendar.lang.fr.js', 'sha384-Ob75mVgpo9t5GyveJWKmg21yW1VCLgGe15lpXGHPbfizJmbuG0JnxdwOg7sbYelv')},
-			gr : {js : fileInfo('/source/jsCalendar.lang.gr.js', 'sha384-PRRiiI0gLDo7hU5jD+aJQxbUSjjXHJeL0CdFAynqIWD9XATAYPQpKQkwrqjM+b8t')},
-			hu : {js : fileInfo('/source/jsCalendar.lang.hu.js', 'sha384-yP2k8rRYSOiAc2PfxQ/WAFjMVRoA8AMxGZhlutbHXDc9vGMeokM2qyF2fLHaGPxo')},
-			it : {js : fileInfo('/source/jsCalendar.lang.it.js', 'sha384-3PiSuWThRXpAvOjasZXyIrVl5H2x296VPhp9D0NebW9V5rcHzCSx4Dh5WRd+pQVO')},
-			ja : {js : fileInfo('/source/jsCalendar.lang.ja.js', 'sha384-O/JkPTslqFkNst65hIikWD7NVsNBRN2vGvprEt9n9tXPKFwocawTwKvwAnPOOZRc')},
-			nl : {js : fileInfo('/source/jsCalendar.lang.nl.js', 'sha384-pitfgw0cn6lUL67KU0jVykK7GIZnS0xqH4nBIIgGo6rSSADgyHdWfoDvoR78juHd')},
-			no : {js : fileInfo('/source/jsCalendar.lang.no.js', 'sha384-exBlQuh0Apw5DoBAJVxPYJRKYrQjOScXHmQHX9ZA/jZb92Ec6NQjOddl/GexPkCS')},
-			pt : {js : fileInfo('/source/jsCalendar.lang.pt.js', 'sha384-NF3X/E9s0p9PqeJxs+kx2xFHOAfiuNlGpIiwzLBET1Y0pejnfmOm5DJhn6ioTpCr')},
-			ru : {js : fileInfo('/source/jsCalendar.lang.ru.js', 'sha384-xVQY3RcL7F/s9lcv9KNRyquT4kypFWf4OsQPGvpOcB70qhCvQ5P5KdhSygsc6GQg')},
-			sk : {js : fileInfo('/source/jsCalendar.lang.sk.js', 'sha384-fusvqbkUQKgP3X7NX3lUxQEc5yG0V1vbZx8q246R4Bsl/Mzichrn3n8rOWOvJpSB')},
-			sv : {js : fileInfo('/source/jsCalendar.lang.sv.js', 'sha384-fisTE5VLKPsxo5RbFtTLJ1T0j6y8a3SlylIzHZaXSErsJNIy3P82uGhomnRoPc4m')},
-			tr : {js : fileInfo('/source/jsCalendar.lang.tr.js', 'sha384-9u6ZxP0FkigNhAYvsyxqA97/kjtLLv3cdS5isu5KP/vjQlguqdG76uS4UOEoNk7y')},
-			uk : {js : fileInfo('/source/jsCalendar.lang.uk.js', 'sha384-tVzYxj0/QLUOY8QNd3YSzik+Zi4ShGbZTMd72rTA3xTtQMyrFquKRPsp1nsZdMJl')},
-			zh : {js : fileInfo('/source/jsCalendar.lang.zh.js', 'sha384-V0QPacMFDmO6dM4PsEqgwCew+6CzJCk0LaaL/cRM1+LQZjoh5GH64OHX+RNLuORd')}
+			be : {js : fileInfo('/source/jsCalendar.lang.be.js', 'sha384-PI3VPDqjnkgo002ScVctSGQYmHF4VtmXJT2cJ8H6hWWt1rk+l2Xw5hFUHTnvCBRA')},
+			ca : {js : fileInfo('/source/jsCalendar.lang.ca.js', 'sha384-JXClNV6lrKePFdidQxupyaOcGHsiWlfiVYHzmS3lIIoz7eFppaVo2ZahCKMGwGCQ')},
+			de : {js : fileInfo('/source/jsCalendar.lang.de.js', 'sha384-pUMNW4wJJocu99HqohAVlQD0z72pYWQ8Rwpk2LnF40x5BK3kTmtT8rE2ZlPgM8oh')},
+			es : {js : fileInfo('/source/jsCalendar.lang.es.js', 'sha384-mrCuMLqSjwshLZD661hRZpNAphRZTR0eAxJsWxPrYzsYKRtNb+bT9u1PXq+YH/eP')},
+			fr : {js : fileInfo('/source/jsCalendar.lang.fr.js', 'sha384-KwbbcoiATTslp59b+0njB+Kee4zLz3uQQnfXpDO8R/0c74NRyIZtNNGSf23bb5sX')},
+			gr : {js : fileInfo('/source/jsCalendar.lang.gr.js', 'sha384-iK2L0CkyRtBpOuMRtnOoTTYiIB7mutEAdLs8RLl7ywjvO2MTfNXgP7wYlxpI8Luf')},
+			hu : {js : fileInfo('/source/jsCalendar.lang.hu.js', 'sha384-jA80WXFW3Uvmi2UmXAeJ7KcwR0r1T17rniPWNRMc5zqOW+Gw/L1YTJWKKJNbwi9s')},
+			it : {js : fileInfo('/source/jsCalendar.lang.it.js', 'sha384-FeutWe45g5Km/saFGan8TUe/2OmOMpOKZsSZrs3rTXuWFR1uUPCsMm4dDtRykeWj')},
+			ja : {js : fileInfo('/source/jsCalendar.lang.ja.js', 'sha384-dq7lpAR5pDe3s/lBR9ULfpPzd6aK9ZQsPJvGTuwegn+2/rjfLBJtqBv8EOzCPa28')},
+			nl : {js : fileInfo('/source/jsCalendar.lang.nl.js', 'sha384-As68w7gSu5n2NaIp0fWUultu4DgI70O6MSQyRH+Od6diIJGUZcBvics4ngTz9oUm')},
+			no : {js : fileInfo('/source/jsCalendar.lang.no.js', 'sha384-dDRDenGpmJ0kVq2YcUz+VYSFeFfr8xKzLwoAI5EELbV8H7duDe0EGJ7yRor0utLK')},
+			pt : {js : fileInfo('/source/jsCalendar.lang.pt.js', 'sha384-OuvqMzktEfrB5yX69l56nmgYr7te4ddjTTDRWVFrVNhwfqIKxmtfZ/FuUfNSRyP6')},
+			ru : {js : fileInfo('/source/jsCalendar.lang.ru.js', 'sha384-kBE7kRvecDZhG8Iuhos+/KGlGRGhldEWtQY6fGpINKmVBy/wdkPuXFOwbuQgGDHc')},
+			sk : {js : fileInfo('/source/jsCalendar.lang.sk.js', 'sha384-lmEicWSwUIuajZmSxrv5afJwh4cnWCv57GZk8txwIdnTn+0qquKzrUXU2lnI9iLz')},
+			sv : {js : fileInfo('/source/jsCalendar.lang.sv.js', 'sha384-1v65xmPX5LIyMT0Xx4kYTJGs0m46w5rDMAlI0TEflquw9crO/JNQrzERWzYmAZSZ')},
+			tr : {js : fileInfo('/source/jsCalendar.lang.tr.js', 'sha384-hNohV0ROcFbk5u0wNd418nVBT7GrMjKAcOeDyqrmMJJObFJvAg9LLmOVimRt4JZ1')},
+			uk : {js : fileInfo('/source/jsCalendar.lang.uk.js', 'sha384-fXAL6Ls5vwxHAkPKW7JLSgv97fC8EsZu4Mzp/ixmQSOENuqx5nKqVfCHKYe8RY57')},
+			vi : {js : fileInfo('/source/jsCalendar.lang.vi.js', 'sha384-DOWw8McjzVHs1i9fDFU2Dnxdnu2iegcNWzYCLp4f2Cu0Bp3Qi0BY32RbsLlYgDi4')},
+			zh : {js : fileInfo('/source/jsCalendar.lang.zh.js', 'sha384-5hI0jP3xwvMxIRXx35fGWlFlB+WEyL514/3oJS9pUapLWsAQgUOTObZ73Uv6yDEZ')}
 		},
 		extension : {
 			datepicker : (parameters.minified ?
-				{js : fileInfo('/extensions/jsCalendar.datepicker.min.js', 'sha384-+kCc/DUyMCZKRKBUju8rYWlpPstskB0TMl/gO6Qu1yDvtdZTdKBWUv8slo8vn7x/')} :
-				{js : fileInfo('/extensions/jsCalendar.datepicker.js', 'sha384-A9jyu6xqyitRcMEZEgHbi1znFOFMSqCCD/Htdwy7QCbR6Yw3FDygm8qgpLJx1VG0')}
+				{js : fileInfo('/extensions/jsCalendar.datepicker.min.js', 'sha384-wtfZsrKmrTZWlxIwe+M5+4+N86yssnwnp+roPrrn2iZmZpYwiLuwjyiK7gPHiXaL')} :
+				{js : fileInfo('/extensions/jsCalendar.datepicker.js', 'sha384-5OolMXEGgjxv0NWEN5CR+spNSn8lbAxaftqcI5b9FenGumJRH6YyLElB5UEknI5u')}
 			)
 		},
 		theme : {
 			default : (parameters.minified ?
-				{css : fileInfo('/source/jsCalendar.min.css', 'sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w')} :
-				{css : fileInfo('/source/jsCalendar.css', 'sha384-IqymsN08KC67WHkPOiAlEL5w5cmUFIkVI/NR/j1QOYD6bzuZ/JdXGVTHa0sfWnci')}
+				{css : fileInfo('/source/jsCalendar.min.css', 'sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0')} :
+				{css : fileInfo('/source/jsCalendar.css', 'sha384-1eG5+BK6CGsH/Pv3yC+0Q17dhDvZTewIMAyQtzOe6Sdf3Y2mAAbIJUonVtuF0aBS')}
 			),
 			clean : (parameters.minified ?
-				{css : fileInfo('/themes/jsCalendar.clean.min.css', 'sha384-KVMZD/q6PZDK3xYHB7uJwJbE8VGNCaJWAQQ+9i/MsP8VV4eLGQdJRzHjfVACCBMU')} :
-				{css : fileInfo('/themes/jsCalendar.clean.css', 'sha384-ICEMsS1kLS8RctRzIh3D3wXGIGNXdAeq/Cox8tRla+pje3WXoVOd+J0LR7AFXt9q')}
+				{css : fileInfo('/themes/jsCalendar.clean.min.css', 'sha384-+Q5KnhF5PDyAjoLJ73El+kWpIqwE45/tnCDNQUCoI6aC0I5NB3PjSNsJh7DNlSNl')} :
+				{css : fileInfo('/themes/jsCalendar.clean.css', 'sha384-iu6Xy6xFoxfjWh3PAdkR3OnAUOSAqV+DzTV68jUTHcp+ChMcGcP/AHAQVffSk3ZH')}
 			),
 			darkseries : (parameters.minified ?
-				{css : fileInfo('/themes/jsCalendar.darkseries.min.css', 'sha384-ZbdiJ7QkbjnGdb+XFoRs+hUWQqmkaWxNaczaUzb8rhUIl+D+ZaAiqpxse5Nn/rBk')} :
-				{css : fileInfo('/themes/jsCalendar.darkseries.css', 'sha384-1WOpRS9VWHABAzTAZ4pqBzNb+4UGfNq6qvWoz6ROv89xiHFu0SDj8WGIcQo584Jr')}
+				{css : fileInfo('/themes/jsCalendar.darkseries.min.css', 'sha384-/Q810KfMjn0yvx2vItxJAmnH8Iv7/hrv7uy2ayVeB2ZEtA0KbEeMYWXWKrjPspw2')} :
+				{css : fileInfo('/themes/jsCalendar.darkseries.css', 'sha384-pAl+cSXMJQfKRFQVA9kUU7CND001EQJRr/wg+E9b98uvyPhluvZ9hMOdkv2OFfr1')}
 			),
 			micro : (parameters.minified ?
-				{css : fileInfo('/themes/jsCalendar.micro.min.css', 'sha384-aOgaUk5MAJeF3DMxm62ZLQdwcwGJHAL+x2HKDLeL0KGzq58mbx1NmWBufXj6av+T')} :
-				{css : fileInfo('/themes/jsCalendar.micro.css', 'sha384-trm9scV3zUQrRLK6sHRClCHa7P/k5N9ZJVRx9UlyE3BZUcont3CLSSC80VWlKXCj')}
+				{css : fileInfo('/themes/jsCalendar.micro.min.css', 'sha384-3gCaZq7eDuL3x8LF+0UCFizRVc+c26pzZLa2YGmnLdg6w0eqcpNtND/YjdZeTHdr')} :
+				{css : fileInfo('/themes/jsCalendar.micro.css', 'sha384-uA5g8zJY+Xx+zuLq7rlcHqcqz7JDu/b/GV5pcvmapGNf6MG+1AeY75pQOQZ+LjB6')}
 			)
 		}
 	};

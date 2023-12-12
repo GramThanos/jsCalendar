@@ -1,4 +1,4 @@
-[![latest release](https://img.shields.io/badge/latest%20release-v1.4.4-green.svg)](https://github.com/GramThanos/jsCalendar/releases/latest)
+[![latest release](https://img.shields.io/badge/latest%20release-v1.4.5-green.svg)](https://github.com/GramThanos/jsCalendar/releases/latest)
 [![latest development](https://img.shields.io/badge/latest%20development-v1.4.5--beta-yellow.svg)](https://github.com/GramThanos/jsCalendar#whats-new)
 [![license](https://img.shields.io/github/license/GramThanos/jsCalendar.svg)](https://github.com/GramThanos/jsCalendar/blob/master/LICENSE)
 [![npm project](https://img.shields.io/badge/npm%20package-simple--jscalendar-red.svg)](https://www.npmjs.com/package/simple-jscalendar)
@@ -51,17 +51,17 @@ ___
 You can also use the [jsCalendar package](https://unpkg.com/simple-jscalendar/) on the [unpkg CDN](https://unpkg.com).
 
 ```html
-<!-- jsCalendar v1.4.4 Javascript and CSS from unpkg cdn -->
-<script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+<!-- jsCalendar v1.4.5 Javascript and CSS from unpkg cdn -->
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
 ```
 
 Or you can also use the [jsCalendar npm package](https://www.jsdelivr.com/package/npm/simple-jscalendar) on the [jsdelivr CDN](https://www.jsdelivr.com).
 
 ```html
-<!-- jsCalendar v1.4.4 Javascript and CSS from jsdelivr npm cdn -->
-<script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+<!-- jsCalendar v1.4.5 Javascript and CSS from jsdelivr npm cdn -->
+<script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
 ```
 
 Full example with all the files and their integrity hashes [using unpkg here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-unpkg%20full%20demo.html) and [using jsdelivr here](https://github.com/GramThanos/jsCalendar/blob/master/demos/cdn-jsdelivr%20full%20demo.html) (the hashes are the same).
@@ -117,25 +117,13 @@ ___
 
 ### Whats new?
 
-#### Latest development code v1.4.5-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
+#### Latest development code v1.4.6-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
  - Added
-    - Added extension add method `jsCalendar.ext('example', {init : <function>, create : <function>, update : <function>});`
-    - Added methods `freeze`/`unfreeze`/`isFrozen` to prevent the calendars from re-rendering the UI PR#56 by @paxperscientiam
+    - Nothing yet
  - Bugs
-    - Fixed `info.start` parameter on `onMonthRender` (was not the first date)
-    - Fixed selected dates not highlighted bug (depending on your timezone) (issue #44)
-    - Fixed `onDateRender` incorrect `isCurrentMonth`, `isPreviousMonth` and `isNextMonth` (issue #45)
-    - Fixed `fdotw` bug #42
-    - Improved UX on dates outside `min` & `max` limits PR#58 by @zangarmarsh
-    - Fixed invalid date passed as date object not being detected
+    - Nothing yet
  - Languages
-    - Added Polish Language (by [avatec](https://github.com/avatec))
-    - Added Arabic Language (by [JefferyHus](https://github.com/JefferyHus))
-    - Added Thai Language (by [notjiam](https://github.com/notjiam))
-    - Added Korean Language (by [JefferyHus](https://github.com/JefferyHus))
-    - Added Occitan Language (by [Quentin PAGÈS](https://github.com/ensag-dev))
-    - Added VietNamese Language (by [Nguyen Duy Dien](https://github.com/dienht))
-    - Fixed Catalan Language spelling mistake
+    - Nothing yet
 ___
 
 

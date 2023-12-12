@@ -1,7 +1,7 @@
 {
   "name": "simple-jscalendar",
   "description": "Just a simple javascript calendar",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "main": "source/jsCalendar.js",
   "author": {
     "name": "GramThanos"
