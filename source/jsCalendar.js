@@ -1317,6 +1317,13 @@ var jsCalendar = (function(){
             return null;
         }
 
+        // Checking if date object is invalid
+        if (isNaN(date)) {
+            // Throw an error
+            if (!silent) throw new Error('jsCalendar: Invalid date.');
+            return null;
+        }
+
         // Return date
         return new Date(date.getTime());
     };
