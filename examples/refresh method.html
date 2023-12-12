@@ -18,19 +18,39 @@
 
 
 		<!-- Button -->
-		<button id="my-button">Refresh</button>
+		<button id="my-button-1">Refresh Calendar 1</button>
 		<!-- My calendar element -->
-		<div id="my-calendar"></div>
+		<div id="my-calendar-1"></div>
 		<!-- Create the calendar -->
 		<script type="text/javascript">
 			// Create the calendar
-			var myCalendar = jsCalendar.new("#my-calendar");
+			var myCalendar1 = jsCalendar.new("#my-calendar-1");
 			// Get the button
-			var button = document.getElementById("my-button");
+			var button1 = document.getElementById("my-button-1");
 			// Add a button event
-			button.addEventListener("click", function(){
+			button1.addEventListener("click", function(){
 				// Refresh
-				myCalendar.refresh();
+				myCalendar1.refresh();
+			}, false);
+		</script>
+
+		<!-- Button -->
+		<button id="my-button-2">Refresh Calendar 2</button>
+		<!-- My calendar element -->
+		<div id="my-calendar-2" data-date="12/12/2023"></div>
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			let date2 = new Date('12/12/2023');
+			// Create the calendar
+			var myCalendar2 = jsCalendar.new("#my-calendar-2");
+			// Get the button
+			var button2 = document.getElementById("my-button-2");
+			// Add a button event
+			button2.addEventListener("click", function(){
+				// Go to next month
+				date2.setMonth(date2.getMonth() + 1);
+				// Refresh
+				myCalendar2.refresh(date2);
 			}, false);
 		</script>
 
