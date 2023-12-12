@@ -127,6 +127,7 @@ ___
     - Fixed `onDateRender` incorrect `isCurrentMonth`, `isPreviousMonth` and `isNextMonth` (issue #45)
     - Fixed `fdotw` bug #42
     - Improved UX on dates outside `min` & `max` limits PR#58 by @zangarmarsh
+    - Fixed invalid date passed as date object not being detected
  - Languages
     - Added Polish Language (by [avatec](https://github.com/avatec))
     - Added Arabic Language (by [JefferyHus](https://github.com/JefferyHus))
