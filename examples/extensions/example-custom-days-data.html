@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jsCalendar example extension</title>
+		<meta name="description" content="jsCalendar datepicker example">
+		<meta name="author" content="GramThanos">
+
+		<!-- jsCalendar -->
+		<link rel="stylesheet" type="text/css" href="../../source/jsCalendar.css">
+		<script type="text/javascript" src="../../source/jsCalendar.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<!-- Example Calendar -->
+		<div class="auto-jsCalendar"></div>
+
+		<!-- Example Extension -->
+		<script type="text/javascript">
+			(function($){
+				// Check if jsCalendar exists
+				if (!$) throw 'Error jsCalendar library was not found';
+
+				// Instance Handlers
+				var update = function(instance, month) {
+					// Update days elements
+					let i = 0;
+					for (i = month.days.length - 1; i >= 0; i--) {
+						let date = month.days[i];
+						//console.log(date, instance._elements.bodyCols[i]);
+						let month_name = (['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])[date.getMonth()].toUpperCase();
+						let date_number = String(date.getDate()).padStart(2, '0');
+						instance._elements.bodyCols[i].classList.add(`${month_name}-${date_number}`); // e.g. DEC-20
+						instance._elements.bodyCols[i].dataset.date = `${month_name}-${date_number}`;
+					}
+				};
+
+				// Load extension
+				$.ext('custom-date-data', {
+					init : () => {},
+					create : () => {},
+					update : update
+				});
+			})(window.jsCalendar);
+		</script>
+	</body>
+</html>
