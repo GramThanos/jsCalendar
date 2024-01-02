@@ -65,7 +65,7 @@
 						<li><a href="docs.html">Docs</a></li>
 						<li><a href="themes.html">Themes</a></li>
 						<li><a href="demos.html">Demos</a></li>
-						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
+						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">GitHub</a></li>
 					</ul>
 					<br>
 					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.5/jsCalendar_v1.4.5.zip" class="download-button">
@@ -114,11 +114,14 @@
 			</div>
 		</div>
 
-		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
+		<a class="github-fork-ribbon" href="https://github.com/GramThanos/jsCalendar/" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
 
 
 		<script type="text/javascript">
+			var languageNames;
+			try {languageNames = new Intl.DisplayNames(['en'], {type: 'language'});}
+			catch (e) {languageNames = null;}
 
 			var codeGenerator = {
 
@@ -235,8 +238,12 @@
 						zeroFill : {name : 'Zero fill', defvalue : 'false', values : ['true', 'false']},
 						monthFormat : {name : 'Month format', defvalue : 'month', values : ['month', 'MMM', 'month YYYY', '##/YYYY']},
 						dayFormat : {name : 'Day format', defvalue : 'D', values : ['DDD', 'DD', 'D']},
-						fdotw : {name : 'First day of the week', defvalue : '1', values : ['1', '2']},
-						language : {name : 'Language', defvalue : 'en', values : ['en','ar','be','ca','de','es','fr','gr','hu','it','ja','ko','nl','no','oc','pl','pt','ru','sk','sv','th','tr','uk','vi','zh']}
+						fdotw : {name : 'First day of the week', defvalue : '1', values : [{text:'Sunday (1)', value:'1'}, {text:'Monday (2)', value:'2'}]},
+						language : {name : 'Language', defvalue : 'en', values : ((langs) => {
+							return langs.map(code => {
+								return {text: languageNames ? languageNames.of(code == 'gr' ? 'el' : code) + ' (' + code + ')' : code, value: code};
+							});
+						})(['en','ar','be','ca','de','es','fr','gr','hu','it','ja','ko','nl','no','oc','pl','pt','ru','sk','sv','th','tr','uk','vi','zh'])}
 					}
 				},
 
@@ -325,7 +332,7 @@
 					var parameters = this.info.parameters;
 
 					var that = this;
-					var param, row, select;
+					var param, row, select, val, txt;
 					for (param_name in parameters) {
 						if (parameters.hasOwnProperty(param_name)) {
 							param = parameters[param_name];
@@ -340,9 +347,12 @@
 
 							for (i in param.values) {
 								if (param.values.hasOwnProperty(i)) {
+									txt = param.values[i].text || param.values[i];
+									val = param.values[i].value || param.values[i];
+
 									select = document.createElement('div');
-									select.className = 'param-value' + (param.values[i] == param.defvalue ? ' active' : '');
-									select.innerHTML = param.values[i];
+									select.className = 'param-value' + (val == param.defvalue ? ' active' : '');
+									select.innerHTML = txt;
 									row.appendChild(select);
 									select.addEventListener('click', (function(param, value, select) {
 										return function () {
@@ -352,7 +362,7 @@
 											that.active.parameters[param] = value;
 											that.generate('parameter');
 										}
-									})(param_name, param.values[i], select), false);
+									})(param_name, val, select), false);
 								}
 							}
 

@@ -36,7 +36,7 @@
 						<li><a href="docs.html">Docs</a></li>
 						<li><a href="themes.html">Themes</a></li>
 						<li><a href="demos.html">Demos</a></li>
-						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
+						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">GitHub</a></li>
 					</ul>
 					<br>
 					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.5/jsCalendar_v1.4.5.zip" class="download-button">
@@ -56,9 +56,10 @@
 
 				<table id="versions-table" style="width: 100%;">
 					<tr>
-						<th style="width:100px;">Version</th>
-						<th style="width:100px;">Released</th>
-						<th style="width:130px;">Changelog</th>
+						<th style="width:58px;">Version</th>
+						<th style="width:86px;">Released</th>
+						<th style="width:110px;">Changelog</th>
+						<th>jsDelivr Stats</th>
 						<th>Download</th>
 					</tr>
 				</table>
@@ -76,10 +77,11 @@
 
 					// Info vars
 					var downloads = 0;
+					var jsdelivr_hits = 0;
 					var loading = tags.length;
 
 					// Get info for each tag
-					var row, col, date, a, small;
+					var row, col, date, a, small, small2;
 					for (var i = 0; i < tags.length; i++) {
 						// Create table row
 						row = document.createElement('tr');
@@ -101,6 +103,12 @@
 						col.appendChild(a);
 						row.appendChild(col);
 
+						// Stats
+						col = document.createElement('td');
+						small2 = document.createElement('small');
+						col.appendChild(small2);
+						row.appendChild(col);
+
 						// Download
 						col = document.createElement('td');
 						a = document.createElement('a');
@@ -114,7 +122,7 @@
 						table.appendChild(row);
 
 						// Get tag info
-						(function(tag, date, info){
+						(function(tag, date, info, stats){
 							repo.getVersion(tag, function(data){
 								var n, d;
 								if (data && data.assets) {
@@ -128,12 +136,19 @@
 										info.style.padding = '0 5px';
 									}
 								}
-								loading--;
-								if (loading === 0) {
-									total.textContent = 'Downloaded ' + addDots(downloads) + ' times in total!';
-								}
+
+								// Update
+								total.textContent = 'Downloaded ' + addDots(downloads) + ' times & got ' + addDots(jsdelivr_hits) + ' hits in total!';
 							});
-						})(tags[i], date, small);
+
+							fetch('https://data.jsdelivr.com/v1/stats/packages/npm/simple-jscalendar@' + tag).then(res => res.json()).then(data => {
+								stats.textContent = '' + addDots(data.hits.total) + ' hits & ' + readableSize(data.bandwidth.total) + ' data';
+								jsdelivr_hits += data.hits.total;
+
+								// Update
+								total.textContent = 'Downloaded ' + addDots(downloads) + ' times and got ' + addDots(jsdelivr_hits) + ' hits in total!';
+							});
+						})(tags[i], date, small, small2);
 					}
 
 					function readableSize(bytes) {
@@ -163,7 +178,7 @@
 			</div>
 		</div>
 
-		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
+		<a class="github-fork-ribbon" href="https://github.com/GramThanos/jsCalendar/" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
 	</body>
 </html>

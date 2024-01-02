@@ -39,7 +39,7 @@
 						<li class="active"><a href="docs.html">Docs</a></li>
 						<li><a href="themes.html">Themes</a></li>
 						<li><a href="demos.html">Demos</a></li>
-						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">Github</a></li>
+						<li><a href="https://github.com/GramThanos/jsCalendar/" target="_blank">GitHub</a></li>
 					</ul>
 					<br>
 					<a href="https://github.com/GramThanos/jsCalendar/releases/download/v1.4.5/jsCalendar_v1.4.5.zip" class="download-button">
@@ -366,7 +366,7 @@
 						<tr><td>month</td>	<td>Month's full name</td>			<td>February</td></tr>
 						<tr><td>MMM</td>	<td>Month's first 3 letters</td>	<td>Feb</td></tr>
 						<tr><td>mmm</td>	<td>Month's first 3 letters</td>	<td>Feb</td></tr>
-						<tr><td>##</td>		<td>Month's number (zerofilled)</td><td>02</td></tr>
+						<tr><td>##</td>		<td>Month's number (zero-filled)</td><td>02</td></tr>
 						<tr><td>#</td>		<td>Month's number</td>				<td>2</td></tr>
 						<tr><td>YYYY</td>	<td>Year</td>						<td>2017</td></tr>
 						<tr><td>yyyy</td>	<td>Year</td>						<td>2017</td></tr>
@@ -1822,20 +1822,38 @@ Testing dateToString:
 						<tr><td>extention_name</td><td>The string name of the extension to load. This should be unique for each extension.</td></tr>
 						<tr><td>extention_object</td><td>The <a href="#more-javascript-extensions-extentionobject">ExtentionObject</a> of the extension.</td></tr>
 					</table>
+					<p class="note">To utilise an extension, it should be loaded before creating a calendar. Thus, it is suggested to load any extension script just after loading the jsCalendar library.</p>
 					<br><br>
 
 					<p id="more-javascript-extensions-extentionobject">The ExtentionObject is an object that can optionally include handlers that will be called from jsCalendar upon the corresponding event.</p><br>
 					<table style="width: 100%;">
-						<tr><td>ExtentionObject</td><td>{ init: function() { ... }, create: function(elements) { ... }, update: function(month) { ... } }</td></tr>
+						<tr><td>ExtentionObject</td><td>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;init: function(instance) { ... },<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;create: function(instance, elements) { ... },<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;update: function(instance, month) { ... }<br>
+							}</td></tr>
 					</table>
-					<p>Handlers</p>
-					<table>
-						<tr><td>init</td><td>Will be called just after the initialisation of the calendar's parameters.</td></tr>
-						<tr><td>create</td><td>Will be called just after the creation of the calendar's HTML elements. The calendar's elements will be passed as a parameter.</td></tr>
-						<tr><td>create</td><td>Will be called just after the UI update of the calendar. The information of the active month will be passed as a parameter.</td></tr>
-					</table>
+					<br>
 
-					<p class="note">*Using the this keyword inside any handler, you can get access to the instance of the jsCalendar object of the corresponding calendar.</p>
+					<p class="section-subtitle">Handlers</p>
+					<table>
+						<tr><td>init</td><td>Will be called just after the initialisation of the calendar's parameters. (optional)</td></tr>
+						<tr><td>create</td><td>Will be called just after the creation of the calendar's HTML elements. The calendar's elements will be passed as a parameter. (optional)</td></tr>
+						<tr><td>update</td><td>Will be called just after the UI update of the calendar. The information of the active month will be passed as a parameter. (optional)</td></tr>
+					</table>
+					<br>
+
+					<!--
+					<p class="section-subtitle">Handlers > init handler</p>
+					<p class="note">*TODO: Extensions documentation is a work in progress. You can assist by creating a pull request on GitHub.</p>
+					
+					<p class="section-subtitle">Handlers > create handler</p>
+					<p class="note">*TODO: Extensions documentation is a work in progress. You can assist by creating a pull request on GitHub.</p>
+
+					<p class="section-subtitle">Handlers > update handler</p>
+					<p class="note">*TODO: Extensions documentation is a work in progress. You can assist by creating a pull request on GitHub.</p>
+					-->
 					<br>
 				</div>
 				<div class="wrapper-clear"></div>
@@ -1970,7 +1988,7 @@ days : [
 			</div>
 		</div>
 
-		<a href="https://github.com/GramThanos/jsCalendar/" class="github-ribbon"></a>
+		<a class="github-fork-ribbon" href="https://github.com/GramThanos/jsCalendar/" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
 	</body>
 </html>
