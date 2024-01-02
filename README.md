@@ -123,6 +123,7 @@ ___
  - Bugs
     - Added missing languages on examples
     - Added missing languages on loader
+    - Relaxed need for extension methods
  - Languages
     - Nothing yet
 ___

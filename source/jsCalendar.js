@@ -1,5 +1,5 @@
 /*
- * jsCalendar v1.4.5
+ * jsCalendar v1.4.6-beta
  *
  *
  * MIT License
@@ -42,7 +42,7 @@ var jsCalendar = (function(){
     }
 
     // Version
-    JsCalendar.version = 'v1.4.5';
+    JsCalendar.version = 'v1.4.6-beta';
 
     // Sub-Constructor
     JsCalendar.prototype._construct = function(args) {
@@ -90,12 +90,12 @@ var jsCalendar = (function(){
     JsCalendar.extension = {};
     JsCalendar.prototype.extensionCall = function(extension, method, args) {
         extension = JsCalendar.extension[extension];
-        return extension[method].apply(extension, args);
+        return extension && extension.hasOwnProperty(method) && typeof extension[method] == 'function' ? extension[method].apply(extension, args) : undefined;
     };
     JsCalendar.prototype.extensionsCall = function(method, args) {
         args = [this].concat(args);
         for (var i in JsCalendar.extension) {
-            if (JsCalendar.extension.hasOwnProperty(i) && JsCalendar.extension[i].hasOwnProperty(method)) {
+            if (JsCalendar.extension.hasOwnProperty(i)) {
                 this.extensionCall(i, method, args);
             }
         }
@@ -1457,6 +1457,7 @@ var jsCalendar = (function(){
 
     // Exetnsion load
     JsCalendar.ext = function(id, extension) {
+        if (!id) throw new Error('jsCalendar: invalid extension id.');
         JsCalendar.extension[id] = extension;
     };
 
