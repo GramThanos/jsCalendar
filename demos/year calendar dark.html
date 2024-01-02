@@ -95,14 +95,62 @@
 		<!-- Full Calendar wrapper -->
 		<div id="year-calendar"></div>
 
+		<!-- Example Extensions Load before creating calendars-->
+		<script type="text/javascript">
+			(function($){
+				// Check if jsCalendar exists
+				if (!$) throw 'Error jsCalendar library was not found';
+
+				var addDateOnElement = function(element, date) {
+					element.setAttribute('date', String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()));
+				};
+
+				// Instance Handlers
+				var update = function(instance, month) {
+					// Update days elements
+					for (var i = month.days.length - 1; i >= 0; i--) {
+						addDateOnElement(instance._elements.bodyCols[i], month.days[i]);
+					}
+				};
+
+				// Load extension
+				$.ext('custom-date-attribute', {update : update});
+			})(window.jsCalendar);
+		</script>
+		<script type="text/javascript">
+			(function($){
+				// Check if jsCalendar exists
+				if (!$) throw 'Error jsCalendar library was not found';
+
+				// Instance Handlers
+				var update = function(instance, month) {
+					// Update days elements
+					for (var i = month.days.length - 1; i >= 0; i--) {
+						// if weekend
+						if (i >= month.start - 1 && i <= month.end -1 && (month.days[i].getDay() == 0 || month.days[i].getDay() == 6)) {
+							instance._elements.bodyCols[i].style.opacity = 0.8;
+							instance._elements.bodyCols[i].style.color = '#ff5722';
+						}
+						else {
+							instance._elements.bodyCols[i].removeAttribute('style');
+							//instance._elements.bodyCols[i].style.opacity = 'unset';
+							//instance._elements.bodyCols[i].style.color = 'unset';
+						}
+					}
+				};
+
+				// Load extension
+				$.ext('custom-date-attribute', {update : update});
+			})(window.jsCalendar);
+		</script>
+
 		<!-- Create the calendar -->
 		<script type="text/javascript">
 			// Get element
 			var wrapper = document.getElementById("year-calendar");
 
 			// Variables
-			var date = new Date();
-			var year = date.getYear() + 1900;
+			var year = new Date().getFullYear();
 			var div;
 
 			// Create title
@@ -130,7 +178,8 @@
 		</script>
 		
 		<div class="version">
-			jsCalendar <script type="text/javascript">document.writeln(jsCalendar.version);</script>
+			jsCalendar <span id="jsCalendar-version"></span>
 		</div>
+		<script type="text/javascript">document.getElementById('jsCalendar-version').textContent = jsCalendar.version;</script>
 	</body>
 </html>

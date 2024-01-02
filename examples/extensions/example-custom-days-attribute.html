@@ -25,24 +25,22 @@
 				// Check if jsCalendar exists
 				if (!$) throw 'Error jsCalendar library was not found';
 
+				var addDateOnElement = function(element, date) {
+					element.setAttribute('date', String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()));
+				};
+
 				// Instance Handlers
 				var update = function(instance, month) {
 					// Update days elements
-					let i = 0;
-					for (i = month.days.length - 1; i >= 0; i--) {
-						let date = month.days[i];
-						//console.log(date, instance._elements.bodyCols[i]);
-						let month_name = (['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])[date.getMonth()].toUpperCase();
-						let date_number = String(date.getDate()).padStart(2, '0');
-						instance._elements.bodyCols[i].classList.add(`${month_name}-${date_number}`); // e.g. DEC-20
-						instance._elements.bodyCols[i].dataset.date = `${month_name}-${date_number}`;
+					for (var i = month.days.length - 1; i >= 0; i--) {
+						addDateOnElement(instance._elements.bodyCols[i], month.days[i]);
 					}
 				};
 
 				// Load extension
 				$.ext('custom-date-data', {
-					init : () => {},
-					create : () => {},
+					//init : () => {},
+					//create : () => {},
 					update : update
 				});
 			})(window.jsCalendar);
