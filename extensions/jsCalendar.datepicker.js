@@ -342,6 +342,10 @@
         this._target.value = $.tools.dateToString(date, this._options.format, this.jsCalendar._options.language);
         // Update calendar date
         this.jsCalendar.set(date);
+
+        // THROW CHANEGE EVENT ON INPUT BOX WHEN NEW DATE IS PICKED
+        const event = new Event('change', { bubbles: true });
+        this._target.dispatchEvent(event);
         // Close picker
         this.hide();
     };
