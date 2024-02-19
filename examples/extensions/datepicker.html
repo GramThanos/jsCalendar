@@ -123,5 +123,40 @@
 			}, false);
 		</script>
 
+
+		
+		Example 7<br>
+		<input type="text"
+			   id="example-7"
+			   name="example-7"
+			   data-years-line="7"
+			   data-datepicker/>
+		<br>
+		<br>
+
+		<script type="text/javascript">
+			document.getElementById('example-7').addEventListener('change', function(e) {
+				alert('Datepicker onchanged event was fired:\n' + this.value);
+			}, false);
+		</script>
+
+
+		
+		Example 8<br>
+		<input type="text"
+			   id="example-8"
+			   name="example-8"
+			   data-years-line="8"
+			   data-dispatch-on-change="false"
+			   data-datepicker/>
+		<br>
+		<br>
+
+		<script type="text/javascript">
+			document.getElementById('example-8').addEventListener('change', function(e) {
+				alert('User manually changed the input:\n' + this.value);
+			}, false);
+		</script>
+
 	</body>
 </html>
