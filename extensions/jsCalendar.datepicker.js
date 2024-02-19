@@ -55,7 +55,8 @@
         offsetTop : 2,
         offsetLeft : -4,
         close_keycodes : [9, 27, 13], // TAB 9, ESC 27, ENTER 13
-        class : 'jsCalendar-datepicker-wrappper'
+        class : 'jsCalendar-datepicker-wrappper',
+        dispatchOnChange : true,
     };
 
     // Sub-Constructor
@@ -292,6 +293,15 @@
                 this._options.yearsLine = item;
             }
         }
+        if (typeof options.dispatchOnChange !== 'undefined'){
+            item = options.dispatchOnChange.toString().toLowerCase();
+            if (item === 'false') {
+                this._options.dispatchOnChange = false;
+            }
+            else if (item === 'true') {
+                this._options.dispatchOnChange = true;
+            }
+        }
 
         // Get calendar options
         options = {};
@@ -343,9 +353,9 @@
         // Update calendar date
         this.jsCalendar.set(date);
 
-        // THROW CHANEGE EVENT ON INPUT BOX WHEN NEW DATE IS PICKED
-        const event = new Event('change', { bubbles: true });
-        this._target.dispatchEvent(event);
+        // Dispatch change event on input box
+        if (window.Event && this._options.dispatchOnChange)
+            this._target.dispatchEvent(new window.Event('change', {bubbles: true }));
         // Close picker
         this.hide();
     };
