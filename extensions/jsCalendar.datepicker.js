@@ -1,11 +1,11 @@
 /*
  * jsCalendar extension
- * DatePicker v1.1.1
+ * DatePicker v1.2.0
  *
  *
  * MIT License
  *
- * Copyright (c) 2021 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2024 Grammatopoulos Athanasios-Vasileios
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +55,8 @@
         offsetTop : 2,
         offsetLeft : -4,
         close_keycodes : [9, 27, 13], // TAB 9, ESC 27, ENTER 13
-        class : 'jsCalendar-datepicker-wrappper'
+        class : 'jsCalendar-datepicker-wrappper',
+        dispatchOnChange : true,
     };
 
     // Sub-Constructor
@@ -292,6 +293,15 @@
                 this._options.yearsLine = item;
             }
         }
+        if (typeof options.dispatchOnChange !== 'undefined'){
+            item = options.dispatchOnChange.toString().toLowerCase();
+            if (item === 'false') {
+                this._options.dispatchOnChange = false;
+            }
+            else if (item === 'true') {
+                this._options.dispatchOnChange = true;
+            }
+        }
 
         // Get calendar options
         options = {};
@@ -342,6 +352,10 @@
         this._target.value = $.tools.dateToString(date, this._options.format, this.jsCalendar._options.language);
         // Update calendar date
         this.jsCalendar.set(date);
+
+        // Dispatch change event on input box
+        if (window.Event && this._options.dispatchOnChange)
+            this._target.dispatchEvent(new window.Event('change', {bubbles: true }));
         // Close picker
         this.hide();
     };
