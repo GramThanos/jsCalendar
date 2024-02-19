@@ -1,11 +1,11 @@
 /*
  * jsCalendar extension
- * DatePicker v1.1.1
+ * DatePicker v1.2.0
  *
  *
  * MIT License
  *
- * Copyright (c) 2021 Grammatopoulos Athanasios-Vasileios
+ * Copyright (c) 2024 Grammatopoulos Athanasios-Vasileios
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
