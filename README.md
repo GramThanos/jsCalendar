@@ -119,7 +119,7 @@ ___
 
 #### Latest development code v1.4.6-beta <sub><sup>(beta minified versions may be out-of-date)</sub></sup>
  - Added
-    - Nothing yet
+    - (extension) Date picker, added on-change event fire when a new date is picked (Issue #67, Pull Request #68)
  - Bugs
     - Added missing languages on examples
     - Added missing languages on loader
